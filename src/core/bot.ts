@@ -94,6 +94,10 @@ export class BotPlayer {
 
       case 'number': {
         if (q?.type === 'year') return { number: Math.round(q.answer + gauss() * s.years) };
+        if (q?.type === 'price') {
+          const guess = q.answer * Math.exp(gauss() * s.noise * 1.3);
+          return { number: guess >= 100 ? roundNice(guess) : Math.round(guess * 10) / 10 };
+        }
         if (q?.type === 'closest') {
           const guess = q.answer * (1 + gauss() * s.noise);
           return { number: roundNice(q.answer >= 0 ? Math.max(0, guess) : guess) };

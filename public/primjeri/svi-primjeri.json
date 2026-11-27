@@ -234,6 +234,17 @@
       "explanation": "Titanic je udario u santu leda 14. travnja 1912., a potonuo je u ranim satima 15. travnja."
     },
     {
+      "id": "primjer-price-001",
+      "type": "price",
+      "difficulty": 1,
+      "category": "Cijene",
+      "item": "Kugla sladoleda",
+      "details": "u slastičarnici u Zagrebu, 2025.",
+      "answer": 2,
+      "source": "Okvirne cijene u Hrvatskoj, 2025.",
+      "explanation": "Kugla sladoleda obično stoji između 1,50 i 2,50 €."
+    },
+    {
       "id": "primjer-risk-001",
       "type": "risk",
       "difficulty": 1,

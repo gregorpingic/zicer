@@ -159,6 +159,11 @@ export function validateQuestion(raw: unknown): Question {
       const ex = strArr(o, 'examples', 0, 50, false);
       return { ...base, topic: str(o, 'topic')!, ...(ex ? { examples: ex } : {}) } as Question;
     }
+    case 'price': {
+      const answer = num(o, 'answer', { min: 0.01, max: 1_000_000_000 });
+      const details = str(o, 'details', false);
+      return { ...base, item: str(o, 'item')!, answer, ...(details ? { details } : {}) } as Question;
+    }
     case 'year':
       requireFactual(o);
       return { ...base, question: str(o, 'question')!, answer: num(o, 'answer', { int: true, min: -5000, max: 2100 }) } as Question;

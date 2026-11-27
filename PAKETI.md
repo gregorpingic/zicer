@@ -54,6 +54,7 @@ Jedna datoteka = jedan paket. Gotovi valjani primjeri za svaku vrstu igre nalaze
 | `category` | Kategorijski dvoboj | `topic` | `examples` |
 | `year` ✱ | Pogodi godinu | `question`, `answer` (cijeli broj) | – |
 | `risk` ✱ | Riskiraj bodove | `question`, `options` (4), `correct` (0–3), `category` | – |
+| `price` | Pogodi cijenu | `item`, `answer` (cijena u eurima) | `details`, `explanation`, `source` |
 
 Veliko finale nema vlastita pitanja – koristi pitanja ostalih vrsta.
 

@@ -197,6 +197,13 @@ const FIELDS: Record<GameType, Field[]> = {
     SRC,
     EXPL,
   ],
+  price: [
+    { key: 'item', label: 'Artikl ili usluga', kind: 'text', help: 'npr. Kugla sladoleda' },
+    { key: 'details', label: 'Pobliži opis', kind: 'text', optional: true, help: 'npr. u kafiću na moru, ljeto 2025.' },
+    { key: 'answer', label: 'Okvirna cijena u eurima', kind: 'number' },
+    { ...EXPL, optional: true },
+    SRC_OPT,
+  ],
   risk: [
     { key: 'question', label: 'Pitanje', kind: 'text' },
     { key: 'options', label: 'Ponuđeni odgovori', kind: 'list', help: 'Točno 4 odgovora.' },

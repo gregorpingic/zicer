@@ -34,7 +34,7 @@ function roomCode(): string {
   return c;
 }
 
-const BUILTIN_VERSION = 1;
+const BUILTIN_VERSION = 2;
 
 /** Pri prvom pokretanju (ili novoj verziji ugrađenog paketa) uvozi ugrađena pitanja. */
 async function seedBuiltin() {

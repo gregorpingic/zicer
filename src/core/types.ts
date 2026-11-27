@@ -15,7 +15,8 @@ export type GameType =
   | 'higherlower'
   | 'category'
   | 'year'
-  | 'risk';
+  | 'risk'
+  | 'price';
 
 /** Runda može biti jedna vrsta igre ili Veliko finale (kombinacija vrsta). */
 export type RoundKind = GameType | 'finale' | 'mix';
@@ -118,6 +119,16 @@ export interface YearQuestion extends BaseQuestion {
   question: string;
   answer: number;
 }
+export interface PriceQuestion extends BaseQuestion {
+  type: 'price';
+  /** Artikl ili usluga čija se cijena pogađa. */
+  item: string;
+  /** Okvirna cijena u eurima. */
+  answer: number;
+  /** Pobliži opis (količina, gdje, kada), npr. „u kafiću u Zagrebu”. */
+  details?: string;
+}
+
 export interface RiskQuestion extends BaseQuestion {
   type: 'risk';
   question: string;
@@ -139,7 +150,8 @@ export type Question =
   | HigherLowerQuestion
   | CategoryQuestion
   | YearQuestion
-  | RiskQuestion;
+  | RiskQuestion
+  | PriceQuestion;
 
 export type QuestionOf<T extends GameType> = Extract<Question, { type: T }>;
 
@@ -270,6 +282,7 @@ export const DEFAULT_TIMERS: Record<GameType, number> = {
   list3: 60,
   order: 60,
   knowme: 60,
+  price: 30,
 };
 
 export const TEMPO_FACTOR: Record<Tempo, number> = { opusteno: 1.5, normalno: 1, brzo: 0.7, bez: 0 };

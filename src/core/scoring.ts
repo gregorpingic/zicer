@@ -28,6 +28,18 @@ export function closestPoints(guesses: [number, number], answer: number): [numbe
   return d0 < d1 ? [POINTS.closestWin + bonus(d0), 0] : [0, POINTS.closestWin + bonus(d1)];
 }
 
+/** Bodovi za "Pogodi cijenu": bliži 20 (izjednačeno 10 svakome), +10 za svakoga unutar ±10 %. */
+export function pricePoints(guesses: [number | null, number | null], price: number): [number, number] {
+  const dist = guesses.map((g) => (g === null ? Infinity : Math.abs(g - price)));
+  const pts: [number, number] = [0, 0];
+  if (dist[0] !== Infinity || dist[1] !== Infinity) {
+    if (dist[0] === dist[1]) pts[0] = pts[1] = POINTS.closestTie;
+    else pts[dist[0] < dist[1] ? 0 : 1] = POINTS.closestWin;
+  }
+  for (const p of [0, 1] as const) if (dist[p] <= price * 0.1) pts[p] += POINTS.closestExactBonus;
+  return pts;
+}
+
 /** Bodovi za "Pogodi godinu" prema preciznosti. */
 export function yearPoints(guess: number, answer: number): number {
   const d = Math.abs(guess - answer);

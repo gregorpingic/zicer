@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import type { GameProps } from './types';
 import type { Outcome, PlayerIndex } from '../core/types';
-import { POINTS, closestPoints, maxStake, yearPoints } from '../core/scoring';
+import { POINTS, closestPoints, maxStake, pricePoints, yearPoints } from '../core/scoring';
 import { sfx } from '../core/sound';
 import {
   Button,
@@ -337,6 +337,61 @@ export function Risk({ question: q, active, players, scores, onDone }: GameProps
       <ResultBanner points={points!} players={players} />
       <Explanation explanation={q.explanation} source={q.source} />
       <NextButton readText={q.explanation} phone={[`Točno: ${q.options[q.correct]}`, pointsLine(points!, players, 1)]} onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}
+
+// ---------------- Pogodi cijenu ----------------
+
+const eur = (n: number) => `${n.toLocaleString('hr-HR', { minimumFractionDigits: n < 100 && n % 1 ? 2 : 0, maximumFractionDigits: 2 })} €`;
+
+export function Price({ question: q, active, players, multiplier, onDone }: GameProps<'price'>) {
+  const [ans, setAns] = useState<Pair<number> | null>(null);
+  const points = ans ? pricePoints(ans, q.answer) : null;
+  useRevealSound(points);
+  const card = (
+    <QuestionCard label="Pogodi cijenu · u eurima" text={`Koliko košta: ${q.item}?`}>
+      {q.details && <div className="qcard-sub">{q.details}</div>}
+    </QuestionCard>
+  );
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <NumberEntry unit="€" placeholder="Cijena u eurima" onSubmit={submit} />}
+          remote={() => ({ kind: 'number', title: `Koliko košta: ${q.item}?${q.details ? ` (${q.details})` : ''}`, unit: '€', placeholder: 'Cijena u eurima' })}
+          fromValue={(v) => Math.max(0, v.number ?? 0)}
+          onComplete={(v) => setAns(pair(v))}
+        />
+      </div>
+    );
+  const near = (g: number) => Math.abs(g - q.answer) <= q.answer * 0.1;
+  const outcome = ans.map((g, p) => (g === null ? 'wrong' : near(g) ? 'correct' : points![p] > 0 ? 'partial' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className="solution big">≈ {eur(q.answer)}</div>
+      <AnswerRow
+        players={players}
+        render={(p) =>
+          ans[p] === null ? (
+            NO_ANSWER
+          ) : (
+            <>
+              <div className={`answer-val ${near(ans[p]!) ? 'good' : ''}`}>{eur(ans[p]!)}</div>
+              <div className="muted">
+                {near(ans[p]!) ? 'unutar ±10 % – bonus!' : `${ans[p]! > q.answer ? 'previše' : 'premalo'} za ${eur(Math.abs(ans[p]! - q.answer))}`}
+              </div>
+            </>
+          )
+        }
+      />
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton readText={q.explanation} phone={[`Cijena: ≈ ${eur(q.answer)}`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }

@@ -135,6 +135,17 @@ const examples = {
     source: 'Encyclopaedia Britannica – Titanic',
     explanation: 'Titanic je udario u santu leda 14. travnja 1912., a potonuo je u ranim satima 15. travnja.',
   },
+  price: {
+    id: 'primjer-price-001',
+    type: 'price',
+    difficulty: 1,
+    category: 'Cijene',
+    item: 'Kugla sladoleda',
+    details: 'u slastičarnici u Zagrebu, 2025.',
+    answer: 2,
+    source: 'Okvirne cijene u Hrvatskoj, 2025.',
+    explanation: 'Kugla sladoleda obično stoji između 1,50 i 2,50 €.',
+  },
   risk: {
     id: 'primjer-risk-001',
     type: 'risk',
@@ -152,7 +163,7 @@ const names = {
   feud: 'Što kaže narod?', closest: 'Najbliži pobjeđuje', list3: 'Nabroji tri', knowme: 'Koliko me poznaješ?',
   association: 'Asocijacije', truefalse: 'Istina ili laž', quiz: 'Klasični kviz', order: 'Poredaj po redu',
   oddone: 'Izbaci uljeza', describe: 'Pogodi po opisu', higherlower: 'Veće ili manje', category: 'Kategorijski dvoboj',
-  year: 'Pogodi godinu', risk: 'Riskiraj bodove',
+  year: 'Pogodi godinu', risk: 'Riskiraj bodove', price: 'Pogodi cijenu',
 };
 
 mkdirSync('public/primjeri', { recursive: true });

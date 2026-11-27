@@ -15,6 +15,7 @@ export const GAME_TYPES: GameType[] = [
   'category',
   'year',
   'risk',
+  'price',
 ];
 
 export interface RoundInfo {
@@ -138,6 +139,16 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
       'Točan odgovor donosi uloženo, netočan ga oduzima.',
     ],
   },
+  price: {
+    name: 'Pogodi cijenu',
+    short: 'Koliko košta? Tajno procijenite cijenu u eurima.',
+    rules: [
+      'Oba igrača tajno upisuju procjenu cijene u eurima.',
+      'Bliža procjena: 20 bodova. Jednako udaljene procjene: 10 bodova svakome.',
+      'Tko pogodi unutar ±10 % stvarne cijene, dobiva još +10 – bonus mogu dobiti oboje.',
+      'Cijene su okvirne (Hrvatska, 2025.), osim ako nije drukčije navedeno.',
+    ],
+  },
   mix: {
     name: 'Miješana runda',
     short: 'Svako pitanje je druga vrsta igre.',
@@ -219,5 +230,7 @@ export function questionText(q: Question): string {
       return `Pogodi: ${q.subject}`;
     case 'category':
       return q.topic;
+    case 'price':
+      return `Koliko košta: ${q.item}?`;
   }
 }
