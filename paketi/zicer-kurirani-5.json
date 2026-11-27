@@ -9952,6 +9952,4590 @@
    "source": "IMDb",
    "difficulty": 2,
    "id": "kur5-quiz-0453"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Zebre i konji mogu imati zajedničke potomke.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Križanac zebre i konja zove se zebroid.",
+   "source": "National Geographic",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0001"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Pas ima bolji njuh od mačke.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Pas ima oko 300 milijuna mirisnih receptora, mačka oko 200 milijuna.",
+   "source": "National Geographic",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0002"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Glista ima pet srca.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Ima pet parova lučnih krvnih žila koje rade kao srca.",
+   "source": "National Geographic",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0003"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Mladunče klokana pri rođenju je veliko kao zrno graha.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Rađa se sitno i razvija se u majčinoj torbi.",
+   "source": "National Geographic",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0004"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Pingvini mogu letjeti na kratke udaljenosti.",
+   "answer": false,
+   "category": "Životinje",
+   "explanation": "Pingvini uopće ne lete, ali odlično plivaju.",
+   "source": "National Geographic",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0005"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Leptiri okus osjećaju nogama.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Osjetila okusa imaju na stopalima.",
+   "source": "National Geographic",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0006"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Konji mogu spavati stojeći.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Posebna građa nogu omogućuje im drijemanje na nogama.",
+   "source": "National Geographic",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0007"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Kokoš je najbliži živući srodnik tiranosaura.",
+   "answer": true,
+   "category": "Životinje",
+   "explanation": "Ptice su potomci dinosaura, a analize bjelančevina pokazuju sličnost s kokoši.",
+   "source": "Science (2007.)",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0008"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Psi se znoje kroz cijelu kožu kao ljudi.",
+   "answer": false,
+   "category": "Životinje",
+   "explanation": "Psi se znoje uglavnom kroz jastučiće šapa, a hlade se dahtanjem.",
+   "source": "National Geographic",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0009"
+  },
+  {
+   "type": "truefalse",
+   "statement": "U Hrvatskoj žive vukovi.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Vuk je strogo zaštićena vrsta, najviše ih je u Gorskom kotaru, Lici i Dalmaciji.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0010"
+  },
+  {
+   "type": "truefalse",
+   "statement": "U Hrvatskoj žive risovi.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Ris je vraćen u Gorski kotar 1970-ih.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0011"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Bjeloglavi sup gnijezdi se na Cresu.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Na Cresu postoji centar za oporavak bjeloglavih supova.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0012"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Čovječja ribica živi u špiljama Dinarida.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Može živjeti bez hrane i do deset godina.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0013"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Hrvatski jezik ima tri narječja: štokavsko, kajkavsko i čakavsko.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Nazivi dolaze od upitne zamjenice „što”.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0014"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Glagoljica se koristila u Hrvatskoj sve do 19. stoljeća.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Na otocima se u bogoslužju koristila i u 19. stoljeću.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0015"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Zagreb je stariji od Splita.",
+   "answer": false,
+   "category": "Hrvatska",
+   "explanation": "Split je nastao oko Dioklecijanove palače (oko 300.), a Zagreb se prvi put spominje 1094.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0016"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Rijeka je najveća hrvatska luka.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Riječka luka je najveća teretna luka u Hrvatskoj.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0017"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Istra je najveći hrvatski poluotok.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Istra je najveći poluotok na Jadranu.",
+   "source": "Hrvatska enciklopedija",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0018"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Hrvatska je u Domovinskom ratu bila članica UN-a.",
+   "answer": true,
+   "category": "Hrvatska",
+   "explanation": "Primljena je u UN 22. svibnja 1992.",
+   "source": "UN",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0019"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Sunce izlazi na zapadu.",
+   "answer": false,
+   "category": "Znanost",
+   "explanation": "Sunce izlazi na istoku, a zalazi na zapadu.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0020"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Na Mjesecu je gravitacija oko šest puta slabija nego na Zemlji.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Zato su astronauti na Mjesecu skakutali.",
+   "source": "NASA",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0021"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Zvijezde koje vidimo možda više ne postoje.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Svjetlost nekih zvijezda putuje do nas tisućama godina.",
+   "source": "NASA",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0022"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Ljudsko tijelo sadrži više bakterijskih stanica nego što ih ima Mliječni put zvijezda.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "U tijelu ima desetke bilijuna bakterija, a u galaksiji stotine milijardi zvijezda.",
+   "source": "Cell (2016.)",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0023"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Krvna grupa 0 negativna može se dati svima.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Zato je zovu univerzalni darivatelj.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0024"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Ljudi imaju više od 200 kostiju kad se rode.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Bebe imaju oko 300 kostiju, a odrasli 206.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0025"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Jabuka pluta na vodi.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Oko četvrtine jabuke čini zrak.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0026"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Zlato se ne otapa u vodi niti hrđa.",
+   "answer": true,
+   "category": "Znanost",
+   "explanation": "Zato zlatni predmeti traju tisućama godina.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0027"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Smrznuta voda zauzima manje mjesta od tekuće.",
+   "answer": false,
+   "category": "Znanost",
+   "explanation": "Led zauzima više mjesta – zato boca u zamrzivaču pukne.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0028"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Olovo je teže od zlata.",
+   "answer": false,
+   "category": "Znanost",
+   "explanation": "Zlato je gotovo dvostruko gušće od olova.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0029"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Prvi film o Jamesu Bondu bio je „Dr. No”.",
+   "answer": true,
+   "category": "Filmovi i serije",
+   "explanation": "Izašao je 1962.",
+   "source": "EON Productions",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0030"
+  },
+  {
+   "type": "truefalse",
+   "statement": "U filmu „Titanic” glumi i Celine Dion.",
+   "answer": false,
+   "category": "Filmovi i serije",
+   "explanation": "Celine Dion samo pjeva pjesmu „My Heart Will Go On”.",
+   "source": "Paramount",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0031"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Lik Shreka nastao je prema knjizi.",
+   "answer": true,
+   "category": "Filmovi i serije",
+   "explanation": "Prema slikovnici Williama Steiga iz 1990.",
+   "source": "DreamWorks",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0032"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Serija „Prijatelji” odvija se u Los Angelesu.",
+   "answer": false,
+   "category": "Filmovi i serije",
+   "explanation": "Odvija se u New Yorku.",
+   "source": "Warner Bros.",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0033"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Harry Potter rođen je 31. srpnja.",
+   "answer": true,
+   "category": "Zanimljivosti",
+   "explanation": "Isti datum rođenja ima i J. K. Rowling.",
+   "source": "J. K. Rowling",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0034"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Gandalf je u „Gospodaru prstenova” bio i Sivi i Bijeli.",
+   "answer": true,
+   "category": "Filmovi i serije",
+   "explanation": "Nakon borbe s Balrogom vraća se kao Gandalf Bijeli.",
+   "source": "J. R. R. Tolkien",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0035"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Pjesmu „Bohemian Rhapsody” napisao je Freddie Mercury.",
+   "answer": true,
+   "category": "Glazba",
+   "explanation": "Snimljena je 1975.",
+   "source": "Queen",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0036"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Beethoven je bio gluh kad je napisao Devetu simfoniju.",
+   "answer": true,
+   "category": "Glazba",
+   "explanation": "Na praizvedbi je morao biti okrenut prema publici da vidi pljesak.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-truefalse-0037"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Grupa ABBA potječe iz Norveške.",
+   "answer": false,
+   "category": "Glazba",
+   "explanation": "ABBA je iz Švedske.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 1,
+   "id": "kur5-truefalse-0038"
+  },
+  {
+   "type": "truefalse",
+   "statement": "Elvis Presley nikad nije nastupio izvan Sjeverne Amerike.",
+   "answer": true,
+   "category": "Glazba",
+   "explanation": "Svi su mu koncerti bili u SAD-u i Kanadi.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-truefalse-0039"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Peć",
+    "Pizza",
+    "Brašno",
+    "Kruh"
+   ],
+   "answer": "Pekarnica",
+   "difficulty": 1,
+   "accept": [
+    "pekara",
+    "pekar"
+   ],
+   "category": "Hrana i piće",
+   "id": "kur5-association-0001"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Rakete",
+    "Planeti",
+    "Kaciga",
+    "Bestežinsko stanje"
+   ],
+   "answer": "Astronaut",
+   "difficulty": 1,
+   "accept": [
+    "svemir"
+   ],
+   "category": "Znanost",
+   "id": "kur5-association-0002"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Stol",
+    "Rezervacija",
+    "Konobar",
+    "Jelovnik"
+   ],
+   "answer": "Restoran",
+   "difficulty": 1,
+   "category": "Hrana i piće",
+   "id": "kur5-association-0003"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Kofer",
+    "Ukrcaj",
+    "Pista",
+    "Kontrola"
+   ],
+   "answer": "Aerodrom",
+   "difficulty": 1,
+   "accept": [
+    "zračna luka"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0004"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Mreža",
+    "Smeč",
+    "Pijesak",
+    "Šest igrača"
+   ],
+   "answer": "Odbojka",
+   "difficulty": 1,
+   "category": "Sport",
+   "id": "kur5-association-0005"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Ključ",
+    "Brava",
+    "Prozor",
+    "Krov"
+   ],
+   "answer": "Kuća",
+   "difficulty": 1,
+   "accept": [
+    "stan"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0006"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Grad",
+    "Kraljevna",
+    "Zmaj",
+    "Mač"
+   ],
+   "answer": "Vitez",
+   "difficulty": 1,
+   "category": "Povijest",
+   "id": "kur5-association-0007"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Kuhača",
+    "Lonac",
+    "Recept",
+    "Kecelja"
+   ],
+   "answer": "Kuhar",
+   "difficulty": 1,
+   "accept": [
+    "kuhanje"
+   ],
+   "category": "Hrana i piće",
+   "id": "kur5-association-0008"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Bijela",
+    "Rep",
+    "Uši",
+    "Mrkva"
+   ],
+   "answer": "Zec",
+   "difficulty": 1,
+   "accept": [
+    "zeko"
+   ],
+   "category": "Životinje",
+   "id": "kur5-association-0009"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Kolica",
+    "Popis",
+    "Blagajna",
+    "Police"
+   ],
+   "answer": "Trgovina",
+   "difficulty": 1,
+   "accept": [
+    "dućan",
+    "kupovina"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0010"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Prosjek",
+    "Ispit",
+    "Indeks",
+    "Diploma"
+   ],
+   "answer": "Studij",
+   "difficulty": 1,
+   "accept": [
+    "fakultet",
+    "faks"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0011"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Vrh",
+    "Gojzerice",
+    "Markacija",
+    "Planinarski dom"
+   ],
+   "answer": "Planinarenje",
+   "difficulty": 1,
+   "accept": [
+    "planina"
+   ],
+   "category": "Sport",
+   "id": "kur5-association-0012"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Ispit",
+    "Kolona",
+    "Instruktor",
+    "Volan"
+   ],
+   "answer": "Autoškola",
+   "difficulty": 1,
+   "accept": [
+    "vozačka"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0013"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Utakmica",
+    "Zastava",
+    "Šal",
+    "Navijanje"
+   ],
+   "answer": "Navijači",
+   "difficulty": 1,
+   "accept": [
+    "navijac",
+    "tribina"
+   ],
+   "category": "Sport",
+   "id": "kur5-association-0014"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Mlijeko",
+    "Rogovi",
+    "Livada",
+    "Mu"
+   ],
+   "answer": "Krava",
+   "difficulty": 1,
+   "category": "Životinje",
+   "id": "kur5-association-0015"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Plamen",
+    "Drva",
+    "Dim",
+    "Kamin"
+   ],
+   "answer": "Vatra",
+   "difficulty": 1,
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0016"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Tama",
+    "Zvijezde",
+    "Mjesec",
+    "San"
+   ],
+   "answer": "Noć",
+   "difficulty": 1,
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0017"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Bijelo",
+    "Pahulje",
+    "Snjegović",
+    "Sanjke"
+   ],
+   "answer": "Snijeg",
+   "difficulty": 1,
+   "accept": [
+    "zima"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0018"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Kist",
+    "Paleta",
+    "Štafelaj",
+    "Platno"
+   ],
+   "answer": "Slikar",
+   "difficulty": 1,
+   "accept": [
+    "slikanje"
+   ],
+   "category": "Zanimljivosti",
+   "id": "kur5-association-0019"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Rajska plaža",
+    "Lopar",
+    "Otok",
+    "Kvarner"
+   ],
+   "answer": "Rab",
+   "difficulty": 1,
+   "category": "Hrvatska",
+   "id": "kur5-association-0020"
+  },
+  {
+   "type": "association",
+   "clues": [
+    "Tvrđava",
+    "Šetnica",
+    "Karneval",
+    "Kvarner"
+   ],
+   "answer": "Rijeka",
+   "difficulty": 1,
+   "category": "Hrvatska",
+   "id": "kur5-association-0021"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad im netko zakasni na kavu.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Gledaju mobitel",
+     "points": 30,
+     "accept": [
+      "mobitel"
+     ]
+    },
+    {
+     "text": "Naruče bez njega",
+     "points": 25,
+     "accept": [
+      "naruče"
+     ]
+    },
+    {
+     "text": "Zovu ga",
+     "points": 20,
+     "accept": [
+      "zovu"
+     ]
+    },
+    {
+     "text": "Ljute se",
+     "points": 15
+    },
+    {
+     "text": "Čekaju",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0001"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se jede u kinu osim kokica.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Nachos",
+     "points": 30
+    },
+    {
+     "text": "Čips",
+     "points": 25
+    },
+    {
+     "text": "Bomboni",
+     "points": 20
+    },
+    {
+     "text": "Čokolada",
+     "points": 15
+    },
+    {
+     "text": "Hot dog",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0002"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad im je rođendan.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Slave",
+     "points": 30,
+     "accept": [
+      "proslava"
+     ]
+    },
+    {
+     "text": "Puhnu svjećice",
+     "points": 25,
+     "accept": [
+      "svjećice"
+     ]
+    },
+    {
+     "text": "Otvaraju poklone",
+     "points": 20,
+     "accept": [
+      "pokloni"
+     ]
+    },
+    {
+     "text": "Izađu van",
+     "points": 15,
+     "accept": [
+      "izlazak"
+     ]
+    },
+    {
+     "text": "Dobivaju čestitke",
+     "points": 10,
+     "accept": [
+      "čestitke"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0003"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neki kućanski aparat u kuhinji.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Hladnjak",
+     "points": 30,
+     "accept": [
+      "frižider"
+     ]
+    },
+    {
+     "text": "Štednjak",
+     "points": 25,
+     "accept": [
+      "pećnica"
+     ]
+    },
+    {
+     "text": "Mikrovalna",
+     "points": 20
+    },
+    {
+     "text": "Perilica posuđa",
+     "points": 15,
+     "accept": [
+      "perilica"
+     ]
+    },
+    {
+     "text": "Aparat za kavu",
+     "points": 10,
+     "accept": [
+      "kafe aparat"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0004"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se može izgubiti na putovanju.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Prtljaga",
+     "points": 30,
+     "accept": [
+      "kofer"
+     ]
+    },
+    {
+     "text": "Putovnica",
+     "points": 25,
+     "accept": [
+      "osobna"
+     ]
+    },
+    {
+     "text": "Novčanik",
+     "points": 20
+    },
+    {
+     "text": "Mobitel",
+     "points": 15
+    },
+    {
+     "text": "Ključevi",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0005"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade u nedjelju.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Odmaraju",
+     "points": 30,
+     "accept": [
+      "odmor"
+     ]
+    },
+    {
+     "text": "Idu na misu",
+     "points": 25,
+     "accept": [
+      "misa"
+     ]
+    },
+    {
+     "text": "Ručaju s obitelji",
+     "points": 20,
+     "accept": [
+      "ručak"
+     ]
+    },
+    {
+     "text": "Spavaju",
+     "points": 15
+    },
+    {
+     "text": "Šeću",
+     "points": 10,
+     "accept": [
+      "šetnja"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0006"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što djeca rade u parku.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Ljuljaju se",
+     "points": 30,
+     "accept": [
+      "ljuljačka"
+     ]
+    },
+    {
+     "text": "Spuštaju se niz tobogan",
+     "points": 25,
+     "accept": [
+      "tobogan"
+     ]
+    },
+    {
+     "text": "Igraju loptom",
+     "points": 20,
+     "accept": [
+      "lopta"
+     ]
+    },
+    {
+     "text": "Trče",
+     "points": 15
+    },
+    {
+     "text": "Voze bicikl",
+     "points": 10,
+     "accept": [
+      "bicikl"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0007"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što je okruglo i jede se.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Pizza",
+     "points": 30
+    },
+    {
+     "text": "Krafna",
+     "points": 25
+    },
+    {
+     "text": "Jabuka",
+     "points": 20
+    },
+    {
+     "text": "Naranča",
+     "points": 15
+    },
+    {
+     "text": "Kolač",
+     "points": 10,
+     "accept": [
+      "torta"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0008"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se radi kad pada kiša.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Otvori se kišobran",
+     "points": 30,
+     "accept": [
+      "kišobran"
+     ]
+    },
+    {
+     "text": "Ostane se doma",
+     "points": 25,
+     "accept": [
+      "doma"
+     ]
+    },
+    {
+     "text": "Gleda se film",
+     "points": 20,
+     "accept": [
+      "film"
+     ]
+    },
+    {
+     "text": "Spava se",
+     "points": 15
+    },
+    {
+     "text": "Čita se",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0009"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade dok se voze vlakom.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Gledaju kroz prozor",
+     "points": 30
+    },
+    {
+     "text": "Spavaju",
+     "points": 25
+    },
+    {
+     "text": "Čitaju",
+     "points": 20
+    },
+    {
+     "text": "Gledaju mobitel",
+     "points": 15,
+     "accept": [
+      "mobitel"
+     ]
+    },
+    {
+     "text": "Jedu",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0010"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neki predmet koji se nosi na glavi.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kapa",
+     "points": 30
+    },
+    {
+     "text": "Šešir",
+     "points": 25
+    },
+    {
+     "text": "Kaciga",
+     "points": 20
+    },
+    {
+     "text": "Marama",
+     "points": 15
+    },
+    {
+     "text": "Naočale",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0011"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade na balkonu ljeti.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Piju kavu",
+     "points": 30,
+     "accept": [
+      "kava"
+     ]
+    },
+    {
+     "text": "Sunčaju se",
+     "points": 25
+    },
+    {
+     "text": "Večeraju",
+     "points": 20
+    },
+    {
+     "text": "Puše",
+     "points": 15
+    },
+    {
+     "text": "Zalijevaju cvijeće",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0012"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se može kupiti na tržnici.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Voće",
+     "points": 30
+    },
+    {
+     "text": "Povrće",
+     "points": 25
+    },
+    {
+     "text": "Sir",
+     "points": 20
+    },
+    {
+     "text": "Jaja",
+     "points": 15
+    },
+    {
+     "text": "Cvijeće",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0013"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto zbog čega ljudi idu u Ikeu.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Namještaj",
+     "points": 30
+    },
+    {
+     "text": "Hot dog",
+     "points": 25
+    },
+    {
+     "text": "Ćufte",
+     "points": 20,
+     "accept": [
+      "mesne okruglice"
+     ]
+    },
+    {
+     "text": "Ukrasi",
+     "points": 15,
+     "accept": [
+      "dekoracija"
+     ]
+    },
+    {
+     "text": "Svijeće",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0014"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade na Silvestrovo prije ponoći.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Večeraju",
+     "points": 30,
+     "accept": [
+      "večera"
+     ]
+    },
+    {
+     "text": "Piju",
+     "points": 25
+    },
+    {
+     "text": "Plešu",
+     "points": 20
+    },
+    {
+     "text": "Gledaju TV",
+     "points": 15,
+     "accept": [
+      "televizija"
+     ]
+    },
+    {
+     "text": "Odbrojavaju",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0015"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ima vrata.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kuća",
+     "points": 30
+    },
+    {
+     "text": "Auto",
+     "points": 25
+    },
+    {
+     "text": "Ormar",
+     "points": 20
+    },
+    {
+     "text": "Hladnjak",
+     "points": 15
+    },
+    {
+     "text": "Lift",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0016"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neki razlog za odlazak u Austriju.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Skijanje",
+     "points": 30
+    },
+    {
+     "text": "Posao",
+     "points": 25
+    },
+    {
+     "text": "Kupovina",
+     "points": 20,
+     "accept": [
+      "šoping"
+     ]
+    },
+    {
+     "text": "Beč",
+     "points": 15
+    },
+    {
+     "text": "Advent",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0017"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad su prehlađeni.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Piju čaj",
+     "points": 30,
+     "accept": [
+      "čaj"
+     ]
+    },
+    {
+     "text": "Leže u krevetu",
+     "points": 25,
+     "accept": [
+      "krevet"
+     ]
+    },
+    {
+     "text": "Uzimaju lijekove",
+     "points": 20,
+     "accept": [
+      "lijekovi"
+     ]
+    },
+    {
+     "text": "Kihaju",
+     "points": 15
+    },
+    {
+     "text": "Jedu juhu",
+     "points": 10,
+     "accept": [
+      "juha"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0018"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se radi s kruhom.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Jede se",
+     "points": 30,
+     "accept": [
+      "jesti"
+     ]
+    },
+    {
+     "text": "Reže",
+     "points": 25,
+     "accept": [
+      "rezati"
+     ]
+    },
+    {
+     "text": "Peče",
+     "points": 20,
+     "accept": [
+      "tost"
+     ]
+    },
+    {
+     "text": "Maže",
+     "points": 15,
+     "accept": [
+      "namaz"
+     ]
+    },
+    {
+     "text": "Daje patkama",
+     "points": 10,
+     "accept": [
+      "patke"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0019"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade na koncertu.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Pjevaju",
+     "points": 30
+    },
+    {
+     "text": "Plešu",
+     "points": 25
+    },
+    {
+     "text": "Snimaju mobitelom",
+     "points": 20,
+     "accept": [
+      "snimaju"
+     ]
+    },
+    {
+     "text": "Plješću",
+     "points": 15
+    },
+    {
+     "text": "Piju",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0020"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se nosi u planine.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Ruksak",
+     "points": 30
+    },
+    {
+     "text": "Voda",
+     "points": 25
+    },
+    {
+     "text": "Sendviči",
+     "points": 20,
+     "accept": [
+      "hrana"
+     ]
+    },
+    {
+     "text": "Jakna",
+     "points": 15
+    },
+    {
+     "text": "Gojzerice",
+     "points": 10,
+     "accept": [
+      "cipele"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0021"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade na prvi dan godišnjeg.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Spavaju dugo",
+     "points": 30,
+     "accept": [
+      "spavaju"
+     ]
+    },
+    {
+     "text": "Putuju",
+     "points": 25
+    },
+    {
+     "text": "Pakiraju se",
+     "points": 20
+    },
+    {
+     "text": "Odu na more",
+     "points": 15,
+     "accept": [
+      "more"
+     ]
+    },
+    {
+     "text": "Ništa",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0022"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi kupuju za kuću na Božić.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Bor",
+     "points": 30
+    },
+    {
+     "text": "Lampice",
+     "points": 25
+    },
+    {
+     "text": "Kuglice",
+     "points": 20,
+     "accept": [
+      "ukrasi"
+     ]
+    },
+    {
+     "text": "Pokloni",
+     "points": 15
+    },
+    {
+     "text": "Hrana",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0023"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad im je netko bolestan.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Posjete ga",
+     "points": 30,
+     "accept": [
+      "posjeta"
+     ]
+    },
+    {
+     "text": "Kuhaju juhu",
+     "points": 25,
+     "accept": [
+      "juha"
+     ]
+    },
+    {
+     "text": "Zovu",
+     "points": 20
+    },
+    {
+     "text": "Donesu lijekove",
+     "points": 15,
+     "accept": [
+      "lijekovi"
+     ]
+    },
+    {
+     "text": "Brinu se",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0024"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznata Italija.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Pizza",
+     "points": 30
+    },
+    {
+     "text": "Tjestenina",
+     "points": 25,
+     "accept": [
+      "pasta"
+     ]
+    },
+    {
+     "text": "Rim",
+     "points": 20
+    },
+    {
+     "text": "Moda",
+     "points": 15
+    },
+    {
+     "text": "Nogomet",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0025"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznata Francuska.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Eiffelov toranj",
+     "points": 30
+    },
+    {
+     "text": "Vino",
+     "points": 25
+    },
+    {
+     "text": "Sir",
+     "points": 20
+    },
+    {
+     "text": "Kroasan",
+     "points": 15
+    },
+    {
+     "text": "Moda",
+     "points": 10,
+     "accept": [
+      "Pariz"
+     ]
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0026"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznata Njemačka.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Pivo",
+     "points": 30
+    },
+    {
+     "text": "Automobili",
+     "points": 25,
+     "accept": [
+      "auti"
+     ]
+    },
+    {
+     "text": "Kobasice",
+     "points": 20
+    },
+    {
+     "text": "Oktoberfest",
+     "points": 15
+    },
+    {
+     "text": "Nogomet",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0027"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznata Švicarska.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Čokolada",
+     "points": 30
+    },
+    {
+     "text": "Sat",
+     "points": 25,
+     "accept": [
+      "satovi"
+     ]
+    },
+    {
+     "text": "Sir",
+     "points": 20
+    },
+    {
+     "text": "Alpe",
+     "points": 15,
+     "accept": [
+      "planine"
+     ]
+    },
+    {
+     "text": "Banke",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0028"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznat Japan.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Suši",
+     "points": 30
+    },
+    {
+     "text": "Tehnologija",
+     "points": 25
+    },
+    {
+     "text": "Anime",
+     "points": 20,
+     "accept": [
+      "crtići"
+     ]
+    },
+    {
+     "text": "Samuraji",
+     "points": 15
+    },
+    {
+     "text": "Trešnjin cvijet",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0029"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto po čemu je poznata Amerika.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Hamburgeri",
+     "points": 30
+    },
+    {
+     "text": "Hollywood",
+     "points": 25
+    },
+    {
+     "text": "New York",
+     "points": 20
+    },
+    {
+     "text": "Kip slobode",
+     "points": 15
+    },
+    {
+     "text": "Coca-Cola",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0030"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neku životinju koja živi u Africi.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Lav",
+     "points": 30
+    },
+    {
+     "text": "Slon",
+     "points": 25
+    },
+    {
+     "text": "Žirafa",
+     "points": 20
+    },
+    {
+     "text": "Zebra",
+     "points": 15
+    },
+    {
+     "text": "Nosorog",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0031"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neku stvar koja se može razbiti.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Čaša",
+     "points": 30
+    },
+    {
+     "text": "Tanjur",
+     "points": 25
+    },
+    {
+     "text": "Ogledalo",
+     "points": 20
+    },
+    {
+     "text": "Prozor",
+     "points": 15
+    },
+    {
+     "text": "Mobitel",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0032"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad se ne mogu odlučiti.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Bacaju novčić",
+     "points": 30,
+     "accept": [
+      "novčić"
+     ]
+    },
+    {
+     "text": "Pitaju nekoga",
+     "points": 25
+    },
+    {
+     "text": "Odgađaju",
+     "points": 20
+    },
+    {
+     "text": "Razmišljaju",
+     "points": 15
+    },
+    {
+     "text": "Pišu za i protiv",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0033"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade dok čekaju liječnika.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Gledaju mobitel",
+     "points": 30,
+     "accept": [
+      "mobitel"
+     ]
+    },
+    {
+     "text": "Čitaju",
+     "points": 25
+    },
+    {
+     "text": "Razgovaraju",
+     "points": 20
+    },
+    {
+     "text": "Spavaju",
+     "points": 15
+    },
+    {
+     "text": "Gledaju na sat",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0034"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neku zabavu za djecu na moru.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kupanje",
+     "points": 30
+    },
+    {
+     "text": "Pijesak",
+     "points": 25,
+     "accept": [
+      "dvorci"
+     ]
+    },
+    {
+     "text": "Sladoled",
+     "points": 20
+    },
+    {
+     "text": "Šlauf",
+     "points": 15
+    },
+    {
+     "text": "Skakanje u more",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0035"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi rade kad im zazvoni telefon u kinu.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Ugase ga",
+     "points": 30,
+     "accept": [
+      "ugase"
+     ]
+    },
+    {
+     "text": "Prekinu poziv",
+     "points": 25
+    },
+    {
+     "text": "Javi se šapatom",
+     "points": 20
+    },
+    {
+     "text": "Ispričaju se",
+     "points": 15
+    },
+    {
+     "text": "Izađu van",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0036"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se može vidjeti u trgovačkom centru.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Trgovine",
+     "points": 30
+    },
+    {
+     "text": "Ljudi",
+     "points": 25,
+     "accept": [
+      "gužva"
+     ]
+    },
+    {
+     "text": "Kafići",
+     "points": 20
+    },
+    {
+     "text": "Kino",
+     "points": 15
+    },
+    {
+     "text": "Pokretne stepenice",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0037"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što je ljudima neugodno.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kad zaborave ime",
+     "points": 30
+    },
+    {
+     "text": "Kad padnu",
+     "points": 25
+    },
+    {
+     "text": "Kad ih netko vidi gole",
+     "points": 20
+    },
+    {
+     "text": "Kad im zakruli u trbuhu",
+     "points": 15
+    },
+    {
+     "text": "Kad pogriješe",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0038"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi neku osobinu dobrog partnera.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Iskrenost",
+     "points": 30
+    },
+    {
+     "text": "Humor",
+     "points": 25,
+     "accept": [
+      "duhovitost"
+     ]
+    },
+    {
+     "text": "Pažnja",
+     "points": 20,
+     "accept": [
+      "brižnost"
+     ]
+    },
+    {
+     "text": "Vjernost",
+     "points": 15
+    },
+    {
+     "text": "Strpljenje",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0039"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što parovi rade zajedno vikendom.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kuhaju",
+     "points": 30
+    },
+    {
+     "text": "Gledaju film",
+     "points": 25,
+     "accept": [
+      "film"
+     ]
+    },
+    {
+     "text": "Šeću",
+     "points": 20
+    },
+    {
+     "text": "Izlaze",
+     "points": 15
+    },
+    {
+     "text": "Spavaju dugo",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0040"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što se radi prvi put kad dobiješ psa.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Daš mu ime",
+     "points": 30,
+     "accept": [
+      "ime"
+     ]
+    },
+    {
+     "text": "Kupiš zdjelicu",
+     "points": 25,
+     "accept": [
+      "zdjelica"
+     ]
+    },
+    {
+     "text": "Ideš veterinaru",
+     "points": 20,
+     "accept": [
+      "veterinar"
+     ]
+    },
+    {
+     "text": "Kupiš povodac",
+     "points": 15,
+     "accept": [
+      "povodac"
+     ]
+    },
+    {
+     "text": "Fotografiraš ga",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0041"
+  },
+  {
+   "type": "feud",
+   "question": "Navedi nešto što ljudi pogledaju u novom stanu.",
+   "estimated": true,
+   "answers": [
+    {
+     "text": "Kupaonica",
+     "points": 30
+    },
+    {
+     "text": "Kuhinja",
+     "points": 25
+    },
+    {
+     "text": "Pogled",
+     "points": 20
+    },
+    {
+     "text": "Balkon",
+     "points": 15
+    },
+    {
+     "text": "Grijanje",
+     "points": 10
+    }
+   ],
+   "difficulty": 1,
+   "id": "kur5-feud-0042"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Slovenije?",
+   "options": [
+    "Triglav",
+    "Grossglockner",
+    "Mount Everest",
+    "Aconcagua"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Slovenije je Triglav.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0454"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Austrije?",
+   "options": [
+    "Grossglockner",
+    "Fuji",
+    "Maglić",
+    "Kilimandžaro"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Austrije je Grossglockner.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0455"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Švicarske?",
+   "options": [
+    "Ben Nevis",
+    "Dufourspitze (Monte Rosa)",
+    "Kékes",
+    "Fuji"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Švicarske je Dufourspitze (Monte Rosa).",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0456"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Njemačke?",
+   "options": [
+    "Aconcagua",
+    "Zugspitze",
+    "Rysy",
+    "Kékes"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Njemačke je Zugspitze.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0457"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Španjolske?",
+   "options": [
+    "Kilimandžaro",
+    "Teide",
+    "Triglav",
+    "Korab"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Španjolske je Teide.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0458"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Grčke?",
+   "options": [
+    "Maglić",
+    "Mount Everest",
+    "Ararat",
+    "Olimp"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Grčke je Olimp.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0459"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Bosne i Hercegovine?",
+   "options": [
+    "Galdhøpiggen",
+    "Elbrus",
+    "Maglić",
+    "Dinara (Sinjal)"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Bosne i Hercegovine je Maglić.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0460"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Poljske?",
+   "options": [
+    "Denali",
+    "Kékes",
+    "Grossglockner",
+    "Rysy"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Poljske je Rysy.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0461"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Češke?",
+   "options": [
+    "Grossglockner",
+    "Gerlachovský štít",
+    "Sněžka",
+    "Musala"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Češke je Sněžka.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0462"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Slovačke?",
+   "options": [
+    "Gerlachovský štít",
+    "Mount Logan",
+    "Denali",
+    "Zugspitze"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Slovačke je Gerlachovský štít.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0463"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Mađarske?",
+   "options": [
+    "Kékes",
+    "Ararat",
+    "Sněžka",
+    "Galdhøpiggen"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Mađarske je Kékes.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0464"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Rumunjske?",
+   "options": [
+    "Dufourspitze (Monte Rosa)",
+    "Moldoveanu",
+    "Maglić",
+    "Zugspitze"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Rumunjske je Moldoveanu.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0465"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Bugarske?",
+   "options": [
+    "Kilimandžaro",
+    "Mount Logan",
+    "Musala",
+    "Kebnekaise"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Bugarske je Musala.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0466"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Norveške?",
+   "options": [
+    "Denali",
+    "Gerlachovský štít",
+    "Galdhøpiggen",
+    "Ararat"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Norveške je Galdhøpiggen.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0467"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Švedske?",
+   "options": [
+    "Musala",
+    "Galdhøpiggen",
+    "Kebnekaise",
+    "Kékes"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Švedske je Kebnekaise.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0468"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Ujedinjenog Kraljevstva?",
+   "options": [
+    "Mount Logan",
+    "Ben Nevis",
+    "Gerlachovský štít",
+    "Maglić"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Ujedinjenog Kraljevstva je Ben Nevis.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0469"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh SAD-a?",
+   "options": [
+    "Denali",
+    "Mount Everest",
+    "Kebnekaise",
+    "Triglav"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh SAD-a je Denali.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0470"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Japana?",
+   "options": [
+    "Musala",
+    "Rysy",
+    "Fuji",
+    "Moldoveanu"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Japana je Fuji.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0471"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Turske?",
+   "options": [
+    "Ararat",
+    "Dinara (Sinjal)",
+    "Moldoveanu",
+    "Elbrus"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Turske je Ararat.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0472"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Rusije?",
+   "options": [
+    "Musala",
+    "Maglić",
+    "Elbrus",
+    "Moldoveanu"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Rusije je Elbrus.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0473"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Argentine?",
+   "options": [
+    "Zugspitze",
+    "Ben Nevis",
+    "Triglav",
+    "Aconcagua"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Argentine je Aconcagua.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0474"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Kanade?",
+   "options": [
+    "Mount Logan",
+    "Galdhøpiggen",
+    "Grossglockner",
+    "Moldoveanu"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Kanade je Mount Logan.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0475"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Tanzanije?",
+   "options": [
+    "Dufourspitze (Monte Rosa)",
+    "Fuji",
+    "Kilimandžaro",
+    "Aconcagua"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Tanzanije je Kilimandžaro.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0476"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Nepala?",
+   "options": [
+    "Sněžka",
+    "Mount Everest",
+    "Teide",
+    "Olimp"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Nepala je Mount Everest.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0477"
+  },
+  {
+   "type": "quiz",
+   "question": "Koji je najviši vrh Sjeverne Makedonije?",
+   "options": [
+    "Ben Nevis",
+    "Musala",
+    "Elbrus",
+    "Korab"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Najviši vrh Sjeverne Makedonije je Korab.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-quiz-0478"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Beč?",
+   "options": [
+    "Dunav",
+    "Tejo",
+    "Rajna",
+    "Drava"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Beč leži na rijeci Dunav.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0479"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Budimpešta?",
+   "options": [
+    "Nil",
+    "Elba",
+    "Dunav",
+    "Neva"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Budimpešta leži na rijeci Dunav.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0480"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Bratislava?",
+   "options": [
+    "Cetina",
+    "Dunav",
+    "Mississippi",
+    "Temza"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Bratislava leži na rijeci Dunav.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0481"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Vukovar?",
+   "options": [
+    "Cetina",
+    "Dunav",
+    "Drava",
+    "Neretva"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Vukovar leži na rijeci Dunav.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0482"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Pariz?",
+   "options": [
+    "Mississippi",
+    "Seina",
+    "Ljubljanica",
+    "Sava"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Pariz leži na rijeci Seina.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0483"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži London?",
+   "options": [
+    "Mississippi",
+    "Krka",
+    "Sava",
+    "Temza"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "London leži na rijeci Temza.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0484"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Rim?",
+   "options": [
+    "Neretva",
+    "Tiber",
+    "Neva",
+    "Tejo"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Rim leži na rijeci Tiber.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0485"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Prag?",
+   "options": [
+    "Temza",
+    "Vltava",
+    "Rajna",
+    "Mississippi"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Prag leži na rijeci Vltava.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0486"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Firenca?",
+   "options": [
+    "Arno",
+    "Sava",
+    "Kupa",
+    "Vltava"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Firenca leži na rijeci Arno.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0487"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Köln?",
+   "options": [
+    "Rajna",
+    "Neretva",
+    "Ljubljanica",
+    "Dunav"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Köln leži na rijeci Rajna.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0488"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Dresden?",
+   "options": [
+    "Elba",
+    "Visla",
+    "Krka",
+    "Kupa"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Dresden leži na rijeci Elba.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0489"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Varšava?",
+   "options": [
+    "Elba",
+    "Rajna",
+    "Visla",
+    "Tigris"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Varšava leži na rijeci Visla.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0490"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Kairo?",
+   "options": [
+    "Tejo",
+    "Visla",
+    "Nil",
+    "Cetina"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Kairo leži na rijeci Nil.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0491"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Bagdad?",
+   "options": [
+    "Vltava",
+    "Dunav",
+    "Nil",
+    "Tigris"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Bagdad leži na rijeci Tigris.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0492"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Lisabon?",
+   "options": [
+    "Mississippi",
+    "Visla",
+    "Tejo",
+    "Cetina"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Lisabon leži na rijeci Tejo.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0493"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Sevilla?",
+   "options": [
+    "Seina",
+    "Guadalquivir",
+    "Drava",
+    "Temza"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Sevilla leži na rijeci Guadalquivir.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0494"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Zagreb?",
+   "options": [
+    "Sava",
+    "Arno",
+    "Krka",
+    "Elba"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Zagreb leži na rijeci Sava.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0495"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Karlovac?",
+   "options": [
+    "Kupa",
+    "Seina",
+    "Rajna",
+    "Visla"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Karlovac leži na rijeci Kupa.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0496"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Mostar?",
+   "options": [
+    "Neretva",
+    "Nil",
+    "Ljubljanica",
+    "Drava"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Mostar leži na rijeci Neretva.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0497"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Metković?",
+   "options": [
+    "Dnjepar",
+    "Tiber",
+    "Tejo",
+    "Neretva"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Metković leži na rijeci Neretva.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0498"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Omiš?",
+   "options": [
+    "Neva",
+    "Neretva",
+    "Drava",
+    "Cetina"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Omiš leži na rijeci Cetina.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0499"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Ljubljana?",
+   "options": [
+    "Elba",
+    "Sava",
+    "Cetina",
+    "Ljubljanica"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Ljubljana leži na rijeci Ljubljanica.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0500"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži New Orleans?",
+   "options": [
+    "Tiber",
+    "Nil",
+    "Mississippi",
+    "Sava"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "New Orleans leži na rijeci Mississippi.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0501"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Skradin?",
+   "options": [
+    "Mississippi",
+    "Krka",
+    "Cetina",
+    "Nil"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Skradin leži na rijeci Krka.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0502"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Varaždin?",
+   "options": [
+    "Drava",
+    "Tiber",
+    "Seina",
+    "Vltava"
+   ],
+   "correct": 0,
+   "category": "Geografija",
+   "explanation": "Varaždin leži na rijeci Drava.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0503"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Slavonski Brod?",
+   "options": [
+    "Vltava",
+    "Sava",
+    "Temza",
+    "Guadalquivir"
+   ],
+   "correct": 1,
+   "category": "Geografija",
+   "explanation": "Slavonski Brod leži na rijeci Sava.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0504"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Kijev?",
+   "options": [
+    "Elba",
+    "Seina",
+    "Dnjepar",
+    "Kupa"
+   ],
+   "correct": 2,
+   "category": "Geografija",
+   "explanation": "Kijev leži na rijeci Dnjepar.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0505"
+  },
+  {
+   "type": "quiz",
+   "question": "Na kojoj rijeci leži Sankt Peterburg?",
+   "options": [
+    "Visla",
+    "Tejo",
+    "Dnjepar",
+    "Neva"
+   ],
+   "correct": 3,
+   "category": "Geografija",
+   "explanation": "Sankt Peterburg leži na rijeci Neva.",
+   "source": "Geografski atlas",
+   "difficulty": 2,
+   "id": "kur5-quiz-0506"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Michael Phelps?",
+   "options": [
+    "Šah",
+    "Plivanje",
+    "Golf",
+    "Motociklizam"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Michael Phelps – sport: Plivanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0507"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Usain Bolt?",
+   "options": [
+    "Atletika",
+    "Boks",
+    "Veslanje",
+    "Plivanje"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Usain Bolt – sport: Atletika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0508"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Tiger Woods?",
+   "options": [
+    "Motociklizam",
+    "Golf",
+    "Gimnastika",
+    "Skijanje"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Tiger Woods – sport: Golf.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0509"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Lewis Hamilton?",
+   "options": [
+    "Košarka",
+    "Formula 1",
+    "MMA (borilački sportovi)",
+    "Atletika"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Lewis Hamilton – sport: Formula 1.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0510"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Simone Biles?",
+   "options": [
+    "Snowboard",
+    "Gimnastika",
+    "Boks",
+    "Rukomet"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Simone Biles – sport: Gimnastika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0511"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Valentino Rossi?",
+   "options": [
+    "Streljaštvo",
+    "Gimnastika",
+    "Nogomet",
+    "Motociklizam"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Valentino Rossi – sport: Motociklizam.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0512"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Tadej Pogačar?",
+   "options": [
+    "Rukomet",
+    "Biciklizam",
+    "Tenis",
+    "MMA (borilački sportovi)"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Tadej Pogačar – sport: Biciklizam.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0513"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Mikaela Shiffrin?",
+   "options": [
+    "Golf",
+    "Motociklizam",
+    "Veslanje",
+    "Skijanje"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Mikaela Shiffrin – sport: Skijanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0514"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la LeBron James?",
+   "options": [
+    "Rukomet",
+    "Košarka",
+    "Motociklizam",
+    "Hokej na ledu"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "LeBron James – sport: Košarka.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0515"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Wayne Gretzky?",
+   "options": [
+    "Plivanje",
+    "Golf",
+    "Hokej na ledu",
+    "Biciklizam"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Wayne Gretzky – sport: Hokej na ledu.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0516"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Floyd Mayweather?",
+   "options": [
+    "Hokej na ledu",
+    "Veslanje",
+    "Taekwondo",
+    "Boks"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Floyd Mayweather – sport: Boks.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0517"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Magnus Carlsen?",
+   "options": [
+    "Tenis",
+    "Motociklizam",
+    "Šah",
+    "Plivanje"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Magnus Carlsen – sport: Šah.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0518"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Sandra Perković?",
+   "options": [
+    "Atletika",
+    "Veslanje",
+    "Snowboard",
+    "Šah"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Sandra Perković – sport: Atletika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0519"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Blanka Vlašić?",
+   "options": [
+    "Snowboard",
+    "Skijanje",
+    "Golf",
+    "Atletika"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Blanka Vlašić – sport: Atletika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0520"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Domagoj Duvnjak?",
+   "options": [
+    "Veslanje",
+    "Nogomet",
+    "Rukomet",
+    "Gimnastika"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Domagoj Duvnjak – sport: Rukomet.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0521"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Ivano Balić?",
+   "options": [
+    "Motociklizam",
+    "Rukomet",
+    "Hokej na ledu",
+    "Streljaštvo"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Ivano Balić – sport: Rukomet.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0522"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Filip Hrgović?",
+   "options": [
+    "Hokej na ledu",
+    "Boks",
+    "Motociklizam",
+    "Snowboard"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Filip Hrgović – sport: Boks.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0523"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Martin Sinković?",
+   "options": [
+    "Veslanje",
+    "Plivanje",
+    "Rukomet",
+    "Košarka"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Martin Sinković – sport: Veslanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0524"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Damir Martin?",
+   "options": [
+    "Snowboard",
+    "Veslanje",
+    "Tenis",
+    "Hokej na ledu"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Damir Martin – sport: Veslanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0525"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Josip Glasnović?",
+   "options": [
+    "Hokej na ledu",
+    "Streljaštvo",
+    "Gimnastika",
+    "Košarka"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Josip Glasnović – sport: Streljaštvo.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0526"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Matea Jelić?",
+   "options": [
+    "Tenis",
+    "Taekwondo",
+    "Golf",
+    "MMA (borilački sportovi)"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Matea Jelić – sport: Taekwondo.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0527"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Tin Srbić?",
+   "options": [
+    "Streljaštvo",
+    "Golf",
+    "Gimnastika",
+    "Atletika"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Tin Srbić – sport: Gimnastika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0528"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Sara Kolak?",
+   "options": [
+    "Veslanje",
+    "Motociklizam",
+    "Atletika",
+    "Plivanje"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Sara Kolak – sport: Atletika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0529"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Petra Kvitová?",
+   "options": [
+    "Plivanje",
+    "Veslanje",
+    "Golf",
+    "Tenis"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Petra Kvitová – sport: Tenis.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0530"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Janica Kostelić?",
+   "options": [
+    "Taekwondo",
+    "Tenis",
+    "Skijanje",
+    "Gimnastika"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Janica Kostelić – sport: Skijanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0531"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Ivica Kostelić?",
+   "options": [
+    "Motociklizam",
+    "Skijanje",
+    "Veslanje",
+    "Rukomet"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Ivica Kostelić – sport: Skijanje.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0532"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Dražen Petrović?",
+   "options": [
+    "Košarka",
+    "Skijanje",
+    "Plivanje",
+    "Nogomet"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Dražen Petrović – sport: Košarka.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0533"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Toni Kukoč?",
+   "options": [
+    "Rukomet",
+    "Boks",
+    "Košarka",
+    "Atletika"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Toni Kukoč – sport: Košarka.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0534"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Goran Ivanišević?",
+   "options": [
+    "Šah",
+    "Nogomet",
+    "Boks",
+    "Tenis"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Goran Ivanišević – sport: Tenis.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0535"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Marin Čilić?",
+   "options": [
+    "Tenis",
+    "Hokej na ledu",
+    "MMA (borilački sportovi)",
+    "Košarka"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Marin Čilić – sport: Tenis.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0536"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Luka Modrić?",
+   "options": [
+    "Veslanje",
+    "Hokej na ledu",
+    "Snowboard",
+    "Nogomet"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Luka Modrić – sport: Nogomet.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0537"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Joško Gvardiol?",
+   "options": [
+    "Biciklizam",
+    "Veslanje",
+    "Nogomet",
+    "Boks"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Joško Gvardiol – sport: Nogomet.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0538"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Mirko Filipović Cro Cop?",
+   "options": [
+    "Plivanje",
+    "Rukomet",
+    "MMA (borilački sportovi)",
+    "Snowboard"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Mirko Filipović Cro Cop – sport: MMA (borilački sportovi).",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0539"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Novak Đoković?",
+   "options": [
+    "Streljaštvo",
+    "Tenis",
+    "Snowboard",
+    "Veslanje"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Novak Đoković – sport: Tenis.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0540"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Shaun White?",
+   "options": [
+    "Veslanje",
+    "Snowboard",
+    "Šah",
+    "Streljaštvo"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Shaun White – sport: Snowboard.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0541"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Sebastian Coe?",
+   "options": [
+    "Rukomet",
+    "Atletika",
+    "Plivanje",
+    "Gimnastika"
+   ],
+   "correct": 1,
+   "category": "Sport",
+   "explanation": "Sebastian Coe – sport: Atletika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0542"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Nadia Comăneci?",
+   "options": [
+    "Snowboard",
+    "Šah",
+    "Nogomet",
+    "Gimnastika"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Nadia Comăneci – sport: Gimnastika.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0543"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Eddy Merckx?",
+   "options": [
+    "Veslanje",
+    "Golf",
+    "Košarka",
+    "Biciklizam"
+   ],
+   "correct": 3,
+   "category": "Sport",
+   "explanation": "Eddy Merckx – sport: Biciklizam.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0544"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Ayrton Senna?",
+   "options": [
+    "Snowboard",
+    "Skijanje",
+    "Formula 1",
+    "Tenis"
+   ],
+   "correct": 2,
+   "category": "Sport",
+   "explanation": "Ayrton Senna – sport: Formula 1.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0545"
+  },
+  {
+   "type": "quiz",
+   "question": "U kojem se sportu natječe ili natjecao/la Garri Kasparov?",
+   "options": [
+    "Šah",
+    "Nogomet",
+    "Tenis",
+    "Taekwondo"
+   ],
+   "correct": 0,
+   "category": "Sport",
+   "explanation": "Garri Kasparov – sport: Šah.",
+   "source": "Olympedia / službeni profili",
+   "difficulty": 2,
+   "id": "kur5-quiz-0546"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj faze Mjeseca počevši od mladog Mjeseca.",
+   "items": [
+    "Mlađak",
+    "Prva četvrt",
+    "Uštap (pun Mjesec)",
+    "Zadnja četvrt"
+   ],
+   "category": "Znanost",
+   "explanation": "Cijeli ciklus traje oko 29,5 dana.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-order-0001"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj slova grčkog alfabeta po redu.",
+   "items": [
+    "Alfa",
+    "Beta",
+    "Gama",
+    "Delta",
+    "Epsilon"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "Odatle i riječ „alfabet”.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 1,
+   "id": "kur5-order-0002"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj slova NATO-ove abecede po redu.",
+   "items": [
+    "Alfa",
+    "Bravo",
+    "Charlie",
+    "Delta",
+    "Echo"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "Slijede Foxtrot, Golf i Hotel.",
+   "source": "NATO",
+   "difficulty": 2,
+   "values": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+   ],
+   "id": "kur5-order-0003"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj rimske brojeve od najmanjeg.",
+   "items": [
+    "V",
+    "X",
+    "L",
+    "C",
+    "M"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "D je 500.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "values": [
+    "5",
+    "10",
+    "50",
+    "100",
+    "1000"
+   ],
+   "id": "kur5-order-0004"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj planete od najudaljenijeg prema Suncu.",
+   "items": [
+    "Neptun",
+    "Uran",
+    "Saturn",
+    "Jupiter",
+    "Mars"
+   ],
+   "category": "Znanost",
+   "explanation": "Neptun je najudaljeniji planet.",
+   "source": "NASA",
+   "difficulty": 2,
+   "id": "kur5-order-0005"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj slojeve Zemlje od površine prema središtu.",
+   "items": [
+    "Kora",
+    "Plašt",
+    "Vanjska jezgra",
+    "Unutarnja jezgra"
+   ],
+   "category": "Znanost",
+   "explanation": "Unutarnja jezgra je čvrsta, a vanjska tekuća.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 2,
+   "id": "kur5-order-0006"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj slojeve atmosfere od tla prema gore.",
+   "items": [
+    "Troposfera",
+    "Stratosfera",
+    "Mezosfera",
+    "Termosfera"
+   ],
+   "category": "Znanost",
+   "explanation": "Ozonski omotač je u stratosferi.",
+   "source": "NASA",
+   "difficulty": 3,
+   "id": "kur5-order-0007"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj faze života leptira.",
+   "items": [
+    "Jaje",
+    "Gusjenica",
+    "Kukuljica",
+    "Leptir"
+   ],
+   "category": "Životinje",
+   "explanation": "Takav razvoj zove se potpuna preobrazba.",
+   "source": "National Geographic",
+   "difficulty": 1,
+   "id": "kur5-order-0008"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj faze razvoja žabe.",
+   "items": [
+    "Jaje (mrijest)",
+    "Punoglavac",
+    "Punoglavac s nogama",
+    "Žaba"
+   ],
+   "category": "Životinje",
+   "explanation": "Punoglavac diše škrgama.",
+   "source": "National Geographic",
+   "difficulty": 1,
+   "id": "kur5-order-0009"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj ljudske zube od sredine usta prema kraju.",
+   "items": [
+    "Sjekutići",
+    "Očnjaci",
+    "Pretkutnjaci",
+    "Kutnjaci"
+   ],
+   "category": "Znanost",
+   "explanation": "Umnjaci su posljednji kutnjaci.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "id": "kur5-order-0010"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj obroke kroz dan prema uobičajenom vremenu.",
+   "items": [
+    "Doručak",
+    "Ručak",
+    "Užina",
+    "Večera"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "U Hrvatskoj se užinom često zove i prijepodnevni obrok.",
+   "source": "Opće znanje",
+   "difficulty": 1,
+   "id": "kur5-order-0011"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj ljetne Olimpijske igre kronološki.",
+   "items": [
+    "Barcelona",
+    "Atlanta",
+    "Sydney",
+    "Atena",
+    "Peking"
+   ],
+   "category": "Sport",
+   "explanation": "London je slijedio 2012.",
+   "source": "MOO",
+   "difficulty": 2,
+   "values": [
+    "1992.",
+    "1996.",
+    "2000.",
+    "2004.",
+    "2008."
+   ],
+   "id": "kur5-order-0012"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj svjetska nogometna prvenstva kronološki.",
+   "items": [
+    "Italija",
+    "SAD",
+    "Francuska",
+    "Južna Koreja i Japan",
+    "Njemačka"
+   ],
+   "category": "Sport",
+   "explanation": "Hrvatska je prvi put igrala 1998.",
+   "source": "FIFA",
+   "difficulty": 2,
+   "values": [
+    "1990.",
+    "1994.",
+    "1998.",
+    "2002.",
+    "2006."
+   ],
+   "id": "kur5-order-0013"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj filmove o Jamesu Bondu s Danielom Craigom redom izlaska.",
+   "items": [
+    "Casino Royale",
+    "Zrno utjehe",
+    "Skyfall",
+    "Spectre",
+    "Ne umiri još"
+   ],
+   "category": "Filmovi i serije",
+   "explanation": "U posljednjem filmu Bond umire.",
+   "source": "EON Productions",
+   "difficulty": 3,
+   "values": [
+    "2006.",
+    "2008.",
+    "2012.",
+    "2015.",
+    "2021."
+   ],
+   "id": "kur5-order-0014"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj glazbene note od najduže.",
+   "items": [
+    "Cijela nota",
+    "Polovinka",
+    "Četvrtinka",
+    "Osminka"
+   ],
+   "category": "Glazba",
+   "explanation": "Svaka je upola kraća od prethodne.",
+   "source": "Glazbena teorija",
+   "difficulty": 2,
+   "id": "kur5-order-0015"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj hrvatske gradove od sjevera prema jugu.",
+   "items": [
+    "Čakovec",
+    "Varaždin",
+    "Zagreb",
+    "Karlovac",
+    "Gospić"
+   ],
+   "category": "Hrvatska",
+   "explanation": "Čakovec je najsjeverniji veći hrvatski grad.",
+   "source": "Geografske koordinate",
+   "difficulty": 3,
+   "values": [
+    "46,4° N",
+    "46,3° N",
+    "45,8° N",
+    "45,5° N",
+    "44,5° N"
+   ],
+   "id": "kur5-order-0016"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj hrvatske gradove od zapada prema istoku.",
+   "items": [
+    "Umag",
+    "Rijeka",
+    "Karlovac",
+    "Bjelovar",
+    "Ilok"
+   ],
+   "category": "Hrvatska",
+   "explanation": "Ilok je najistočniji hrvatski grad.",
+   "source": "Geografske koordinate",
+   "difficulty": 3,
+   "values": [
+    "13,5° E",
+    "14,4° E",
+    "15,5° E",
+    "16,8° E",
+    "19,4° E"
+   ],
+   "id": "kur5-order-0017"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj po veličini – od najmanje.",
+   "items": [
+    "Mrav",
+    "Mačka",
+    "Pas (njemački ovčar)",
+    "Konj",
+    "Slon"
+   ],
+   "category": "Životinje",
+   "explanation": "Slon je najveća kopnena životinja.",
+   "source": "National Geographic",
+   "difficulty": 1,
+   "id": "kur5-order-0018"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj valute po starosti – od najstarije.",
+   "items": [
+    "Britanska funta",
+    "Američki dolar",
+    "Švicarski franak",
+    "Euro"
+   ],
+   "category": "Povijest",
+   "explanation": "Funta je najstarija valuta koja je još u upotrebi.",
+   "source": "Encyclopaedia Britannica",
+   "difficulty": 3,
+   "values": [
+    "8. st.",
+    "1792.",
+    "1850.",
+    "1999."
+   ],
+   "id": "kur5-order-0019"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj gradove po broju stanovnika – od najvećeg.",
+   "items": [
+    "Zagreb",
+    "Split",
+    "Rijeka",
+    "Osijek",
+    "Zadar",
+    "Velika Gorica"
+   ],
+   "category": "Hrvatska",
+   "explanation": "Prema popisu stanovništva 2021.",
+   "source": "DZS",
+   "difficulty": 2,
+   "values": [
+    "≈ 767 000",
+    "≈ 161 000",
+    "≈ 108 000",
+    "≈ 96 000",
+    "≈ 70 000",
+    "≈ 61 000"
+   ],
+   "id": "kur5-order-0020"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj formate papira od najvećeg.",
+   "items": [
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "Svaki je format upola manji od prethodnog.",
+   "source": "ISO 216",
+   "difficulty": 2,
+   "values": [
+    "297 × 420 mm",
+    "210 × 297 mm",
+    "148 × 210 mm",
+    "105 × 148 mm"
+   ],
+   "id": "kur5-order-0021"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj odjevne veličine – od najveće.",
+   "items": [
+    "XXL",
+    "XL",
+    "L",
+    "M",
+    "S"
+   ],
+   "category": "Zanimljivosti",
+   "explanation": "S znači small (malo).",
+   "source": "Opće znanje",
+   "difficulty": 1,
+   "id": "kur5-order-0022"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj medalje – od najvrjednije.",
+   "items": [
+    "Zlato",
+    "Srebro",
+    "Bronca"
+   ],
+   "category": "Sport",
+   "explanation": "Na Olimpijskim igrama zlatne medalje su zapravo pozlaćeno srebro.",
+   "source": "MOO",
+   "difficulty": 1,
+   "values": [
+    "1. mjesto",
+    "2. mjesto",
+    "3. mjesto"
+   ],
+   "id": "kur5-order-0023"
+  },
+  {
+   "type": "order",
+   "prompt": "Poredaj pojaseve u judu – od početnika.",
+   "items": [
+    "Bijeli",
+    "Žuti",
+    "Narančasti",
+    "Zeleni",
+    "Plavi",
+    "Smeđi"
+   ],
+   "category": "Sport",
+   "explanation": "Nakon smeđeg slijedi crni pojas.",
+   "source": "Hrvatski judo savez",
+   "difficulty": 3,
+   "id": "kur5-order-0024"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje kupuješ svaki tjedan.",
+   "examples": [
+    "Kruh",
+    "Mlijeko",
+    "Jaja",
+    "Voće",
+    "Povrće",
+    "Kava",
+    "Sir",
+    "Meso",
+    "Voda",
+    "Jogurt",
+    "Toaletni papir",
+    "Deterdžent"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0001"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje rade na struju, a nisu u kuhinji.",
+   "examples": [
+    "Televizor",
+    "Računalo",
+    "Fen",
+    "Usisivač",
+    "Perilica",
+    "Klima",
+    "Lampa",
+    "Punjač",
+    "Glačalo",
+    "Brijač",
+    "Ventilator",
+    "Radio"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0002"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje imaju tipke.",
+   "examples": [
+    "Mobitel",
+    "Tipkovnica",
+    "Daljinski",
+    "Kalkulator",
+    "Klavir",
+    "Lift",
+    "Mikrovalna",
+    "Bankomat",
+    "Konzola",
+    "Perilica",
+    "Fotoaparat",
+    "Interfon"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0003"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri crtane serije iz djetinjstva.",
+   "examples": [
+    "Simpsoni",
+    "Tom i Jerry",
+    "Pčelica Maja",
+    "Smrfovi",
+    "Kremenkovi",
+    "Profesor Baltazar",
+    "Duck Tales",
+    "Pokémon",
+    "Pinokio",
+    "Nindža kornjače",
+    "Sailor Moon",
+    "Lessie"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0004"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje radiš kad se probudiš.",
+   "examples": [
+    "Kava",
+    "Tuš",
+    "Pranje zubi",
+    "Doručak",
+    "Mobitel",
+    "Oblačenje",
+    "Budilica",
+    "WC",
+    "Rastezanje",
+    "Otvaranje prozora"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0005"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri razloga zašto ljudi idu u šetnju.",
+   "examples": [
+    "Zdravlje",
+    "Pas",
+    "Svjež zrak",
+    "Razgovor",
+    "Opuštanje",
+    "Mršavljenje",
+    "Lijepo vrijeme",
+    "Razmišljanje",
+    "Druženje"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0006"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje rade ljudi na selu.",
+   "examples": [
+    "Rade u polju",
+    "Hrane životinje",
+    "Sade vrt",
+    "Beru voće",
+    "Kose travu",
+    "Muzu krave",
+    "Peku rakiju",
+    "Cijepaju drva",
+    "Prave sir"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0007"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje ljudi rade na moru kad pada kiša.",
+   "examples": [
+    "Spavaju",
+    "Gledaju filmove",
+    "Igraju karte",
+    "Šeću u kabanici",
+    "Idu u kafić",
+    "Idu u muzej",
+    "Kupaju se svejedno",
+    "Kuhaju"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0008"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se rade na Silvestrovo.",
+   "examples": [
+    "Vatromet",
+    "Šampanjac",
+    "Ples",
+    "Odbrojavanje",
+    "Poljubac",
+    "Zabava",
+    "Koncert na trgu",
+    "Večera",
+    "Zdravica"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0009"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje ti trebaju za pizzu.",
+   "examples": [
+    "Tijesto",
+    "Brašno",
+    "Kvasac",
+    "Rajčica",
+    "Sir",
+    "Mozzarella",
+    "Šunka",
+    "Gljive",
+    "Origano",
+    "Pećnica",
+    "Maslinovo ulje"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0010"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se nalaze u svakoj kupaonici.",
+   "examples": [
+    "Wc",
+    "Umivaonik",
+    "Ogledalo",
+    "Ručnik",
+    "Sapun",
+    "Četkica za zube",
+    "Pasta",
+    "Tuš",
+    "Kada",
+    "Toaletni papir"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0011"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje zovemo „pametnim”.",
+   "examples": [
+    "Pametni telefon",
+    "Pametni sat",
+    "Pametni televizor",
+    "Pametna kuća",
+    "Pametna žarulja",
+    "Pametni zvučnik",
+    "Pametni hladnjak"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0012"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se rade s prijateljima ljeti.",
+   "examples": [
+    "Kupanje",
+    "Roštilj",
+    "Kampiranje",
+    "Koncerti",
+    "Izlasci",
+    "Putovanja",
+    "Odbojka na pijesku",
+    "Sladoled",
+    "Vožnja barkom"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0013"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje imaju više od četiri noge.",
+   "examples": [
+    "Pauk",
+    "Mrav",
+    "Stonoga",
+    "Hobotnica",
+    "Rak",
+    "Stol s pet nogu",
+    "Kukac",
+    "Jastog",
+    "Škorpion"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0014"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se mogu staviti na palačinku.",
+   "examples": [
+    "Nutella",
+    "Pekmez",
+    "Med",
+    "Orasi",
+    "Šećer",
+    "Banana",
+    "Sladoled",
+    "Šlag",
+    "Sir",
+    "Šunka",
+    "Jagode",
+    "Limun"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0015"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri imena koja počinju slovom M.",
+   "examples": [
+    "Marko",
+    "Marija",
+    "Matej",
+    "Mia",
+    "Mateo",
+    "Maja",
+    "Mihael",
+    "Martina",
+    "Marin",
+    "Mirela",
+    "Mladen",
+    "Monika"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0016"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri imena koja počinju slovom A.",
+   "examples": [
+    "Ana",
+    "Ante",
+    "Antonija",
+    "Andrej",
+    "Andrea",
+    "Antun",
+    "Adrijana",
+    "Alen",
+    "Anita",
+    "Ana Marija",
+    "Aleksandar"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0017"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri riječi koje počinju s „pre”.",
+   "examples": [
+    "Prekid",
+    "Predsjednik",
+    "Prečac",
+    "Preko",
+    "Prenoćiti",
+    "Prekosutra",
+    "Preskočiti",
+    "Prebaciti",
+    "Prezime"
+   ],
+   "difficulty": 1,
+   "id": "kur5-list3-0018"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih pjesmu odabrao/la za naš prvi ples?",
+   "id": "kur5-knowme-0001"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji bi film mogao/mogla gledati svake godine za Božić?",
+   "id": "kur5-knowme-0002"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža zimska aktivnost?",
+   "id": "kur5-knowme-0003"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži zvuk?",
+   "id": "kur5-knowme-0004"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža riječ na hrvatskom?",
+   "id": "kur5-knowme-0005"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja me hrana podsjeća na djetinjstvo?",
+   "id": "kur5-knowme-0006"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih stvar najradije naučio/la od bake?",
+   "id": "kur5-knowme-0007"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža tradicija u našoj obitelji?",
+   "id": "kur5-knowme-0008"
+  },
+  {
+   "type": "knowme",
+   "question": "Kamo bih otišao/otišla da imam samo jedan slobodan dan?",
+   "id": "kur5-knowme-0009"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža uspomena s mora?",
+   "id": "kur5-knowme-0010"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih najradije radio/la u mirovini?",
+   "id": "kur5-knowme-0011"
+  },
+  {
+   "type": "knowme",
+   "question": "Kakav bih bio/bila kao roditelj?",
+   "id": "kur5-knowme-0012"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji bi bio moj savršeni ručak nedjeljom?",
+   "id": "kur5-knowme-0013"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih ponio/ponijela iz kuće u kovčegu za mjesec dana?",
+   "id": "kur5-knowme-0014"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih seriju volio/voljela da nikad ne završi?",
+   "id": "kur5-knowme-0015"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži lik iz crtića?",
+   "id": "kur5-knowme-0016"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža emoji sličica?",
+   "id": "kur5-knowme-0017"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju aplikaciju bih prvu izbrisao/la?",
+   "id": "kur5-knowme-0018"
+  },
+  {
+   "type": "knowme",
+   "question": "Što najčešće zaboravim kad izlazim iz kuće?",
+   "id": "kur5-knowme-0019"
+  },
+  {
+   "type": "knowme",
+   "question": "Na što ne mogu reći ne?",
+   "id": "kur5-knowme-0020"
+  },
+  {
+   "type": "knowme",
+   "question": "Što mi najviše smeta kad netko radi u kući?",
+   "id": "kur5-knowme-0021"
+  },
+  {
+   "type": "knowme",
+   "question": "Kada sam zadnji put bio/bila jako ponosan/na na sebe?",
+   "id": "kur5-knowme-0022"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju sam vještinu nedavno naučio/la?",
+   "id": "kur5-knowme-0023"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži način opuštanja?",
+   "id": "kur5-knowme-0024"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih napravio/la da mi je zadnji dan na Zemlji?",
+   "id": "kur5-knowme-0025"
+  },
+  {
+   "type": "knowme",
+   "question": "Gdje bih volio/voljela da nam bude vjenčanje (ili gdje je bilo najljepše)?",
+   "id": "kur5-knowme-0026"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži poklon koji sam dobio/la od tebe?",
+   "id": "kur5-knowme-0027"
+  },
+  {
+   "type": "knowme",
+   "question": "Što me kod tebe najviše nasmije?",
+   "id": "kur5-knowme-0028"
+  },
+  {
+   "type": "knowme",
+   "question": "Kako izgleda moje savršeno jutro?",
+   "id": "kur5-knowme-0029"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je navika koju nikako ne mogu promijeniti?",
+   "id": "kur5-knowme-0030"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji je moj „comfort food” kad mi je loše?",
+   "id": "kur5-knowme-0031"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih poznatu osobu volio/voljela imati za susjeda?",
+   "id": "kur5-knowme-0032"
+  },
+  {
+   "type": "knowme",
+   "question": "Kakav bi bio moj kućni ljubimac iz snova?",
+   "id": "kur5-knowme-0033"
+  },
+  {
+   "type": "knowme",
+   "question": "U kojoj bih seriji volio/voljela živjeti?",
+   "id": "kur5-knowme-0034"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih rekao/rekla da me netko pita što radim kao hobi?",
+   "id": "kur5-knowme-0035"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži kafić?",
+   "id": "kur5-knowme-0036"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih vrstu tečaja upisao/la?",
+   "id": "kur5-knowme-0037"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži način putovanja – auto, vlak ili avion?",
+   "id": "kur5-knowme-0038"
   }
  ]
 }
