@@ -49953,6 +49953,2426 @@
     "2019."
    ],
    "id": "kur4-order-0130"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri filma s Leonardom DiCapriom.",
+   "examples": [
+    "Titanic",
+    "Početak",
+    "Vuk s Wall Streeta",
+    "Povratnik",
+    "Otok sjena",
+    "Uhvati me ako možeš",
+    "Pokojni",
+    "Veliki Gatsby",
+    "Bilo jednom u Hollywoodu",
+    "Ne gledaj gore"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0001"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri filma s Tomom Cruiseom.",
+   "examples": [
+    "Top Gun",
+    "Nemoguća misija",
+    "Kišni čovjek",
+    "Jerry Maguire",
+    "Posljednji samuraj",
+    "Rat svjetova",
+    "Vanilla Sky",
+    "Na rubu sutrašnjice",
+    "Jack Reacher",
+    "Collateral"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0002"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri Pixarova filma.",
+   "examples": [
+    "Priča o igračkama",
+    "Potraga za Nemom",
+    "Auti",
+    "Čudovišta iz ormara",
+    "Nevjerojatni",
+    "Ratatouille",
+    "WALL-E",
+    "Do neba",
+    "Izokrenuto",
+    "Coco",
+    "Luca",
+    "Duša"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0003"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri crtana filma o princezama.",
+   "examples": [
+    "Snjeguljica",
+    "Pepeljuga",
+    "Trnoružica",
+    "Mala sirena",
+    "Ljepotica i zvijer",
+    "Aladin",
+    "Pocahontas",
+    "Mulan",
+    "Zlatokosa",
+    "Snježno kraljevstvo",
+    "Vaiana",
+    "Hrabra"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0004"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri lika iz „Harryja Pottera” koji nisu Harry, Ron i Hermiona.",
+   "examples": [
+    "Dumbledore",
+    "Snape",
+    "Hagrid",
+    "Voldemort",
+    "Draco Malfoy",
+    "Sirius Black",
+    "Ginny",
+    "Neville",
+    "Luna",
+    "Dobby",
+    "McGonagall",
+    "Lupin"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0005"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri lika iz „Igre prijestolja”.",
+   "examples": [
+    "Jon Snow",
+    "Daenerys",
+    "Tyrion",
+    "Cersei",
+    "Arya",
+    "Sansa",
+    "Ned Stark",
+    "Jaime",
+    "Bran",
+    "Joffrey",
+    "Littlefinger",
+    "Hodor"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0006"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri lika iz crtića „Spužva Bob Skockani”.",
+   "examples": [
+    "Spužva Bob",
+    "Patrik",
+    "Squidward",
+    "Gospodin Kliješta",
+    "Sandy",
+    "Plankton",
+    "Gary",
+    "Pearl",
+    "Gospođa Puff"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0007"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Madonne.",
+   "examples": [
+    "Like a Virgin",
+    "Material Girl",
+    "Vogue",
+    "La Isla Bonita",
+    "Like a Prayer",
+    "Hung Up",
+    "Frozen",
+    "Papa Don't Preach",
+    "Holiday",
+    "Music"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0008"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Taylor Swift.",
+   "examples": [
+    "Shake It Off",
+    "Blank Space",
+    "Love Story",
+    "You Belong with Me",
+    "Anti-Hero",
+    "Cruel Summer",
+    "Style",
+    "Bad Blood",
+    "Look What You Made Me Do"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0009"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Severine.",
+   "examples": [
+    "Moja štikla",
+    "Grad bez ljudi",
+    "Italiana",
+    "Krivi spoj",
+    "Daj mi ljubavi",
+    "Gas gas",
+    "Djevojka sa sela",
+    "Tango",
+    "Ko me tiši"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0010"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Prljavog kazališta.",
+   "examples": [
+    "Mojoj majci",
+    "Ruži za moju bivšu",
+    "Kiše jesenje",
+    "Sve je lako kad si mlad",
+    "Ne zovi mama doktora",
+    "Lupi petom o pete",
+    "Heroj ulice",
+    "Zagreb"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0011"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Parnog valjka.",
+   "examples": [
+    "Jesen u meni",
+    "Kao ti",
+    "Sve još miriše na nju",
+    "Hvala ti",
+    "Molitva",
+    "Stranica dnevnika",
+    "Ugasi me",
+    "Uhvati ritam",
+    "Lutka za bal"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0012"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme Hladnog piva.",
+   "examples": [
+    "Buđenje proljeća",
+    "Nije sve tako sivo",
+    "Pjevajte nešto ljubavno",
+    "Sve sam probo",
+    "Šamar",
+    "Za sve je kriv Mikula",
+    "Džaba ste krečili"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0013"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri dalmatinske klapske pjesme.",
+   "examples": [
+    "Ne dirajte mi ravnicu",
+    "Ne mogu ti reć' adio",
+    "Zora bila",
+    "Dalmacijo",
+    "U mom južnom kraju",
+    "tiho",
+    "Kad mi dođeš ti",
+    "Lipa moja"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0014"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pjesme s Eurosonga.",
+   "examples": [
+    "Waterloo",
+    "Rock Me",
+    "Euphoria",
+    "Hard Rock Hallelujah",
+    "Rim Tim Tagi Dim",
+    "Arcade",
+    "Toy",
+    "Heroes",
+    "Making Your Mind Up",
+    "Fairytale",
+    "Zitti e buoni"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0015"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri strane pjevačice.",
+   "examples": [
+    "Madonna",
+    "Beyoncé",
+    "Rihanna",
+    "Adele",
+    "Shakira",
+    "Taylor Swift",
+    "Lady Gaga",
+    "Céline Dion",
+    "Whitney Houston",
+    "Dua Lipa",
+    "Billie Eilish",
+    "Cher"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0016"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri rock benda.",
+   "examples": [
+    "Queen",
+    "The Rolling Stones",
+    "Led Zeppelin",
+    "AC/DC",
+    "Nirvana",
+    "U2",
+    "Pink Floyd",
+    "Metallica",
+    "Bon Jovi",
+    "Guns N' Roses",
+    "Parni valjak",
+    "Prljavo kazalište"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0017"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri klasična skladatelja.",
+   "examples": [
+    "Mozart",
+    "Beethoven",
+    "Bach",
+    "Chopin",
+    "Vivaldi",
+    "Čajkovski",
+    "Verdi",
+    "Haydn",
+    "Schubert",
+    "Debussy",
+    "Lisinski",
+    "Zajc"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0018"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri plesa.",
+   "examples": [
+    "Valcer",
+    "Tango",
+    "Salsa",
+    "Samba",
+    "Polka",
+    "Kolo",
+    "Hip-hop",
+    "Balet",
+    "Rock and roll",
+    "Flamenko",
+    "Čaček",
+    "Sirtaki"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0019"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri sporta na Zimskim olimpijskim igrama.",
+   "examples": [
+    "Skijanje",
+    "Klizanje",
+    "Hokej",
+    "Biatlon",
+    "Bob",
+    "Curling",
+    "Snowboard",
+    "Skijaški skokovi",
+    "Sanjkanje",
+    "Brzo klizanje"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0020"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska rukometaša ili rukometašice.",
+   "examples": [
+    "Ivano Balić",
+    "Domagoj Duvnjak",
+    "Igor Vori",
+    "Mirza Džomba",
+    "Blaženko Lacković",
+    "Luka Cindrić",
+    "Vlado Šola",
+    "Petar Metličić",
+    "Andrea Penezić"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0021"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska košarkaša.",
+   "examples": [
+    "Dražen Petrović",
+    "Toni Kukoč",
+    "Dino Rađa",
+    "Krešimir Ćosić",
+    "Bojan Bogdanović",
+    "Dario Šarić",
+    "Ivica Zubac",
+    "Stojko Vranković",
+    "Arijan Komazec"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0022"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska tenisača ili tenisačice.",
+   "examples": [
+    "Goran Ivanišević",
+    "Marin Čilić",
+    "Iva Majoli",
+    "Borna Ćorić",
+    "Ivan Ljubičić",
+    "Mario Ančić",
+    "Donna Vekić",
+    "Ana Konjuh",
+    "Ivo Karlović",
+    "Mate Pavić"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0023"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri trenera hrvatske nogometne reprezentacije.",
+   "examples": [
+    "Zlatko Dalić",
+    "Slaven Bilić",
+    "Miroslav Blažević",
+    "Igor Štimac",
+    "Niko Kovač",
+    "Ante Čačić",
+    "Otto Barić",
+    "Mirko Jozić"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0024"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri nogometna kluba iz Engleske.",
+   "examples": [
+    "Manchester United",
+    "Liverpool",
+    "Arsenal",
+    "Chelsea",
+    "Manchester City",
+    "Tottenham",
+    "Everton",
+    "Newcastle",
+    "Aston Villa",
+    "West Ham",
+    "Leicester"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0025"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri nogometna kluba iz Italije.",
+   "examples": [
+    "Juventus",
+    "Milan",
+    "Inter",
+    "Roma",
+    "Lazio",
+    "Napoli",
+    "Fiorentina",
+    "Atalanta",
+    "Torino",
+    "Bologna"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0026"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri nogometna kluba iz Španjolske.",
+   "examples": [
+    "Real Madrid",
+    "Barcelona",
+    "Atlético Madrid",
+    "Sevilla",
+    "Valencia",
+    "Villarreal",
+    "Real Sociedad",
+    "Athletic Bilbao",
+    "Betis"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0027"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri vozača Formule 1.",
+   "examples": [
+    "Michael Schumacher",
+    "Lewis Hamilton",
+    "Max Verstappen",
+    "Ayrton Senna",
+    "Fernando Alonso",
+    "Sebastian Vettel",
+    "Niki Lauda",
+    "Alain Prost",
+    "Charles Leclerc",
+    "Lando Norris"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0028"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri grada u kojima su održane Olimpijske igre.",
+   "examples": [
+    "Atena",
+    "Pariz",
+    "London",
+    "Rim",
+    "Moskva",
+    "Los Angeles",
+    "Barcelona",
+    "Atlanta",
+    "Sydney",
+    "Peking",
+    "Tokio",
+    "Rio de Janeiro",
+    "Sarajevo",
+    "Seul",
+    "München"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0029"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri glavna grada u Južnoj Americi.",
+   "examples": [
+    "Buenos Aires",
+    "Santiago",
+    "Lima",
+    "Bogota",
+    "Caracas",
+    "Quito",
+    "Montevideo",
+    "Asunción",
+    "La Paz",
+    "Brasília"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0030"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri grada u Austriji.",
+   "examples": [
+    "Beč",
+    "Graz",
+    "Salzburg",
+    "Innsbruck",
+    "Linz",
+    "Klagenfurt",
+    "Villach",
+    "Bregenz",
+    "St. Pölten"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0031"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri grada u Bosni i Hercegovini.",
+   "examples": [
+    "Sarajevo",
+    "Mostar",
+    "Banja Luka",
+    "Tuzla",
+    "Zenica",
+    "Bihać",
+    "Trebinje",
+    "Neum",
+    "Livno",
+    "Međugorje",
+    "Široki Brijeg"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0032"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri grada u Sloveniji.",
+   "examples": [
+    "Ljubljana",
+    "Maribor",
+    "Celje",
+    "Kranj",
+    "Koper",
+    "Piran",
+    "Novo Mesto",
+    "Ptuj",
+    "Bled",
+    "Portorož"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0033"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri grada u Zagorju.",
+   "examples": [
+    "Krapina",
+    "Zabok",
+    "Pregrada",
+    "Zlatar",
+    "Klanjec",
+    "Donja Stubica",
+    "Oroslavje",
+    "Marija Bistrica",
+    "Varaždinske Toplice"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0034"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri mjesta na Makarskoj rivijeri.",
+   "examples": [
+    "Makarska",
+    "Brela",
+    "Baška Voda",
+    "Tučepi",
+    "Podgora",
+    "Igrane",
+    "Živogošće",
+    "Gradac",
+    "Drašnice"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0035"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska poluotoka.",
+   "examples": [
+    "Istra",
+    "Pelješac",
+    "Lun",
+    "Marjan",
+    "Lapad",
+    "Prevlaka",
+    "Kamenjak",
+    "Molunat"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0036"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska jezera.",
+   "examples": [
+    "Plitvička jezera",
+    "Vransko jezero",
+    "Perućko jezero",
+    "Jarun",
+    "Bundek",
+    "Peruča",
+    "Lokvarsko jezero",
+    "Modro jezero",
+    "Crveno jezero",
+    "Bajer"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0037"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska aerodroma.",
+   "examples": [
+    "Zagreb",
+    "Split",
+    "Dubrovnik",
+    "Zadar",
+    "Pula",
+    "Rijeka",
+    "Osijek",
+    "Brač",
+    "Lošinj"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0038"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska trgovačka lanca.",
+   "examples": [
+    "Konzum",
+    "Studenac",
+    "Plodine",
+    "Tommy",
+    "KTC",
+    "Ribola",
+    "NTL",
+    "Kaufland",
+    "Lidl",
+    "Spar",
+    "Interspar"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0039"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatske novine ili portala.",
+   "examples": [
+    "Večernji list",
+    "Jutarnji list",
+    "24sata",
+    "Slobodna Dalmacija",
+    "Novi list",
+    "Index.hr",
+    "Glas Slavonije",
+    "Net.hr",
+    "Telegram"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0040"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatske televizije.",
+   "examples": [
+    "HRT",
+    "Nova TV",
+    "RTL",
+    "Doma TV",
+    "HRT 2",
+    "RTL 2",
+    "CMC",
+    "Mreža",
+    "Sportska televizija"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0041"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatske emisije ili kviza.",
+   "examples": [
+    "Potjera",
+    "Tko želi biti milijunaš",
+    "Lijepom našom",
+    "Dnevnik",
+    "Pozitivno",
+    "Ljubav je na selu",
+    "Supertalent",
+    "Masterchef",
+    "Farma",
+    "Do posljednjeg zrna"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0042"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri jela od mljevenog mesa.",
+   "examples": [
+    "Ćevapi",
+    "Pljeskavica",
+    "Sarma",
+    "Punjene paprike",
+    "Musaka",
+    "Lazanje",
+    "Bolonjez",
+    "Hamburger",
+    "Mesne okruglice",
+    "Faširanci",
+    "Burek"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0043"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri jela od riže.",
+   "examples": [
+    "Rižoto",
+    "Sarma",
+    "Paella",
+    "Suši",
+    "Punjene paprike",
+    "Pohana riža",
+    "Rižoto s plodovima mora",
+    "Mliječna riža",
+    "Biryani"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0044"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri jela od graha ili mahunarki.",
+   "examples": [
+    "Grah",
+    "Ričet",
+    "Maneštra",
+    "Humus",
+    "Falafel",
+    "Chili con carne",
+    "Varivo od leće",
+    "Pašta fažol",
+    "Juha od graška"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0045"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se jedu za Badnjak.",
+   "examples": [
+    "Bakalar",
+    "Riba",
+    "Fritule",
+    "Kolači",
+    "Grah",
+    "Krumpir",
+    "Blitva",
+    "Lignje",
+    "Bakalar na bijelo",
+    "Orehnjača"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0046"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri vrste kruha ili peciva.",
+   "examples": [
+    "Kifla",
+    "Baget",
+    "Kroasan",
+    "Pogača",
+    "Lepinja",
+    "Đevrek",
+    "Raženi kruh",
+    "Integralni kruh",
+    "Ciabatta",
+    "Tost",
+    "Pecivo sa sjemenkama"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0047"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri voćke koje rastu u Hrvatskoj.",
+   "examples": [
+    "Jabuka",
+    "Kruška",
+    "Šljiva",
+    "Trešnja",
+    "Višnja",
+    "Smokva",
+    "Mandarina",
+    "Breskva",
+    "Marelica",
+    "Grožđe",
+    "Dunja",
+    "Orah",
+    "Kiwi"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0048"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri vrste salate.",
+   "examples": [
+    "Zelena salata",
+    "Rikola",
+    "Matovilac",
+    "Kupusna salata",
+    "Krumpir salata",
+    "Francuska salata",
+    "Šopska salata",
+    "Cezar salata",
+    "Grčka salata"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0049"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri začina u kuhinji.",
+   "examples": [
+    "Sol",
+    "Papar",
+    "Paprika",
+    "Vegeta",
+    "Origano",
+    "Bosiljak",
+    "Lovor",
+    "Cimet",
+    "Kurkuma",
+    "Kumin",
+    "Ružmarin",
+    "Peršin"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0050"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri pića bez alkohola.",
+   "examples": [
+    "Voda",
+    "Sok",
+    "Coca-Cola",
+    "Cedevita",
+    "Ledeni čaj",
+    "Limunada",
+    "Mlijeko",
+    "Kakao",
+    "Čaj",
+    "Mineralna",
+    "Fanta",
+    "Sprite"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0051"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri vrste piva ili pivovare.",
+   "examples": [
+    "Ožujsko",
+    "Karlovačko",
+    "Pan",
+    "Osječko",
+    "Tomislav",
+    "Heineken",
+    "Guinness",
+    "Budweiser",
+    "Stella Artois",
+    "Paulaner",
+    "Pilsner Urquell"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0052"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri hrvatska vina.",
+   "examples": [
+    "Plavac mali",
+    "Graševina",
+    "Malvazija",
+    "Teran",
+    "Pošip",
+    "Dingač",
+    "Babić",
+    "Vugava",
+    "Grk",
+    "Žlahtina",
+    "Postup"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0053"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se nalaze u hladnjaku na vratima.",
+   "examples": [
+    "Mlijeko",
+    "Jaja",
+    "Kečap",
+    "Senf",
+    "Majoneza",
+    "Sokovi",
+    "Maslac",
+    "Džem",
+    "Umaci",
+    "Voda"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0054"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se rade na moru, a ne u gradu.",
+   "examples": [
+    "Kupanje",
+    "Sunčanje",
+    "Ronjenje",
+    "Pecanje",
+    "Vožnja barkom",
+    "Skakanje u more",
+    "Picigin",
+    "Lovljenje rakova"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0055"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri sportske igre s mrežom.",
+   "examples": [
+    "Tenis",
+    "Odbojka",
+    "Badminton",
+    "Stolni tenis",
+    "Nogomet (gol)",
+    "Vaterpolo",
+    "Košarka",
+    "Hokej",
+    "Rukomet",
+    "Padel"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0056"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri vrste cipela.",
+   "examples": [
+    "Tenisice",
+    "Štikle",
+    "Čizme",
+    "Sandale",
+    "Mokasinke",
+    "Japanke",
+    "Gojzerice",
+    "Baletanke",
+    "Papuče",
+    "Kopačke"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0057"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri dijela odjeće koje nosiš u zimi.",
+   "examples": [
+    "Kaput",
+    "Šal",
+    "Kapa",
+    "Rukavice",
+    "Pulover",
+    "Čizme",
+    "Termo majica",
+    "Debele čarape",
+    "Jakna"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0058"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari u spavaćoj sobi.",
+   "examples": [
+    "Krevet",
+    "Ormar",
+    "Jastuk",
+    "Poplun",
+    "Noćni ormarić",
+    "Lampa",
+    "Budilica",
+    "Komoda",
+    "Ogledalo",
+    "Zavjese"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0059"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari u dnevnom boravku.",
+   "examples": [
+    "Kauč",
+    "Televizor",
+    "Stolić",
+    "Tepih",
+    "Fotelja",
+    "Lampa",
+    "Polica",
+    "Zavjese",
+    "Daljinski",
+    "Biljka"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0060"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se rade na laptopu.",
+   "examples": [
+    "Pisanje",
+    "Mailovi",
+    "Filmovi",
+    "Igrice",
+    "Društvene mreže",
+    "Kupovina",
+    "Video pozivi",
+    "Učenje",
+    "Rad",
+    "Glazba"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0061"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje te mogu probuditi ujutro.",
+   "examples": [
+    "Budilica",
+    "Sunce",
+    "Pas",
+    "Dijete",
+    "Susjed",
+    "Kava",
+    "Smeće (kamion)",
+    "Ptice",
+    "Mobitel",
+    "Bušilica"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0062"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje ljudi rade u svibnju.",
+   "examples": [
+    "Roštiljaju",
+    "Idu na izlete",
+    "Prvi put se kupaju",
+    "Sade vrt",
+    "Slave Praznik rada",
+    "Matura",
+    "Krizma",
+    "Prva pričest"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0063"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri izuma bez kojih ne možeš zamisliti dan.",
+   "examples": [
+    "Mobitel",
+    "Struja",
+    "Internet",
+    "Hladnjak",
+    "Auto",
+    "Perilica",
+    "Žarulja",
+    "Televizor",
+    "Aparat za kavu",
+    "WC"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0064"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje rade baka i djed.",
+   "examples": [
+    "Kuhaju",
+    "Pričaju priče",
+    "Daju novac",
+    "Rade u vrtu",
+    "Gledaju vijesti",
+    "Pletu",
+    "Peku kolače",
+    "Pričaju o starim vremenima"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0065"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje rade djeca u školi.",
+   "examples": [
+    "Uče",
+    "Pišu",
+    "Čitaju",
+    "Igraju se",
+    "Jedu užinu",
+    "Pišu ispite",
+    "Odgovaraju",
+    "Crtaju",
+    "Pjevaju",
+    "Tjelesni"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0066"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje kupiš na kiosku.",
+   "examples": [
+    "Novine",
+    "Žvake",
+    "Cigarete",
+    "Bon",
+    "Karta za tramvaj",
+    "Loto",
+    "Bomboni",
+    "Voda",
+    "Sličice",
+    "Upaljač"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0067"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje vidiš u zračnoj luci.",
+   "examples": [
+    "Avioni",
+    "Kofer",
+    "Stjuardese",
+    "Piloti",
+    "Check-in",
+    "Duty free",
+    "Kontrola",
+    "Traka za prtljagu",
+    "Gate",
+    "Ploča s letovima"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0068"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri razloga za putovanje.",
+   "examples": [
+    "Odmor",
+    "Posao",
+    "Posjet obitelji",
+    "Svadba",
+    "Koncert",
+    "Utakmica",
+    "Studij",
+    "Upoznavanje kulture",
+    "Hrana",
+    "More"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0069"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje skupljaju kolekcionari.",
+   "examples": [
+    "Marke",
+    "Kovanice",
+    "Sličice",
+    "Salvete",
+    "Magneti",
+    "Stripovi",
+    "Autići",
+    "Ploče",
+    "Figurice",
+    "Kartice"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0070"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje rade influenceri.",
+   "examples": [
+    "Snimaju videe",
+    "Objavljuju slike",
+    "Reklamiraju proizvode",
+    "Putuju",
+    "Rade selfije",
+    "Odgovaraju pratiteljima",
+    "Live stream"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0071"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se mogu pokvariti u stanu.",
+   "examples": [
+    "Bojler",
+    "Perilica",
+    "Hladnjak",
+    "Slavina",
+    "WC",
+    "Klima",
+    "Žarulja",
+    "Brava",
+    "Roleta",
+    "Utičnica"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0072"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri lika iz „Ratova zvijezda” koji nisu ljudi.",
+   "examples": [
+    "Yoda",
+    "Chewbacca",
+    "R2-D2",
+    "C-3PO",
+    "Jabba",
+    "Ewok",
+    "BB-8",
+    "Grogu",
+    "Jar Jar Binks",
+    "Greedo"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0073"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje ima svaki hotel.",
+   "examples": [
+    "Recepcija",
+    "Krevet",
+    "Ručnici",
+    "Lift",
+    "Doručak",
+    "Ključ",
+    "Kupaonica",
+    "Wi-Fi",
+    "Televizor",
+    "Sobarica"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0074"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se mogu naći u šumi.",
+   "examples": [
+    "Drveće",
+    "Gljive",
+    "Lišće",
+    "Životinje",
+    "Kamenje",
+    "Mahovina",
+    "Potok",
+    "Šišarke",
+    "Kesteni",
+    "Jagode"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0075"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri morske životinje koje se jedu.",
+   "examples": [
+    "Riba",
+    "Lignje",
+    "Hobotnica",
+    "Škampi",
+    "Dagnje",
+    "Kamenice",
+    "Jastog",
+    "Rakovi",
+    "Sipa",
+    "Kozice"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0076"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri životinje koje su nacionalni simboli država.",
+   "examples": [
+    "Orao (SAD)",
+    "Kuna (Hrvatska)",
+    "Lav (Engleska)",
+    "Medvjed (Rusija)",
+    "Klokan (Australija)",
+    "Panda (Kina)",
+    "Pijetao (Francuska)",
+    "Jednorog (Škotska)"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0077"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri ptice koje dolaze u Hrvatsku.",
+   "examples": [
+    "Lastavica",
+    "Roda",
+    "Golub",
+    "Vrabac",
+    "Galeb",
+    "Kos",
+    "Sjenica",
+    "Sova",
+    "Orao",
+    "Svraka",
+    "Vrana",
+    "Čaplja"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0078"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se rade na Uskrs.",
+   "examples": [
+    "Bojanje jaja",
+    "Misa",
+    "Ručak",
+    "Tucanje jaja",
+    "Traženje jaja",
+    "Šunka",
+    "Pinca",
+    "Blagoslov jela"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0079"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje imaš na stolu za ručak.",
+   "examples": [
+    "Tanjur",
+    "Vilica",
+    "Nož",
+    "Žlica",
+    "Čaša",
+    "Salveta",
+    "Kruh",
+    "Sol",
+    "Papar",
+    "Voda"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0080"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje se mogu reciklirati.",
+   "examples": [
+    "Papir",
+    "Plastika",
+    "Staklo",
+    "Limenke",
+    "Karton",
+    "Baterije",
+    "Ulje",
+    "Elektronika",
+    "Odjeća",
+    "Tetrapak"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0081"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri igre koje se igraju na rođendanu.",
+   "examples": [
+    "Skrivača",
+    "Lovice",
+    "Pantomima",
+    "Glazbeni stolci",
+    "Pinjata",
+    "Potraga za blagom",
+    "Pikado",
+    "Twister"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0082"
+  },
+  {
+   "type": "list3",
+   "prompt": "Nabroji tri stvari koje te podsjećaju na djetinjstvo.",
+   "examples": [
+    "Crtići",
+    "Kinder jaje",
+    "Sličice",
+    "Lizalice",
+    "Bicikl",
+    "Igre na ulici",
+    "Baka",
+    "Ljeto na moru",
+    "Školska torba"
+   ],
+   "difficulty": 1,
+   "id": "kur4-list3-0083"
+  },
+  {
+   "type": "category",
+   "topic": "Hrvatski filmovi i serije (svi)",
+   "examples": [
+    "Kud puklo da puklo",
+    "Naše malo misto",
+    "Gruntovčani",
+    "Smogovci",
+    "Bitange i princeze",
+    "Larin izbor",
+    "Kumovi",
+    "Crno-bijeli svijet",
+    "Novine",
+    "Počivali u miru",
+    "Na terapiji",
+    "Dnevnik Pauline P.",
+    "Svećenikova djeca",
+    "Metastaze",
+    "Tko pjeva zlo ne misli",
+    "Ne daj se Floki",
+    "Kaja ubit ću te",
+    "Maršal"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0001"
+  },
+  {
+   "type": "category",
+   "topic": "Hrvatski komičari i voditelji",
+   "examples": [
+    "Ivan Šarić",
+    "Željko Pervan",
+    "Tarik Filipović",
+    "Ivan Vukušić",
+    "Duško Ćurlić",
+    "Mirko Fodor",
+    "Antonija Blaće",
+    "Zoran Kesić",
+    "Đuro Utješanović",
+    "Ecija Ojdanić",
+    "Branimir Bajić"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0002"
+  },
+  {
+   "type": "category",
+   "topic": "Strani komičari",
+   "examples": [
+    "Mr. Bean",
+    "Rowan Atkinson",
+    "Jim Carrey",
+    "Robin Williams",
+    "Eddie Murphy",
+    "Charlie Chaplin",
+    "Jerry Seinfeld",
+    "Adam Sandler",
+    "Ricky Gervais",
+    "Steve Martin",
+    "Ben Stiller",
+    "Will Ferrell"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0003"
+  },
+  {
+   "type": "category",
+   "topic": "Likovi iz Marvela",
+   "examples": [
+    "Iron Man",
+    "Kapetan Amerika",
+    "Thor",
+    "Hulk",
+    "Spider-Man",
+    "Crna udovica",
+    "Doktor Strange",
+    "Crni pantera",
+    "Loki",
+    "Thanos",
+    "Groot",
+    "Rocket",
+    "Deadpool",
+    "Wolverine",
+    "Ant-Man",
+    "Vision",
+    "Wanda"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0004"
+  },
+  {
+   "type": "category",
+   "topic": "Dječje pjesme",
+   "examples": [
+    "Sretan rođendan",
+    "Mali mrav",
+    "Ide maca oko tebe",
+    "Pliva patka preko Save",
+    "Zeko i potočić",
+    "Bratec Martin",
+    "Sunce sja",
+    "Tko je tu",
+    "Visibaba",
+    "Puž",
+    "Kišobran",
+    "Imam kuću od slatkiša"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0005"
+  },
+  {
+   "type": "category",
+   "topic": "Bajke",
+   "examples": [
+    "Crvenkapica",
+    "Pepeljuga",
+    "Snjeguljica",
+    "Trnoružica",
+    "Ivica i Marica",
+    "Matovilka",
+    "Mala sirena",
+    "Ružno pače",
+    "Palčica",
+    "Snježna kraljica",
+    "Pinokio",
+    "Petar Pan",
+    "Mačak u čizmama",
+    "Tri praščića",
+    "Zlatokosa"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0006"
+  },
+  {
+   "type": "category",
+   "topic": "Dalmatinski izrazi i riječi",
+   "examples": [
+    "Fjaka",
+    "Bonaca",
+    "Kužina",
+    "Pomidor",
+    "Kapula",
+    "Fritaja",
+    "Tavaja",
+    "Ponistra",
+    "Balkun",
+    "Šugaman",
+    "Bevanda",
+    "Marenda",
+    "Đir",
+    "Riva",
+    "Lancun",
+    "Kamara"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0007"
+  },
+  {
+   "type": "category",
+   "topic": "Zagrebački izrazi i riječi",
+   "examples": [
+    "Fakat",
+    "Purger",
+    "Kaj",
+    "Štikla",
+    "Cuga",
+    "Klopa",
+    "Gablec",
+    "Kuzla",
+    "Bajta",
+    "Frka",
+    "Šalabahter",
+    "Štreber",
+    "Cener",
+    "Švercer"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0008"
+  },
+  {
+   "type": "category",
+   "topic": "Hrvatske tradicionalne igre i običaji",
+   "examples": [
+    "Kolo",
+    "Alka",
+    "Moreška",
+    "Kraljice",
+    "Bušari",
+    "Klapa",
+    "Licitar",
+    "Zvončari",
+    "Kumstvo",
+    "Badnji panj",
+    "Svatovi",
+    "Prelo",
+    "Sijelo",
+    "Pokladni ophod"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0009"
+  },
+  {
+   "type": "category",
+   "topic": "Poznati Hrvati (svi)",
+   "examples": [
+    "Nikola Tesla",
+    "Luka Modrić",
+    "Janica Kostelić",
+    "Goran Ivanišević",
+    "Dražen Petrović",
+    "Oliver Dragojević",
+    "Ivan Meštrović",
+    "Ruđer Bošković",
+    "Faust Vrančić",
+    "Slavoljub Penkala",
+    "Mate Rimac",
+    "Marko Marulić",
+    "Miroslav Krleža",
+    "Gibonni",
+    "Severina",
+    "Blanka Vlašić"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0010"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se pakiraju za more",
+   "examples": [
+    "Kupaći",
+    "Ručnik",
+    "Krema za sunčanje",
+    "Naočale",
+    "Šešir",
+    "Japanke",
+    "Maska",
+    "Peraje",
+    "Šlauf",
+    "Knjiga",
+    "Punjač",
+    "Putovnica",
+    "Lijekovi",
+    "Repelent"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0011"
+  },
+  {
+   "type": "category",
+   "topic": "Vrste ribe na tržnici",
+   "examples": [
+    "Srdela",
+    "Inćun",
+    "Skuša",
+    "Oslić",
+    "Orada",
+    "Brancin",
+    "Lubin",
+    "Zubatac",
+    "Kirnja",
+    "Arbun",
+    "Tuna",
+    "Losos",
+    "Pastrva",
+    "Šaran",
+    "Som",
+    "Lignja",
+    "Hobotnica",
+    "Sipa"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0012"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari u ljekarni",
+   "examples": [
+    "Lijekovi",
+    "Vitamini",
+    "Flasteri",
+    "Krema",
+    "Sirup",
+    "Kapi",
+    "Toplomjer",
+    "Zavoj",
+    "Probiotik",
+    "Maske",
+    "Šampon protiv peruti",
+    "Krema za sunčanje",
+    "Tablete za grlo"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0013"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje svijetle",
+   "examples": [
+    "Sunce",
+    "Mjesec",
+    "Zvijezde",
+    "Žarulja",
+    "Svijeća",
+    "Lampa",
+    "Mobitel",
+    "Ekran",
+    "Svjetiljka",
+    "Krijesnica",
+    "Semafor",
+    "Neonska reklama",
+    "Vatromet",
+    "Munja"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0014"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje imaju gumbe",
+   "examples": [
+    "Košulja",
+    "Kaput",
+    "Daljinski",
+    "Mobitel",
+    "Lift",
+    "Kalkulator",
+    "Tipkovnica",
+    "Mikrovalna",
+    "Perilica",
+    "Jakna",
+    "Igraća konzola",
+    "Zvono"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0015"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se pune",
+   "examples": [
+    "Mobitel",
+    "Baterija",
+    "Auto (gorivo)",
+    "Boca",
+    "Čaša",
+    "Kada",
+    "Lopta",
+    "Balon",
+    "Kemijska olovka",
+    "Perilica",
+    "Spremnik",
+    "Novčanik",
+    "Laptop",
+    "Električni auto"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0016"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se vežu",
+   "examples": [
+    "Vezice",
+    "Kravata",
+    "Šal",
+    "Kosa",
+    "Brod",
+    "Pas",
+    "Pojas",
+    "Paket",
+    "Mašna",
+    "Pregača",
+    "Marama",
+    "Uže",
+    "Balon"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0017"
+  },
+  {
+   "type": "category",
+   "topic": "Imena psa ili mačke iz filmova i crtića",
+   "examples": [
+    "Lassie",
+    "Snoopy",
+    "Pluto",
+    "Scooby-Doo",
+    "Garfield",
+    "Tom",
+    "Hachiko",
+    "Beethoven",
+    "Marley",
+    "Bolt",
+    "Lady",
+    "Skitnica",
+    "Salem",
+    "Krivonja",
+    "Dobri pas Rex"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0018"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se kupuju u Ikei",
+   "examples": [
+    "Ormar",
+    "Krevet",
+    "Polica",
+    "Stol",
+    "Stolica",
+    "Lampa",
+    "Jastuk",
+    "Poplun",
+    "Svijeće",
+    "Okvir za slike",
+    "Biljke",
+    "Hot dog",
+    "Ćufte",
+    "Vješalice",
+    "Kutije"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0019"
+  },
+  {
+   "type": "category",
+   "topic": "Pojmovi s interneta",
+   "examples": [
+    "Lajk",
+    "Selfie",
+    "Hashtag",
+    "Mem",
+    "Influencer",
+    "Story",
+    "Streaming",
+    "Podcast",
+    "Emoji",
+    "Wi-Fi",
+    "Lozinka",
+    "Spam",
+    "Link",
+    "Download",
+    "Upload",
+    "Profil"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0020"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se rade u kafiću",
+   "examples": [
+    "Pije se kava",
+    "Razgovara",
+    "Čita novine",
+    "Gleda mobitel",
+    "Plaća",
+    "Gleda utakmica",
+    "Puši",
+    "Radi na laptopu",
+    "Sastanci",
+    "Spojevi",
+    "Ogovaranje"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0021"
+  },
+  {
+   "type": "category",
+   "topic": "Stvari koje se kupuju na Adventu",
+   "examples": [
+    "Kuhano vino",
+    "Fritule",
+    "Kobasice",
+    "Licitar",
+    "Medenjaci",
+    "Ukrasi",
+    "Kuhani gin",
+    "Kestenje",
+    "Šećerna vata",
+    "Rukavice",
+    "Kape",
+    "Med",
+    "Svijeće"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0022"
+  },
+  {
+   "type": "category",
+   "topic": "Biljke na balkonu",
+   "examples": [
+    "Muškatli",
+    "Pelargonija",
+    "Bosiljak",
+    "Ružmarin",
+    "Lavanda",
+    "Petunija",
+    "Begonija",
+    "Kaktus",
+    "Rajčica",
+    "Jagode",
+    "Menta",
+    "Bršljan"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0023"
+  },
+  {
+   "type": "category",
+   "topic": "Kućni ljubimci",
+   "examples": [
+    "Pas",
+    "Mačka",
+    "Hrčak",
+    "Zamorac",
+    "Kunić",
+    "Papiga",
+    "Kanarinac",
+    "Ribica",
+    "Kornjača",
+    "Činčila",
+    "Gušter",
+    "Zmija",
+    "Tvor",
+    "Štakor",
+    "Miš"
+   ],
+   "difficulty": 1,
+   "id": "kur4-category-0024"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji je moj omiljeni dio dana?",
+   "id": "kur4-knowme-0152"
+  },
+  {
+   "type": "knowme",
+   "question": "Što ja nikad ne bih pojeo/pojela?",
+   "id": "kur4-knowme-0153"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje je moje omiljeno mjesto u našem stanu?",
+   "id": "kur4-knowme-0154"
+  },
+  {
+   "type": "knowme",
+   "question": "Što najviše volim raditi vikendom?",
+   "id": "kur4-knowme-0155"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju sam seriju zadnju gledao/gledala do kraja?",
+   "id": "kur4-knowme-0156"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža emisija na televiziji?",
+   "id": "kur4-knowme-0157"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja je moja omiljena pjesma za vožnju u autu?",
+   "id": "kur4-knowme-0158"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih naručio/naručila u pekarnici?",
+   "id": "kur4-knowme-0159"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju vrstu kave pijem?",
+   "id": "kur4-knowme-0160"
+  },
+  {
+   "type": "knowme",
+   "question": "Što najčešće naručim za dostavu?",
+   "id": "kur4-knowme-0161"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je omiljeni restoran u gradu?",
+   "id": "kur4-knowme-0162"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži kolač kod tvoje mame ili bake?",
+   "id": "kur4-knowme-0163"
+  },
+  {
+   "type": "knowme",
+   "question": "Što me najviše raspoloži kad sam tužan/tužna?",
+   "id": "kur4-knowme-0164"
+  },
+  {
+   "type": "knowme",
+   "question": "Što me može najbrže naljutiti?",
+   "id": "kur4-knowme-0165"
+  },
+  {
+   "type": "knowme",
+   "question": "Gdje bih volio/voljela živjeti da ne živim ovdje?",
+   "id": "kur4-knowme-0166"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje bih vozilo vozio/vozila da mogu birati bilo koje?",
+   "id": "kur4-knowme-0167"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje bih zanimanje odabrao/odabrala da krenem ispočetka?",
+   "id": "kur4-knowme-0168"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži predmet koji posjedujem?",
+   "id": "kur4-knowme-0169"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je bio najsretniji dan u životu?",
+   "id": "kur4-knowme-0170"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih napravio/napravila s milijun eura?",
+   "id": "kur4-knowme-0171"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje je moje skriveno umijeće?",
+   "id": "kur4-knowme-0172"
+  },
+  {
+   "type": "knowme",
+   "question": "Čega se sramim, a zapravo je smiješno?",
+   "id": "kur4-knowme-0173"
+  },
+  {
+   "type": "knowme",
+   "question": "Što najčešće tražim po stanu?",
+   "id": "kur4-knowme-0174"
+  },
+  {
+   "type": "knowme",
+   "question": "Što je zadnje što sam kupio/kupila za sebe?",
+   "id": "kur4-knowme-0175"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih uzeo/uzela na pusti otok od hrane?",
+   "id": "kur4-knowme-0176"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju poznatu osobu najviše cijenim?",
+   "id": "kur4-knowme-0177"
+  },
+  {
+   "type": "knowme",
+   "question": "U koju bih poznatu osobu bio/bila zaljubljen/a da nisam s tobom?",
+   "id": "kur4-knowme-0178"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja je moja najdraža igra na mobitelu?",
+   "id": "kur4-knowme-0179"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju društvenu igru najradije igram?",
+   "id": "kur4-knowme-0180"
+  },
+  {
+   "type": "knowme",
+   "question": "Kakvo vrijeme najviše volim?",
+   "id": "kur4-knowme-0181"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža plaža na kojoj smo bili?",
+   "id": "kur4-knowme-0182"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje je najljepše mjesto na kojem smo bili zajedno?",
+   "id": "kur4-knowme-0183"
+  },
+  {
+   "type": "knowme",
+   "question": "Kamo bih te odveo/odvela na iznenađenje?",
+   "id": "kur4-knowme-0184"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih ti kupio/kupila za rođendan da imam neograničen budžet?",
+   "id": "kur4-knowme-0185"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži zajednički film?",
+   "id": "kur4-knowme-0186"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja je naša najsmješnija zajednička uspomena?",
+   "id": "kur4-knowme-0187"
+  },
+  {
+   "type": "knowme",
+   "question": "Što najviše volim kod tebe, a nikad ti ne kažem?",
+   "id": "kur4-knowme-0188"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji sam kućanski posao zadnji put izbjegao/izbjegla?",
+   "id": "kur4-knowme-0189"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko u našoj vezi više kasni?",
+   "id": "kur4-knowme-0190"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko u našoj vezi više priča?",
+   "id": "kur4-knowme-0191"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko od nas bolje kuha?",
+   "id": "kur4-knowme-0192"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko od nas prvi zaspi navečer?",
+   "id": "kur4-knowme-0193"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko od nas duže ostaje na mobitelu?",
+   "id": "kur4-knowme-0194"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko od nas je tvrdoglaviji?",
+   "id": "kur4-knowme-0195"
+  },
+  {
+   "type": "knowme",
+   "question": "Tko od nas se prvi ispriča nakon svađe?",
+   "id": "kur4-knowme-0196"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih životinju volio/voljela imati doma?",
+   "id": "kur4-knowme-0197"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži začin?",
+   "id": "kur4-knowme-0198"
+  },
+  {
+   "type": "knowme",
+   "question": "Kako pijem čaj?",
+   "id": "kur4-knowme-0199"
+  },
+  {
+   "type": "knowme",
+   "question": "Što radim kad ne mogu zaspati?",
+   "id": "kur4-knowme-0200"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža pjesma iz djetinjstva?",
+   "id": "kur4-knowme-0201"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je bio najdraži učitelj/učiteljica?",
+   "id": "kur4-knowme-0202"
+  },
+  {
+   "type": "knowme",
+   "question": "Što sam htio/htjela biti s deset godina?",
+   "id": "kur4-knowme-0203"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža slatkiš-grickalica?",
+   "id": "kur4-knowme-0204"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje voće nikad ne jedem?",
+   "id": "kur4-knowme-0205"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja je moja najveća mana po mom mišljenju?",
+   "id": "kur4-knowme-0206"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja je moja najveća vrlina po mom mišljenju?",
+   "id": "kur4-knowme-0207"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih supermoć koristio/koristila za zabavu?",
+   "id": "kur4-knowme-0208"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih radio/radila da sam jedan dan nevidljiv/a?",
+   "id": "kur4-knowme-0209"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje mjesto u Hrvatskoj još nisam posjetio/posjetila, a želim?",
+   "id": "kur4-knowme-0210"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži grad u inozemstvu?",
+   "id": "kur4-knowme-0211"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža hrana na putovanjima?",
+   "id": "kur4-knowme-0212"
+  },
+  {
+   "type": "knowme",
+   "question": "Što bih uvijek ponio/ponijela na izlet?",
+   "id": "kur4-knowme-0213"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje mi je najdraže godišnje doba za izlete?",
+   "id": "kur4-knowme-0214"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja me pjesma uvijek natjera da zapjevam?",
+   "id": "kur4-knowme-0215"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju frazu najčešće koristim?",
+   "id": "kur4-knowme-0216"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja me reklama najviše živcira?",
+   "id": "kur4-knowme-0217"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je bio prvi mobitel?",
+   "id": "kur4-knowme-0218"
+  },
+  {
+   "type": "knowme",
+   "question": "Kako se zvao moj prvi kućni ljubimac (ili kako bi se zvao)?",
+   "id": "kur4-knowme-0219"
+  },
+  {
+   "type": "knowme",
+   "question": "Koje sam boje kosu htio/htjela imati kao tinejdžer?",
+   "id": "kur4-knowme-0220"
+  },
+  {
+   "type": "knowme",
+   "question": "Što sam najviše skupljao/skupljala kao dijete?",
+   "id": "kur4-knowme-0221"
+  },
+  {
+   "type": "knowme",
+   "question": "Koja mi je najdraža igračka iz djetinjstva?",
+   "id": "kur4-knowme-0222"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži sport za gledanje na TV-u?",
+   "id": "kur4-knowme-0223"
+  },
+  {
+   "type": "knowme",
+   "question": "Za koji klub navijam?",
+   "id": "kur4-knowme-0224"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji sam sport nekad trenirao/trenirala?",
+   "id": "kur4-knowme-0225"
+  },
+  {
+   "type": "knowme",
+   "question": "Koliko bih kilometara mogao/mogla prepješačiti bez žaljenja?",
+   "id": "kur4-knowme-0226"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži način putovanja?",
+   "id": "kur4-knowme-0227"
+  },
+  {
+   "type": "knowme",
+   "question": "Koju bih stvar promijenio/promijenila na sebi?",
+   "id": "kur4-knowme-0228"
+  },
+  {
+   "type": "knowme",
+   "question": "Što me najviše opusti nakon posla?",
+   "id": "kur4-knowme-0229"
+  },
+  {
+   "type": "knowme",
+   "question": "Koliko sati trebam spavati da budem dobre volje?",
+   "id": "kur4-knowme-0230"
+  },
+  {
+   "type": "knowme",
+   "question": "Koji mi je najdraži doručak vikendom?",
+   "id": "kur4-knowme-0231"
   }
  ]
 }
