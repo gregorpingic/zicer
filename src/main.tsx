@@ -5,7 +5,17 @@ import App from './App';
 import PhoneApp from './remote/PhoneApp';
 import './styles.css';
 
-registerSW({ immediate: true });
+// Nova verzija aplikacije provjerava se pri pokretanju i svaki put kad se aplikacija vrati u prvi plan
+// (instalirana aplikacija na mobitelu inače može danima raditi sa starom verzijom).
+registerSW({
+  immediate: true,
+  onRegisteredSW(_url, r) {
+    if (!r) return;
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') void r.update();
+    });
+  },
+});
 
 const isPhone = () => location.hash.startsWith('#mobitel');
 
