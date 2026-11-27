@@ -1,0 +1,22 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-closest",
+    "name": "Primjer – Najbliži pobjeđuje",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-closest-001",
+      "type": "closest",
+      "difficulty": 2,
+      "category": "Zanimljivosti",
+      "question": "Koliko je metara visok neboder Burdž Kalifa u Dubaiju?",
+      "answer": 828,
+      "unit": "m",
+      "source": "Council on Tall Buildings and Urban Habitat (CTBUH)",
+      "explanation": "Burdž Kalifa visok je 828 metara i od otvorenja 2010. najviša je zgrada na svijetu."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-category",
+    "name": "Primjer – Kategorijski dvoboj",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-category-001",
+      "type": "category",
+      "difficulty": 1,
+      "topic": "Hrvatski otoci",
+      "examples": [
+        "Krk",
+        "Cres",
+        "Brač",
+        "Hvar",
+        "Korčula",
+        "Vis",
+        "Mljet",
+        "Pag",
+        "Rab",
+        "Lastovo"
+      ]
+    }
+  ]
+}

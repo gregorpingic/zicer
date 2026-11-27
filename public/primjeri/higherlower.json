@@ -1,0 +1,25 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-higherlower",
+    "name": "Primjer – Veće ili manje",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-higherlower-001",
+      "type": "higherlower",
+      "difficulty": 3,
+      "category": "Geografija",
+      "question": "Leži li Zagreb sjevernije ili južnije od Venecije?",
+      "options": [
+        "Sjevernije",
+        "Južnije"
+      ],
+      "correct": 0,
+      "source": "Geografske koordinate: Zagreb ≈ 45,81° N, Venecija ≈ 45,44° N",
+      "explanation": "Zagreb je oko 40 km sjevernije od Venecije, iako se mnogima čini da je Italija „gore”."
+    }
+  ]
+}

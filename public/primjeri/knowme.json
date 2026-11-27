@@ -1,0 +1,16 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-knowme",
+    "name": "Primjer – Koliko me poznaješ?",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-knowme-001",
+      "type": "knowme",
+      "question": "Koja ti je najdraža uspomena s nekog putovanja?"
+    }
+  ]
+}

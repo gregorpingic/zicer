@@ -1,0 +1,29 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-association",
+    "name": "Primjer – Asocijacije",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-association-001",
+      "type": "association",
+      "difficulty": 1,
+      "clues": [
+        "Kist",
+        "Platno",
+        "Paleta",
+        "Galerija"
+      ],
+      "answer": "Slika",
+      "accept": [
+        "slikarstvo",
+        "slikar",
+        "slikanje"
+      ],
+      "explanation": "Kist, platno i paleta alati su slikara, a slike se izlažu u galeriji."
+    }
+  ]
+}

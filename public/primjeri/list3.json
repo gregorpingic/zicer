@@ -1,0 +1,25 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-list3",
+    "name": "Primjer – Nabroji tri",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-list3-001",
+      "type": "list3",
+      "difficulty": 1,
+      "prompt": "Nabroji tri stvari koje se uvijek nađu u bakinoj kuhinji.",
+      "count": 3,
+      "examples": [
+        "Vegeta",
+        "Domaći kolači",
+        "Staklenke sa zimnicom",
+        "Krpa za suđe preko ramena",
+        "Lonac juhe"
+      ]
+    }
+  ]
+}

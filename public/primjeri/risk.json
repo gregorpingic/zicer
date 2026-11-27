@@ -1,0 +1,27 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-risk",
+    "name": "Primjer – Riskiraj bodove",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-risk-001",
+      "type": "risk",
+      "difficulty": 1,
+      "category": "Zanimljivosti",
+      "question": "Koliko država članica ima Europska unija (stanje 2025.)?",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ],
+      "correct": 2,
+      "source": "Europska unija – european-union.europa.eu",
+      "explanation": "Nakon izlaska Ujedinjenog Kraljevstva 2020. EU ima 27 članica."
+    }
+  ]
+}

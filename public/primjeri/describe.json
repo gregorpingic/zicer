@@ -1,0 +1,28 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-describe",
+    "name": "Primjer – Pogodi po opisu",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-describe-001",
+      "type": "describe",
+      "difficulty": 2,
+      "category": "Geografija",
+      "subject": "Država",
+      "clues": [
+        "Moj parlament, osnovan 930. godine, jedan je od najstarijih na svijetu.",
+        "Na mojoj zastavi nalazi se križ.",
+        "Jedan moj gejzir dao je ime svim gejzirima na svijetu.",
+        "Glavni grad mi je Reykjavík."
+      ],
+      "answer": "Island",
+      "accept": [
+        "iceland"
+      ]
+    }
+  ]
+}

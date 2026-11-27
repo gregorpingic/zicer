@@ -1,0 +1,253 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjeri-svi",
+    "name": "Primjeri za sve vrste igara",
+    "author": "Zicer",
+    "description": "Po jedno pitanje za svaku vrstu."
+  },
+  "questions": [
+    {
+      "id": "primjer-feud-001",
+      "type": "feud",
+      "difficulty": 1,
+      "question": "Što ljudi najčešće rade na godišnjem odmoru kad pada kiša?",
+      "estimated": true,
+      "answers": [
+        {
+          "text": "Gledaju filmove ili serije",
+          "points": 30,
+          "accept": [
+            "film",
+            "serija",
+            "netflix",
+            "televizija"
+          ]
+        },
+        {
+          "text": "Spavaju",
+          "points": 25,
+          "accept": [
+            "spavanje",
+            "drijemaju"
+          ]
+        },
+        {
+          "text": "Idu u trgovački centar",
+          "points": 20,
+          "accept": [
+            "shopping",
+            "šoping",
+            "kupovina"
+          ]
+        },
+        {
+          "text": "Igraju društvene igre",
+          "points": 15,
+          "accept": [
+            "karte",
+            "igre"
+          ]
+        },
+        {
+          "text": "Sjede u kafiću",
+          "points": 10,
+          "accept": [
+            "kava",
+            "kafić",
+            "birtija"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "primjer-closest-001",
+      "type": "closest",
+      "difficulty": 2,
+      "category": "Zanimljivosti",
+      "question": "Koliko je metara visok neboder Burdž Kalifa u Dubaiju?",
+      "answer": 828,
+      "unit": "m",
+      "source": "Council on Tall Buildings and Urban Habitat (CTBUH)",
+      "explanation": "Burdž Kalifa visok je 828 metara i od otvorenja 2010. najviša je zgrada na svijetu."
+    },
+    {
+      "id": "primjer-list3-001",
+      "type": "list3",
+      "difficulty": 1,
+      "prompt": "Nabroji tri stvari koje se uvijek nađu u bakinoj kuhinji.",
+      "count": 3,
+      "examples": [
+        "Vegeta",
+        "Domaći kolači",
+        "Staklenke sa zimnicom",
+        "Krpa za suđe preko ramena",
+        "Lonac juhe"
+      ]
+    },
+    {
+      "id": "primjer-knowme-001",
+      "type": "knowme",
+      "question": "Koja ti je najdraža uspomena s nekog putovanja?"
+    },
+    {
+      "id": "primjer-association-001",
+      "type": "association",
+      "difficulty": 1,
+      "clues": [
+        "Kist",
+        "Platno",
+        "Paleta",
+        "Galerija"
+      ],
+      "answer": "Slika",
+      "accept": [
+        "slikarstvo",
+        "slikar",
+        "slikanje"
+      ],
+      "explanation": "Kist, platno i paleta alati su slikara, a slike se izlažu u galeriji."
+    },
+    {
+      "id": "primjer-truefalse-001",
+      "type": "truefalse",
+      "difficulty": 2,
+      "category": "Zanimljivosti",
+      "statement": "Kineski zid vidi se golim okom iz svemira.",
+      "answer": false,
+      "source": "NASA – „Great Wall of China” (Earth Observatory)",
+      "explanation": "Zid je dug, ali uzak (širok tek nekoliko metara) i sličan boji okoliša pa ga astronauti golim okom s orbite ne mogu razaznati."
+    },
+    {
+      "id": "primjer-quiz-001",
+      "type": "quiz",
+      "difficulty": 1,
+      "category": "Životinje",
+      "question": "Koja je najveća životinja koja je ikada živjela na Zemlji?",
+      "options": [
+        "Argentinosaurus",
+        "Plavetni kit",
+        "Afrički slon",
+        "Megalodon"
+      ],
+      "correct": 1,
+      "source": "Smithsonian Ocean – Blue Whale",
+      "explanation": "Plavetni kit može narasti do oko 30 m i težiti više od 150 tona – više od bilo kojeg poznatog dinosaura."
+    },
+    {
+      "id": "primjer-order-001",
+      "type": "order",
+      "difficulty": 2,
+      "category": "Znanost",
+      "prompt": "Poredaj planete prema promjeru – od najvećeg.",
+      "items": [
+        "Jupiter",
+        "Saturn",
+        "Uran",
+        "Neptun",
+        "Zemlja"
+      ],
+      "values": [
+        "≈ 139 800 km",
+        "≈ 116 500 km",
+        "≈ 50 700 km",
+        "≈ 49 200 km",
+        "≈ 12 700 km"
+      ],
+      "source": "NASA – Planetary Fact Sheet",
+      "explanation": "Uran i Neptun gotovo su jednako veliki, ali je Uran nešto širi, dok je Neptun masivniji."
+    },
+    {
+      "id": "primjer-oddone-001",
+      "type": "oddone",
+      "difficulty": 2,
+      "category": "Hrvatska",
+      "prompt": "Koji od ovih pojmova nije otok?",
+      "items": [
+        "Krk",
+        "Cres",
+        "Rab",
+        "Pelješac",
+        "Lošinj"
+      ],
+      "odd": 3,
+      "explanation": "Pelješac je poluotok, spojen s kopnom kod Stona. Ostali su otoci Kvarnera."
+    },
+    {
+      "id": "primjer-describe-001",
+      "type": "describe",
+      "difficulty": 2,
+      "category": "Geografija",
+      "subject": "Država",
+      "clues": [
+        "Moj parlament, osnovan 930. godine, jedan je od najstarijih na svijetu.",
+        "Na mojoj zastavi nalazi se križ.",
+        "Jedan moj gejzir dao je ime svim gejzirima na svijetu.",
+        "Glavni grad mi je Reykjavík."
+      ],
+      "answer": "Island",
+      "accept": [
+        "iceland"
+      ]
+    },
+    {
+      "id": "primjer-higherlower-001",
+      "type": "higherlower",
+      "difficulty": 3,
+      "category": "Geografija",
+      "question": "Leži li Zagreb sjevernije ili južnije od Venecije?",
+      "options": [
+        "Sjevernije",
+        "Južnije"
+      ],
+      "correct": 0,
+      "source": "Geografske koordinate: Zagreb ≈ 45,81° N, Venecija ≈ 45,44° N",
+      "explanation": "Zagreb je oko 40 km sjevernije od Venecije, iako se mnogima čini da je Italija „gore”."
+    },
+    {
+      "id": "primjer-category-001",
+      "type": "category",
+      "difficulty": 1,
+      "topic": "Hrvatski otoci",
+      "examples": [
+        "Krk",
+        "Cres",
+        "Brač",
+        "Hvar",
+        "Korčula",
+        "Vis",
+        "Mljet",
+        "Pag",
+        "Rab",
+        "Lastovo"
+      ]
+    },
+    {
+      "id": "primjer-year-001",
+      "type": "year",
+      "difficulty": 1,
+      "category": "Povijest",
+      "question": "Koje je godine potonuo Titanic?",
+      "answer": 1912,
+      "source": "Encyclopaedia Britannica – Titanic",
+      "explanation": "Titanic je udario u santu leda 14. travnja 1912., a potonuo je u ranim satima 15. travnja."
+    },
+    {
+      "id": "primjer-risk-001",
+      "type": "risk",
+      "difficulty": 1,
+      "category": "Zanimljivosti",
+      "question": "Koliko država članica ima Europska unija (stanje 2025.)?",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ],
+      "correct": 2,
+      "source": "Europska unija – european-union.europa.eu",
+      "explanation": "Nakon izlaska Ujedinjenog Kraljevstva 2020. EU ima 27 članica."
+    }
+  ]
+}

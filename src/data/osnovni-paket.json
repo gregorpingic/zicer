@@ -1,0 +1,449 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "zicer-osnovni",
+    "name": "Osnovni paket (probni)",
+    "author": "Zicer",
+    "description": "Probna pitanja za svaku vrstu igre – po 3 pitanja."
+  },
+  "questions": [
+    {
+      "id": "osn-feud-001",
+      "type": "feud",
+      "difficulty": 1,
+      "question": "Što ljudi najčešće rade čim dođu kući s posla?",
+      "estimated": true,
+      "answers": [
+        { "text": "Presvuku se", "points": 30, "accept": ["presvlačenje", "skinu se", "trenirku"] },
+        { "text": "Jedu", "points": 25, "accept": ["ručak", "večera", "hrana", "frižider", "hladnjak"] },
+        { "text": "Legnu na kauč", "points": 20, "accept": ["odmor", "odmore", "kauč", "sofa", "leže"] },
+        { "text": "Tuširaju se", "points": 15, "accept": ["tuš", "kupanje", "okupaju"] },
+        { "text": "Provjere mobitel", "points": 10, "accept": ["mobitel", "telefon", "društvene mreže", "instagram"] }
+      ]
+    },
+    {
+      "id": "osn-feud-002",
+      "type": "feud",
+      "difficulty": 1,
+      "question": "Što ljudi najčešće zaborave ponijeti na more?",
+      "estimated": true,
+      "answers": [
+        { "text": "Kremu za sunčanje", "points": 30, "accept": ["krema", "zaštita", "sunčanje", "spf"] },
+        { "text": "Punjač za mobitel", "points": 25, "accept": ["punjač", "kabel"] },
+        { "text": "Kupaći kostim", "points": 20, "accept": ["kupaće", "kupaći", "badić", "gaće"] },
+        { "text": "Sunčane naočale", "points": 15, "accept": ["naočale", "očale"] },
+        { "text": "Ručnik", "points": 10, "accept": ["peškir", "šugaman"] }
+      ]
+    },
+    {
+      "id": "osn-feud-003",
+      "type": "feud",
+      "difficulty": 2,
+      "question": "Koji kućanski posao ljudi najviše mrze?",
+      "estimated": true,
+      "answers": [
+        { "text": "Glačanje", "points": 35, "accept": ["peglanje", "pegla", "glačalo"] },
+        { "text": "Pranje prozora", "points": 25, "accept": ["prozori", "stakla"] },
+        { "text": "Čišćenje kupaonice", "points": 20, "accept": ["kupaonica", "wc", "zahod", "školjka"] },
+        { "text": "Pranje suđa", "points": 12, "accept": ["suđe", "posuđe"] },
+        { "text": "Usisavanje", "points": 8, "accept": ["usisavač", "usisati"] }
+      ]
+    },
+
+    {
+      "id": "osn-closest-001",
+      "type": "closest",
+      "difficulty": 1,
+      "category": "Znanost",
+      "question": "Koliko kostiju ima odrasla osoba?",
+      "answer": 206,
+      "unit": "kostiju",
+      "source": "Encyclopaedia Britannica – Human skeleton",
+      "explanation": "Novorođenče ima oko 300 kostiju, ali se mnoge tijekom odrastanja srastu pa odrasla osoba ima 206."
+    },
+    {
+      "id": "osn-closest-002",
+      "type": "closest",
+      "difficulty": 2,
+      "category": "Geografija",
+      "question": "Koliko je kilometara dug Zemljin ekvator?",
+      "answer": 40075,
+      "unit": "km",
+      "source": "NASA – Earth Fact Sheet",
+      "explanation": "Opseg Zemlje na ekvatoru iznosi oko 40 075 km; preko polova je nešto kraći (oko 40 008 km) jer je Zemlja blago spljoštena."
+    },
+    {
+      "id": "osn-closest-003",
+      "type": "closest",
+      "difficulty": 2,
+      "category": "Geografija",
+      "question": "Koliko je metara visok Mount Everest?",
+      "answer": 8849,
+      "unit": "m",
+      "source": "Zajedničko kinesko-nepalsko mjerenje iz 2020. (8848,86 m)",
+      "explanation": "Kina i Nepal 2020. su zajednički objavili visinu od 8848,86 metara, što se zaokružuje na 8849 m."
+    },
+
+    {
+      "id": "osn-list3-001",
+      "type": "list3",
+      "difficulty": 1,
+      "prompt": "Nabroji tri razloga za kašnjenje na posao.",
+      "examples": ["Gužva u prometu", "Nije zazvonio budilnik", "Nestalo goriva", "Tramvaj nije došao", "Zaboravio/la sam ključeve"]
+    },
+    {
+      "id": "osn-list3-002",
+      "type": "list3",
+      "difficulty": 1,
+      "prompt": "Nabroji tri stvari koje ljudi rade kada su sami kod kuće.",
+      "examples": ["Pjevaju naglas", "Jedu iz lonca", "Plešu po stanu", "Gledaju serije satima", "Hodaju u donjem rublju"]
+    },
+    {
+      "id": "osn-list3-003",
+      "type": "list3",
+      "difficulty": 2,
+      "prompt": "Nabroji tri najgora poklona za rođendan.",
+      "examples": ["Vaga", "Krema protiv bora", "Usisavač", "Poklon-bon za teretanu", "Recikliran poklon s etiketom"]
+    },
+
+    {
+      "id": "osn-knowme-001",
+      "type": "knowme",
+      "question": "Što bi prvo kupio/kupila da dobiješ 10.000 eura?"
+    },
+    {
+      "id": "osn-knowme-002",
+      "type": "knowme",
+      "question": "Koji kućanski posao najviše mrziš?"
+    },
+    {
+      "id": "osn-knowme-003",
+      "type": "knowme",
+      "question": "Koju bi hranu mogao/mogla jesti svaki dan?"
+    },
+
+    {
+      "id": "osn-association-001",
+      "type": "association",
+      "difficulty": 1,
+      "category": "Hrana i piće",
+      "clues": ["Kora", "Sir", "Rajčica", "Italija"],
+      "answer": "Pizza",
+      "accept": ["pica"]
+    },
+    {
+      "id": "osn-association-002",
+      "type": "association",
+      "difficulty": 1,
+      "clues": ["Mrkva", "Pahulja", "Metla", "Zima"],
+      "answer": "Snjegović",
+      "accept": ["snješko", "snjegovic", "sniješko"]
+    },
+    {
+      "id": "osn-association-003",
+      "type": "association",
+      "difficulty": 2,
+      "category": "Hrvatska",
+      "clues": ["Kuna", "Nalivpero", "Dalmatinac", "Kravata"],
+      "answer": "Hrvatska",
+      "accept": ["hrvati", "hrvatski"],
+      "explanation": "Kuna je bila hrvatska valuta, nalivpero je usavršio Slavoljub Penkala, dalmatinac je hrvatska pasmina pasa, a kravata potječe od marame hrvatskih vojnika."
+    },
+
+    {
+      "id": "osn-truefalse-001",
+      "type": "truefalse",
+      "difficulty": 1,
+      "category": "Životinje",
+      "statement": "Hobotnica ima tri srca.",
+      "answer": true,
+      "source": "Smithsonian Ocean – Octopuses",
+      "explanation": "Dva srca pumpaju krv kroz škrge, a treće kroz ostatak tijela."
+    },
+    {
+      "id": "osn-truefalse-002",
+      "type": "truefalse",
+      "difficulty": 2,
+      "category": "Znanost",
+      "statement": "Banane rastu na drveću.",
+      "answer": false,
+      "source": "Encyclopaedia Britannica – Banana",
+      "explanation": "Banana je golema zeljasta biljka: njezino 'deblo' je lažna stabljika od čvrsto smotanih listova, a ne drvo."
+    },
+    {
+      "id": "osn-truefalse-003",
+      "type": "truefalse",
+      "difficulty": 3,
+      "category": "Životinje",
+      "statement": "Morski psi postoje dulje od drveća.",
+      "answer": true,
+      "source": "Natural History Museum (London) – fosilni zapis morskih pasa",
+      "explanation": "Najstariji fosili morskih pasa stari su oko 450 milijuna godina, a prva drveća pojavila su se prije otprilike 385 milijuna godina."
+    },
+
+    {
+      "id": "osn-quiz-001",
+      "type": "quiz",
+      "difficulty": 2,
+      "category": "Hrvatska",
+      "question": "Koji je najviši vrh Hrvatske?",
+      "options": ["Sveti Jure", "Vaganski vrh", "Dinara (Sinjal)", "Kamešnica"],
+      "correct": 2,
+      "source": "Hrvatska enciklopedija – Dinara",
+      "explanation": "Sinjal na Dinari visok je 1831 m. Sveti Jure na Biokovu ima 1762 m, a Vaganski vrh na Velebitu 1757 m."
+    },
+    {
+      "id": "osn-quiz-002",
+      "type": "quiz",
+      "difficulty": 1,
+      "category": "Znanost",
+      "question": "Koji je kemijski simbol za zlato?",
+      "options": ["Ag", "Au", "Zn", "Go"],
+      "correct": 1,
+      "source": "IUPAC – periodni sustav elemenata",
+      "explanation": "Simbol Au dolazi od latinske riječi aurum. Ag je srebro (argentum), a Zn cink."
+    },
+    {
+      "id": "osn-quiz-003",
+      "type": "quiz",
+      "difficulty": 1,
+      "category": "Filmovi i serije",
+      "question": "Tko je režirao film „Ralje” iz 1975.?",
+      "options": ["George Lucas", "Steven Spielberg", "Francis Ford Coppola", "Martin Scorsese"],
+      "correct": 1,
+      "source": "AFI Catalog – Jaws (1975)",
+      "explanation": "„Ralje” su bile Spielbergov veliki proboj i često se smatraju prvim ljetnim blockbusterom."
+    },
+
+    {
+      "id": "osn-order-001",
+      "type": "order",
+      "difficulty": 2,
+      "category": "Geografija",
+      "prompt": "Poredaj države prema površini – od najveće prema najmanjoj.",
+      "items": ["Francuska", "Španjolska", "Njemačka", "Italija", "Hrvatska"],
+      "values": ["≈ 551 700 km² (europski dio)", "≈ 506 000 km²", "≈ 357 600 km²", "≈ 301 300 km²", "≈ 56 600 km²"],
+      "source": "CIA World Factbook",
+      "explanation": "Francuska je najveća država Europske unije, a Hrvatska ima oko 56 594 km² kopnene površine."
+    },
+    {
+      "id": "osn-order-002",
+      "type": "order",
+      "difficulty": 1,
+      "category": "Povijest",
+      "prompt": "Poredaj događaje kronološki – od najranijeg.",
+      "items": ["Kolumbo stiže u Ameriku", "Francuska revolucija", "Prvo slijetanje čovjeka na Mjesec", "Pad Berlinskog zida"],
+      "values": ["1492.", "1789.", "1969.", "1989."],
+      "source": "Encyclopaedia Britannica",
+      "explanation": "Između Kolumba i pada Berlinskog zida prošlo je gotovo 500 godina."
+    },
+    {
+      "id": "osn-order-003",
+      "type": "order",
+      "difficulty": 2,
+      "category": "Filmovi i serije",
+      "prompt": "Poredaj filmove prema godini izlaska – od najstarijeg.",
+      "items": ["Kum", "Titanic", "Matrix", "Avatar"],
+      "values": ["1972.", "1997.", "1999.", "2009."],
+      "source": "AFI Catalog / IMDb",
+      "explanation": "Titanic i Matrix dijele samo dvije godine razlike, a Avatar je stigao desetljeće kasnije."
+    },
+
+    {
+      "id": "osn-oddone-001",
+      "type": "oddone",
+      "difficulty": 1,
+      "category": "Znanost",
+      "items": ["Merkur", "Venera", "Mjesec", "Mars", "Jupiter"],
+      "odd": 2,
+      "explanation": "Mjesec je prirodni satelit Zemlje, a svi ostali su planeti Sunčeva sustava."
+    },
+    {
+      "id": "osn-oddone-002",
+      "type": "oddone",
+      "difficulty": 1,
+      "category": "Geografija",
+      "items": ["Pariz", "Rim", "Barcelona", "Beč", "Lisabon"],
+      "odd": 2,
+      "explanation": "Barcelona nije glavni grad – glavni grad Španjolske je Madrid. Ostali su glavni gradovi svojih država."
+    },
+    {
+      "id": "osn-oddone-003",
+      "type": "oddone",
+      "difficulty": 2,
+      "category": "Životinje",
+      "items": ["Kit", "Dupin", "Morski pas", "Tuljan"],
+      "odd": 2,
+      "explanation": "Morski pas je riba, a kit, dupin i tuljan su sisavci koji udišu zrak plućima."
+    },
+
+    {
+      "id": "osn-describe-001",
+      "type": "describe",
+      "difficulty": 1,
+      "category": "Hrvatska",
+      "subject": "Osoba",
+      "clues": [
+        "Rođen sam u Smiljanu.",
+        "Neko vrijeme radio sam za Thomasa Edisona.",
+        "Mjerna jedinica za magnetsku indukciju nosi moje ime.",
+        "Zaslužan sam za razvoj sustava izmjenične struje.",
+        "Jedna poznata marka električnih automobila zove se po meni."
+      ],
+      "answer": "Nikola Tesla",
+      "accept": ["tesla"]
+    },
+    {
+      "id": "osn-describe-002",
+      "type": "describe",
+      "difficulty": 1,
+      "category": "Životinje",
+      "subject": "Životinja",
+      "clues": [
+        "U vratu imam sedam kralježaka – jednako kao i čovjek.",
+        "Moj jezik je tamnoplav i dug gotovo pola metra.",
+        "Živim u afričkoj savani i najradije jedem lišće akacije.",
+        "Najviša sam životinja na svijetu."
+      ],
+      "answer": "Žirafa",
+      "accept": ["zirafa"]
+    },
+    {
+      "id": "osn-describe-003",
+      "type": "describe",
+      "difficulty": 2,
+      "category": "Filmovi i serije",
+      "subject": "Film",
+      "clues": [
+        "Osvojio sam 11 Oscara.",
+        "Glazbu za mene skladao je James Horner.",
+        "Snimljen sam 1997. godine.",
+        "Glavne uloge igraju Leonardo DiCaprio i Kate Winslet.",
+        "Moja priča završava sudarom s ledenom santom."
+      ],
+      "answer": "Titanic"
+    },
+
+    {
+      "id": "osn-higherlower-001",
+      "type": "higherlower",
+      "difficulty": 1,
+      "category": "Geografija",
+      "question": "Ima li Hrvatska više ili manje stanovnika od Slovenije?",
+      "options": ["Više", "Manje"],
+      "correct": 0,
+      "source": "DZS – Popis stanovništva 2021.; SURS (Slovenija)",
+      "explanation": "Hrvatska ima oko 3,87 milijuna stanovnika (popis 2021.), a Slovenija oko 2,1 milijun."
+    },
+    {
+      "id": "osn-higherlower-002",
+      "type": "higherlower",
+      "difficulty": 2,
+      "category": "Hrana i piće",
+      "question": "Ima li avokado više ili manje kalorija od banane (na 100 grama)?",
+      "options": ["Više", "Manje"],
+      "correct": 0,
+      "source": "USDA FoodData Central",
+      "explanation": "Avokado ima oko 160 kcal na 100 g zbog masti, a banana oko 89 kcal."
+    },
+    {
+      "id": "osn-higherlower-003",
+      "type": "higherlower",
+      "difficulty": 2,
+      "category": "Filmovi i serije",
+      "question": "Je li prvi „Alien” izašao prije ili poslije prvog „Terminatora”?",
+      "options": ["Prije", "Poslije"],
+      "correct": 0,
+      "source": "AFI Catalog",
+      "explanation": "„Alien” je izašao 1979., a „Terminator” 1984. godine."
+    },
+
+    {
+      "id": "osn-category-001",
+      "type": "category",
+      "difficulty": 1,
+      "topic": "Europske države",
+      "examples": ["Hrvatska", "Austrija", "Portugal", "Island", "Estonija", "Malta", "Moldavija"]
+    },
+    {
+      "id": "osn-category-002",
+      "type": "category",
+      "difficulty": 2,
+      "topic": "Pasmine pasa",
+      "examples": ["Dalmatinac", "Labrador", "Hrvatski ovčar", "Tornjak", "Pudla", "Bigl", "Haski"]
+    },
+    {
+      "id": "osn-category-003",
+      "type": "category",
+      "difficulty": 1,
+      "topic": "Jela od krumpira",
+      "examples": ["Pomfrit", "Pire", "Lešo krumpir", "Restani krumpir", "Njoki", "Krumpir salata", "Musaka"]
+    },
+
+    {
+      "id": "osn-year-001",
+      "type": "year",
+      "difficulty": 1,
+      "category": "Povijest",
+      "question": "Koje je godine čovjek prvi put stupio na Mjesec?",
+      "answer": 1969,
+      "source": "NASA – Apollo 11",
+      "explanation": "Neil Armstrong i Buzz Aldrin sletjeli su na Mjesec 20. srpnja 1969. u misiji Apollo 11."
+    },
+    {
+      "id": "osn-year-002",
+      "type": "year",
+      "difficulty": 2,
+      "category": "Hrvatska",
+      "question": "Koje je godine rođen Nikola Tesla?",
+      "answer": 1856,
+      "source": "Hrvatska enciklopedija – Tesla, Nikola",
+      "explanation": "Tesla je rođen 10. srpnja 1856. u Smiljanu kraj Gospića."
+    },
+    {
+      "id": "osn-year-003",
+      "type": "year",
+      "difficulty": 2,
+      "category": "Tehnologija",
+      "question": "Koje je godine prvi iPhone stigao u prodaju?",
+      "answer": 2007,
+      "source": "Apple Newsroom, lipanj 2007.",
+      "explanation": "Steve Jobs predstavio ga je u siječnju 2007., a u prodaju je stigao 29. lipnja 2007. u SAD-u."
+    },
+
+    {
+      "id": "osn-risk-001",
+      "type": "risk",
+      "difficulty": 1,
+      "category": "Znanost",
+      "question": "Koji je planet najbliži Suncu?",
+      "options": ["Venera", "Merkur", "Mars", "Zemlja"],
+      "correct": 1,
+      "source": "NASA – Mercury",
+      "explanation": "Merkur je od Sunca udaljen prosječno oko 58 milijuna km."
+    },
+    {
+      "id": "osn-risk-002",
+      "type": "risk",
+      "difficulty": 1,
+      "category": "Hrvatska",
+      "question": "Koje je godine Hrvatska postala članica Europske unije?",
+      "options": ["2009.", "2011.", "2013.", "2015."],
+      "correct": 2,
+      "source": "Europska unija – europa.eu, profil Hrvatske",
+      "explanation": "Hrvatska je 1. srpnja 2013. postala 28. članica EU-a."
+    },
+    {
+      "id": "osn-risk-003",
+      "type": "risk",
+      "difficulty": 2,
+      "category": "Sport",
+      "question": "Koliko igrača jedne momčadi istodobno igra na terenu u rukometu?",
+      "options": ["5", "6", "7", "8"],
+      "correct": 2,
+      "source": "IHF – Pravila rukometne igre",
+      "explanation": "Na terenu je šest igrača u polju i vratar – ukupno sedam."
+    }
+  ]
+}

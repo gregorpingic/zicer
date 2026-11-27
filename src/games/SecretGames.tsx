@@ -1,0 +1,321 @@
+import { useEffect, useState, type ReactNode } from 'react';
+import type { GameProps } from './types';
+import type { Outcome, PlayerIndex } from '../core/types';
+import { POINTS, closestPoints, maxStake, yearPoints } from '../core/scoring';
+import { sfx } from '../core/sound';
+import {
+  Button,
+  ChoiceEntry,
+  Explanation,
+  NextButton,
+  NumberEntry,
+  QuestionCard,
+  ResultBanner,
+  SecretSequence,
+  formatNumber,
+} from '../components/common';
+
+type Answers<T> = Partial<Record<PlayerIndex, T>>;
+const order = (active: PlayerIndex): PlayerIndex[] => [active, (1 - active) as PlayerIndex];
+
+function useRevealSound(points: [number, number] | null) {
+  const key = points ? points.join(',') : '';
+  useEffect(() => {
+    if (!key) return;
+    const [a, b] = key.split(',').map(Number);
+    if (a > 0 || b > 0) sfx.correct();
+    else sfx.wrong();
+  }, [key]);
+}
+
+function AnswerRow({ players, render }: { players: [string, string]; render: (p: PlayerIndex) => ReactNode }) {
+  return (
+    <div className="answers-row">
+      {([0, 1] as const).map((p) => (
+        <div key={p} className={`answer-box p${p}`}>
+          <div className="answer-name">{players[p]}</div>
+          {render(p)}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ---------------- Najbliži pobjeđuje ----------------
+
+export function Closest({ question: q, active, players, multiplier, onDone }: GameProps<'closest'>) {
+  const [ans, setAns] = useState<[number, number] | null>(null);
+  const points = ans ? closestPoints(ans, q.answer) : null;
+  useRevealSound(points);
+  const card = <QuestionCard label="Najbliži pobjeđuje" text={q.question} />;
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <NumberEntry unit={q.unit} onSubmit={submit} />}
+          remote={() => ({ kind: 'number', title: q.question, unit: q.unit })}
+          fromValue={(v) => v.number ?? 0}
+          onComplete={(v: Answers<number>) => setAns([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+  const outcome = points!.map((p) => (p >= POINTS.closestWin ? 'correct' : p > 0 ? 'partial' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className="solution">
+        Točan odgovor: <strong>{formatNumber(q.answer)}</strong> {q.unit}
+      </div>
+      <AnswerRow
+        players={players}
+        render={(p) => (
+          <>
+            <div className="answer-val">
+              {formatNumber(ans[p])} <span className="unit">{q.unit}</span>
+            </div>
+            <div className="muted">odstupanje {formatNumber(Math.abs(ans[p] - q.answer))}</div>
+          </>
+        )}
+      />
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}
+
+// ---------------- Istina ili laž ----------------
+
+export function TrueFalse({ question: q, active, players, multiplier, onDone }: GameProps<'truefalse'>) {
+  const [ans, setAns] = useState<[boolean, boolean] | null>(null);
+  const points = ans ? (ans.map((a) => (a === q.answer ? POINTS.truefalse : 0)) as [number, number]) : null;
+  useRevealSound(points);
+  const card = <QuestionCard label="Istina ili laž?" text={q.statement} />;
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<boolean>
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <ChoiceEntry options={['Istina', 'Laž']} onSubmit={(i) => submit(i === 0)} />}
+          remote={() => ({ kind: 'choice', title: q.statement, options: ['Istina', 'Laž'] })}
+          fromValue={(v) => v.choice === 0}
+          onComplete={(v) => setAns([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+  const outcome = ans.map((a) => (a === q.answer ? 'correct' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className={`solution big ${q.answer ? 'is-true' : 'is-false'}`}>{q.answer ? 'ISTINA' : 'LAŽ'}</div>
+      <AnswerRow
+        players={players}
+        render={(p) => (
+          <div className={`answer-val ${ans[p] === q.answer ? 'good' : 'bad'}`}>
+            {ans[p] ? 'Istina' : 'Laž'} {ans[p] === q.answer ? '✓' : '✕'}
+          </div>
+        )}
+      />
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}
+
+// ---------------- Veće ili manje ----------------
+
+export function HigherLower({ question: q, active, players, multiplier, onDone }: GameProps<'higherlower'>) {
+  const [ans, setAns] = useState<[number, number] | null>(null);
+  const points = ans ? (ans.map((a) => (a === q.correct ? POINTS.higherlower : 0)) as [number, number]) : null;
+  useRevealSound(points);
+  const card = <QuestionCard label="Veće ili manje?" text={q.question} />;
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <ChoiceEntry options={q.options} onSubmit={submit} />}
+          remote={() => ({ kind: 'choice', title: q.question, options: q.options })}
+          fromValue={(v) => v.choice ?? 0}
+          onComplete={(v) => setAns([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+  const outcome = ans.map((a) => (a === q.correct ? 'correct' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className="solution big">{q.options[q.correct]}</div>
+      <AnswerRow
+        players={players}
+        render={(p) => (
+          <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
+            {q.options[ans[p]]} {ans[p] === q.correct ? '✓' : '✕'}
+          </div>
+        )}
+      />
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}
+
+// ---------------- Pogodi godinu ----------------
+
+export function Year({ question: q, active, players, multiplier, onDone }: GameProps<'year'>) {
+  const [ans, setAns] = useState<[number, number] | null>(null);
+  const points = ans ? (ans.map((a) => yearPoints(a, q.answer)) as [number, number]) : null;
+  useRevealSound(points);
+  const card = <QuestionCard label="Pogodi godinu" text={q.question} />;
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <NumberEntry placeholder="Godina" onSubmit={(n) => submit(Math.round(n))} />}
+          remote={() => ({ kind: 'number', title: q.question, placeholder: 'Godina' })}
+          fromValue={(v) => Math.round(v.number ?? 0)}
+          onComplete={(v) => setAns([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+  const outcome = points!.map((p) => (p >= 25 ? 'correct' : p > 0 ? 'partial' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className="solution big">{q.answer}.</div>
+      <AnswerRow
+        players={players}
+        render={(p) => (
+          <>
+            <div className="answer-val">{ans[p]}.</div>
+            <div className="muted">
+              {ans[p] === q.answer ? 'točno!' : `${Math.abs(ans[p] - q.answer)} god. razlike`}
+            </div>
+          </>
+        )}
+      />
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}
+
+// ---------------- Riskiraj bodove ----------------
+
+function StakeEntry({ max, onSubmit }: { max: number; onSubmit: (n: number) => void }) {
+  const [v, setV] = useState(Math.min(10, max));
+  const quick = [0, Math.round(max / 4), Math.round(max / 2), max];
+  return (
+    <div className="stake">
+      <div className="stake-val">{v}</div>
+      <input
+        type="range"
+        min={0}
+        max={max}
+        step={1}
+        value={v}
+        onChange={(e) => setV(Number(e.target.value))}
+        aria-label="Ulog"
+        className="masked-range"
+      />
+      <div className="row center">
+        {[...new Set(quick)].map((n) => (
+          <Button key={n} variant="secondary" onClick={() => setV(n)}>
+            {n === max ? `Sve (${n})` : n}
+          </Button>
+        ))}
+      </div>
+      <Button big onClick={() => onSubmit(v)}>
+        Zaključaj ulog
+      </Button>
+    </div>
+  );
+}
+
+export function Risk({ question: q, active, players, scores, onDone }: GameProps<'risk'>) {
+  const [stakes, setStakes] = useState<[number, number] | null>(null);
+  const [ans, setAns] = useState<[number, number] | null>(null);
+  const points = stakes && ans ? (ans.map((a, p) => (a === q.correct ? stakes[p] : -stakes[p])) as [number, number]) : null;
+  useRevealSound(points);
+
+  if (!stakes)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          players={players}
+          order={order(active)}
+          header={
+            <div className="qcard">
+              <div className="qcard-label">Riskiraj bodove · kategorija: {q.category}</div>
+              <div className="qcard-text">Koliko bodova ulažeš prije nego što vidiš pitanje?</div>
+            </div>
+          }
+          renderInput={(p, submit) => (
+            <>
+              <div className="muted center">
+                Tvoji bodovi: {scores[p]} · najveći mogući ulog: {maxStake(scores[p])}
+              </div>
+              <StakeEntry max={maxStake(scores[p])} onSubmit={submit} />
+            </>
+          )}
+          remote={(p) => ({ kind: 'stake', title: `Koliko ulažeš? Kategorija: ${q.category}`, max: maxStake(scores[p]), score: scores[p] })}
+          fromValue={(v, p) => Math.max(0, Math.min(maxStake(scores[p]), Math.round(v.number ?? 0)))}
+          onComplete={(v) => setStakes([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+
+  const card = <QuestionCard label={`Riskiraj bodove · ${q.category}`} text={q.question} />;
+  if (!ans)
+    return (
+      <div className="game">
+        <SecretSequence<number>
+          key="answers"
+          players={players}
+          order={order(active)}
+          header={card}
+          renderInput={(_, submit) => <ChoiceEntry options={q.options} onSubmit={submit} />}
+          remote={() => ({ kind: 'choice', title: q.question, options: q.options })}
+          fromValue={(v) => v.choice ?? 0}
+          onComplete={(v) => setAns([v[0]!, v[1]!])}
+        />
+      </div>
+    );
+
+  const outcome = ans.map((a) => (a === q.correct ? 'correct' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      {card}
+      <div className="solution">
+        Točan odgovor: <strong>{q.options[q.correct]}</strong>
+      </div>
+      <AnswerRow
+        players={players}
+        render={(p) => (
+          <>
+            <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
+              {q.options[ans[p]]} {ans[p] === q.correct ? '✓' : '✕'}
+            </div>
+            <div className="muted">ulog: {stakes[p]}</div>
+          </>
+        )}
+      />
+      <ResultBanner points={points!} players={players} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+    </div>
+  );
+}

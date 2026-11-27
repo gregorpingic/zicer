@@ -1,0 +1,27 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-oddone",
+    "name": "Primjer – Izbaci uljeza",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-oddone-001",
+      "type": "oddone",
+      "difficulty": 2,
+      "category": "Hrvatska",
+      "prompt": "Koji od ovih pojmova nije otok?",
+      "items": [
+        "Krk",
+        "Cres",
+        "Rab",
+        "Pelješac",
+        "Lošinj"
+      ],
+      "odd": 3,
+      "explanation": "Pelješac je poluotok, spojen s kopnom kod Stona. Ostali su otoci Kvarnera."
+    }
+  ]
+}

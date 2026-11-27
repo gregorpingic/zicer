@@ -1,0 +1,21 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-truefalse",
+    "name": "Primjer – Istina ili laž",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-truefalse-001",
+      "type": "truefalse",
+      "difficulty": 2,
+      "category": "Zanimljivosti",
+      "statement": "Kineski zid vidi se golim okom iz svemira.",
+      "answer": false,
+      "source": "NASA – „Great Wall of China” (Earth Observatory)",
+      "explanation": "Zid je dug, ali uzak (širok tek nekoliko metara) i sličan boji okoliša pa ga astronauti golim okom s orbite ne mogu razaznati."
+    }
+  ]
+}

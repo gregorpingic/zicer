@@ -1,0 +1,21 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-year",
+    "name": "Primjer – Pogodi godinu",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-year-001",
+      "type": "year",
+      "difficulty": 1,
+      "category": "Povijest",
+      "question": "Koje je godine potonuo Titanic?",
+      "answer": 1912,
+      "source": "Encyclopaedia Britannica – Titanic",
+      "explanation": "Titanic je udario u santu leda 14. travnja 1912., a potonuo je u ranim satima 15. travnja."
+    }
+  ]
+}

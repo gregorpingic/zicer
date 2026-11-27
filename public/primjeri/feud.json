@@ -1,0 +1,64 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-feud",
+    "name": "Primjer – Što kaže narod?",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-feud-001",
+      "type": "feud",
+      "difficulty": 1,
+      "question": "Što ljudi najčešće rade na godišnjem odmoru kad pada kiša?",
+      "estimated": true,
+      "answers": [
+        {
+          "text": "Gledaju filmove ili serije",
+          "points": 30,
+          "accept": [
+            "film",
+            "serija",
+            "netflix",
+            "televizija"
+          ]
+        },
+        {
+          "text": "Spavaju",
+          "points": 25,
+          "accept": [
+            "spavanje",
+            "drijemaju"
+          ]
+        },
+        {
+          "text": "Idu u trgovački centar",
+          "points": 20,
+          "accept": [
+            "shopping",
+            "šoping",
+            "kupovina"
+          ]
+        },
+        {
+          "text": "Igraju društvene igre",
+          "points": 15,
+          "accept": [
+            "karte",
+            "igre"
+          ]
+        },
+        {
+          "text": "Sjede u kafiću",
+          "points": 10,
+          "accept": [
+            "kava",
+            "kafić",
+            "birtija"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-quiz",
+    "name": "Primjer – Klasični kviz",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-quiz-001",
+      "type": "quiz",
+      "difficulty": 1,
+      "category": "Životinje",
+      "question": "Koja je najveća životinja koja je ikada živjela na Zemlji?",
+      "options": [
+        "Argentinosaurus",
+        "Plavetni kit",
+        "Afrički slon",
+        "Megalodon"
+      ],
+      "correct": 1,
+      "source": "Smithsonian Ocean – Blue Whale",
+      "explanation": "Plavetni kit može narasti do oko 30 m i težiti više od 150 tona – više od bilo kojeg poznatog dinosaura."
+    }
+  ]
+}
