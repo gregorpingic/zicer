@@ -99,6 +99,8 @@ export default function TvLobby({
     },
     { id: 'time', label: 'Tempo', value: TEMPO_NAMES[settings.tempo ?? 'normalno'], act: () => set({ tempo: next(TEMPOS, settings.tempo ?? 'normalno') }) },
     { id: 'auto', label: 'Automatski nastavak', value: settings.autoNext ? 'Da' : 'Ne', act: () => set({ autoNext: !settings.autoNext }) },
+    { id: 'jokers', label: 'Džokeri', value: settings.jokers ? 'Da' : 'Ne', act: () => set({ jokers: !settings.jokers }) },
+    { id: 'speed', label: 'Brzinski bonus', value: settings.speedBonus ? 'Da' : 'Ne', act: () => set({ speedBonus: !settings.speedBonus }) },
   ];
 
   const phoneButtons: ControlButton[] = [

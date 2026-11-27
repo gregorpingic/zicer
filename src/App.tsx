@@ -68,6 +68,17 @@ function Help({ onBack }: { onBack: () => void }) {
           Neriješen rezultat razrješava se dodatnim pitanjem.
         </p>
       </section>
+      <section className="card">
+        <h2>Džokeri, brzinski bonus i prijava pitanja</h2>
+        <ul className="rules">
+          <li><strong>½ 50:50</strong> – u Kvizu i Uljezu, kad si na potezu, uklanja dva netočna odgovora.</li>
+          <li><strong>×2 Dupli bodovi</strong> – udvostručuje tvoje bodove na trenutačnom pitanju (aktiviraj prije odgovora).</li>
+          <li><strong>⇄ Ukradi potez</strong> – preuzimaš pitanje na kojem je protivnik; pitanje kreće ispočetka s tobom.</li>
+          <li>Svaki džoker može se iskoristiti jednom po dvoboju – na mobitelu ili na ekranu.</li>
+          <li><strong>⚡ Brzinski bonus</strong> – +5 za najbrži točan odgovor u igrama Istina ili laž i Veće ili manje te za točan odgovor u prvoj trećini vremena u Kvizu i Uljezu.</li>
+          <li><strong>⚑ Prijavi</strong> – ako je pitanje netočno, nejasno ili dosadno, prijavi ga; prijave se pregledavaju u „Pitanja i paketi”.</li>
+        </ul>
+      </section>
       {(Object.keys(ROUND_INFO) as (keyof typeof ROUND_INFO)[]).map((k) => (
         <section key={k} className="card">
           <h2>{ROUND_INFO[k].name}</h2>

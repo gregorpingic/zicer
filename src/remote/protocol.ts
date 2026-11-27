@@ -1,4 +1,7 @@
-import type { PlayerIndex } from '../core/types';
+import type { JokerKind, PlayerIndex } from '../core/types';
+
+/** Stanje džokera za prikaz: 'ok' = može se iskoristiti, 'na' = nije primjenjiv sada, 'used' = potrošen. */
+export type JokerView = Record<JokerKind, 'ok' | 'na' | 'used'>;
 
 // Protokol između televizora (domaćin, vodi igru) i mobitela (upravljači).
 // Televizor opisuje što koji igrač trenutačno može napraviti (ControlSpec),
@@ -58,6 +61,10 @@ export interface PhoneInfo {
   /** Trenutačno pitanje i tko je na potezu (za prikaz dok mobitel čeka). */
   question?: string;
   turn?: string;
+  /** Džokeri po igraču (ako su uključeni). */
+  jokers?: [JokerView, JokerView];
+  /** Može li se trenutačno pitanje prijaviti. */
+  canReport?: boolean;
 }
 
 export type HostMessage =
@@ -71,7 +78,9 @@ export type PhoneCommand =
   | { cmd: 'resume' }
   | { cmd: 'skip' }
   | { cmd: 'adjust'; player: PlayerIndex; delta: number }
-  | { cmd: 'zoom'; delta: number };
+  | { cmd: 'zoom'; delta: number }
+  | { cmd: 'joker'; kind: JokerKind }
+  | { cmd: 'report'; reason: string };
 
 export type PhoneMessage =
   | { type: 'join'; player: PlayerIndex }

@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import type { GameProps } from './types';
 import type { Outcome, PlayerIndex } from '../core/types';
-import { POINTS, closestPoints, maxStake, pricePoints, yearPoints } from '../core/scoring';
+import { POINTS, closestPoints, maxStake, pricePoints, speedBonus, yearPoints } from '../core/scoring';
 import { sfx } from '../core/sound';
 import {
   Button,
@@ -14,12 +14,30 @@ import {
   SecretSequence,
   formatNumber,
   pointsLine,
+  useSettings,
 } from '../components/common';
 
 type Pair<T> = [T | null, T | null];
 const order = (active: PlayerIndex): PlayerIndex[] => [active, (1 - active) as PlayerIndex];
 const pair = <T,>(v: Partial<Record<PlayerIndex, T | null>>): Pair<T> => [v[0] ?? null, v[1] ?? null];
 const NO_ANSWER = <span className="muted">⌛ bez odgovora</span>;
+type Times = Partial<Record<PlayerIndex, number>>;
+
+/** Zbraja osnovne bodove i brzinski bonus (ako je uključen). */
+function withSpeed(base: [number, number], correct: [boolean, boolean], times: Times, enabled: boolean): { points: [number, number]; bonus: [number, number] } {
+  const bonus = enabled ? speedBonus(correct, [times[0], times[1]]) : ([0, 0] as [number, number]);
+  return { points: [base[0] + bonus[0], base[1] + bonus[1]], bonus };
+}
+
+function SpeedNote({ bonus, times, players }: { bonus: [number, number]; times: Times; players: [string, string] }) {
+  const p = bonus[0] ? 0 : bonus[1] ? 1 : null;
+  if (p === null) return null;
+  return (
+    <div className="speed-note">
+      ⚡ Brzinski bonus +{bonus[p]}: <strong>{players[p]}</strong> je točno odgovorio/la za {times[p]!.toFixed(1)} s
+    </div>
+  );
+}
 
 function useRevealSound(points: [number, number] | null) {
   const key = points ? points.join(',') : '';
@@ -106,8 +124,13 @@ export function Closest({ question: q, active, players, multiplier, onDone }: Ga
 // ---------------- Istina ili laž ----------------
 
 export function TrueFalse({ question: q, active, players, multiplier, onDone }: GameProps<'truefalse'>) {
+  const { speedBonus: speedOn } = useSettings();
   const [ans, setAns] = useState<Pair<boolean> | null>(null);
-  const points = ans ? (ans.map((a) => (a === q.answer ? POINTS.truefalse : 0)) as [number, number]) : null;
+  const [times, setTimes] = useState<Times>({});
+  const scored = ans
+    ? withSpeed(ans.map((a) => (a === q.answer ? POINTS.truefalse : 0)) as [number, number], ans.map((a) => a === q.answer) as [boolean, boolean], times, speedOn)
+    : null;
+  const points = scored ? scored.points : null;
   useRevealSound(points);
   const card = <QuestionCard label="Istina ili laž?" text={q.statement} />;
   if (!ans)
@@ -120,7 +143,10 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
           renderInput={(_, submit) => <ChoiceEntry options={['Istina', 'Laž']} onSubmit={(i) => submit(i === 0)} />}
           remote={() => ({ kind: 'choice', title: q.statement, options: ['Istina', 'Laž'] })}
           fromValue={(v) => v.choice === 0}
-          onComplete={(v) => setAns(pair(v))}
+          onComplete={(v, t) => {
+            setTimes(t);
+            setAns(pair(v));
+          }}
         />
       </div>
     );
@@ -141,6 +167,7 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
           )
         }
       />
+      <SpeedNote bonus={scored!.bonus} times={times} players={players} />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
       <NextButton readText={q.explanation} phone={[`Točno: ${q.answer ? 'ISTINA' : 'LAŽ'}`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
@@ -151,8 +178,13 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
 // ---------------- Veće ili manje ----------------
 
 export function HigherLower({ question: q, active, players, multiplier, onDone }: GameProps<'higherlower'>) {
+  const { speedBonus: speedOn } = useSettings();
   const [ans, setAns] = useState<Pair<number> | null>(null);
-  const points = ans ? (ans.map((a) => (a === q.correct ? POINTS.higherlower : 0)) as [number, number]) : null;
+  const [times, setTimes] = useState<Times>({});
+  const scored = ans
+    ? withSpeed(ans.map((a) => (a === q.correct ? POINTS.higherlower : 0)) as [number, number], ans.map((a) => a === q.correct) as [boolean, boolean], times, speedOn)
+    : null;
+  const points = scored ? scored.points : null;
   useRevealSound(points);
   const card = <QuestionCard label="Veće ili manje?" text={q.question} />;
   if (!ans)
@@ -165,7 +197,10 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
           renderInput={(_, submit) => <ChoiceEntry options={q.options} onSubmit={submit} />}
           remote={() => ({ kind: 'choice', title: q.question, options: q.options })}
           fromValue={(v) => v.choice ?? 0}
-          onComplete={(v) => setAns(pair(v))}
+          onComplete={(v, t) => {
+            setTimes(t);
+            setAns(pair(v));
+          }}
         />
       </div>
     );
@@ -174,6 +209,7 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
     <div className="game">
       {card}
       <div className="solution big">{q.options[q.correct]}</div>
+      <SpeedNote bonus={scored!.bonus} times={times} players={players} />
       <AnswerRow
         players={players}
         render={(p) =>

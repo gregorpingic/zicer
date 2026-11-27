@@ -289,8 +289,8 @@ interface SecretProps<T> {
   order: PlayerIndex[];
   header?: ReactNode;
   renderInput: (p: PlayerIndex, submit: (v: T) => void) => ReactNode;
-  /** Vrijednost je null ako igrač nije odgovorio na vrijeme. */
-  onComplete: (values: Partial<Record<PlayerIndex, T | null>>) => void;
+  /** Vrijednost je null ako igrač nije odgovorio na vrijeme; times = sekunde do odgovora. */
+  onComplete: (values: Partial<Record<PlayerIndex, T | null>>, times: Partial<Record<PlayerIndex, number>>) => void;
   /** Opis unosa za mobitel / računalo. */
   remote: (p: PlayerIndex) => RemoteInput;
   /** Pretvara odgovor s mobitela ili računala u vrijednost. */
@@ -310,16 +310,21 @@ function ParallelSecretSequence<T>({ players, order, header, renderInput, onComp
   const seconds = useAnswerTime();
   const [vals, setVals] = useState<Partial<Record<PlayerIndex, T | null>>>({});
   const done = useRef(false);
+  const started = useRef(performance.now());
+  const times = useRef<Partial<Record<PlayerIndex, number>>>({});
   const pending = (p: PlayerIndex) => order.includes(p) && !(p in vals);
   const spec = (p: PlayerIndex): ControlSpec | null =>
     pending(p) ? ({ ...remote(p), for: p, secret: true, ...(seconds ? { timer: seconds } : {}) } as ControlSpec) : null;
-  const set = (p: PlayerIndex, v: T | null) => setVals((prev) => (p in prev ? prev : { ...prev, [p]: v }));
+  const set = (p: PlayerIndex, v: T | null) => {
+    if (v !== null && times.current[p] === undefined) times.current[p] = (performance.now() - started.current) / 1000;
+    setVals((prev) => (p in prev ? prev : { ...prev, [p]: v }));
+  };
   const modes = [useControl(spec(0), (v) => set(0, fromValue(v, 0))), useControl(spec(1), (v) => set(1, fromValue(v, 1)))];
   const complete = order.every((p) => p in vals);
   useEffect(() => {
     if (complete && !done.current) {
       done.current = true;
-      onComplete(vals);
+      onComplete(vals, times.current);
     }
   }, [complete, vals, onComplete]);
   const timeout = () =>
@@ -367,14 +372,17 @@ function LocalSecretSequence<T>({ players, order, header, renderInput, onComplet
   const [step, setStep] = useState(0);
   const [ready, setReady] = useState(false);
   const values = useRef<Partial<Record<PlayerIndex, T | null>>>({});
+  const times = useRef<Partial<Record<PlayerIndex, number>>>({});
+  const readyAt = useRef(0);
   const p = order[step];
 
   const submit = (v: T | null) => {
     values.current[p] = v;
+    if (v !== null) times.current[p] = (performance.now() - readyAt.current) / 1000;
     if (step + 1 < order.length) {
       setStep(step + 1);
       setReady(false);
-    } else onComplete(values.current);
+    } else onComplete(values.current, times.current);
   };
 
   return (
@@ -393,7 +401,14 @@ function LocalSecretSequence<T>({ players, order, header, renderInput, onComplet
             Uređaj preuzima <strong>{players[p]}</strong>
           </div>
           {order.length > 1 && <div className="muted">{players[(1 - p) as PlayerIndex]}, ne gledaj u ekran!</div>}
-          <Button big onClick={() => setReady(true)} autoFocus>
+          <Button
+            big
+            onClick={() => {
+              readyAt.current = performance.now();
+              setReady(true);
+            }}
+            autoFocus
+          >
             Ja sam {players[p]} – prikaži unos
           </Button>
         </div>

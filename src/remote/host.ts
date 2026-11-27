@@ -31,7 +31,7 @@ export class RemoteHost {
   private nextId = 1;
   private info: PhoneInfo;
   private listeners = new Set<() => void>();
-  private cmdListeners = new Set<(c: PhoneCommand) => void>();
+  private cmdListeners = new Set<(c: PhoneCommand, player: PlayerIndex) => void>();
   private scheduled = false;
   private destroyed = false;
   private retryTimer: number | undefined;
@@ -115,7 +115,7 @@ export class RemoteHost {
       reg.handler(msg.value || {});
     } else if (msg.type === 'cmd') {
       const { type: _t, ...cmd } = msg;
-      this.cmdListeners.forEach((l) => l(cmd as PhoneCommand));
+      this.cmdListeners.forEach((l) => l(cmd as PhoneCommand, player));
     }
   }
 
@@ -195,7 +195,7 @@ export class RemoteHost {
     this.listeners.add(l);
     return () => void this.listeners.delete(l);
   }
-  onCommand(l: (c: PhoneCommand) => void): () => void {
+  onCommand(l: (c: PhoneCommand, player: PlayerIndex) => void): () => void {
     this.cmdListeners.add(l);
     return () => void this.cmdListeners.delete(l);
   }

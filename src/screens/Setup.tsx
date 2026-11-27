@@ -231,6 +231,18 @@ export default function Setup({
           </span>
         </label>
         <label className="check">
+          <input type="checkbox" checked={settings.jokers} onChange={(e) => set({ jokers: e.target.checked })} />
+          <span>
+            <strong>Džokeri</strong> – 50:50, dupli bodovi i ukradi potez, svaki jednom po dvoboju
+          </span>
+        </label>
+        <label className="check">
+          <input type="checkbox" checked={settings.speedBonus} onChange={(e) => set({ speedBonus: e.target.checked })} />
+          <span>
+            <strong>Brzinski bonus</strong> – +5 za brz točan odgovor
+          </span>
+        </label>
+        <label className="check">
           <input type="checkbox" checked={settings.autoNext} onChange={(e) => set({ autoNext: e.target.checked })} />
           <span>
             <strong>Automatski nastavak</strong> – nakon otkrivanja odgovora igra sama ide dalje

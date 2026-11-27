@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { GameProps } from './types';
 import type { Outcome, PlayerIndex } from '../core/types';
 import { POINTS, answerMatches, normalize, orderPoints } from '../core/scoring';
@@ -15,6 +15,7 @@ import {
   SecretSequence,
   TurnBanner,
   useAnswerTime,
+  useSettings,
   pointsLine,
 } from '../components/common';
 import { Control } from '../remote/RemoteContext';
@@ -35,7 +36,9 @@ function OptionsWithSteal({
   explanation,
   source,
   onDone,
+  removed = [],
 }: {
+  removed?: number[];
   options: string[];
   correct: number;
   active: PlayerIndex;
@@ -53,9 +56,14 @@ function OptionsWithSteal({
   const timer = seconds ? { timer: seconds } : {};
   const [first, setFirst] = useState<number | null>(null);
   const [steal, setSteal] = useState<number | null | 'declined'>(null);
+  const { speedBonus: speedOn } = useSettings();
+  const startedAt = useRef(performance.now());
+  const [answerTime, setAnswerTime] = useState<number | null>(null);
+  const fastLimit = seconds ? seconds / 3 : 5;
   const phase = first === null ? 'answer' : first === correct ? 'done' : steal === null ? 'steal' : 'done';
 
   const pickFirst = (i: number) => {
+    setAnswerTime((performance.now() - startedAt.current) / 1000);
     setFirst(i);
     if (i === correct) sfx.correct();
     else sfx.wrong();
@@ -71,6 +79,7 @@ function OptionsWithSteal({
   if (phase === 'done') {
     outcome[active] = first === correct ? 'correct' : 'wrong';
     if (first === correct) points[active] = winPoints;
+    if (first === correct && speedOn && answerTime !== null && answerTime <= fastLimit) points[active] += POINTS.speed;
     else if (typeof steal === 'number') {
       outcome[other] = steal === correct ? 'correct' : 'wrong';
       if (steal === correct) points[other] = POINTS.steal;
@@ -78,6 +87,7 @@ function OptionsWithSteal({
   }
 
   const optClass = (i: number) => {
+    if (phase !== 'done' && removed.includes(i)) return 'choice removed';
     if (phase !== 'done') return i === first ? 'choice wrong' : 'choice';
     if (i === correct) return 'choice right';
     if (i === first || i === steal) return 'choice wrong';
@@ -91,7 +101,7 @@ function OptionsWithSteal({
         <button
           key={i}
           className={optClass(i)}
-          disabled={!clickable || phase === 'done' || (phase === 'steal' && i === first)}
+          disabled={!clickable || phase === 'done' || removed.includes(i) || (phase === 'steal' && i === first)}
           onClick={() => (phase === 'answer' ? pickFirst(i) : pickSteal(i))}
         >
           {options.length === 4 && <span className="choice-letter">{'ABCD'[i]}</span>}
@@ -111,7 +121,7 @@ function OptionsWithSteal({
       {first === -1 && <div className="msg msg-bad">⌛ {players[active]} nije odgovorio/la na vrijeme.</div>}
       {phase === 'answer' && (
         <Control
-          spec={{ for: active, kind: 'choice', title: text, options, ...timer }}
+          spec={{ for: active, kind: 'choice', title: text, options, disabled: removed, ...timer }}
           onSubmit={(v) => v.choice !== undefined && pickFirst(v.choice)}
           display={board(false)}
         >
@@ -125,7 +135,7 @@ function OptionsWithSteal({
             kind: 'choice',
             title: `Krađa za ${POINTS.steal * multiplier} bodova: ${text}`,
             options,
-            disabled: first === null || first < 0 ? [] : [first],
+            disabled: [...removed, ...(first === null || first < 0 ? [] : [first])],
             ...timer,
             buttons: [{ id: 'decline', label: 'Ne želim krasti', variant: 'ghost' }],
           }}
@@ -143,6 +153,11 @@ function OptionsWithSteal({
       {phase === 'done' && (
         <>
           {board(false)}
+          {first === correct && speedOn && answerTime !== null && answerTime <= fastLimit && (
+            <div className="speed-note">
+              ⚡ Brzinski bonus +{POINTS.speed}: točan odgovor za {answerTime.toFixed(1)} s
+            </div>
+          )}
           <ResultBanner points={points} players={players} multiplier={multiplier} />
           <Explanation explanation={explanation} source={source} />
           <NextButton readText={explanation} phone={[`Točno: ${options[correct]}`, pointsLine(points, players, multiplier)]} onClick={() => onDone({ points, outcome })} />
@@ -152,9 +167,10 @@ function OptionsWithSteal({
   );
 }
 
-export function Quiz({ question: q, active, players, multiplier, onDone }: GameProps<'quiz'>) {
+export function Quiz({ question: q, active, players, multiplier, onDone, removed }: GameProps<'quiz'>) {
   return (
     <OptionsWithSteal
+      removed={removed}
       options={q.options}
       correct={q.correct}
       active={active}
@@ -170,9 +186,10 @@ export function Quiz({ question: q, active, players, multiplier, onDone }: GameP
   );
 }
 
-export function OddOne({ question: q, active, players, multiplier, onDone }: GameProps<'oddone'>) {
+export function OddOne({ question: q, active, players, multiplier, onDone, removed }: GameProps<'oddone'>) {
   return (
     <OptionsWithSteal
+      removed={removed}
       options={q.items}
       correct={q.odd}
       active={active}

@@ -9,5 +9,7 @@ export interface GameProps<T extends GameType = GameType> {
   scores: [number, number];
   /** Množitelj bodova (finale) – komponenta ga samo prikazuje, pogon ga primjenjuje. */
   multiplier: number;
+  /** Džoker 50:50 – indeksi uklonjenih netočnih odgovora. */
+  removed?: number[];
   onDone: (result: QuestionOutcome) => void;
 }

@@ -213,10 +213,20 @@ export interface MatchConfig {
   difficulty: DifficultySetting;
 }
 
+export type JokerKind = 'fifty' | 'double' | 'steal';
+/** Džokeri jednog igrača: true = još neiskorišten. */
+export type JokerSet = Record<JokerKind, boolean>;
+
 export interface CurrentQuestion {
   question: Question;
   active: PlayerIndex;
   multiplier: number;
+  /** 50:50 – indeksi uklonjenih netočnih odgovora. */
+  removed?: number[];
+  /** Igrači koji su na ovom pitanju aktivirali dvostruke bodove. */
+  doubled?: PlayerIndex[];
+  /** Brojač preuzimanja poteza (za ponovno pokretanje pitanja). */
+  stolen?: number;
   /** Poruka ako je baza za ovu vrstu iscrpljena pa se pitanja ponavljaju. */
   recycled?: boolean;
 }
@@ -247,6 +257,8 @@ export interface MatchState {
   winner: PlayerIndex | null;
   finishedAt?: number;
   tiebreaks: number;
+  /** Džokeri po igraču (nema ih u starim spremljenim igrama). */
+  jokers?: [JokerSet, JokerSet];
 }
 
 export interface MatchRecord {
@@ -307,6 +319,10 @@ export interface Settings {
   autoNext: boolean;
   /** Miješana pitanja: svako pitanje u rundi je druga vrsta igre. */
   mixed: boolean;
+  /** Džokeri (50:50, dupli bodovi, ukradi potez) – po jedan od svakog po dvoboju. */
+  jokers: boolean;
+  /** Brzinski bonus za brži točan odgovor. */
+  speedBonus: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -322,4 +338,6 @@ export const DEFAULT_SETTINGS: Settings = {
   botLevel: 'srednje',
   autoNext: true,
   mixed: false,
+  jokers: true,
+  speedBonus: true,
 };

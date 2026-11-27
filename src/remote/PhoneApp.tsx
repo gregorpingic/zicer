@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Peer, { type DataConnection } from 'peerjs';
-import type { PlayerIndex } from '../core/types';
+import type { JokerKind, PlayerIndex } from '../core/types';
 import { parseNumber } from '../components/common';
 import {
   PEER_PREFIX,
@@ -203,6 +203,10 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
             send(m);
             setMenu(false);
           }}
+          onReport={(reason) => {
+            send({ type: 'cmd', cmd: 'report', reason });
+            setMenu(false);
+          }}
           onSwitch={() => {
             save({ code });
             setMenu(false);
@@ -215,6 +219,25 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
         />
       )}
       {info?.paused && <div className="phone-paused">Pauza</div>}
+      {info?.jokers && me !== null && info.inGame && (
+        <div className="phone-jokers">
+          {PHONE_JOKERS.map((j) => {
+            const st = info.jokers![me][j.kind];
+            return (
+              <button
+                key={j.kind}
+                className={`joker ${st}`}
+                disabled={st !== 'ok'}
+                onClick={() => send({ type: 'cmd', cmd: 'joker', kind: j.kind })}
+                title={j.label}
+              >
+                <span className="joker-icon">{j.icon}</span>
+                <span className="joker-label">{st === 'used' ? 'iskorišten' : j.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
       <main className="phone-body">
         {[...own, ...shared].map((c) => (
           <ControlView key={c.id} c={c} paused={!!info?.paused} onSubmit={(v) => submit(c, v)} />
@@ -267,20 +290,30 @@ function CodeEntry({ initial, error, onSubmit, onLeave }: { initial: string; err
   );
 }
 
+const PHONE_JOKERS: { kind: JokerKind; icon: string; label: string }[] = [
+  { kind: 'fifty', icon: '½', label: '50:50' },
+  { kind: 'double', icon: '×2', label: 'Dupli bodovi' },
+  { kind: 'steal', icon: '⇄', label: 'Ukradi potez' },
+];
+const REASONS = ['Netočan odgovor', 'Nejasno pitanje', 'Glupo ili dosadno', 'Ponavlja se', 'Zastarjelo'];
+
 function PhoneMenu({
   info,
   players,
   onCmd,
+  onReport,
   onSwitch,
   onLeave,
 }: {
   info: PhoneInfo | null;
   players: [string, string];
   onCmd: (m: PhoneMessage) => void;
+  onReport: (reason: string) => void;
   onSwitch: () => void;
   onLeave: () => void;
 }) {
   const [confirmSkip, setConfirmSkip] = useState(false);
+  const [reporting, setReporting] = useState(false);
   return (
     <div className="phone-menu">
       {info?.inGame && (
@@ -297,6 +330,21 @@ function PhoneMenu({
               Sigurno preskoči?
             </button>
           )}
+          {info.canReport &&
+            (!reporting ? (
+              <button className="btn btn-secondary" onClick={() => setReporting(true)}>
+                ⚑ Prijavi ovo pitanje
+              </button>
+            ) : (
+              <div className="phone-adjust">
+                <div className="muted small">Što ne valja s pitanjem?</div>
+                {REASONS.map((r) => (
+                  <button key={r} className="btn btn-secondary" onClick={() => onReport(r)}>
+                    {r}
+                  </button>
+                ))}
+              </div>
+            ))}
           <div className="phone-adjust">
             <div className="muted small">Ručna korekcija bodova</div>
             {([0, 1] as const).map((p) => (

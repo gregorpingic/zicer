@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ComponentType } from 'react';
-import type { GameType, MatchState, PlayerIndex, QuestionOutcome } from '../core/types';
+import type { GameType, JokerKind, MatchState, PlayerIndex, Question, QuestionOutcome } from '../core/types';
 import { GAME_COMPONENTS } from '../games';
 import type { GameProps } from '../games/types';
 import { MODE_NAMES, ROUND_INFO, SIMULTANEOUS, questionText } from '../core/gameInfo';
@@ -8,7 +8,78 @@ import { addMatchRecord, saveMatch } from '../db/db';
 import { sfx } from '../core/sound';
 import { stopSpeaking } from '../core/speech';
 import { summarizeMatch } from '../core/stats';
-import { AutoAdvance, Button, Confirm, Modal, PauseContext, QuestionTypeContext, parseNumber, readingTime } from '../components/common';
+import { AutoAdvance, Button, Confirm, Modal, PauseContext, QuestionTypeContext, parseNumber, readingTime, useSettings } from '../components/common';
+import { reportQuestion } from '../db/sync';
+import type { JokerView } from '../remote/protocol';
+
+export const JOKERS: { kind: JokerKind; icon: string; label: string; help: string }[] = [
+  { kind: 'fifty', icon: '½', label: '50:50', help: 'Uklanja dva netočna odgovora (Kviz i Uljez, kad si na potezu)' },
+  { kind: 'double', icon: '×2', label: 'Dupli bodovi', help: 'Udvostručuje tvoje bodove na ovom pitanju' },
+  { kind: 'steal', icon: '⇄', label: 'Ukradi potez', help: 'Preuzimaš pitanje na kojem je protivnik – kreće ispočetka s tobom' },
+];
+
+export const REPORT_REASONS = ['Netočan odgovor', 'Nejasno pitanje', 'Glupo ili dosadno', 'Ponavlja se', 'Zastarjelo'];
+
+function jokerViews(state: MatchState): [JokerView, JokerView] | undefined {
+  if (!state.jokers) return undefined;
+  return ([0, 1] as const).map((p) =>
+    Object.fromEntries(
+      JOKERS.map((j) => [j.kind, !state.jokers![p][j.kind] ? 'used' : engine.canUseJoker(state, p, j.kind) ? 'ok' : 'na']),
+    ),
+  ) as [JokerView, JokerView];
+}
+
+/** Džokeri oba igrača; aktivni se mogu kliknuti na ovom ekranu (ili s mobitela). */
+function JokerBar({ state, onUse }: { state: MatchState; onUse: (p: PlayerIndex, k: JokerKind) => void }) {
+  const views = jokerViews(state);
+  if (!views) return null;
+  return (
+    <div className="joker-bar">
+      {([0, 1] as const).map((p) => (
+        <div key={p} className={`joker-group p${p}`}>
+          <span className="joker-name">{state.players[p]}</span>
+          {JOKERS.map((j) => (
+            <button
+              key={j.kind}
+              className={`joker ${views[p][j.kind]}`}
+              disabled={views[p][j.kind] !== 'ok'}
+              title={`${j.label} – ${j.help}`}
+              aria-label={`${state.players[p]}: ${j.label}`}
+              onClick={() => onUse(p, j.kind)}
+            >
+              {j.icon}
+            </button>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ReportModal({ question, onSend, onClose }: { question: Question; onSend: (reason: string) => void; onClose: () => void }) {
+  const [text, setText] = useState('');
+  return (
+    <Modal title="Prijavi pitanje" onClose={onClose}>
+      <p className="muted small">„{questionText(question)}”</p>
+      <div className="row">
+        {REPORT_REASONS.map((r) => (
+          <Button key={r} variant="secondary" onClick={() => onSend(text ? `${r}: ${text}` : r)}>
+            {r}
+          </Button>
+        ))}
+      </div>
+      <textarea className="json-area report-text" placeholder="Neobavezno: što točno ne valja?" value={text} onChange={(e) => setText(e.target.value)} />
+      <div className="row end">
+        <Button variant="ghost" onClick={onClose}>
+          Odustani
+        </Button>
+        <Button onClick={() => onSend(text || 'Prijavljeno')} disabled={!text.trim()}>
+          Pošalji
+        </Button>
+      </div>
+    </Modal>
+  );
+}
 import { Control, useHub } from '../remote/RemoteContext';
 import TvZoomButtons from '../remote/TvZoomButtons';
 
@@ -357,12 +428,44 @@ export default function GameScreen({
 
   // Način s mobitelima: naredbe s mobitela i podaci za njihovo zaglavlje.
   const { host, bot } = useHub();
+  const settings = useSettings();
+  const [reportOpen, setReportOpen] = useState(false);
+  const [toast, setToast] = useState('');
+  const showToast = (t: string) => {
+    setToast(t);
+    window.setTimeout(() => setToast(''), 3000);
+  };
+  /** Džoker: odmah mijenja stanje (bez čekanja), uz kratku obavijest. */
+  const useJokerFor = (p: PlayerIndex, kind: JokerKind) => {
+    const before = stateRef.current;
+    const after = engine.useJoker(before, p, kind);
+    if (after === before) return;
+    sfx.reveal();
+    void commit(after);
+    showToast(`${before.players[p]} koristi džoker: ${JOKERS.find((j) => j.kind === kind)!.label}!`);
+  };
+  const sendReport = (reason: string, p: PlayerIndex | null) => {
+    const q = stateRef.current.current?.question;
+    if (!q) return;
+    void reportQuestion({
+      question_id: q.id,
+      pack_id: q.packId ?? null,
+      text: questionText(q),
+      reason,
+      by_name: p === null ? '' : stateRef.current.players[p],
+    });
+    setReportOpen(false);
+    showToast('Pitanje je prijavljeno – hvala! Pregledat ćemo ga u „Pitanja i paketi”.');
+  };
+
   // Računalo mora znati koje je pitanje na redu (za svoje odgovore).
   bot?.setQuestion(state.current?.question ?? null);
   useEffect(() => {
     if (!host) return;
-    return host.onCommand((c) => {
-      if (c.cmd === 'pause') setPaused(true);
+    return host.onCommand((c, from) => {
+      if (c.cmd === 'joker') useJokerFor(from, c.kind);
+      else if (c.cmd === 'report') sendReport(c.reason, from);
+      else if (c.cmd === 'pause') setPaused(true);
       else if (c.cmd === 'resume') setPaused(false);
       else if (c.cmd === 'skip') {
         const s = stateRef.current;
@@ -389,8 +492,10 @@ export default function GameScreen({
       question: state.current ? questionText(state.current.question) : undefined,
       turn:
         state.current && !SIMULTANEOUS.includes(state.current.question.type) ? `Na potezu: ${state.players[state.current.active]}` : undefined,
+      jokers: settings.jokers ? jokerViews(state) : undefined,
+      canReport: !!state.current,
     });
-  }, [host, state, paused]);
+  }, [host, state, paused, settings.jokers]);
 
   const cur = state.current;
   const inQuestion = (state.phase === 'question' || state.phase === 'tiebreak') && cur;
@@ -422,9 +527,10 @@ export default function GameScreen({
         )}
         <QuestionTypeContext.Provider value={cur.question.type}>
         <Comp
-          key={`${cur.question.id}-${state.results.length}`}
+          key={`${cur.question.id}-${state.results.length}-${cur.stolen || 0}`}
           question={cur.question}
           active={cur.active}
+          removed={cur.removed}
           players={state.players}
           scores={state.scores}
           multiplier={cur.multiplier}
@@ -452,13 +558,21 @@ export default function GameScreen({
           <Button variant="ghost" onClick={() => setAdjust(true)}>
             ± Bodovi
           </Button>
+          {inQuestion && (
+            <Button variant="ghost" onClick={() => setReportOpen(true)}>
+              ⚑ Prijavi
+            </Button>
+          )}
           <Button variant="ghost" onClick={() => setConfirm('exit')}>
             ✕ Izlaz
           </Button>
           {host && <TvZoomButtons />}
         </div>
         )}
+        {settings.jokers && state.phase === 'question' && <JokerBar state={state} onUse={useJokerFor} />}
+        {toast && <div className="game-toast">{toast}</div>}
         <main className={`stage ${busy ? 'busy' : ''} ${paused ? 'hidden' : ''}`} aria-hidden={paused}>{content}</main>
+        {reportOpen && cur && <ReportModal question={cur.question} onClose={() => setReportOpen(false)} onSend={(r) => sendReport(r, null)} />}
 
         {paused && (
           <div className="pause-overlay">

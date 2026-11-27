@@ -2,6 +2,8 @@ import type {
   CurrentQuestion,
   DifficultySetting,
   GameType,
+  JokerKind,
+  JokerSet,
   MatchConfig,
   MatchRecord,
   MatchState,
@@ -10,7 +12,7 @@ import type {
   QuestionOutcome,
   RoundKind,
 } from './types';
-import { BOT_EXCLUDED, FINALE_POOL, GAME_TYPES, categoryOf } from './gameInfo';
+import { BOT_EXCLUDED, FINALE_POOL, GAME_TYPES, SIMULTANEOUS, categoryOf } from './gameInfo';
 import { POINTS } from './scoring';
 import * as store from '../db/db';
 
@@ -50,8 +52,42 @@ export function planRounds(types: GameType[], count: number, withFinale: boolean
   return rounds;
 }
 
+const fullJokers = (): JokerSet => ({ fifty: true, double: true, steal: true });
+
+/** Može li igrač p sada iskoristiti džoker? */
+export function canUseJoker(state: MatchState, p: PlayerIndex, kind: JokerKind): boolean {
+  const cur = state.current;
+  if (!state.jokers?.[p][kind] || !cur || state.phase !== 'question') return false;
+  const t = cur.question.type;
+  if (kind === 'fifty') return (t === 'quiz' || t === 'oddone') && cur.active === p && !cur.removed;
+  if (kind === 'double') return t !== 'risk' && !cur.doubled?.includes(p);
+  return !SIMULTANEOUS.includes(t) && cur.active !== p;
+}
+
+/** Aktivira džoker; ako nije dopušten, vraća nepromijenjeno stanje. */
+export function useJoker(state: MatchState, p: PlayerIndex, kind: JokerKind): MatchState {
+  if (!canUseJoker(state, p, kind)) return state;
+  const cur = { ...state.current! };
+  const jokers = state.jokers!.map((j, i) => (i === p ? { ...j, [kind]: false } : j)) as [JokerSet, JokerSet];
+  if (kind === 'fifty') {
+    const q = cur.question as Extract<Question, { type: 'quiz' | 'oddone' }>;
+    const correct = q.type === 'quiz' ? q.correct : q.odd;
+    const count = q.type === 'quiz' ? q.options.length : q.items.length;
+    const wrong = shuffle(Array.from({ length: count }, (_, i) => i).filter((i) => i !== correct));
+    cur.removed = wrong.slice(0, 2);
+  } else if (kind === 'double') {
+    cur.doubled = [...(cur.doubled || []), p];
+  } else {
+    cur.active = p;
+    cur.stolen = (cur.stolen || 0) + 1;
+    cur.removed = undefined;
+  }
+  return { ...state, current: cur, jokers };
+}
+
 export function createMatch(players: [string, string], config: MatchConfig): MatchState {
   return {
+    jokers: [fullJokers(), fullJokers()],
     id: uid(),
     startedAt: Date.now(),
     players,
@@ -177,6 +213,8 @@ export async function completeQuestion(state: MatchState, result: QuestionOutcom
   if (!cur) return state;
   const m = cur.question.type === 'risk' ? 1 : cur.multiplier;
   const points: [number, number] = [result.points[0] * m, result.points[1] * m];
+  // Džoker „dupli bodovi” udvostručuje samo pozitivne bodove.
+  for (const p of cur.doubled || []) if (points[p] > 0) points[p] *= 2;
   const scores: [number, number] = [state.scores[0] + points[0], state.scores[1] + points[1]];
   const next: MatchState = {
     ...state,

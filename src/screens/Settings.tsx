@@ -94,6 +94,19 @@ export default function Settings({ settings, onSave, onBack }: { settings: S; on
           </span>
         </label>
         <label className="check">
+          <input type="checkbox" checked={s.jokers} onChange={(e) => set('jokers', e.target.checked)} />
+          <span>
+            <strong>Džokeri</strong> – svaki igrač po dvoboju ima 50:50, dupli bodovi i ukradi potez
+          </span>
+        </label>
+        <label className="check">
+          <input type="checkbox" checked={s.speedBonus} onChange={(e) => set('speedBonus', e.target.checked)} />
+          <span>
+            <strong>Brzinski bonus</strong> – +5 bodova za najbrži točan odgovor (Istina ili laž, Veće ili manje) i za
+            brz točan odgovor u Kvizu i Uljezu
+          </span>
+        </label>
+        <label className="check">
           <input type="checkbox" checked={s.mixed} onChange={(e) => set('mixed', e.target.checked)} />
           <span>
             <strong>Miješana pitanja</strong> – svako pitanje u rundi je druga vrsta igre

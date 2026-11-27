@@ -113,3 +113,46 @@ describe('planiranje rundi', () => {
     expect(planRounds(['quiz'], 1, true)).toEqual(['quiz']);
   });
 });
+
+import { canUseJoker, createMatch, useJoker } from './engine';
+import { speedBonus } from './scoring';
+import type { MatchState, Question } from './types';
+
+describe('džokeri', () => {
+  const quiz = { id: 'q-quiz', type: 'quiz', question: '?', options: ['a', 'b', 'c', 'd'], correct: 2, category: 'Sport', source: 's', explanation: 'e' } as Question;
+  const tf = { id: 'q-tf', type: 'truefalse', statement: 'x', answer: true, source: 's', explanation: 'e' } as Question;
+  const base = (q: Question): MatchState => ({
+    ...createMatch(['A', 'B'], { mode: 'brzi', types: [], finale: false, rounds: ['quiz'], questionsPerRound: 2, difficulty: 'sve' }),
+    phase: 'question',
+    current: { question: q, active: 0, multiplier: 1 },
+  });
+  it('50:50 uklanja dva netočna odgovora i troši se', () => {
+    const s = useJoker(base(quiz), 0, 'fifty');
+    expect(s.current!.removed).toHaveLength(2);
+    expect(s.current!.removed).not.toContain(2);
+    expect(canUseJoker(s, 0, 'fifty')).toBe(false);
+    expect(s.jokers![0].fifty).toBe(false);
+  });
+  it('50:50 ne može igrač koji nije na potezu', () => {
+    expect(canUseJoker(base(quiz), 1, 'fifty')).toBe(false);
+  });
+  it('ukradi potez mijenja igrača, ali ne kod istodobnih igara', () => {
+    expect(useJoker(base(quiz), 1, 'steal').current!.active).toBe(1);
+    expect(canUseJoker(base(tf), 1, 'steal')).toBe(false);
+  });
+  it('dupli bodovi udvostručuju samo pozitivne bodove', async () => {
+    const { completeQuestion } = await import('./engine');
+    const s = useJoker(base(tf), 1, 'double');
+    // tiebreak faza izbjegava učitavanje sljedećeg pitanja iz baze
+    const out = await completeQuestion({ ...s, phase: 'roundSummary', questionIndex: 1 }, { points: [10, 10], outcome: ['correct', 'correct'] });
+    expect(out.scores).toEqual([10, 20]);
+  });
+});
+
+describe('brzinski bonus', () => {
+  it('najbrži među točnima dobiva +5', () => {
+    expect(speedBonus([true, true], [3.2, 1.1])).toEqual([0, 5]);
+    expect(speedBonus([true, false], [5, 1])).toEqual([5, 0]);
+    expect(speedBonus([false, false], [1, 2])).toEqual([0, 0]);
+  });
+});

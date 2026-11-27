@@ -2991,3 +2991,123 @@ body {
   color: var(--muted);
   font-size: 1rem;
 }
+
+/* Džokeri */
+.joker-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.2rem 1rem 0;
+}
+.joker-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.joker-group.p1 {
+  flex-direction: row-reverse;
+}
+.joker-name {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0.3rem;
+}
+.joker {
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  min-width: 2.3rem;
+  height: 2.1rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  cursor: pointer;
+}
+.joker.ok {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(245, 184, 46, 0.1);
+}
+.joker.ok:hover {
+  background: rgba(245, 184, 46, 0.22);
+}
+.joker.used {
+  opacity: 0.3;
+  text-decoration: line-through;
+  cursor: default;
+}
+.joker.na {
+  opacity: 0.55;
+  cursor: default;
+}
+.phone-jokers {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem 0;
+}
+.phone-jokers .joker {
+  flex: 1;
+  height: auto;
+  min-height: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 0.3rem;
+}
+.joker-icon {
+  font-size: 1rem;
+}
+.joker-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.choice.removed {
+  opacity: 0.18;
+  text-decoration: line-through;
+}
+.speed-note {
+  text-align: center;
+  color: var(--gold);
+  font-weight: 700;
+  animation: reveal 0.35s ease;
+}
+.game-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 30;
+  background: var(--panel2);
+  border: 1px solid var(--gold);
+  color: var(--text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  animation: fade-in 0.25s ease;
+  max-width: 90vw;
+  text-align: center;
+}
+.report-text {
+  min-height: 4rem;
+  margin-top: 0.8rem;
+}
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.report-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+}

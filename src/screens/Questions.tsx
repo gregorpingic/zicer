@@ -5,6 +5,62 @@ import { QUIZ_CATEGORIES, parsePack, validateQuestion } from '../core/validate';
 import { addQuestions, allQuestions, clearPlayed, deletePack, deleteQuestion, listPacks, playedCount } from '../db/db';
 import { Button, Confirm, parseNumber, plural } from '../components/common';
 import SyncBadge, { useDataRefresh } from '../components/SyncBadge';
+import { deleteReport, listReports, type QuestionReport } from '../db/sync';
+
+function ReportsSection({ onChange }: { onChange: () => void }) {
+  const [reports, setReports] = useState<QuestionReport[] | null>(null);
+  const [error, setError] = useState('');
+  const load = () =>
+    listReports()
+      .then((r) => {
+        setReports(r);
+        setError('');
+      })
+      .catch(() => setError('Prijave se ne mogu učitati bez interneta.'));
+  useEffect(() => {
+    void load();
+  }, []);
+  const resolve = async (r: QuestionReport, removeQuestion: boolean) => {
+    if (removeQuestion) await deleteQuestion(r.question_id);
+    await deleteReport(r.id!);
+    await load();
+    onChange();
+  };
+  return (
+    <section className="card">
+      <h2>Prijavljena pitanja {reports?.length ? `(${reports.length})` : ''}</h2>
+      <p className="muted small">
+        Pitanja koja ste tijekom igre označili s ⚑. Obrisano pitanje nestaje sa svih uređaja.
+      </p>
+      {error && <div className="msg msg-info">{error}</div>}
+      {reports && reports.length === 0 && <p className="muted">Nema prijavljenih pitanja. 👍</p>}
+      <ul className="report-list">
+        {reports?.map((r) => (
+          <li key={r.id}>
+            <div>
+              <div>
+                <span className="q-id">{r.question_id}</span> {r.text}
+              </div>
+              <div className="muted small">
+                {r.reason}
+                {r.by_name ? ` · ${r.by_name}` : ''}
+                {r.created_at ? ` · ${new Date(r.created_at).toLocaleDateString('hr-HR')}` : ''}
+              </div>
+            </div>
+            <div className="row">
+              <Button variant="danger" onClick={() => void resolve(r, true)}>
+                Obriši pitanje
+              </Button>
+              <Button variant="ghost" onClick={() => void resolve(r, false)}>
+                Zanemari
+              </Button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 const OWN_PACK: Omit<PackInfo, 'count' | 'importedAt'> = { id: 'vlastita-pitanja', name: 'Vlastita pitanja' };
 
@@ -470,6 +526,7 @@ export default function Questions({ onBack }: { onBack: () => void }) {
         )}
       </section>
 
+      <ReportsSection onChange={() => void load()} />
       <ImportSection onChange={() => void load()} />
       <CustomQuestionForm onAdded={() => void load()} />
 

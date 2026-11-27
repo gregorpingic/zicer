@@ -118,6 +118,24 @@ async function api(request, env, url) {
     }
   }
 
+  if (parts[1] === 'report' && m === 'POST') {
+    const b = await body(request);
+    if (!b || !okId(b.question_id)) return json({ error: 'Neispravna prijava' }, 400);
+    const cnt = await db.prepare('SELECT COUNT(*) AS n FROM reports').first();
+    if (cnt && cnt.n > 2000) return json({ error: 'Previše prijava' }, 429);
+    await db.prepare('INSERT INTO reports (question_id, pack_id, text, reason, by_name, created_at) VALUES (?, ?, ?, ?, ?, ?)')
+      .bind(b.question_id, b.pack_id ?? null, String(b.text || '').slice(0, 500), String(b.reason || '').slice(0, 300), String(b.by_name || '').slice(0, 40), now).run();
+    return json({ ok: true });
+  }
+  if (parts[1] === 'reports' && m === 'GET') {
+    const r = await db.prepare('SELECT * FROM reports ORDER BY created_at DESC LIMIT 500').all();
+    return json(r.results);
+  }
+  if (parts[1] === 'report' && m === 'DELETE' && /^\d+$/.test(parts[2] || '')) {
+    await db.prepare('DELETE FROM reports WHERE id = ?').bind(Number(parts[2])).run();
+    return json({ ok: true });
+  }
+
   return json({ error: 'Nepoznata putanja' }, 404);
 }
 

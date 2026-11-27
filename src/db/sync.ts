@@ -10,7 +10,7 @@ import * as store from './db';
 const API = 'https://zicer.lastegg.app/api';
 
 /** Postavke su iste na svim uređajima – sve, uključujući zvuk i glas. */
-const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer'];
+const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer', 'jokers', 'speedBonus'];
 
 export type SyncStatus = { state: 'idle' | 'syncing' | 'ok' | 'offline'; at?: number; message?: string };
 
@@ -112,7 +112,8 @@ async function syncOnce() {
   setStatus({ state: 'syncing', at: status.at });
   let changed = false;
   try {
-    // 1) Prvo pošalji brisanja i resetiranja napravljena na ovom uređaju.
+    // 1) Prvo pošalji prijave, brisanja i resetiranja napravljena na ovom uređaju.
+    await flushReports();
     for (const id of await store.getPending('deletes')) {
       await call(`/pack/${encodeURIComponent(id)}`, { method: 'DELETE' });
       await store.removePending('deletes', id);
@@ -231,4 +232,41 @@ export function startSync() {
   window.addEventListener('online', () => void syncNow());
   // Često, da promjena postavki ili novi paket stignu na ostale uređaje za nekoliko sekundi.
   window.setInterval(() => document.visibilityState === 'visible' && void syncNow(), 10_000);
+}
+
+// ---------- Prijava pitanja ----------
+
+export interface QuestionReport {
+  id?: number;
+  question_id: string;
+  pack_id: string | null;
+  text: string;
+  reason: string;
+  by_name: string;
+  created_at?: number;
+}
+
+/** Šalje prijavu; ako nema interneta, sprema je i šalje pri sljedećem usklađivanju. */
+export async function reportQuestion(r: QuestionReport) {
+  try {
+    await call('/report', { method: 'POST', body: JSON.stringify(r) });
+  } catch {
+    const pending = (await store.kvGet<QuestionReport[]>('pending-reports')) || [];
+    await store.kvSet('pending-reports', [...pending, r]);
+  }
+}
+
+export async function flushReports() {
+  const pending = (await store.kvGet<QuestionReport[]>('pending-reports')) || [];
+  if (!pending.length) return;
+  for (const r of pending) await call('/report', { method: 'POST', body: JSON.stringify(r) });
+  await store.kvSet('pending-reports', []);
+}
+
+export async function listReports(): Promise<QuestionReport[]> {
+  return call<QuestionReport[]>('/reports');
+}
+
+export async function deleteReport(id: number) {
+  await call(`/report/${id}`, { method: 'DELETE' });
 }

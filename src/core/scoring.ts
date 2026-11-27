@@ -17,7 +17,18 @@ export const POINTS = {
   categoryWin: 20,
   tiebreak: 10,
   riskMinStake: 10,
+  speed: 5,
 } as const;
+
+/** Brzinski bonus kod istodobnih odgovora: najbrži među točnima dobiva +5. */
+export function speedBonus(correct: [boolean, boolean], times: [number | undefined, number | undefined]): [number, number] {
+  const cand = ([0, 1] as const).filter((p) => correct[p] && times[p] !== undefined);
+  if (!cand.length) return [0, 0];
+  const fastest = cand.reduce((a, b) => (times[b]! < times[a]! ? b : a));
+  const out: [number, number] = [0, 0];
+  out[fastest] = POINTS.speed;
+  return out;
+}
 
 /** Bodovi za "Najbliži pobjeđuje". */
 export function closestPoints(guesses: [number, number], answer: number): [number, number] {
