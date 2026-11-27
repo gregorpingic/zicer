@@ -291,6 +291,8 @@ export interface MatchState {
   tiebreaks: number;
   /** Džokeri po igraču (nema ih u starim spremljenim igrama). */
   jokers?: [JokerSet, JokerSet];
+  /** Igra je pokrenuta na jednom uređaju (bez mobitela); inače se nastavlja na televizoru s mobitelima. */
+  local?: boolean;
 }
 
 export interface MatchRecord {

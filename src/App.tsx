@@ -226,7 +226,8 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
-  const begin = async (m: MatchState) => {
+  const begin = async (m0: MatchState) => {
+    const m = host ? m0 : { ...m0, local: true };
     await saveMatch(m);
     setMatch(m);
     setScreen('game');
@@ -341,17 +342,14 @@ export default function App() {
           <div className="home-menu">
             {saved && (
               <div className="resume-box">
-                <Button big className="resume" onClick={resumeTv} autoFocus>
-                  ▶ Nastavi igru na televizoru s mobitelima
+                <Button big className="resume" onClick={() => (saved.local ? (setMatch(saved), setScreen('game')) : resumeTv())} autoFocus>
+                  ▶ Nastavi nedovršenu igru{saved.local ? '' : ' (televizor + mobiteli)'}
                   <span className="small muted">
                     {MODE_NAMES[saved.config.mode]} · runda {saved.roundIndex + 1}/{saved.config.rounds.length} · {saved.players[0]}{' '}
                     {saved.scores[0]} : {saved.scores[1]} {saved.players[1]}
                   </span>
                 </Button>
                 <div className="row center">
-                  <button className="link-btn" onClick={() => { setMatch(saved); setScreen('game'); }}>
-                    Nastavi na ovom uređaju (bez mobitela)
-                  </button>
                   <button className="link-btn danger" onClick={() => setConfirmDiscard(true)}>
                     Odustani od ove igre
                   </button>
