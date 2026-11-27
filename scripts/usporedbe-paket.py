@@ -56,9 +56,9 @@ def make(prefix, idx, prompt, items, dated, category, nq):
                           'category': category, 'prompt': prompt, 'pairs': out})
 
 for i, (cat, block) in enumerate(PEOPLE.items()):
-    make(f'osobe{i}', 0, 'Tko je stariji?', parse(block, True), True, cat, 14)
+    make(f'osobe{i}', 0, 'Tko je stariji?', parse(block, True), True, cat, 32)
 for i, (cat, block) in enumerate(EVENTS.items()):
-    make(f'dog{i}', 0, 'Što je bilo prije?', parse(block, False), False, cat, 10 if len(block.split('|')) > 18 else 6)
+    make(f'dog{i}', 0, 'Što je bilo prije?', parse(block, False), False, cat, 20 if len(block.split('|')) > 18 else 14)
 
 pack = {'format': 'zicer-paket', 'version': 1,
         'pack': {'id': 'zicer-usporedbe', 'name': 'Tko je stariji? – usporedbe', 'author': 'Zicer', 'description': 'Brze serije usporedbi: datumi rođenja poznatih osoba i godine događaja.'},
