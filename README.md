@@ -1,5 +1,7 @@
 # Zicer – kućni kviz dvoboj
 
+**Igraj:** https://zicer.lastegg.app (rezervna adresa: https://gregorpingic.github.io/zicer/)
+
 Web-aplikacija (PWA) za dvoje odraslih igrača na jednom uređaju: kombinacija TV kvizova i društvenih igara,
 bez voditelja, registracije i interneta.
 
@@ -15,6 +17,12 @@ npm run preview    # posluživanje dist/ – odavde se aplikacija može instalir
 
 Za instalaciju na mobitel/TV aplikaciju treba poslužiti preko HTTPS-a (ili `localhost`) – npr. bilo koji
 statički hosting za sadržaj mape `dist/`. Nakon prvog otvaranja radi i bez interneta.
+
+## Objava
+
+- Svaki `git push` na `main` pokreće GitHub Actions: testovi → build → GitHub Pages.
+- `zicer.lastegg.app` je Cloudflare Worker `zicer` ([cloudflare/worker.js](cloudflare/worker.js)) koji poslužuje
+  sadržaj s GitHub Pagesa, pa ga nije potrebno zasebno objavljivati.
 
 ## Igranje na televizoru s mobitelima
 
