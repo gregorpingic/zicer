@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import type { DifficultySetting, GameMode, GameType, MatchConfig, Settings } from '../core/types';
-import { GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from '../core/gameInfo';
+import type { BotLevel, DifficultySetting, GameMode, GameType, MatchConfig, Settings, Tempo } from '../core/types';
+import { BOT_EXCLUDED, GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from '../core/gameInfo';
+import { BOT_LEVEL_NAMES } from '../core/bot';
 import { planRounds } from '../core/engine';
 import { countByType } from '../db/db';
 import { Button } from '../components/common';
@@ -12,15 +13,26 @@ export const DIFFICULTY_OPTIONS: { v: DifficultySetting; label: string }[] = [
   { v: 'tesko', label: 'Teško' },
 ];
 
+export const TEMPO_OPTIONS: { v: Tempo; label: string }[] = [
+  { v: 'opusteno', label: 'Opušteno' },
+  { v: 'normalno', label: 'Normalno' },
+  { v: 'brzo', label: 'Brzo' },
+  { v: 'bez', label: 'Bez ograničenja' },
+];
+
 export default function Setup({
   settings,
+  onSettings,
   onStart,
   onBack,
 }: {
   settings: Settings;
+  onSettings: (s: Settings) => void;
   onStart: (players: [string, string], config: MatchConfig) => void;
   onBack: () => void;
 }) {
+  const [vsBot, setVsBot] = useState(false);
+  const set = (patch: Partial<Settings>) => onSettings({ ...settings, ...patch });
   const [players, setPlayers] = useState<[string, string]>(settings.players);
   const [mode, setMode] = useState<GameMode>('standardni');
   const [random, setRandom] = useState(true);
@@ -33,16 +45,19 @@ export default function Setup({
 
   useEffect(() => {
     void countByType().then(setCounts);
+    const h = () => void countByType().then(setCounts);
+    window.addEventListener('zicer-data', h);
+    return () => window.removeEventListener('zicer-data', h);
   }, []);
   useEffect(() => {
     if (mode !== 'prilagodjeni') setFinale(MODES[mode].finale);
   }, [mode]);
 
-  const available = GAME_TYPES.filter((t) => (counts[t] || 0) > 0);
+  const available = GAME_TYPES.filter((t) => (counts[t] || 0) > 0 && !(vsBot && BOT_EXCLUDED.includes(t)));
   const types = (random ? available : selected.filter((t) => available.includes(t)));
   const rounds = mode === 'prilagodjeni' ? customRounds : MODES[mode].rounds;
   const qpr = mode === 'prilagodjeni' ? customQ : MODES[mode].questionsPerRound;
-  const namesOk = players[0].trim() && players[1].trim() && players[0].trim() !== players[1].trim();
+  const namesOk = vsBot ? !!players[0].trim() : players[0].trim() && players[1].trim() && players[0].trim() !== players[1].trim();
   const canStart = namesOk && types.length > 0;
 
   const toggle = (t: GameType) =>
@@ -53,11 +68,13 @@ export default function Setup({
       mode,
       types,
       finale,
-      rounds: planRounds(types, rounds, finale),
+      mixed: settings.mixed,
+      bot: vsBot ? (settings.botLevel as BotLevel) : undefined,
+      rounds: planRounds(types, rounds, finale, settings.mixed),
       questionsPerRound: qpr,
       difficulty,
     };
-    onStart([players[0].trim(), players[1].trim()], config);
+    onStart([players[0].trim(), vsBot ? settings.botName : players[1].trim()], config);
   };
 
   return (
@@ -70,9 +87,36 @@ export default function Setup({
       </div>
 
       <section className="card">
-        <h2>Igrači</h2>
+        <h2>Protivnik</h2>
+        <div className="seg">
+          <button className={!vsBot ? 'sel' : ''} onClick={() => setVsBot(false)}>
+            👥 Drugi igrač
+          </button>
+          <button className={vsBot ? 'sel' : ''} onClick={() => setVsBot(true)}>
+            🤖 Računalo ({settings.botName})
+          </button>
+        </div>
+        {vsBot && (
+          <>
+            <div className="seg">
+              {(['lako', 'srednje', 'tesko'] as BotLevel[]).map((l) => (
+                <button key={l} className={settings.botLevel === l ? 'sel' : ''} onClick={() => set({ botLevel: l })}>
+                  {BOT_LEVEL_NAMES[l]}
+                </button>
+              ))}
+            </div>
+            <p className="muted small">
+              Računalo odgovara samo. Igre „Koliko me poznaješ?” i „Nabroji tri” se preskaču jer u njima računalo ne može
+              procijeniti tvoje odgovore.
+            </p>
+          </>
+        )}
+      </section>
+
+      <section className="card">
+        <h2>{vsBot ? 'Igrač' : 'Igrači'}</h2>
         <div className="names">
-          {([0, 1] as const).map((p) => (
+          {([0, 1] as const).filter((p) => !vsBot || p === 0).map((p) => (
             <label key={p} className={`name-field p${p}`}>
               <span>Igrač {p + 1}</span>
               <input
@@ -176,6 +220,30 @@ export default function Setup({
           </div>
         )}
         {types.length === 0 && <div className="msg msg-bad">Odaberite barem jednu vrstu igre koja ima pitanja.</div>}
+      </section>
+
+      <section className="card">
+        <h2>Tijek igre</h2>
+        <label className="check">
+          <input type="checkbox" checked={settings.mixed} onChange={(e) => set({ mixed: e.target.checked })} />
+          <span>
+            <strong>Miješana pitanja</strong> – svako pitanje u rundi je druga vrsta igre (umjesto cijele runde iste vrste)
+          </span>
+        </label>
+        <label className="check">
+          <input type="checkbox" checked={settings.autoNext} onChange={(e) => set({ autoNext: e.target.checked })} />
+          <span>
+            <strong>Automatski nastavak</strong> – nakon otkrivanja odgovora igra sama ide dalje
+          </span>
+        </label>
+        <div className="setting-line">Tempo (vrijeme za odgovor ovisi o vrsti igre – podešava se u Postavkama):</div>
+        <div className="seg">
+          {TEMPO_OPTIONS.map((t) => (
+            <button key={t.v} className={settings.tempo === t.v ? 'sel' : ''} onClick={() => set({ tempo: t.v })}>
+              {t.label}
+            </button>
+          ))}
+        </div>
       </section>
 
       <section className="card">

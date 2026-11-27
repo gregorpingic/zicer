@@ -217,7 +217,7 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
       {info?.paused && <div className="phone-paused">Pauza</div>}
       <main className="phone-body">
         {[...own, ...shared].map((c) => (
-          <ControlView key={c.id} c={c} onSubmit={(v) => submit(c, v)} />
+          <ControlView key={c.id} c={c} paused={!!info?.paused} onSubmit={(v) => submit(c, v)} />
         ))}
         {mine.length === 0 && (
           <div className="phone-idle">
@@ -311,6 +311,17 @@ function PhoneMenu({
           </div>
         </>
       )}
+      <div className="phone-adjust">
+        <div className="muted small">Veličina prikaza na televizoru</div>
+        <div className="row">
+          <button className="btn btn-secondary" onClick={() => onCmd({ type: 'cmd', cmd: 'zoom', delta: -0.1 })}>
+            A− manje
+          </button>
+          <button className="btn btn-secondary" onClick={() => onCmd({ type: 'cmd', cmd: 'zoom', delta: 0.1 })}>
+            A+ veće
+          </button>
+        </div>
+      </div>
       <button className="btn btn-ghost" onClick={onSwitch}>
         Promijeni igrača
       </button>
@@ -334,9 +345,34 @@ function Buttons({ c, onSubmit }: { c: { buttons?: ControlButton[] }; onSubmit: 
   );
 }
 
-function ControlView({ c, onSubmit }: { c: Ctl; onSubmit: (v: ControlValue) => void }) {
+/** Odbrojavanje na mobitelu (televizor je mjerodavan; ovo je samo prikaz). */
+function PhoneCountdown({ seconds, paused }: { seconds: number; paused: boolean }) {
+  const [left, setLeft] = useState(seconds * 1000);
+  useEffect(() => {
+    if (paused) return;
+    let last = performance.now();
+    const id = window.setInterval(() => {
+      const now = performance.now();
+      setLeft((l) => Math.max(0, l - (now - last)));
+      last = now;
+    }, 200);
+    return () => window.clearInterval(id);
+  }, [paused]);
+  const sec = Math.ceil(left / 1000);
+  return (
+    <div className={`phone-timer ${sec <= 5 ? 'low' : ''}`}>
+      <div className="phone-timer-bar">
+        <div className="phone-timer-fill" style={{ transform: `scaleX(${left / (seconds * 1000)})` }} />
+      </div>
+      <span>{sec} s</span>
+    </div>
+  );
+}
+
+function ControlView({ c, paused, onSubmit }: { c: Ctl; paused: boolean; onSubmit: (v: ControlValue) => void }) {
   return (
     <section className={`phone-ctl ${c.secret ? 'secret' : ''}`}>
+      {c.timer ? <PhoneCountdown seconds={c.timer} paused={paused} /> : null}
       {c.secret && <div className="phone-secret-tag">🔒 Tajni odgovor – vidiš ga samo ti</div>}
       {c.title && <div className="phone-title">{c.title}</div>}
       {c.note && <div className="msg msg-info">{c.note}</div>}

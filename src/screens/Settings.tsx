@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import type { Settings as S, TimerSetting } from '../core/types';
+import type { BotLevel, GameType, Settings as S } from '../core/types';
+import { DEFAULT_TIMERS } from '../core/types';
+import { GAME_TYPES, ROUND_INFO } from '../core/gameInfo';
+import { BOT_LEVEL_NAMES } from '../core/bot';
 import { hasCroatianVoice, speak, speechSupported } from '../core/speech';
 import { sfx, setSoundEnabled } from '../core/sound';
 import { Button } from '../components/common';
-import { DIFFICULTY_OPTIONS } from './Setup';
+import { DIFFICULTY_OPTIONS, TEMPO_OPTIONS } from './Setup';
 
-const TIMERS: { v: TimerSetting; label: string }[] = [
-  { v: 10, label: '10 s' },
-  { v: 20, label: '20 s' },
-  { v: 30, label: '30 s' },
-  { v: 60, label: '60 s' },
-  { v: 0, label: 'Bez ograničenja' },
-];
+const SECONDS = [0, 5, 10, 15, 20, 25, 30, 40, 45, 60, 90, 120];
+/** Redoslijed u postavkama: od najbržih prema najsporijim igrama. */
+const BY_SPEED = [...GAME_TYPES].sort((a, b) => DEFAULT_TIMERS[a] - DEFAULT_TIMERS[b]);
 
 export default function Settings({ settings, onSave, onBack }: { settings: S; onSave: (s: S) => void; onBack: () => void }) {
   const [s, setS] = useState(settings);
@@ -52,11 +51,67 @@ export default function Settings({ settings, onSave, onBack }: { settings: S; on
 
       <section className="card">
         <h2>Vrijeme za odgovor</h2>
-        <p className="muted small">Za „Nabroji tri” i potez u „Kategorijskom dvoboju” (najviše 20 s po potezu).</p>
+        <p className="muted small">
+          Svaka igra ima svoje vrijeme – kratko za brze odluke, dulje za razmišljanje. Kad istekne, računa se kao da
+          igrač nije odgovorio. Tempo množi sva vremena.
+        </p>
         <div className="seg">
-          {TIMERS.map((t) => (
-            <button key={t.v} className={s.timer === t.v ? 'sel' : ''} onClick={() => set('timer', t.v)}>
+          {TEMPO_OPTIONS.map((t) => (
+            <button key={t.v} className={s.tempo === t.v ? 'sel' : ''} onClick={() => set('tempo', t.v)}>
               {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="timer-table">
+          {BY_SPEED.map((t: GameType) => (
+            <label key={t} className="timer-row">
+              <span>{ROUND_INFO[t].name}</span>
+              <select value={s.timers[t]} onChange={(e) => set('timers', { ...s.timers, [t]: Number(e.target.value) })}>
+                {SECONDS.map((n) => (
+                  <option key={n} value={n}>
+                    {n ? `${n} s` : 'bez ograničenja'}
+                    {n === DEFAULT_TIMERS[t] ? ' (preporučeno)' : ''}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </div>
+        <Button variant="ghost" onClick={() => set('timers', DEFAULT_TIMERS)}>
+          Vrati preporučena vremena
+        </Button>
+      </section>
+
+      <section className="card">
+        <h2>Tijek igre</h2>
+        <label className="check">
+          <input type="checkbox" checked={s.autoNext} onChange={(e) => set('autoNext', e.target.checked)} />
+          <span>
+            <strong>Automatski nastavak</strong> – nakon otkrivanja odgovora, pravila runde i sažetka igra sama ide dalje
+            (pauza zaustavlja odbrojavanje)
+          </span>
+        </label>
+        <label className="check">
+          <input type="checkbox" checked={s.mixed} onChange={(e) => set('mixed', e.target.checked)} />
+          <span>
+            <strong>Miješana pitanja</strong> – svako pitanje u rundi je druga vrsta igre
+          </span>
+        </label>
+      </section>
+
+      <section className="card">
+        <h2>Računalo kao protivnik</h2>
+        <div className="names">
+          <label className="name-field p1">
+            <span>Ime računala</span>
+            <input value={s.botName} maxLength={20} onChange={(e) => set('botName', e.target.value)} />
+          </label>
+        </div>
+        <div className="setting-line">Razina:</div>
+        <div className="seg">
+          {(['lako', 'srednje', 'tesko'] as BotLevel[]).map((l) => (
+            <button key={l} className={s.botLevel === l ? 'sel' : ''} onClick={() => set('botLevel', l)}>
+              {BOT_LEVEL_NAMES[l]}
             </button>
           ))}
         </div>

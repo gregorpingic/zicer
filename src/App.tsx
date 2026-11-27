@@ -1,15 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { GameMode, MatchConfig, MatchState, PackInfo, Settings } from './core/types';
 import { DEFAULT_SETTINGS } from './core/types';
 import { createMatch, planRounds } from './core/engine';
 import { parsePack } from './core/validate';
-import { GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from './core/gameInfo';
+import { BOT_EXCLUDED, GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from './core/gameInfo';
+import { BotPlayer } from './core/bot';
+import { startSync } from './db/sync';
+import SyncBadge from './components/SyncBadge';
 import { setSoundEnabled } from './core/sound';
 import { addQuestions, countByType, db, loadSavedMatch, loadSettings, saveMatch, saveSettings } from './db/db';
 import { RemoteHost } from './remote/host';
 import { RemoteContext } from './remote/RemoteContext';
 import { newRoomCode } from './remote/protocol';
 import TvLobby from './remote/TvLobby';
+import { changeTvZoom, setTvMode } from './remote/tvZoom';
 import builtinPack from './data/osnovni-paket.json';
 import { Button, Confirm, SettingsContext } from './components/common';
 import GameScreen from './screens/GameScreen';
@@ -102,32 +106,61 @@ export default function App() {
   };
   useEffect(() => () => host?.destroy(), [host]);
 
+  // Način za televizor: skaliranje prikaza prema ekranu i promjena veličine s mobitela.
+  const tvActive = !!host && (screen === 'tv' || screen === 'game');
+  useEffect(() => {
+    setTvMode(tvActive);
+  }, [tvActive]);
+  useEffect(() => {
+    if (!host) return;
+    return host.onCommand((c) => {
+      if (c.cmd === 'zoom') changeTvZoom(c.delta);
+    });
+  }, [host]);
+
   const discardSaved = async () => {
     await saveMatch(null);
     setSaved(null);
     setConfirmDiscard(false);
   };
 
-  const quickStart = async (mode: Exclude<GameMode, 'prilagodjeni'>) => {
+  /** Pokretanje s televizora: način, protivnik i postavke iz zaslona za spajanje. */
+  const quickStart = async (mode: Exclude<GameMode, 'prilagodjeni'>, vsBot: boolean) => {
     const counts = await countByType();
-    const types = GAME_TYPES.filter((t) => (counts[t] || 0) > 0);
+    let types = GAME_TYPES.filter((t) => (counts[t] || 0) > 0);
+    if (vsBot) types = types.filter((t) => !BOT_EXCLUDED.includes(t));
     const m = MODES[mode];
     const config: MatchConfig = {
       mode,
       types,
       finale: m.finale,
-      rounds: planRounds(types, m.rounds, m.finale),
+      mixed: settings.mixed,
+      bot: vsBot ? settings.botLevel : undefined,
+      rounds: planRounds(types, m.rounds, m.finale, settings.mixed),
       questionsPerRound: m.questionsPerRound,
       difficulty: settings.difficulty,
     };
+    let players = settings.players;
+    if (vsBot && host) {
+      // Čovjek je uvijek igrač 1; ako je spojen samo drugi mobitel, on preuzima prvo mjesto.
+      const c = host.connected();
+      const human = c[0] || !c[1] ? 0 : 1;
+      if (human === 1) host.movePlayer(1, 0);
+      players = [settings.players[human], settings.botName];
+    } else if (vsBot) players = [settings.players[0], settings.botName];
     await saveMatch(null);
     setSaved(null);
-    void begin(createMatch(settings.players, config));
+    void begin(createMatch(players, config));
   };
+
+  // Računalo kao protivnik postoji samo tijekom dvoboja koji ga ima.
+  const bot = useMemo(() => (match?.config.bot ? new BotPlayer(match.config.bot) : null), [match?.id, match?.config.bot]);
 
   useEffect(() => {
     (async () => {
       await seedBuiltin();
+      startSync();
+      window.addEventListener('zicer-settings', () => void loadSettings().then(setSettings));
       const s = await loadSettings();
       setSettings(s);
       setSoundEnabled(s.sound);
@@ -173,9 +206,11 @@ export default function App() {
       content = (
         <Setup
           settings={settings}
+          onSettings={updateSettings}
           onBack={() => go('home')}
           onStart={(players: [string, string], config: MatchConfig) => {
-            if (players.join() !== settings.players.join()) updateSettings({ ...settings, players });
+            if (!config.bot && players.join() !== settings.players.join()) updateSettings({ ...settings, players });
+            else if (config.bot && players[0] !== settings.players[0]) updateSettings({ ...settings, players: [players[0], settings.players[1]] });
             requestStart(createMatch(players, config));
           }}
         />
@@ -192,7 +227,7 @@ export default function App() {
           }}
           onRematch={(prev) => {
             const c = prev.config;
-            const config = { ...c, rounds: planRounds(c.types, c.rounds.length, c.finale) };
+            const config = { ...c, rounds: planRounds(c.types, c.rounds.length, c.finale, c.mixed) };
             void begin(createMatch(prev.players, config));
           }}
         />
@@ -216,7 +251,9 @@ export default function App() {
           host={host}
           saved={saved}
           onBack={stopTv}
-          onStart={(mode) => void quickStart(mode)}
+          settings={settings}
+          onSettings={updateSettings}
+          onStart={(mode, vsBot) => void quickStart(mode, vsBot)}
           onResume={() => {
             if (saved) {
               setMatch(saved);
@@ -237,6 +274,7 @@ export default function App() {
               <div className="logo-sub">kućni kviz dvoboj</div>
             </div>
           </div>
+          <SyncBadge />
           <div className="home-players">
             <span className="ptag p0">{settings.players[0]}</span>
             <span className="vs">vs</span>
@@ -285,7 +323,15 @@ export default function App() {
 
   return (
     <SettingsContext.Provider value={settings}>
-      <RemoteContext.Provider value={screen === 'game' || screen === 'tv' ? host : null}>{content}</RemoteContext.Provider>
+      <RemoteContext.Provider
+        value={{
+          host: screen === 'game' || screen === 'tv' ? host : null,
+          bot: screen === 'game' ? bot : null,
+          players: screen === 'game' && match ? match.players : settings.players,
+        }}
+      >
+        {content}
+      </RemoteContext.Provider>
       {confirmDiscard && (
         <Confirm
           title="Odustati od nedovršene igre?"

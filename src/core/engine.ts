@@ -10,7 +10,7 @@ import type {
   QuestionOutcome,
   RoundKind,
 } from './types';
-import { FINALE_POOL, GAME_TYPES, categoryOf } from './gameInfo';
+import { BOT_EXCLUDED, FINALE_POOL, GAME_TYPES, categoryOf } from './gameInfo';
 import { POINTS } from './scoring';
 import * as store from '../db/db';
 
@@ -30,11 +30,15 @@ export function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-/** Slaže popis rundi: vrste se ne ponavljaju dok se ne iskoriste sve odabrane. */
-export function planRounds(types: GameType[], count: number, withFinale: boolean): RoundKind[] {
+/**
+ * Slaže popis rundi: vrste se ne ponavljaju dok se ne iskoriste sve odabrane.
+ * Kod miješanih pitanja svaka runda je 'mix' (vrsta se bira za svako pitanje).
+ */
+export function planRounds(types: GameType[], count: number, withFinale: boolean, mixed = false): RoundKind[] {
   const pool = types.length ? types : GAME_TYPES;
   const finale = withFinale && count >= 2;
   const n = finale ? count - 1 : count;
+  if (mixed) return [...Array.from({ length: n }, () => 'mix' as RoundKind), ...(finale ? (['finale'] as RoundKind[]) : [])];
   const out: RoundKind[] = [];
   while (out.length < n) {
     let batch = shuffle(pool);
@@ -126,13 +130,20 @@ async function loadQuestion(state: MatchState, avoidType?: GameType): Promise<Cu
   let type: GameType;
   let multiplier = 1;
   let active: PlayerIndex = ((state.roundIndex + qi) % 2) as PlayerIndex;
-  if (round === 'finale') {
-    multiplier = qi === n - 1 ? 3 : 2;
-    active = trailing(state.scores, (qi % 2) as PlayerIndex);
-    const selected = state.config.rounds.filter((r): r is GameType => r !== 'finale');
-    let pool = await availableTypes(FINALE_POOL.filter((t) => selected.includes(t)));
-    if (!pool.length) pool = await availableTypes(FINALE_POOL);
-    const recent = state.results.slice(-2).map((r) => r.type);
+  if (round === 'finale' || round === 'mix') {
+    const selected = state.config.types?.length
+      ? state.config.types
+      : state.config.rounds.filter((r): r is GameType => r !== 'finale' && r !== 'mix');
+    let pool: GameType[];
+    if (round === 'finale') {
+      multiplier = qi === n - 1 ? 3 : 2;
+      active = trailing(state.scores, (qi % 2) as PlayerIndex);
+      pool = await availableTypes(FINALE_POOL.filter((t) => selected.includes(t)));
+      if (!pool.length) pool = await availableTypes(FINALE_POOL.filter((t) => !state.config.bot || BOT_EXCLUDED.indexOf(t) < 0));
+    } else {
+      pool = await availableTypes(selected);
+    }
+    const recent = state.results.slice(-3).map((r) => r.type);
     const filtered = pool.filter((t) => !recent.includes(t) && t !== avoidType);
     const choose = filtered.length ? filtered : pool;
     if (!choose.length) return null;
@@ -197,11 +208,12 @@ export async function skipQuestion(state: MatchState): Promise<MatchState> {
   const all = await store.questionsByType(cur.question.type);
   const used = new Set(state.usedIds);
   const hasFresh = all.some((q) => !used.has(q.id));
-  if (state.phase === 'tiebreak' || hasFresh || currentRound(state) === 'finale') {
+  const multi = currentRound(state) === 'finale' || currentRound(state) === 'mix';
+  if (state.phase === 'tiebreak' || hasFresh || multi) {
     const replacement =
       state.phase === 'tiebreak'
         ? await loadTiebreakQuestion(state)
-        : currentRound(state) === 'finale'
+        : multi
           ? await loadQuestion(state, hasFresh ? undefined : cur.question.type)
           : await loadQuestion(state);
     if (replacement) {

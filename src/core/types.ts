@@ -18,7 +18,7 @@ export type GameType =
   | 'risk';
 
 /** Runda može biti jedna vrsta igre ili Veliko finale (kombinacija vrsta). */
-export type RoundKind = GameType | 'finale';
+export type RoundKind = GameType | 'finale' | 'mix';
 
 export type Difficulty = 1 | 2 | 3;
 export type PlayerIndex = 0 | 1;
@@ -158,6 +158,10 @@ export interface PackInfo {
   importedAt: number;
   count: number;
   builtin?: boolean;
+  /** Zadnja lokalna promjena (uvoz, brisanje pitanja, vlastito pitanje). */
+  updatedAt?: number;
+  /** Verzija iz oblaka s kojom je paket zadnji put usklađen. */
+  syncedAt?: number;
 }
 
 /** Ishod za statistiku: null = igrač nije sudjelovao u tom pitanju. */
@@ -181,8 +185,14 @@ export interface QuestionResult extends QuestionOutcome {
 export type GameMode = 'brzi' | 'standardni' | 'veliki' | 'prilagodjeni';
 export type DifficultySetting = 'sve' | 'lako' | 'srednje' | 'tesko';
 
+export type BotLevel = 'lako' | 'srednje' | 'tesko';
+
 export interface MatchConfig {
   mode: GameMode;
+  /** Igra protiv računala: računalo je uvijek igrač 2 (indeks 1). */
+  bot?: BotLevel;
+  /** Miješana pitanja: svako pitanje u rundi je druga vrsta igre. */
+  mixed?: boolean;
   /** Odabrane vrste igara (prazno = sve). */
   types: GameType[];
   finale: boolean;
@@ -238,17 +248,52 @@ export interface MatchRecord {
   winner: PlayerIndex;
   results: QuestionResult[];
   adjustments: ScoreAdjustment[];
+  /** Je li zapis poslan u zajedničku bazu. */
+  synced?: boolean;
 }
 
-export type TimerSetting = 10 | 20 | 30 | 60 | 0; // 0 = bez ograničenja
+export type Tempo = 'opusteno' | 'normalno' | 'brzo' | 'bez';
+
+/** Preporučena vremena za odgovor (sekunde) – kratko za brze odluke, dulje za razmišljanje. */
+export const DEFAULT_TIMERS: Record<GameType, number> = {
+  truefalse: 10,
+  higherlower: 10,
+  category: 10,
+  association: 15,
+  describe: 15,
+  quiz: 20,
+  oddone: 20,
+  risk: 20,
+  year: 20,
+  feud: 20,
+  closest: 25,
+  list3: 30,
+  order: 40,
+  knowme: 45,
+};
+
+export const TEMPO_FACTOR: Record<Tempo, number> = { opusteno: 1.5, normalno: 1, brzo: 0.7, bez: 0 };
+
+export type TimerSetting = 10 | 15 | 20 | 30 | 45 | 60 | 0; // 0 = bez ograničenja
 
 export interface Settings {
   players: [string, string];
   sound: boolean;
   speech: boolean;
   autoSpeak: boolean;
+  /** Zastarjelo (prije vremena po vrsti igre); zadržano radi starih postavki. */
   timer: TimerSetting;
+  /** Vrijeme za odgovor po vrsti igre (sekunde, 0 = bez ograničenja). */
+  timers: Record<GameType, number>;
+  /** Tempo množi vremena: opušteno ×1,5, normalno ×1, brzo ×0,7, bez = bez ograničenja. */
+  tempo: Tempo;
   difficulty: DifficultySetting;
+  botName: string;
+  botLevel: BotLevel;
+  /** Automatski nastavak nakon otkrivanja odgovora. */
+  autoNext: boolean;
+  /** Miješana pitanja: svako pitanje u rundi je druga vrsta igre. */
+  mixed: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -257,5 +302,11 @@ export const DEFAULT_SETTINGS: Settings = {
   speech: false,
   autoSpeak: false,
   timer: 30,
+  timers: DEFAULT_TIMERS,
+  tempo: 'normalno',
   difficulty: 'sve',
+  botName: 'Robi',
+  botLevel: 'srednje',
+  autoNext: true,
+  mixed: false,
 };

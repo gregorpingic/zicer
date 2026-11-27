@@ -19,6 +19,13 @@ interface ControlBase {
   note?: string;
   /** Tajni unos – televizor ga nikad ne prikazuje. */
   secret?: boolean;
+  /** Vrijeme za odgovor u sekundama (mobitel prikazuje odbrojavanje). */
+  timer?: number;
+  /**
+   * Uloga kontrole u igri protiv računala: 'judge' – procjena tuđeg odgovora (prepušta se čovjeku),
+   * 'objection' – prigovor na protivnikov odgovor (računalo ga ne koristi).
+   */
+  role?: 'judge' | 'objection';
 }
 
 export type ControlSpec = ControlBase &
@@ -58,7 +65,8 @@ export type PhoneCommand =
   | { cmd: 'pause' }
   | { cmd: 'resume' }
   | { cmd: 'skip' }
-  | { cmd: 'adjust'; player: PlayerIndex; delta: number };
+  | { cmd: 'adjust'; player: PlayerIndex; delta: number }
+  | { cmd: 'zoom'; delta: number };
 
 export type PhoneMessage =
   | { type: 'join'; player: PlayerIndex }

@@ -5,9 +5,22 @@ import { DEFAULT_SETTINGS } from '../core/types';
 interface ZicerDB extends DBSchema {
   questions: { key: string; value: Question; indexes: { type: GameType; packId: string } };
   packs: { key: string; value: PackInfo };
-  played: { key: string; value: { id: string; type: GameType; playedAt: number } ; indexes: { type: GameType } };
+  played: { key: string; value: PlayedRow; indexes: { type: GameType } };
   matches: { key: string; value: MatchRecord; indexes: { finishedAt: number } };
   kv: { key: string; value: unknown };
+}
+
+export interface PlayedRow {
+  id: string;
+  type: GameType;
+  playedAt: number;
+  synced?: boolean;
+}
+
+/** Obavijest sloju za usklađivanje da se nešto lokalno promijenilo. */
+let onLocalChange: () => void = () => undefined;
+export function setLocalChangeListener(l: () => void) {
+  onLocalChange = l;
 }
 
 let dbPromise: Promise<IDBPDatabase<ZicerDB>> | null = null;
@@ -35,10 +48,15 @@ export function db(): Promise<IDBPDatabase<ZicerDB>> {
 
 export async function loadSettings(): Promise<Settings> {
   const s = (await (await db()).get('kv', 'settings')) as Partial<Settings> | undefined;
-  return { ...DEFAULT_SETTINGS, ...(s || {}) };
+  return { ...DEFAULT_SETTINGS, ...(s || {}), timers: { ...DEFAULT_SETTINGS.timers, ...(s?.timers || {}) } };
 }
-export async function saveSettings(s: Settings) {
-  await (await db()).put('kv', s, 'settings');
+export async function saveSettings(s: Settings, fromRemote = false) {
+  const d = await db();
+  await d.put('kv', s, 'settings');
+  if (!fromRemote) {
+    await d.put('kv', Date.now(), 'settings-updated');
+    onLocalChange();
+  }
 }
 export async function loadSavedMatch(): Promise<MatchState | null> {
   return ((await (await db()).get('kv', 'savedMatch')) as MatchState | undefined) || null;
@@ -86,9 +104,11 @@ export async function addQuestions(questions: Question[], pack: PackInfo): Promi
   const packs = tx.objectStore('packs');
   const existing = await packs.get(pack.id);
   if (added.length || !existing) {
-    await packs.put({ ...pack, count: (existing?.count || 0) + added.length, importedAt: Date.now() });
+    const now = Date.now();
+    await packs.put({ ...existing, ...pack, count: (existing?.count || 0) + added.length, importedAt: now, updatedAt: now, syncedAt: existing?.syncedAt });
   }
   await tx.done;
+  if (added.length) onLocalChange();
   return { added, duplicates };
 }
 
@@ -96,7 +116,27 @@ export async function listPacks(): Promise<PackInfo[]> {
   return (await db()).getAll('packs');
 }
 
-export async function deletePack(packId: string) {
+export async function packQuestions(packId: string): Promise<Question[]> {
+  return (await db()).getAllFromIndex('questions', 'packId', packId);
+}
+
+/** Zamjenjuje sadržaj paketa verzijom iz oblaka (bez obavijesti o lokalnoj promjeni). */
+export async function replacePackFromRemote(info: PackInfo, questions: Question[]) {
+  const d = await db();
+  const tx = d.transaction(['questions', 'packs'], 'readwrite');
+  const qs = tx.objectStore('questions');
+  for (const id of await qs.index('packId').getAllKeys(info.id)) await qs.delete(id);
+  for (const q of questions) await qs.put({ ...q, packId: info.id });
+  await tx.objectStore('packs').put(info);
+  await tx.done;
+}
+
+export async function putPackInfo(info: PackInfo) {
+  await (await db()).put('packs', info);
+}
+
+/** Briše paket lokalno; deleteRemote = false kad brisanje dolazi iz oblaka. */
+export async function deletePack(packId: string, deleteRemote = true) {
   const d = await db();
   const tx = d.transaction(['questions', 'packs', 'played'], 'readwrite');
   const ids = await tx.objectStore('questions').index('packId').getAllKeys(packId);
@@ -106,6 +146,29 @@ export async function deletePack(packId: string) {
   }
   await tx.objectStore('packs').delete(packId);
   await tx.done;
+  if (deleteRemote) {
+    await addPending('deletes', packId);
+    onLocalChange();
+  }
+}
+
+/** Radnje koje čekaju slanje u oblak (ako uređaj nije bio na mreži). */
+export async function getPending(kind: 'deletes' | 'resets'): Promise<string[]> {
+  return ((await (await db()).get('kv', `pending-${kind}`)) as string[] | undefined) || [];
+}
+export async function addPending(kind: 'deletes' | 'resets', v: string) {
+  const cur = await getPending(kind);
+  if (!cur.includes(v)) await (await db()).put('kv', [...cur, v], `pending-${kind}`);
+}
+export async function removePending(kind: 'deletes' | 'resets', v: string) {
+  const cur = await getPending(kind);
+  await (await db()).put('kv', cur.filter((x) => x !== v), `pending-${kind}`);
+}
+export async function kvGet<T>(key: string): Promise<T | undefined> {
+  return (await (await db()).get('kv', key)) as T | undefined;
+}
+export async function kvSet(key: string, v: unknown) {
+  await (await db()).put('kv', v, key);
 }
 
 export async function deleteQuestion(id: string) {
@@ -116,10 +179,8 @@ export async function deleteQuestion(id: string) {
   await d.delete('played', id);
   if (q.packId) {
     const p = await d.get('packs', q.packId);
-    if (p) {
-      if (p.count <= 1 && !p.builtin) await d.delete('packs', p.id);
-      else await d.put('packs', { ...p, count: Math.max(0, p.count - 1) });
-    }
+    if (p) await d.put('packs', { ...p, count: Math.max(0, p.count - 1), updatedAt: Date.now() });
+    onLocalChange();
   }
 }
 
@@ -130,13 +191,28 @@ export async function playedIds(type: GameType): Promise<Set<string>> {
 }
 export async function markPlayed(q: Question) {
   await (await db()).put('played', { id: q.id, type: q.type, playedAt: Date.now() });
+  onLocalChange();
 }
-export async function clearPlayed(type?: GameType) {
+export async function allPlayed(): Promise<PlayedRow[]> {
+  return (await db()).getAll('played');
+}
+export async function putPlayed(rows: PlayedRow[]) {
   const d = await db();
-  if (!type) return d.clear('played');
   const tx = d.transaction('played', 'readwrite');
-  for (const k of await tx.store.index('type').getAllKeys(type)) await tx.store.delete(k);
+  for (const r of rows) await tx.store.put(r);
   await tx.done;
+}
+/** Briše evidenciju odigranih (local = true kad brisanje dolazi iz oblaka ili se ne treba slati). */
+export async function clearPlayed(type?: GameType, before = Infinity, local = false) {
+  const d = await db();
+  const tx = d.transaction('played', 'readwrite');
+  const rows = type ? await tx.store.index('type').getAll(type) : await tx.store.getAll();
+  for (const r of rows) if (r.playedAt < before) await tx.store.delete(r.id);
+  await tx.done;
+  if (!local) {
+    await addPending('resets', type ? `played:${type}` : 'played');
+    onLocalChange();
+  }
 }
 export async function playedCount(): Promise<number> {
   return (await db()).count('played');
@@ -144,13 +220,24 @@ export async function playedCount(): Promise<number> {
 
 // ---------- Povijest ----------
 
-export async function addMatchRecord(r: MatchRecord) {
-  await (await db()).put('matches', r);
+export async function addMatchRecord(r: MatchRecord, fromRemote = false) {
+  await (await db()).put('matches', fromRemote ? { ...r, synced: true } : r);
+  if (!fromRemote) onLocalChange();
+}
+export async function allMatchRecords(): Promise<MatchRecord[]> {
+  return (await db()).getAll('matches');
 }
 export async function listMatches(): Promise<MatchRecord[]> {
   const all = await (await db()).getAllFromIndex('matches', 'finishedAt');
   return all.reverse();
 }
-export async function clearMatches() {
-  await (await db()).clear('matches');
+export async function clearMatches(before = Infinity, local = false) {
+  const d = await db();
+  const tx = d.transaction('matches', 'readwrite');
+  for (const r of await tx.store.getAll()) if (r.finishedAt < before) await tx.store.delete(r.id);
+  await tx.done;
+  if (!local) {
+    await addPending('resets', 'matches');
+    onLocalChange();
+  }
 }

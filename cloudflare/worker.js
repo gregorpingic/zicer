@@ -105,6 +105,19 @@ async function api(request, env, url) {
     return json({ at: now });
   }
 
+  if (parts[1] === 'settings') {
+    if (m === 'GET') {
+      const row = await db.prepare("SELECT value, updated_at FROM kv WHERE key = 'settings'").first();
+      return json(row ? { value: JSON.parse(row.value), updated_at: row.updated_at } : { value: null, updated_at: 0 });
+    }
+    if (m === 'PUT') {
+      const b = await body(request);
+      if (!b || typeof b !== 'object') return json({ error: 'Neispravno' }, 400);
+      await db.prepare("INSERT OR REPLACE INTO kv (key, value, updated_at) VALUES ('settings', ?, ?)").bind(JSON.stringify(b).slice(0, 20000), now).run();
+      return json({ updated_at: now });
+    }
+  }
+
   return json({ error: 'Nepoznata putanja' }, 404);
 }
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { parsePack, validateQuestion } from './validate';
-import { answerMatches, closestPoints, cluePoints, orderPoints, yearPoints } from './scoring';
+import { answerMatches, closestPoints, cluePoints, matchBoard, orderPoints, yearPoints } from './scoring';
 import { planRounds } from './engine';
 import { GAME_TYPES } from './gameInfo';
 import builtin from '../data/osnovni-paket.json';
@@ -81,6 +81,24 @@ describe('prepoznavanje odgovora', () => {
     expect(answerMatches('tesla', ['Nikola Tesla'])).toBe(true);
     expect(answerMatches('mačka', ['Žirafa'])).toBe(false);
     expect(answerMatches('', ['Pizza'])).toBe(false);
+  });
+});
+
+describe('ploča "Što kaže narod?"', () => {
+  const board = [
+    { text: 'Glačanje', accept: ['peglanje'] },
+    { text: 'Pranje prozora', accept: ['prozori', 'stakla'] },
+    { text: 'Čišćenje kupaonice', accept: ['kupaonica', 'wc', 'zahod'] },
+    { text: 'Pranje suđa', accept: ['suđe'] },
+  ];
+  it('zajednička riječ ne odlučuje sama', () => {
+    expect(matchBoard('pranje wc', board).index).toBe(2);
+    expect(matchBoard('pranje', board)).toEqual({ index: null, vague: true });
+    expect(matchBoard('pranje prozora', board).index).toBe(1);
+    expect(matchBoard('prozori', board).index).toBe(1);
+    expect(matchBoard('suđe', board).index).toBe(3);
+    expect(matchBoard('peglanje', board).index).toBe(0);
+    expect(matchBoard('kuhanje', board).index).toBe(null);
   });
 });
 

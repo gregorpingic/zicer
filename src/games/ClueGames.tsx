@@ -4,7 +4,7 @@ import type { Outcome, PlayerIndex } from '../core/types';
 import { POINTS, answerMatches, cluePoints } from '../core/scoring';
 import { sfx } from '../core/sound';
 import { Control } from '../remote/RemoteContext';
-import { Button, Explanation, NextButton, QuestionCard, ResultBanner, TurnBanner } from '../components/common';
+import { AnswerTimer, Button, Explanation, NextButton, QuestionCard, ResultBanner, TurnBanner, useAnswerTime } from '../components/common';
 
 interface ClueProps {
   label: string;
@@ -27,6 +27,7 @@ function ProgressiveClues(props: ClueProps) {
   const { clues, answer, accept, active, players, multiplier, onDone } = props;
   const other = (1 - active) as PlayerIndex;
   const n = clues.length;
+  const seconds = useAnswerTime();
   const [shown, setShown] = useState(1);
   const [phase, setPhase] = useState<Phase>('play');
   const [judgeFor, setJudgeFor] = useState<'active' | 'steal'>('active');
@@ -93,6 +94,16 @@ function ProgressiveClues(props: ClueProps) {
         ))}
       </ol>
 
+      {(phase === 'play' || phase === 'steal') && (
+        <AnswerTimer
+          key={`${phase}-${shown}`}
+          onEnd={() => {
+            if (phase === 'steal') return finish(null, true);
+            setMsg('⌛ Isteklo je vrijeme – otvara se sljedeći trag.');
+            nextClue();
+          }}
+        />
+      )}
       {msg && (phase === 'play' || phase === 'steal') && <div className="msg msg-info">{msg}</div>}
       {(phase === 'play' || phase === 'steal') && (
         <Control
@@ -103,6 +114,7 @@ function ProgressiveClues(props: ClueProps) {
             note: msg || undefined,
             placeholder: 'Upiši odgovor',
             submitLabel: 'Provjeri',
+            ...(seconds ? { timer: seconds } : {}),
             buttons: [
               phase === 'play'
                 ? { id: 'next', label: shown < n ? 'Sljedeći trag' : 'Odustajem', variant: 'secondary' }
@@ -210,7 +222,7 @@ function ProgressiveClues(props: ClueProps) {
           <div className="solution big">{answer}</div>
           <ResultBanner points={result.points} players={players} multiplier={multiplier} title={result.title} />
           <Explanation explanation={props.explanation} source={props.source} />
-          <NextButton onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
+          <NextButton readText={props.explanation} onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
         </>
       )}
     </div>

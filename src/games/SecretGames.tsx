@@ -15,8 +15,10 @@ import {
   formatNumber,
 } from '../components/common';
 
-type Answers<T> = Partial<Record<PlayerIndex, T>>;
+type Pair<T> = [T | null, T | null];
 const order = (active: PlayerIndex): PlayerIndex[] => [active, (1 - active) as PlayerIndex];
+const pair = <T,>(v: Partial<Record<PlayerIndex, T | null>>): Pair<T> => [v[0] ?? null, v[1] ?? null];
+const NO_ANSWER = <span className="muted">⌛ bez odgovora</span>;
 
 function useRevealSound(points: [number, number] | null) {
   const key = points ? points.join(',') : '';
@@ -41,11 +43,20 @@ function AnswerRow({ players, render }: { players: [string, string]; render: (p:
   );
 }
 
+/** Bodovi za najbliži odgovor kad netko možda nije odgovorio na vrijeme. */
+function closestWithMissing(a: Pair<number>, answer: number): [number, number] {
+  const solo = (v: number) => POINTS.closestWin + (v === answer ? POINTS.closestExactBonus : 0);
+  if (a[0] === null && a[1] === null) return [0, 0];
+  if (a[0] === null) return [0, solo(a[1]!)];
+  if (a[1] === null) return [solo(a[0]), 0];
+  return closestPoints([a[0], a[1]], answer);
+}
+
 // ---------------- Najbliži pobjeđuje ----------------
 
 export function Closest({ question: q, active, players, multiplier, onDone }: GameProps<'closest'>) {
-  const [ans, setAns] = useState<[number, number] | null>(null);
-  const points = ans ? closestPoints(ans, q.answer) : null;
+  const [ans, setAns] = useState<Pair<number> | null>(null);
+  const points = ans ? closestWithMissing(ans, q.answer) : null;
   useRevealSound(points);
   const card = <QuestionCard label="Najbliži pobjeđuje" text={q.question} />;
   if (!ans)
@@ -58,7 +69,7 @@ export function Closest({ question: q, active, players, multiplier, onDone }: Ga
           renderInput={(_, submit) => <NumberEntry unit={q.unit} onSubmit={submit} />}
           remote={() => ({ kind: 'number', title: q.question, unit: q.unit })}
           fromValue={(v) => v.number ?? 0}
-          onComplete={(v: Answers<number>) => setAns([v[0]!, v[1]!])}
+          onComplete={(v) => setAns(pair(v))}
         />
       </div>
     );
@@ -71,18 +82,22 @@ export function Closest({ question: q, active, players, multiplier, onDone }: Ga
       </div>
       <AnswerRow
         players={players}
-        render={(p) => (
-          <>
-            <div className="answer-val">
-              {formatNumber(ans[p])} <span className="unit">{q.unit}</span>
-            </div>
-            <div className="muted">odstupanje {formatNumber(Math.abs(ans[p] - q.answer))}</div>
-          </>
-        )}
+        render={(p) =>
+          ans[p] === null ? (
+            NO_ANSWER
+          ) : (
+            <>
+              <div className="answer-val">
+                {formatNumber(ans[p]!)} <span className="unit">{q.unit}</span>
+              </div>
+              <div className="muted">odstupanje {formatNumber(Math.abs(ans[p]! - q.answer))}</div>
+            </>
+          )
+        }
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -90,7 +105,7 @@ export function Closest({ question: q, active, players, multiplier, onDone }: Ga
 // ---------------- Istina ili laž ----------------
 
 export function TrueFalse({ question: q, active, players, multiplier, onDone }: GameProps<'truefalse'>) {
-  const [ans, setAns] = useState<[boolean, boolean] | null>(null);
+  const [ans, setAns] = useState<Pair<boolean> | null>(null);
   const points = ans ? (ans.map((a) => (a === q.answer ? POINTS.truefalse : 0)) as [number, number]) : null;
   useRevealSound(points);
   const card = <QuestionCard label="Istina ili laž?" text={q.statement} />;
@@ -104,7 +119,7 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
           renderInput={(_, submit) => <ChoiceEntry options={['Istina', 'Laž']} onSubmit={(i) => submit(i === 0)} />}
           remote={() => ({ kind: 'choice', title: q.statement, options: ['Istina', 'Laž'] })}
           fromValue={(v) => v.choice === 0}
-          onComplete={(v) => setAns([v[0]!, v[1]!])}
+          onComplete={(v) => setAns(pair(v))}
         />
       </div>
     );
@@ -115,15 +130,19 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
       <div className={`solution big ${q.answer ? 'is-true' : 'is-false'}`}>{q.answer ? 'ISTINA' : 'LAŽ'}</div>
       <AnswerRow
         players={players}
-        render={(p) => (
-          <div className={`answer-val ${ans[p] === q.answer ? 'good' : 'bad'}`}>
-            {ans[p] ? 'Istina' : 'Laž'} {ans[p] === q.answer ? '✓' : '✕'}
-          </div>
-        )}
+        render={(p) =>
+          ans[p] === null ? (
+            NO_ANSWER
+          ) : (
+            <div className={`answer-val ${ans[p] === q.answer ? 'good' : 'bad'}`}>
+              {ans[p] ? 'Istina' : 'Laž'} {ans[p] === q.answer ? '✓' : '✕'}
+            </div>
+          )
+        }
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -131,7 +150,7 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
 // ---------------- Veće ili manje ----------------
 
 export function HigherLower({ question: q, active, players, multiplier, onDone }: GameProps<'higherlower'>) {
-  const [ans, setAns] = useState<[number, number] | null>(null);
+  const [ans, setAns] = useState<Pair<number> | null>(null);
   const points = ans ? (ans.map((a) => (a === q.correct ? POINTS.higherlower : 0)) as [number, number]) : null;
   useRevealSound(points);
   const card = <QuestionCard label="Veće ili manje?" text={q.question} />;
@@ -145,7 +164,7 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
           renderInput={(_, submit) => <ChoiceEntry options={q.options} onSubmit={submit} />}
           remote={() => ({ kind: 'choice', title: q.question, options: q.options })}
           fromValue={(v) => v.choice ?? 0}
-          onComplete={(v) => setAns([v[0]!, v[1]!])}
+          onComplete={(v) => setAns(pair(v))}
         />
       </div>
     );
@@ -156,15 +175,19 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
       <div className="solution big">{q.options[q.correct]}</div>
       <AnswerRow
         players={players}
-        render={(p) => (
-          <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
-            {q.options[ans[p]]} {ans[p] === q.correct ? '✓' : '✕'}
-          </div>
-        )}
+        render={(p) =>
+          ans[p] === null ? (
+            NO_ANSWER
+          ) : (
+            <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
+              {q.options[ans[p]!]} {ans[p] === q.correct ? '✓' : '✕'}
+            </div>
+          )
+        }
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -172,8 +195,8 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
 // ---------------- Pogodi godinu ----------------
 
 export function Year({ question: q, active, players, multiplier, onDone }: GameProps<'year'>) {
-  const [ans, setAns] = useState<[number, number] | null>(null);
-  const points = ans ? (ans.map((a) => yearPoints(a, q.answer)) as [number, number]) : null;
+  const [ans, setAns] = useState<Pair<number> | null>(null);
+  const points = ans ? (ans.map((a) => (a === null ? 0 : yearPoints(a, q.answer))) as [number, number]) : null;
   useRevealSound(points);
   const card = <QuestionCard label="Pogodi godinu" text={q.question} />;
   if (!ans)
@@ -186,7 +209,7 @@ export function Year({ question: q, active, players, multiplier, onDone }: GameP
           renderInput={(_, submit) => <NumberEntry placeholder="Godina" onSubmit={(n) => submit(Math.round(n))} />}
           remote={() => ({ kind: 'number', title: q.question, placeholder: 'Godina' })}
           fromValue={(v) => Math.round(v.number ?? 0)}
-          onComplete={(v) => setAns([v[0]!, v[1]!])}
+          onComplete={(v) => setAns(pair(v))}
         />
       </div>
     );
@@ -197,18 +220,20 @@ export function Year({ question: q, active, players, multiplier, onDone }: GameP
       <div className="solution big">{q.answer}.</div>
       <AnswerRow
         players={players}
-        render={(p) => (
-          <>
-            <div className="answer-val">{ans[p]}.</div>
-            <div className="muted">
-              {ans[p] === q.answer ? 'točno!' : `${Math.abs(ans[p] - q.answer)} god. razlike`}
-            </div>
-          </>
-        )}
+        render={(p) =>
+          ans[p] === null ? (
+            NO_ANSWER
+          ) : (
+            <>
+              <div className="answer-val">{ans[p]}.</div>
+              <div className="muted">{ans[p] === q.answer ? 'točno!' : `${Math.abs(ans[p]! - q.answer)} god. razlike`}</div>
+            </>
+          )
+        }
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -221,16 +246,7 @@ function StakeEntry({ max, onSubmit }: { max: number; onSubmit: (n: number) => v
   return (
     <div className="stake">
       <div className="stake-val">{v}</div>
-      <input
-        type="range"
-        min={0}
-        max={max}
-        step={1}
-        value={v}
-        onChange={(e) => setV(Number(e.target.value))}
-        aria-label="Ulog"
-        className="masked-range"
-      />
+      <input type="range" min={0} max={max} step={1} value={v} onChange={(e) => setV(Number(e.target.value))} aria-label="Ulog" />
       <div className="row center">
         {[...new Set(quick)].map((n) => (
           <Button key={n} variant="secondary" onClick={() => setV(n)}>
@@ -247,7 +263,7 @@ function StakeEntry({ max, onSubmit }: { max: number; onSubmit: (n: number) => v
 
 export function Risk({ question: q, active, players, scores, onDone }: GameProps<'risk'>) {
   const [stakes, setStakes] = useState<[number, number] | null>(null);
-  const [ans, setAns] = useState<[number, number] | null>(null);
+  const [ans, setAns] = useState<Pair<number> | null>(null);
   const points = stakes && ans ? (ans.map((a, p) => (a === q.correct ? stakes[p] : -stakes[p])) as [number, number]) : null;
   useRevealSound(points);
 
@@ -273,7 +289,7 @@ export function Risk({ question: q, active, players, scores, onDone }: GameProps
           )}
           remote={(p) => ({ kind: 'stake', title: `Koliko ulažeš? Kategorija: ${q.category}`, max: maxStake(scores[p]), score: scores[p] })}
           fromValue={(v, p) => Math.max(0, Math.min(maxStake(scores[p]), Math.round(v.number ?? 0)))}
-          onComplete={(v) => setStakes([v[0]!, v[1]!])}
+          onComplete={(v) => setStakes([v[0] ?? 0, v[1] ?? 0])}
         />
       </div>
     );
@@ -290,7 +306,7 @@ export function Risk({ question: q, active, players, scores, onDone }: GameProps
           renderInput={(_, submit) => <ChoiceEntry options={q.options} onSubmit={submit} />}
           remote={() => ({ kind: 'choice', title: q.question, options: q.options })}
           fromValue={(v) => v.choice ?? 0}
-          onComplete={(v) => setAns([v[0]!, v[1]!])}
+          onComplete={(v) => setAns(pair(v))}
         />
       </div>
     );
@@ -306,16 +322,20 @@ export function Risk({ question: q, active, players, scores, onDone }: GameProps
         players={players}
         render={(p) => (
           <>
-            <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
-              {q.options[ans[p]]} {ans[p] === q.correct ? '✓' : '✕'}
-            </div>
+            {ans[p] === null ? (
+              NO_ANSWER
+            ) : (
+              <div className={`answer-val ${ans[p] === q.correct ? 'good' : 'bad'}`}>
+                {q.options[ans[p]!]} {ans[p] === q.correct ? '✓' : '✕'}
+              </div>
+            )}
             <div className="muted">ulog: {stakes[p]}</div>
           </>
         )}
       />
       <ResultBanner points={points!} players={players} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }

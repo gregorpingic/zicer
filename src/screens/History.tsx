@@ -4,6 +4,7 @@ import { computeStats, type PlayerStats } from '../core/stats';
 import { MODE_NAMES } from '../core/gameInfo';
 import { clearMatches, listMatches } from '../db/db';
 import { Button, Confirm } from '../components/common';
+import { useDataRefresh } from '../components/SyncBadge';
 
 const fmtDate = (t: number) =>
   new Date(t).toLocaleString('hr-HR', { day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -72,6 +73,7 @@ export default function History({ onBack }: { onBack: () => void }) {
   const [confirm, setConfirm] = useState(false);
   const load = () => void listMatches().then(setMatches);
   useEffect(load, []);
+  useDataRefresh(load);
 
   if (!matches) return <div className="page">Učitavanje…</div>;
   const stats = computeStats(matches).sort((a, b) => b.matches - a.matches);
@@ -130,7 +132,7 @@ export default function History({ onBack }: { onBack: () => void }) {
       {confirm && (
         <Confirm
           title="Resetirati statistiku?"
-          text="Bit će obrisani svi odigrani dvoboji, pobjede, rekordi i statistika po kategorijama. Ovo se ne može poništiti."
+          text="Bit će obrisani svi odigrani dvoboji, pobjede, rekordi i statistika po kategorijama – na svim uređajima. Ovo se ne može poništiti."
           confirmLabel="Obriši sve"
           danger
           onCancel={() => setConfirm(false)}

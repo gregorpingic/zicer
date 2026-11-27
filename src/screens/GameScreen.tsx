@@ -8,8 +8,9 @@ import { addMatchRecord, saveMatch } from '../db/db';
 import { sfx } from '../core/sound';
 import { stopSpeaking } from '../core/speech';
 import { summarizeMatch } from '../core/stats';
-import { Button, Confirm, Modal, PauseContext, parseNumber } from '../components/common';
-import { Control, useRemoteHost } from '../remote/RemoteContext';
+import { AutoAdvance, Button, Confirm, Modal, PauseContext, QuestionTypeContext, parseNumber, readingTime } from '../components/common';
+import { Control, useHub } from '../remote/RemoteContext';
+import TvZoomButtons from '../remote/TvZoomButtons';
 
 function ScoreBoard({ state, highlight }: { state: MatchState; highlight: PlayerIndex | null }) {
   const prev = useRef(state.scores);
@@ -56,7 +57,11 @@ function ScoreBoard({ state, highlight }: { state: MatchState; highlight: Player
             <div className="sb-round">
               Runda {state.roundIndex + 1}/{state.config.rounds.length}
             </div>
-            <div className="sb-type">{ROUND_INFO[round].name}</div>
+            <div className="sb-type">
+              {(round === 'mix' || round === 'finale') && state.current && state.phase === 'question'
+                ? ROUND_INFO[state.current.question.type].name
+                : ROUND_INFO[round].name}
+            </div>
             {state.phase === 'question' && (
               <div className="sb-q">
                 Pitanje {state.questionIndex + 1}/{state.config.questionsPerRound}
@@ -130,6 +135,12 @@ function AdjustModal({ state, onApply, onClose }: { state: MatchState; onApply: 
 function RoundIntro({ state, onStart }: { state: MatchState; onStart: () => void }) {
   const kind = state.config.rounds[state.roundIndex];
   const info = ROUND_INFO[kind];
+  const started = useRef(false);
+  const start = () => {
+    if (started.current) return;
+    started.current = true;
+    onStart();
+  };
   const trailing = state.scores[0] === state.scores[1] ? null : state.scores[0] < state.scores[1] ? 0 : 1;
   return (
     <div className="panel intro">
@@ -151,12 +162,13 @@ function RoundIntro({ state, onStart }: { state: MatchState; onStart: () => void
       <p className="muted">Pitanja u rundi: {state.config.questionsPerRound}</p>
       <Control
         spec={{ for: 'any', kind: 'buttons', title: `Runda ${state.roundIndex + 1}: ${info.name}`, note: info.short, buttons: [{ id: 'start', label: 'Započni rundu' }] }}
-        onSubmit={onStart}
+        onSubmit={start}
       >
-        <Button big onClick={onStart} autoFocus>
+        <Button big onClick={start} autoFocus>
           Započni rundu
         </Button>
       </Control>
+      <AutoAdvance seconds={readingTime(info.rules.join(' '), 5)} onEnd={start} />
     </div>
   );
 }
@@ -169,6 +181,12 @@ function RoundSummary({ state, onNext }: { state: MatchState; onNext: () => void
     gained[1] += r.points[1];
   });
   const last = state.roundIndex + 1 >= state.config.rounds.length;
+  const went = useRef(false);
+  const next = () => {
+    if (went.current) return;
+    went.current = true;
+    onNext();
+  };
   return (
     <div className="panel intro">
       <div className="intro-kicker">Kraj runde {state.roundIndex + 1}</div>
@@ -185,12 +203,13 @@ function RoundSummary({ state, onNext }: { state: MatchState; onNext: () => void
       </div>
       <Control
         spec={{ for: 'any', kind: 'buttons', title: `Kraj runde ${state.roundIndex + 1}`, buttons: [{ id: 'next', label: last ? 'Proglasi pobjednika' : 'Sljedeća runda' }] }}
-        onSubmit={onNext}
+        onSubmit={next}
       >
-        <Button big onClick={onNext} autoFocus>
+        <Button big onClick={next} autoFocus>
           {last ? 'Proglasi pobjednika' : 'Sljedeća runda'}
         </Button>
       </Control>
+      <AutoAdvance seconds={6} onEnd={next} />
     </div>
   );
 }
@@ -337,7 +356,9 @@ export default function GameScreen({
   }, []);
 
   // Način s mobitelima: naredbe s mobitela i podaci za njihovo zaglavlje.
-  const host = useRemoteHost();
+  const { host, bot } = useHub();
+  // Računalo mora znati koje je pitanje na redu (za svoje odgovore).
+  bot?.setQuestion(state.current?.question ?? null);
   useEffect(() => {
     if (!host) return;
     return host.onCommand((c) => {
@@ -387,9 +408,16 @@ export default function GameScreen({
             Neriješeno! Dodatno pitanje odlučuje pobjednika – bolji odgovor donosi +10.
           </div>
         )}
+        {(state.config.rounds[state.roundIndex] === 'mix' || state.config.rounds[state.roundIndex] === 'finale') &&
+          state.phase === 'question' && (
+            <div className="mix-hint">
+              <strong>{ROUND_INFO[cur.question.type].name}</strong> · {ROUND_INFO[cur.question.type].short}
+            </div>
+          )}
         {cur.recycled && (
           <div className="muted small center">Sva pitanja ove vrste već su odigrana – baza se vrti ispočetka.</div>
         )}
+        <QuestionTypeContext.Provider value={cur.question.type}>
         <Comp
           key={`${cur.question.id}-${state.results.length}`}
           question={cur.question}
@@ -399,6 +427,7 @@ export default function GameScreen({
           multiplier={cur.multiplier}
           onDone={(r: QuestionOutcome) => run((s) => engine.completeQuestion(s, r))}
         />
+        </QuestionTypeContext.Provider>
       </>
     );
   } else content = <div className="panel center">Učitavanje…</div>;
@@ -423,6 +452,7 @@ export default function GameScreen({
           <Button variant="ghost" onClick={() => setConfirm('exit')}>
             ✕ Izlaz
           </Button>
+          {host && <TvZoomButtons />}
         </div>
         )}
         <main className={`stage ${busy ? 'busy' : ''} ${paused ? 'hidden' : ''}`} aria-hidden={paused}>{content}</main>

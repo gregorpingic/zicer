@@ -115,3 +115,55 @@ export function answerMatches(guess: string, candidates: string[]): boolean {
     return gWords.some((gw) => cWords.some((cw) => wordsMatch(gw, cw)));
   });
 }
+
+// ---------- Prepoznavanje odgovora na ploči ("Što kaže narod?") ----------
+
+const STOP = new Set(['na', 'u', 'i', 'se', 'za', 'od', 'do', 'po', 'sa', 's', 'je', 'su', 'ili', 'da', 'ne', 'iz', 'o']);
+
+function words(s: string): string[] {
+  return normalize(s)
+    .split(' ')
+    .filter((w) => w.length >= 2 && !STOP.has(w));
+}
+
+export interface BoardMatch {
+  /** indeks pogođenog odgovora ili null */
+  index: number | null;
+  /** upis se poklapa samo s riječima koje dijeli više odgovora (preopćenito) */
+  vague: boolean;
+}
+
+/**
+ * Pronalazi odgovor na ploči. Riječi koje se pojavljuju u više odgovora (npr. "pranje" u
+ * "Pranje prozora" i "Pranje suđa") ne odlučuju same – mora se pogoditi riječ specifična za odgovor.
+ */
+export function matchBoard(guess: string, answers: { text: string; accept?: string[] }[]): BoardMatch {
+  const g = normalize(guess);
+  if (!g) return { index: null, vague: false };
+  // 1) točno poklapanje cijelog teksta ili prihvaćenog oblika
+  for (let i = 0; i < answers.length; i++) {
+    if ([answers[i].text, ...(answers[i].accept || [])].some((t) => normalize(t) === g)) return { index: i, vague: false };
+  }
+  const termWords = answers.map((a) => [a.text, ...(a.accept || [])].flatMap(words));
+  // koliko odgovora sadrži pojedinu riječ
+  const owners = (w: string) => termWords.filter((ws) => ws.some((x) => wordsMatch(w, x) || (w.length === 2 && w === x))).length;
+  const gw = words(guess);
+  let best = -1;
+  let bestScore = 0;
+  let vague = false;
+  answers.forEach((_, i) => {
+    let score = 0;
+    for (const w of gw) {
+      const hit = termWords[i].some((x) => (w.length === 2 || x.length === 2 ? w === x : wordsMatch(w, x)));
+      if (!hit) continue;
+      if (owners(w) > 1) vague = true;
+      else score++;
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      best = i;
+    }
+  });
+  if (best >= 0) return { index: best, vague: false };
+  return { index: null, vague };
+}

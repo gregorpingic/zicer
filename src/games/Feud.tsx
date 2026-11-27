@@ -1,28 +1,36 @@
 import { useState } from 'react';
 import type { GameProps } from './types';
 import type { Outcome, PlayerIndex } from '../core/types';
-import { answerMatches } from '../core/scoring';
+import { matchBoard } from '../core/scoring';
 import { sfx } from '../core/sound';
 import { Control } from '../remote/RemoteContext';
-import { Button, NextButton, PlayerTag, QuestionCard, ResultBanner, TurnBanner } from '../components/common';
+import { AnswerTimer, Button, NextButton, PlayerTag, QuestionCard, ResultBanner, TurnBanner, useAnswerTime } from '../components/common';
 
 type Phase = 'play' | 'steal' | 'done';
 
+interface LogEntry {
+  p: PlayerIndex;
+  guess: string;
+  result: 'hit' | 'miss' | 'vague' | 'dup' | 'timeout' | 'pass';
+  index?: number;
+  undone?: boolean;
+}
+
 export default function Feud({ question: q, active, players, multiplier, onDone }: GameProps<'feud'>) {
   const other = (1 - active) as PlayerIndex;
+  const seconds = useAnswerTime();
   const [revealed, setRevealed] = useState<boolean[]>(() => q.answers.map(() => false));
   const [strikes, setStrikes] = useState(0);
   const [phase, setPhase] = useState<Phase>('play');
   const [input, setInput] = useState('');
-  const [msg, setMsg] = useState<{ text: string; kind: 'good' | 'bad' | 'info' } | null>(null);
+  const [log, setLog] = useState<LogEntry[]>([]);
   const [lastHit, setLastHit] = useState<number | null>(null);
   const [result, setResult] = useState<{ points: [number, number]; outcome: [Outcome, Outcome]; title: string } | null>(null);
 
   const bankOf = (rev: boolean[]) => q.answers.reduce((s, a, i) => s + (rev[i] ? a.points : 0), 0);
   const bank = bankOf(revealed);
-
-  const findMatch = (guess: string) =>
-    q.answers.findIndex((a) => answerMatches(guess, [a.text, ...(a.accept || [])]));
+  const attempt = log.length;
+  const turnPlayer = phase === 'steal' ? other : active;
 
   const finish = (winner: PlayerIndex, pts: number, title: string, stealOutcome: Outcome, cleared = false) => {
     const points: [number, number] = [0, 0];
@@ -34,54 +42,85 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
     setPhase('done');
   };
 
-  const strike = () => {
+  const addLog = (e: LogEntry) => setLog((l) => [...l, e]);
+
+  const strike = (entry: LogEntry) => {
     sfx.wrong();
+    addLog(entry);
     const s = strikes + 1;
     setStrikes(s);
-    setMsg({ text: 'Nema na ploči!', kind: 'bad' });
-    if (s >= 3) {
-      setPhase('steal');
-      setMsg({ text: `Tri pogreške! ${players[other]} može ukrasti banku jednim odgovorom.`, kind: 'info' });
-    }
+    if (s >= 3) setPhase('steal');
   };
 
-  const guessPlay = (raw = input) => {
+  const guessPlay = (raw: string) => {
     const g = raw.trim();
     if (!g) return;
     setInput('');
-    const i = findMatch(g);
-    if (i >= 0 && revealed[i]) {
-      setMsg({ text: `„${q.answers[i].text}” je već otkriveno – pokušaj ponovno.`, kind: 'info' });
-      return;
+    const m = matchBoard(g, q.answers);
+    if (m.index === null) {
+      if (m.vague) return addLog({ p: active, guess: g, result: 'vague' });
+      return strike({ p: active, guess: g, result: 'miss' });
     }
-    if (i < 0) return strike();
+    if (revealed[m.index]) return addLog({ p: active, guess: g, result: 'dup', index: m.index });
     sfx.correct();
-    const rev = revealed.map((r, k) => r || k === i);
+    const rev = revealed.map((r, k) => r || k === m.index);
     setRevealed(rev);
-    setLastHit(i);
-    setMsg({ text: `Točno! +${q.answers[i].points} u banku`, kind: 'good' });
-    if (rev.every(Boolean)) {
-      setTimeout(() => finish(active, bankOf(rev), `${players[active]} je očistio/la ploču!`, null, true), 600);
-    }
+    setLastHit(m.index);
+    addLog({ p: active, guess: g, result: 'hit', index: m.index });
+    if (rev.every(Boolean)) setTimeout(() => finish(active, bankOf(rev), `${players[active]} je očistio/la ploču!`, null, true), 700);
   };
 
-  const guessSteal = (giveUp = false, raw = input) => {
-    const g = raw.trim();
+  const guessSteal = (raw: string | null) => {
+    const g = (raw ?? '').trim();
     setInput('');
-    const i = giveUp || !g ? -1 : findMatch(g);
-    if (i >= 0 && !revealed[i]) {
+    const m = g ? matchBoard(g, q.answers) : { index: null, vague: false };
+    if (m.index !== null && !revealed[m.index]) {
       sfx.correct();
-      const rev = revealed.map((r, k) => r || k === i);
+      const rev = revealed.map((r, k) => r || k === m.index);
       setRevealed(rev);
-      setLastHit(i);
-      finish(other, bankOf(rev), `${players[other]} krade banku!`, 'correct');
+      setLastHit(m.index);
+      addLog({ p: other, guess: g, result: 'hit', index: m.index });
+      finish(other, bankOf(rev), `${players[other]} krade banku s „${g}”!`, 'correct');
     } else {
       sfx.wrong();
+      addLog({ p: other, guess: g || '—', result: raw === null ? 'timeout' : g ? 'miss' : 'pass' });
       finish(active, bank, `Krađa nije uspjela – banka ostaje igraču ${players[active]}.`, 'wrong');
     }
   };
 
-  const showAll = phase === 'done';
+  /** Poništava prihvaćeni odgovor (ako ga protivnik ne prihvaća). */
+  const undo = (k: number) => {
+    const e = log[k];
+    if (!e || e.result !== 'hit' || e.undone || e.index === undefined || phase === 'done') return;
+    setRevealed((r) => r.map((x, i) => (i === e.index ? false : x)));
+    setLog((l) => l.map((x, i) => (i === k ? { ...x, undone: true } : x)));
+    setLastHit(null);
+    sfx.wrong();
+  };
+  let lastAcceptedIdx = -1;
+  for (let k = log.length - 1; k >= 0; k--)
+    if (log[k].result === 'hit' && !log[k].undone) {
+      lastAcceptedIdx = k;
+      break;
+    }
+
+  const last = log[log.length - 1];
+  const lastMsg = !last
+    ? undefined
+    : last.result === 'vague'
+      ? `„${last.guess}” je preopćenito – budi precizniji/a (bez kazne).`
+      : last.result === 'dup'
+        ? `„${last.guess}” je već otkriveno – pokušaj ponovno.`
+        : last.result === 'miss'
+          ? `„${last.guess}” nema na ploči!`
+          : last.result === 'timeout'
+            ? 'Isteklo je vrijeme!'
+            : last.result === 'hit'
+              ? last.undone
+                ? 'Odgovor je poništen.'
+                : `Točno! „${q.answers[last.index!].text}” +${q.answers[last.index!].points}`
+              : undefined;
+  const msgKind = !last ? '' : last.result === 'hit' && !last.undone ? 'msg-good' : last.result === 'miss' || last.result === 'timeout' ? 'msg-bad' : 'msg-info';
 
   return (
     <div className="game feud">
@@ -92,7 +131,7 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
       <div className="feud-board">
         {q.answers.map((a, i) => {
           const open = revealed[i];
-          const missed = showAll && !open;
+          const missed = phase === 'done' && !open;
           return (
             <div key={i} className={`feud-slot ${open ? 'open' : ''} ${missed ? 'missed' : ''} ${lastHit === i ? 'hit' : ''}`}>
               <span className="feud-num">{i + 1}</span>
@@ -110,81 +149,122 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
         </div>
         <div className="strikes" aria-label={`Pogreške: ${strikes} od 3`}>
           {[0, 1, 2].map((k) => (
-            <span key={k} className={`strike ${k < strikes ? 'on' : ''}`}>✕</span>
+            <span key={k} className={`strike ${k < strikes ? 'on' : ''}`}>
+              ✕
+            </span>
           ))}
         </div>
+        {phase !== 'done' && (
+          <AnswerTimer
+            key={`${phase}-${attempt}`}
+            onEnd={() => (phase === 'play' ? strike({ p: active, guess: '—', result: 'timeout' }) : guessSteal(null))}
+          />
+        )}
       </div>
 
-      {msg && phase !== 'done' && <div className={`msg msg-${msg.kind}`}>{msg.text}</div>}
+      {lastMsg && phase !== 'done' && <div className={`msg ${msgKind}`}>{lastMsg}</div>}
 
       {(phase === 'play' || phase === 'steal') && (
         <Control
           spec={{
-            for: phase === 'play' ? active : other,
+            for: turnPlayer,
             kind: 'text',
             title: phase === 'play' ? q.question : `Krađa! ${q.question}`,
-            note: msg?.text,
+            note: lastMsg,
             placeholder: phase === 'play' ? 'Upiši odgovor' : 'Odgovor za krađu',
             submitLabel: 'Provjeri',
-            buttons: [
-              phase === 'play'
-                ? { id: 'strike', label: 'Ne znam (pogreška)', variant: 'bad' }
-                : { id: 'giveup', label: 'Odustajem', variant: 'bad' },
-            ],
+            ...(seconds ? { timer: seconds } : {}),
+            buttons: [phase === 'play' ? { id: 'strike', label: 'Ne znam (pogreška)', variant: 'bad' } : { id: 'giveup', label: 'Odustajem', variant: 'bad' }],
           }}
           onSubmit={(v) => {
             if (phase === 'play') {
-              if (v.button === 'strike') strike();
+              if (v.button === 'strike') strike({ p: active, guess: '—', result: 'pass' });
               else guessPlay(v.text || '');
-            } else if (v.button === 'giveup') guessSteal(true, '');
-            else guessSteal(false, v.text || '');
+            } else guessSteal(v.button === 'giveup' ? '' : v.text || '');
           }}
         >
-        <form
-          className="guess-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (phase === 'play') guessPlay();
-            else guessSteal(false);
-          }}
-        >
-          <input
-            className="big-input"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder={phase === 'play' ? 'Izgovori odgovor i upiši ga' : 'Odgovor za krađu'}
-            autoComplete="off"
-            aria-label="Odgovor"
-          />
-          <div className="row">
-            <Button type="submit" disabled={!input.trim()}>
-              Provjeri
-            </Button>
-            {phase === 'play' ? (
-              <Button variant="bad" onClick={() => strike()}>
-                Ne znam (pogreška)
+          <form
+            className="guess-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (phase === 'play') guessPlay(input);
+              else guessSteal(input);
+            }}
+          >
+            <input
+              className="big-input"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={phase === 'play' ? 'Izgovori odgovor i upiši ga' : 'Odgovor za krađu'}
+              autoComplete="off"
+              aria-label="Odgovor"
+            />
+            <div className="row center">
+              <Button type="submit" disabled={!input.trim()}>
+                Provjeri
               </Button>
-            ) : (
-              <Button variant="bad" onClick={() => guessSteal(true)}>
-                Odustajem
-              </Button>
-            )}
-          </div>
-          <div className="muted small">Dovoljan je dio riječi – aplikacija prepoznaje padeže i slova bez kvačica.</div>
-        </form>
+              {phase === 'play' ? (
+                <Button variant="bad" onClick={() => strike({ p: active, guess: '—', result: 'pass' })}>
+                  Ne znam (pogreška)
+                </Button>
+              ) : (
+                <Button variant="bad" onClick={() => guessSteal('')}>
+                  Odustajem
+                </Button>
+              )}
+            </div>
+          </form>
         </Control>
+      )}
+
+      {/* Protivnik može osporiti zadnji prihvaćeni odgovor (na mobitelu). */}
+      {phase === 'play' && lastAcceptedIdx >= 0 && (
+        <Control
+          spec={{
+            for: other,
+            kind: 'buttons',
+            role: 'objection',
+            title: `${players[active]} je upisao/la „${log[lastAcceptedIdx].guess}” → prihvaćeno kao „${q.answers[log[lastAcceptedIdx].index!].text}”`,
+            buttons: [{ id: 'object', label: 'Ne prihvaćam taj odgovor', variant: 'secondary' }],
+          }}
+          onSubmit={() => undo(lastAcceptedIdx)}
+          silent
+        />
+      )}
+
+      {log.length > 0 && (
+        <div className="guess-log" aria-label="Upisani odgovori">
+          {log.map((e, k) => (
+            <span key={k} className={`log-item ${e.result} ${e.undone ? 'undone' : ''}`}>
+              <PlayerTag p={e.p} name={players[e.p]} />: „{e.guess}”{' '}
+              {e.result === 'hit'
+                ? e.undone
+                  ? '→ poništeno'
+                  : `→ ${q.answers[e.index!].text} ✓`
+                : e.result === 'vague'
+                  ? '→ preopćenito'
+                  : e.result === 'dup'
+                    ? '→ već otkriveno'
+                    : e.result === 'timeout'
+                      ? '⌛'
+                      : e.result === 'pass'
+                        ? '→ ne zna'
+                        : '✕'}
+              {e.result === 'hit' && !e.undone && phase !== 'done' && (
+                <button className="link-btn small" onClick={() => undo(k)}>
+                  poništi
+                </button>
+              )}
+            </span>
+          ))}
+        </div>
       )}
 
       {phase === 'done' && result && (
         <>
           <ResultBanner points={result.points} players={players} multiplier={multiplier} title={result.title} />
-          <NextButton onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
+          <NextButton auto={9} onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
         </>
-      )}
-      {phase === 'steal' && (
-        <div className="muted small center">
-          Ako <PlayerTag p={other} name={players[other]} /> pogodi preostali odgovor, uzima cijelu banku.
-        </div>
       )}
     </div>
   );

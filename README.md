@@ -24,6 +24,23 @@ statički hosting za sadržaj mape `dist/`. Nakon prvog otvaranja radi i bez int
 - `zicer.lastegg.app` je Cloudflare Worker `zicer` ([cloudflare/worker.js](cloudflare/worker.js)) koji poslužuje
   sadržaj s GitHub Pagesa, pa ga nije potrebno zasebno objavljivati.
 
+## Zajednička baza (svi uređaji)
+
+Pitanja, paketi, vlastita pitanja, povijest dvoboja, statistika, odigrana pitanja i zajedničke postavke
+spremaju se u Cloudflare D1 bazu (`zicer`) preko API-ja na `zicer.lastegg.app/api` ([cloudflare/worker.js](cloudflare/worker.js)).
+Svaki uređaj drži lokalnu kopiju (igra radi i bez interneta) i usklađuje se pri pokretanju, svake minute,
+pri povratku u aplikaciju i nakon svake promjene ([src/db/sync.ts](src/db/sync.ts)). Zvuk i glas ostaju po uređaju.
+
+## Igra protiv računala
+
+Na postavljanju igre ili na televizoru odaberite protivnika „Računalo” (lako / srednje / teško). Računalo
+odgovara samo ([src/core/bot.ts](src/core/bot.ts)); „Koliko me poznaješ?” i „Nabroji tri” se tada preskaču.
+
+## Vrijeme za odgovor
+
+Svaka vrsta igre ima svoje preporučeno vrijeme (Istina ili laž 10 s … Koliko me poznaješ? 45 s), koje se
+može promijeniti u Postavkama. Tempo (opušteno / normalno / brzo / bez ograničenja) množi sva vremena.
+
 ## Igranje na televizoru s mobitelima
 
 1. Na televizoru (preglednik na TV-u ili laptop na HDMI-ju) otvorite Zicer → **📺 Igraj na televizoru s mobitelima**,

@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import type { PlayerIndex, Settings } from '../core/types';
-import { DEFAULT_SETTINGS } from '../core/types';
+import type { GameType, PlayerIndex, Settings } from '../core/types';
+import { DEFAULT_SETTINGS, DEFAULT_TIMERS, TEMPO_FACTOR } from '../core/types';
 import { speak, speakOnce, speechSupported } from '../core/speech';
 import { sfx } from '../core/sound';
-import { Control, useControl, useRemoteHost } from '../remote/RemoteContext';
+import { Control, useControl, useHub } from '../remote/RemoteContext';
 import type { ControlSpec, ControlValue } from '../remote/protocol';
 
 /** Opis tajnog unosa za mobitel (bez polja "for", koje postavlja SecretSequence). */
@@ -127,50 +127,97 @@ export function Explanation({ explanation, source }: { explanation?: string; sou
   );
 }
 
-/** Mjerač vremena koji se zaustavlja tijekom pauze. seconds = 0 znači bez ograničenja. */
-export function Timer({ seconds, running, onEnd }: { seconds: number; running: boolean; onEnd: () => void }) {
+/**
+ * Mjerač vremena koji se zaustavlja tijekom pauze. seconds = 0 znači bez ograničenja.
+ * variant: 'big' (Nabroji tri, Kategorije), 'answer' (vrijeme za odgovor), 'auto' (automatski nastavak, tih).
+ */
+export function Timer({
+  seconds,
+  running = true,
+  onEnd,
+  variant = 'big',
+}: {
+  seconds: number;
+  running?: boolean;
+  onEnd: () => void;
+  variant?: 'big' | 'answer' | 'auto';
+}) {
   const paused = usePaused();
   const [left, setLeft] = useState(seconds * 1000);
+  const leftRef = useRef(seconds * 1000);
   const endRef = useRef(onEnd);
   endRef.current = onEnd;
-  const lastTick = useRef<number | null>(null);
-
-  useEffect(() => setLeft(seconds * 1000), [seconds]);
 
   useEffect(() => {
-    if (!running || paused || seconds === 0) {
-      lastTick.current = null;
-      return;
-    }
-    lastTick.current = performance.now();
+    leftRef.current = seconds * 1000;
+    setLeft(seconds * 1000);
+  }, [seconds]);
+
+  useEffect(() => {
+    if (!running || paused || seconds === 0 || leftRef.current <= 0) return;
+    let last = performance.now();
     const id = window.setInterval(() => {
       const now = performance.now();
-      const dt = now - (lastTick.current ?? now);
-      lastTick.current = now;
-      setLeft((prev) => {
-        const next = Math.max(0, prev - dt);
-        if (Math.ceil(next / 1000) !== Math.ceil(prev / 1000) && next > 0 && next <= 3000) sfx.tick();
-        if (next === 0 && prev > 0) {
-          sfx.timeUp();
-          setTimeout(() => endRef.current(), 0);
-        }
-        return next;
-      });
+      const prev = leftRef.current;
+      const next = Math.max(0, prev - (now - last));
+      last = now;
+      leftRef.current = next;
+      setLeft(next);
+      if (variant !== 'auto' && next > 0 && next <= 3000 && Math.ceil(next / 1000) !== Math.ceil(prev / 1000)) sfx.tick();
+      if (next === 0) {
+        window.clearInterval(id);
+        if (variant !== 'auto') sfx.timeUp();
+        endRef.current();
+      }
     }, 100);
     return () => window.clearInterval(id);
-  }, [running, paused, seconds]);
+  }, [running, paused, seconds, variant]);
 
-  if (seconds === 0) return <div className="timer timer-none">Bez vremenskog ograničenja</div>;
-  const s = Math.ceil(left / 1000);
+  if (seconds === 0) return variant === 'big' ? <div className="timer timer-none">Bez vremenskog ograničenja</div> : null;
+  const sec = Math.ceil(left / 1000);
   const frac = left / (seconds * 1000);
+  if (variant === 'auto')
+    return (
+      <div className="auto-next" aria-live="off">
+        <div className="auto-bar">
+          <div className="auto-fill" style={{ transform: `scaleX(${frac})` }} />
+        </div>
+        <span>{paused ? 'Pauza' : `Nastavak za ${sec} s`}</span>
+      </div>
+    );
   return (
-    <div className={`timer ${s <= 5 ? 'timer-low' : ''}`} role="timer" aria-live="off">
-      <div className="timer-num">{s}</div>
+    <div className={`timer timer-${variant} ${sec <= 5 ? 'timer-low' : ''}`} role="timer" aria-live="off">
+      <div className="timer-num">{sec}</div>
       <div className="timer-bar">
         <div className="timer-fill" style={{ transform: `scaleX(${frac})` }} />
       </div>
     </div>
   );
+}
+
+/** Vrsta igre trenutačnog pitanja – određuje vrijeme za odgovor. */
+export const QuestionTypeContext = createContext<GameType | null>(null);
+
+/** Vrijeme za odgovor (sekunde) za trenutačnu vrstu igre i tempo (0 = bez ograničenja). */
+export function useAnswerTime(): number {
+  const s = useSettings();
+  const type = useContext(QuestionTypeContext);
+  if (!type || s.tempo === 'bez') return 0;
+  const base = s.timers?.[type] ?? DEFAULT_TIMERS[type];
+  return base > 0 ? Math.max(5, Math.round(base * TEMPO_FACTOR[s.tempo ?? 'normalno'])) : 0;
+}
+
+/** Odbrojavanje za odgovor; ne prikazuje se ako je vrijeme neograničeno. */
+export function AnswerTimer({ onEnd, running = true, seconds }: { onEnd: () => void; running?: boolean; seconds?: number }) {
+  const t = useAnswerTime();
+  return <Timer seconds={seconds ?? t} running={running} onEnd={onEnd} variant="answer" />;
+}
+
+/** Automatski nastavak nakon otkrivanja (ako je uključen u postavkama). */
+export function AutoAdvance({ seconds, onEnd }: { seconds: number; onEnd: () => void }) {
+  const { autoNext } = useSettings();
+  if (!autoNext || seconds <= 0) return null;
+  return <Timer seconds={seconds} onEnd={onEnd} variant="auto" />;
 }
 
 export function Modal({ title, children, onClose }: { title: string; children: ReactNode; onClose?: () => void }) {
@@ -242,28 +289,32 @@ interface SecretProps<T> {
   order: PlayerIndex[];
   header?: ReactNode;
   renderInput: (p: PlayerIndex, submit: (v: T) => void) => ReactNode;
-  onComplete: (values: Partial<Record<PlayerIndex, T>>) => void;
-  /** Opis unosa za mobitel (način s mobitelima). */
+  /** Vrijednost je null ako igrač nije odgovorio na vrijeme. */
+  onComplete: (values: Partial<Record<PlayerIndex, T | null>>) => void;
+  /** Opis unosa za mobitel / računalo. */
   remote: (p: PlayerIndex) => RemoteInput;
-  /** Pretvara odgovor s mobitela u vrijednost. */
+  /** Pretvara odgovor s mobitela ili računala u vrijednost. */
   fromValue: (v: ControlValue, p: PlayerIndex) => T;
 }
 
-/** Tajni unos: na jednom uređaju s predajom uređaja, a s mobitelima istodobno na oba mobitela. */
+/**
+ * Tajni unos. Dva igrača na jednom uređaju: redom, uz predaju uređaja.
+ * S mobitelima ili protiv računala: istodobno, bez predaje uređaja.
+ */
 export function SecretSequence<T>(props: SecretProps<T>) {
-  const host = useRemoteHost();
-  return host ? <RemoteSecretSequence {...props} /> : <LocalSecretSequence {...props} />;
+  const { host, bot } = useHub();
+  return host || bot ? <ParallelSecretSequence {...props} /> : <LocalSecretSequence {...props} />;
 }
 
-function RemoteSecretSequence<T>({ players, order, header, onComplete, remote, fromValue }: SecretProps<T>) {
-  const [vals, setVals] = useState<Partial<Record<PlayerIndex, T>>>({});
+function ParallelSecretSequence<T>({ players, order, header, renderInput, onComplete, remote, fromValue }: SecretProps<T>) {
+  const seconds = useAnswerTime();
+  const [vals, setVals] = useState<Partial<Record<PlayerIndex, T | null>>>({});
   const done = useRef(false);
   const pending = (p: PlayerIndex) => order.includes(p) && !(p in vals);
   const spec = (p: PlayerIndex): ControlSpec | null =>
-    pending(p) ? ({ ...remote(p), for: p, secret: true } as ControlSpec) : null;
-  const accept = (p: PlayerIndex) => (v: ControlValue) => setVals((prev) => ({ ...prev, [p]: fromValue(v, p) }));
-  useControl(spec(0), accept(0));
-  useControl(spec(1), accept(1));
+    pending(p) ? ({ ...remote(p), for: p, secret: true, ...(seconds ? { timer: seconds } : {}) } as ControlSpec) : null;
+  const set = (p: PlayerIndex, v: T | null) => setVals((prev) => (p in prev ? prev : { ...prev, [p]: v }));
+  const modes = [useControl(spec(0), (v) => set(0, fromValue(v, 0))), useControl(spec(1), (v) => set(1, fromValue(v, 1)))];
   const complete = order.every((p) => p in vals);
   useEffect(() => {
     if (complete && !done.current) {
@@ -271,22 +322,43 @@ function RemoteSecretSequence<T>({ players, order, header, onComplete, remote, f
       onComplete(vals);
     }
   }, [complete, vals, onComplete]);
+  const timeout = () =>
+    setVals((prev) => {
+      const n = { ...prev };
+      for (const p of order) if (!(p in n)) n[p] = null;
+      return n;
+    });
+  const chip = (p: PlayerIndex) =>
+    p in vals ? (vals[p] === null ? '⌛ bez odgovora' : '🔒 zaključano') : modes[p] === 'bot' ? '🤖 razmišlja…' : modes[p] === 'remote' ? '📱 odgovara na mobitelu…' : '… odgovara';
   return (
     <div className="secret">
       {header}
+      {!complete && <AnswerTimer onEnd={timeout} />}
       <div className="secret-status">
         {order.map((p) => (
           <span key={p} className={`secret-chip p${p} ${p in vals ? 'done' : ''}`}>
-            {players[p]} {p in vals ? '🔒 zaključano' : '📱 odgovara na mobitelu…'}
+            {players[p]} {chip(p)}
           </span>
         ))}
       </div>
-      <div className="phone-wait">
-        <span className="phone-icon" aria-hidden>
-          📱
-        </span>
-        <span>Odgovorite tajno na svojim mobitelima – odgovori se otkrivaju kad oboje odgovore.</span>
-      </div>
+      {order.map((p) =>
+        pending(p) && modes[p] === 'local' ? (
+          <div key={p} className={`secret-input p${p}`}>
+            <div className="secret-who">
+              Tvoj odgovor: <PlayerTag p={p} name={players[p]} />
+            </div>
+            {renderInput(p, (v) => set(p, v))}
+          </div>
+        ) : null,
+      )}
+      {order.some((p) => pending(p) && modes[p] === 'remote') && (
+        <div className="phone-wait">
+          <span className="phone-icon" aria-hidden>
+            📱
+          </span>
+          <span>Odgovorite tajno na mobitelu – odgovori se otkrivaju kad svi odgovore.</span>
+        </div>
+      )}
     </div>
   );
 }
@@ -294,10 +366,10 @@ function RemoteSecretSequence<T>({ players, order, header, onComplete, remote, f
 function LocalSecretSequence<T>({ players, order, header, renderInput, onComplete }: SecretProps<T>) {
   const [step, setStep] = useState(0);
   const [ready, setReady] = useState(false);
-  const values = useRef<Partial<Record<PlayerIndex, T>>>({});
+  const values = useRef<Partial<Record<PlayerIndex, T | null>>>({});
   const p = order[step];
 
-  const submit = (v: T) => {
+  const submit = (v: T | null) => {
     values.current[p] = v;
     if (step + 1 < order.length) {
       setStep(step + 1);
@@ -327,6 +399,7 @@ function LocalSecretSequence<T>({ players, order, header, renderInput, onComplet
         </div>
       ) : (
         <div className={`secret-input p${p}`} key={`${step}`}>
+          <AnswerTimer onEnd={() => submit(null)} />
           <div className="secret-who">
             Tajni odgovor: <PlayerTag p={p} name={players[p]} />
           </div>
@@ -383,14 +456,28 @@ export function ChoiceEntry({ options, onSubmit }: { options: string[]; onSubmit
   );
 }
 
-export function NextButton({ onClick, label = 'Dalje' }: { onClick: () => void; label?: string }) {
+/** Koliko sekundi automatski nastavak čeka: dulje ako ima teksta za pročitati. */
+export function readingTime(text?: string, base = 6): number {
+  const words = text ? text.trim().split(/\s+/).length : 0;
+  return Math.min(22, base + Math.ceil(words * 0.33));
+}
+
+/** Gumb za nastavak s automatskim odbrojavanjem (prema postavkama). */
+export function NextButton({ onClick, label = 'Dalje', readText, auto }: { onClick: () => void; label?: string; readText?: string; auto?: number }) {
+  const clicked = useRef(false);
+  const go = () => {
+    if (clicked.current) return;
+    clicked.current = true;
+    onClick();
+  };
   return (
     <div className="next-row">
-      <Control spec={{ for: 'any', kind: 'buttons', buttons: [{ id: 'next', label: `${label} →` }] }} onSubmit={onClick}>
-        <Button big onClick={onClick} autoFocus>
+      <Control spec={{ for: 'any', kind: 'buttons', buttons: [{ id: 'next', label: `${label} →` }] }} onSubmit={go}>
+        <Button big onClick={go} autoFocus>
           {label} →
         </Button>
       </Control>
+      <AutoAdvance seconds={auto ?? readingTime(readText)} onEnd={go} />
     </div>
   );
 }

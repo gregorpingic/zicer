@@ -5,6 +5,7 @@ import { POINTS, normalize, orderPoints } from '../core/scoring';
 import { shuffle } from '../core/engine';
 import { sfx } from '../core/sound';
 import {
+  AnswerTimer,
   Button,
   Explanation,
   NextButton,
@@ -14,7 +15,7 @@ import {
   SecretSequence,
   Timer,
   TurnBanner,
-  useSettings,
+  useAnswerTime,
 } from '../components/common';
 import { Control } from '../remote/RemoteContext';
 
@@ -48,6 +49,8 @@ function OptionsWithSteal({
   onDone: GameProps['onDone'];
 }) {
   const other = otherOf(active);
+  const seconds = useAnswerTime();
+  const timer = seconds ? { timer: seconds } : {};
   const [first, setFirst] = useState<number | null>(null);
   const [steal, setSteal] = useState<number | null | 'declined'>(null);
   const phase = first === null ? 'answer' : first === correct ? 'done' : steal === null ? 'steal' : 'done';
@@ -103,9 +106,12 @@ function OptionsWithSteal({
       {phase === 'answer' && <TurnBanner p={active} name={players[active]} />}
       {phase === 'steal' && <TurnBanner p={other} name={players[other]}> – može ukrasti za {POINTS.steal * multiplier}</TurnBanner>}
       <QuestionCard label={label} text={text} />
+      {phase === 'answer' && <AnswerTimer key="a" onEnd={() => pickFirst(-1)} />}
+      {phase === 'steal' && <AnswerTimer key="s" onEnd={() => setSteal('declined')} />}
+      {first === -1 && <div className="msg msg-bad">⌛ {players[active]} nije odgovorio/la na vrijeme.</div>}
       {phase === 'answer' && (
         <Control
-          spec={{ for: active, kind: 'choice', title: text, options }}
+          spec={{ for: active, kind: 'choice', title: text, options, ...timer }}
           onSubmit={(v) => v.choice !== undefined && pickFirst(v.choice)}
           display={board(false)}
         >
@@ -119,7 +125,8 @@ function OptionsWithSteal({
             kind: 'choice',
             title: `Krađa za ${POINTS.steal * multiplier} bodova: ${text}`,
             options,
-            disabled: first === null ? [] : [first],
+            disabled: first === null || first < 0 ? [] : [first],
+            ...timer,
             buttons: [{ id: 'decline', label: 'Ne želim krasti', variant: 'ghost' }],
           }}
           onSubmit={(v) => (v.choice !== undefined ? pickSteal(v.choice) : setSteal('declined'))}
@@ -138,7 +145,7 @@ function OptionsWithSteal({
           {board(false)}
           <ResultBanner points={points} players={players} multiplier={multiplier} />
           <Explanation explanation={explanation} source={source} />
-          <NextButton onClick={() => onDone({ points, outcome })} />
+          <NextButton readText={explanation} onClick={() => onDone({ points, outcome })} />
         </>
       )}
     </div>
@@ -193,6 +200,7 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
   });
   const [locked, setLocked] = useState(false);
   const [drag, setDrag] = useState<number | null>(null);
+  const seconds = useAnswerTime();
   const res = orderPoints(arr);
   const points: [number, number] = [0, 0];
   points[active] = res.points;
@@ -260,8 +268,9 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
       <QuestionCard label="Poredaj po redu" text={q.prompt} />
       {!locked ? (
         <>
+          <AnswerTimer onEnd={() => lock(arr)} />
           <Control
-            spec={{ for: active, kind: 'order', title: q.prompt, items: arr.map((i) => q.items[i]) }}
+            spec={{ for: active, kind: 'order', title: q.prompt, items: arr.map((i) => q.items[i]), ...(seconds ? { timer: seconds } : {}) }}
             onSubmit={(v) => v.order && v.order.length === arr.length && lock(v.order.map((k) => arr[k]))}
             display={list(false)}
           >
@@ -286,7 +295,7 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
             title={`${res.correctPositions} od ${arr.length} na točnom mjestu`}
           />
           <Explanation explanation={q.explanation} source={q.source} />
-          <NextButton onClick={() => onDone({ points, outcome })} />
+          <NextButton readText={q.explanation} onClick={() => onDone({ points, outcome })} />
         </>
       )}
     </div>
@@ -296,7 +305,7 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
 // ---------------- Nabroji tri ----------------
 
 export function List3({ question: q, active, players, multiplier, onDone }: GameProps<'list3'>) {
-  const settings = useSettings();
+  const listSeconds = useAnswerTime();
   const other = otherOf(active);
   const count = q.count ?? 3;
   const [phase, setPhase] = useState<'ready' | 'run' | 'judge' | 'done'>('ready');
@@ -320,7 +329,7 @@ export function List3({ question: q, active, players, multiplier, onDone }: Game
       {phase === 'ready' && (
         <div className="center stack">
           <div className="muted">
-            {settings.timer ? `Imaš ${settings.timer} sekundi.` : 'Bez vremenskog ograničenja.'} Odgovaraj naglas.
+            {listSeconds ? `Imaš ${listSeconds} sekundi.` : 'Bez vremenskog ograničenja.'} Odgovaraj naglas.
           </div>
           <Control
             spec={{ for: active, kind: 'buttons', title: q.prompt, note: 'Kad pritisneš Kreni, kreće vrijeme. Odgovaraj naglas.', buttons: [{ id: 'go', label: 'Kreni!' }] }}
@@ -334,7 +343,7 @@ export function List3({ question: q, active, players, multiplier, onDone }: Game
       )}
       {phase === 'run' && (
         <div className="center stack">
-          <Timer seconds={settings.timer} running onEnd={() => setPhase('judge')} />
+          <Timer seconds={listSeconds} running onEnd={() => setPhase('judge')} />
           <Control spec={{ for: active, kind: 'buttons', title: 'Nabrajaj naglas!', buttons: [{ id: 'done', label: 'Gotovo' }] }} onSubmit={() => setPhase('judge')}>
             <Button big onClick={() => setPhase('judge')}>
               Gotovo
@@ -351,6 +360,7 @@ export function List3({ question: q, active, players, multiplier, onDone }: Game
             spec={{
               for: other,
               kind: 'buttons',
+              role: 'judge',
               title: `Koliko je valjanih odgovora rekao/la ${players[active]}?`,
               buttons: Array.from({ length: count + 1 }, (_, n) => ({ id: String(n), label: String(n), variant: n === 0 ? 'bad' : 'secondary' })),
             }}
@@ -457,6 +467,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
           <div className="muted">
             {players[subject]} je zaključao/la odgovor. {players[guesser]}, reci naglas što misliš da je odgovor.
           </div>
+          <AnswerTimer onEnd={() => setRevealed(true)} />
           <Control
             spec={{ for: 'any', kind: 'buttons', title: `${players[guesser]} pogađa naglas`, buttons: [{ id: 'reveal', label: 'Otkrij odgovor' }] }}
             onSubmit={() => setRevealed(true)}
@@ -500,8 +511,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
 // ---------------- Kategorijski dvoboj ----------------
 
 export function Category({ question: q, active, players, multiplier, onDone }: GameProps<'category'>) {
-  const settings = useSettings();
-  const turnSeconds = settings.timer === 0 ? 0 : Math.min(settings.timer, 20);
+  const turnSeconds = useAnswerTime();
   const [turn, setTurn] = useState<PlayerIndex>(active);
   const [said, setSaid] = useState<string[]>([]);
   const [input, setInput] = useState('');
@@ -619,6 +629,7 @@ export function Category({ question: q, active, players, multiplier, onDone }: G
             spec={{
               for: opp,
               kind: 'buttons',
+              role: 'objection',
               title: `${players[turn]} odgovara: ${q.topic}`,
               note: 'Ako je odgovor ponovljen ili nije valjan, prijavi ga.',
               buttons: [

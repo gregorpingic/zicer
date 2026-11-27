@@ -138,6 +138,15 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
       'Točan odgovor donosi uloženo, netočan ga oduzima.',
     ],
   },
+  mix: {
+    name: 'Miješana runda',
+    short: 'Svako pitanje je druga vrsta igre.',
+    rules: [
+      'Vrsta igre mijenja se od pitanja do pitanja.',
+      'Kratko pravilo prikazuje se iznad svakog pitanja.',
+      'Bodovanje je kao u pojedinoj igri.',
+    ],
+  },
   finale: {
     name: 'Veliko finale',
     short: 'Mješavina igara uz dvostruke bodove.',
@@ -151,6 +160,9 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
 
 /** Vrste koje se igraju tajnim odgovorima oba igrača (nema "igrača na potezu"). */
 export const SIMULTANEOUS: GameType[] = ['closest', 'truefalse', 'higherlower', 'year', 'risk'];
+
+/** Vrste koje nemaju smisla protiv računala (ono ne zna tvoje odgovore niti čuje izgovoreno). */
+export const BOT_EXCLUDED: GameType[] = ['knowme', 'list3'];
 
 /** Vrste koje se mogu pojaviti u finalu. */
 export const FINALE_POOL: GameType[] = GAME_TYPES.filter((t) => t !== 'risk');

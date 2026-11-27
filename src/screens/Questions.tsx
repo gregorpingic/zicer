@@ -4,6 +4,7 @@ import { GAME_TYPES, ROUND_INFO, questionText } from '../core/gameInfo';
 import { QUIZ_CATEGORIES, parsePack, validateQuestion } from '../core/validate';
 import { addQuestions, allQuestions, clearPlayed, deletePack, deleteQuestion, listPacks, playedCount } from '../db/db';
 import { Button, Confirm, parseNumber, plural } from '../components/common';
+import SyncBadge, { useDataRefresh } from '../components/SyncBadge';
 
 const OWN_PACK: Omit<PackInfo, 'count' | 'importedAt'> = { id: 'vlastita-pitanja', name: 'Vlastita pitanja' };
 
@@ -350,6 +351,7 @@ export default function Questions({ onBack }: { onBack: () => void }) {
   useEffect(() => {
     void load();
   }, []);
+  useDataRefresh(() => void load());
 
   const own = questions.filter((q) => q.packId === OWN_PACK.id);
   const exportOwn = () => {
@@ -373,6 +375,10 @@ export default function Questions({ onBack }: { onBack: () => void }) {
 
       <section className="card">
         <h2>Baza pitanja</h2>
+        <p className="muted small">
+          Pitanja, povijest i statistika dijele se između svih uređaja (laptop, televizor, mobiteli) preko zajedničke
+          baze. <SyncBadge />
+        </p>
         <p>
           Ukupno <strong>{questions.length}</strong> pitanja · odigrano (pamti se između sesija): <strong>{played}</strong>
         </p>
@@ -414,7 +420,7 @@ export default function Questions({ onBack }: { onBack: () => void }) {
           onClick={() =>
             setConfirm({
               title: 'Resetirati odigrana pitanja?',
-              text: 'Aplikacija će zaboraviti koja su pitanja već odigrana pa se sva mogu ponovno pojaviti.',
+              text: 'Aplikacija će zaboraviti koja su pitanja već odigrana (na svim uređajima) pa se sva mogu ponovno pojaviti.',
               run: () => clearPlayed(),
             })
           }
@@ -440,7 +446,7 @@ export default function Questions({ onBack }: { onBack: () => void }) {
                 onClick={() =>
                   setConfirm({
                     title: 'Obrisati paket?',
-                    text: `Paket „${p.name}” i sva njegova pitanja (${p.count}) bit će obrisani.`,
+                    text: `Paket „${p.name}” i sva njegova pitanja (${p.count}) bit će obrisani na svim uređajima.`,
                     run: () => deletePack(p.id),
                   })
                 }

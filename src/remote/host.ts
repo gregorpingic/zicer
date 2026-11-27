@@ -133,6 +133,18 @@ export class RemoteHost {
     return t;
   }
 
+  /** Premješta spojeni mobitel s jednog mjesta igrača na drugo (igra protiv računala). */
+  movePlayer(from: PlayerIndex, to: PlayerIndex) {
+    for (const [c, p] of this.conns) {
+      if (p === from) {
+        this.conns.set(c, to);
+        this.send(c, { type: 'joined', player: to });
+      }
+    }
+    this.emit();
+    this.scheduleBroadcast();
+  }
+
   /** Koji su igrači spojeni. */
   connected(): [boolean, boolean] {
     return this.taken();
