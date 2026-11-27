@@ -443,7 +443,7 @@ export function Versus({ question: q, active, players, multiplier, onDone }: Gam
     ? (right.map((n) => n * POINTS.versusPerPair + (n === q.pairs.length ? POINTS.versusAllBonus : 0)) as [number, number])
     : null;
   useRevealSound(points);
-  const pr = q.pairs[k];
+  const pr = q.pairs[Math.min(k, q.pairs.length - 1)];
   const opts = [pr.a, pr.b];
   const card = <QuestionCard label={`Tko je stariji? · ${Math.min(k + 1, q.pairs.length)}/${q.pairs.length}`} text={q.prompt} />;
   if (!done)

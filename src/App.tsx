@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Component, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { GameMode, MatchConfig, MatchState, PackInfo, Settings } from './core/types';
 import { DEFAULT_SETTINGS } from './core/types';
 import { createMatch, planRounds } from './core/engine';
@@ -9,7 +9,6 @@ import { startSync } from './db/sync';
 import SyncBadge from './components/SyncBadge';
 import Rivalry from './components/Rivalry';
 import { setBusy } from './core/updater';
-import { PinPrompt } from './components/PinPanel';
 import { setSoundEnabled } from './core/sound';
 import { addQuestions, countByType, db, loadSavedMatch, loadSettings, saveMatch, saveSettings } from './db/db';
 import { RemoteHost } from './remote/host';
@@ -399,9 +398,8 @@ export default function App() {
           players: screen === 'game' && match ? match.players : settings.players,
         }}
       >
-        {content}
+        <ScreenGuard key={screen} onHome={() => void go(host ? 'tv' : 'home')}>{content}</ScreenGuard>
       </RemoteContext.Provider>
-      <PinPrompt auto={screen !== 'game' && screen !== 'tv'} />
       {confirmDiscard && (
         <Confirm
           title="Odustati od nedovršene igre?"
@@ -428,4 +426,26 @@ export default function App() {
       )}
     </SettingsContext.Provider>
   );
+}
+
+/** Greška u jednom ekranu ne ruši aplikaciju – soba za mobitele ostaje otvorena, igra ostaje spremljena. */
+class ScreenGuard extends Component<{ onHome: () => void; children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch(e: unknown) {
+    console.error(e);
+  }
+  render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <div className="page center">
+        <p>Nešto je pošlo po zlu na ovom ekranu. Igra je spremljena.</p>
+        <Button big onClick={this.props.onHome}>
+          Natrag
+        </Button>
+      </div>
+    );
+  }
 }

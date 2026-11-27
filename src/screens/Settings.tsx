@@ -6,7 +6,6 @@ import { BOT_LEVEL_NAMES } from '../core/bot';
 import { hasCroatianVoice, speak, speechSupported } from '../core/speech';
 import { sfx, setSoundEnabled } from '../core/sound';
 import { Button } from '../components/common';
-import { PinSettings } from '../components/PinPanel';
 import { DIFFICULTY_OPTIONS, TEMPO_OPTIONS } from './Setup';
 
 const SECONDS = [0, 5, 10, 15, 20, 25, 30, 40, 45, 60, 90, 120];
@@ -144,7 +143,6 @@ export default function Settings({ settings, onSave, onBack }: { settings: S; on
         </div>
       </section>
 
-      <PinSettings />
       <section className="card">
         <h2>Zvuk i glas</h2>
         <label className="check">

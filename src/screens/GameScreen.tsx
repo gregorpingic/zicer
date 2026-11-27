@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ComponentType } from 'react';
+import { Component, useEffect, useRef, useState, type ComponentType, type ReactNode } from 'react';
 import type { GameType, JokerKind, MatchState, PlayerIndex, Question, QuestionOutcome } from '../core/types';
 import { GAME_COMPONENTS } from '../games';
 import type { GameProps } from '../games/types';
@@ -535,6 +535,7 @@ export default function GameScreen({
           <div className="muted small center">Sva pitanja ove vrste već su odigrana – baza se vrti ispočetka.</div>
         )}
         <QuestionTypeContext.Provider value={cur.question.type}>
+        <QuestionGuard key={`g-${cur.question.id}-${state.results.length}`} onSkip={() => void run(engine.skipQuestion)}>
         <Comp
           key={`${cur.question.id}-${state.results.length}-${cur.stolen || 0}`}
           question={cur.question}
@@ -545,6 +546,7 @@ export default function GameScreen({
           multiplier={cur.multiplier}
           onDone={(r: QuestionOutcome) => run((s) => engine.completeQuestion(s, r))}
         />
+        </QuestionGuard>
         </QuestionTypeContext.Provider>
       </>
     );
@@ -628,4 +630,19 @@ export default function GameScreen({
       </div>
     </PauseContext.Provider>
   );
+}
+
+/** Ako pitanje izazove grešku, ne ruši cijelu igru (ni sobu za mobitele) – pitanje se preskače. */
+class QuestionGuard extends Component<{ onSkip: () => void; children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch(e: unknown) {
+    console.error('Greška u pitanju', e);
+    window.setTimeout(() => this.props.onSkip(), 1500);
+  }
+  render() {
+    return this.state.failed ? <div className="msg msg-info center">Ovo pitanje nije uspjelo – preskačem ga…</div> : this.props.children;
+  }
 }
