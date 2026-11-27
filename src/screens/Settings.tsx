@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { BotLevel, GameType, Settings as S } from '../core/types';
 import { DEFAULT_TIMERS } from '../core/types';
 import { GAME_TYPES, ROUND_INFO } from '../core/gameInfo';
@@ -14,6 +14,8 @@ const BY_SPEED = [...GAME_TYPES].sort((a, b) => DEFAULT_TIMERS[a] - DEFAULT_TIME
 
 export default function Settings({ settings, onSave, onBack }: { settings: S; onSave: (s: S) => void; onBack: () => void }) {
   const [s, setS] = useState(settings);
+  // Promjena s drugog uređaja odmah se vidi i na otvorenom ekranu postavki.
+  useEffect(() => setS(settings), [settings]);
   const set = <K extends keyof S>(k: K, v: S[K]) => {
     const next = { ...s, [k]: v };
     setS(next);

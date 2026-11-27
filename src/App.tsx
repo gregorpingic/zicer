@@ -160,7 +160,12 @@ export default function App() {
     (async () => {
       await seedBuiltin();
       startSync();
-      window.addEventListener('zicer-settings', () => void loadSettings().then(setSettings));
+      window.addEventListener('zicer-settings', () =>
+        void loadSettings().then((s) => {
+          setSettings(s);
+          setSoundEnabled(s.sound);
+        }),
+      );
       const s = await loadSettings();
       setSettings(s);
       setSoundEnabled(s.sound);

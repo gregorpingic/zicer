@@ -9,8 +9,8 @@ import * as store from './db';
 
 const API = 'https://zicer.lastegg.app/api';
 
-/** Postavke koje su iste na svim uređajima. */
-const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed'];
+/** Postavke su iste na svim uređajima – sve, uključujući zvuk i glas. */
+const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer'];
 
 export type SyncStatus = { state: 'idle' | 'syncing' | 'ok' | 'offline'; at?: number; message?: string };
 
@@ -224,10 +224,11 @@ export function startSync() {
   if (localStorage.getItem('zicer-sync') === 'off') return;
   store.setLocalChangeListener(() => {
     window.clearTimeout(timer);
-    timer = window.setTimeout(() => void syncNow(), 1500);
+    timer = window.setTimeout(() => void syncNow(), 600);
   });
   void syncNow();
   document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && void syncNow());
   window.addEventListener('online', () => void syncNow());
-  window.setInterval(() => document.visibilityState === 'visible' && void syncNow(), 60_000);
+  // Često, da promjena postavki ili novi paket stignu na ostale uređaje za nekoliko sekundi.
+  window.setInterval(() => document.visibilityState === 'visible' && void syncNow(), 10_000);
 }
