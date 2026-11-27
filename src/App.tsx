@@ -124,6 +124,14 @@ export default function App() {
     localStorage.setItem('zicer-tv', '1');
     void go('tv');
   };
+  /** Nastavak spremljene igre u načinu televizor + mobiteli (ista soba, mobiteli se sami spoje). */
+  const resumeTv = () => {
+    if (!saved) return;
+    if (!host) setHost(new RemoteHost(roomCode(), settings.players));
+    localStorage.setItem('zicer-tv', '1');
+    setMatch(saved);
+    setScreen('game');
+  };
   const stopTv = () => {
     localStorage.removeItem('zicer-tv');
     host?.destroy();
@@ -333,19 +341,24 @@ export default function App() {
           <div className="home-menu">
             {saved && (
               <div className="resume-box">
-                <Button big variant="secondary" className="resume" onClick={() => { setMatch(saved); setScreen('game'); }}>
-                  ▶ Nastavi nedovršenu igru
+                <Button big className="resume" onClick={resumeTv} autoFocus>
+                  ▶ Nastavi igru na televizoru s mobitelima
                   <span className="small muted">
                     {MODE_NAMES[saved.config.mode]} · runda {saved.roundIndex + 1}/{saved.config.rounds.length} · {saved.players[0]}{' '}
                     {saved.scores[0]} : {saved.scores[1]} {saved.players[1]}
                   </span>
                 </Button>
-                <button className="link-btn danger" onClick={() => setConfirmDiscard(true)}>
-                  Odustani od ove igre
-                </button>
+                <div className="row center">
+                  <button className="link-btn" onClick={() => { setMatch(saved); setScreen('game'); }}>
+                    Nastavi na ovom uređaju (bez mobitela)
+                  </button>
+                  <button className="link-btn danger" onClick={() => setConfirmDiscard(true)}>
+                    Odustani od ove igre
+                  </button>
+                </div>
               </div>
             )}
-            <Button big onClick={startTv} autoFocus>
+            <Button big onClick={startTv} autoFocus={!saved}>
               📺 Igraj na televizoru s mobitelima
             </Button>
             <Button big variant="secondary" onClick={() => { location.hash = 'mobitel'; }}>
