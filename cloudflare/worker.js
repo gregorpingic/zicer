@@ -45,7 +45,8 @@ async function api(request, env, url) {
     if (count >= 20) return json({ error: 'pin-locked' }, 429);
     const given = parts[1] === 'pin' && m === 'POST' ? (await body(request.clone())).old : request.headers.get('x-zicer-pin');
     if (!(await pinOk(given))) {
-      await db.prepare("INSERT OR REPLACE INTO kv (key, value, updated_at) VALUES ('pin-fails', ?, ?)").bind(String(count + 1), now).run();
+      // Kao pogrešan pokušaj broji se samo upisan, a krivi PIN – uređaj bez PIN-a ne smije zaključati ostale.
+      if (given) await db.prepare("INSERT OR REPLACE INTO kv (key, value, updated_at) VALUES ('pin-fails', ?, ?)").bind(String(count + 1), now).run();
       return json({ error: 'pin' }, 401);
     }
   }

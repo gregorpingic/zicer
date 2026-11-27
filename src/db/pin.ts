@@ -3,16 +3,25 @@ export const API = 'https://zicer.lastegg.app/api';
 const KEY = 'zicer-pin';
 
 export const getPin = () => localStorage.getItem(KEY) || '';
+/** Poslužitelj je odbio PIN ovog uređaja: usklađivanje se ne ponavlja dok se PIN ne upiše. */
+let blocked = false;
+export const isPinBlocked = () => blocked;
 export function savePin(pin: string) {
   if (pin) localStorage.setItem(KEY, pin);
   else localStorage.removeItem(KEY);
+  blocked = false;
 }
+/** Otvara prozor za upis PIN-a (manual = korisnik je to zatražio). */
+export const askPin = (manual: boolean) => window.dispatchEvent(new CustomEvent('zicer-pin-needed', { detail: { manual } }));
 export const pinHeaders = (): Record<string, string> => (getPin() ? { 'x-zicer-pin': getPin() } : {});
 
 /** fetch prema API-ju s PIN-om; na 401 javlja aplikaciji da treba upisati PIN. */
 export async function apiFetch(path: string, init: RequestInit = {}): Promise<Response> {
   const res = await fetch(API + path, { ...init, headers: { 'content-type': 'application/json', ...pinHeaders(), ...(init.headers || {}) } });
-  if (res.status === 401) window.dispatchEvent(new Event('zicer-pin-needed'));
+  if (res.status === 401) {
+    blocked = true;
+    askPin(false);
+  }
   return res;
 }
 

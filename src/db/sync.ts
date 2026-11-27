@@ -1,4 +1,4 @@
-import { apiFetch } from './pin';
+import { apiFetch, isPinBlocked } from './pin';
 import type { MatchRecord, PackInfo, Question, Settings } from '../core/types';
 import * as store from './db';
 
@@ -105,6 +105,7 @@ export function syncNow(): Promise<void> {
 }
 
 async function syncOnce() {
+  if (isPinBlocked()) return; // čeka se upis PIN-a – ne opterećuj poslužitelj odbijenim zahtjevima
   if (!navigator.onLine) {
     setStatus({ state: 'offline', at: status.at, message: 'Nema interneta – promjene će se uskladiti kasnije.' });
     return;

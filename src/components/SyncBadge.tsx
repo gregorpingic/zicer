@@ -1,5 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { getSyncStatus, onSyncChange, syncNow } from '../db/sync';
+import { askPin, isPinBlocked } from '../db/pin';
 
 /** Mala oznaka stanja usklađivanja sa zajedničkom bazom. */
 export default function SyncBadge() {
@@ -9,7 +10,7 @@ export default function SyncBadge() {
     const t = window.setInterval(() => tick((x) => x + 1), 30_000);
     return () => window.clearInterval(t);
   }, []);
-  const needsPin = s.state === 'offline' && /^Usklađivanje nije uspjelo: 401/.test(s.message || '');
+  const needsPin = isPinBlocked() || (s.state === 'offline' && /^Usklađivanje nije uspjelo: 401/.test(s.message || ''));
   const ago = s.at ? Math.max(0, Math.round((Date.now() - s.at) / 60000)) : null;
   const text =
     s.state === 'syncing'
@@ -22,7 +23,7 @@ export default function SyncBadge() {
           ? 'Nije usklađeno – pokušaj ponovno'
           : 'Usklađivanje…';
   return (
-    <button className={`sync-badge ${s.state}`} onClick={() => (needsPin ? window.dispatchEvent(new Event('zicer-pin-needed')) : void syncNow())} title={s.message || 'Pitanja, povijest i statistika dijele se između svih uređaja'}>
+    <button className={`sync-badge ${s.state}`} onClick={() => (needsPin ? askPin(true) : void syncNow())} title={s.message || 'Pitanja, povijest i statistika dijele se između svih uređaja'}>
       ☁ {text}
     </button>
   );

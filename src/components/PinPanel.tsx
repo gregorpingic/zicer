@@ -49,18 +49,31 @@ export function PinSettings() {
 }
 
 /** Prozor koji se pojavi kad poslužitelj zatraži PIN (npr. na novom uređaju). */
-export function PinPrompt() {
+let autoShown = false;
+
+/** auto = smije li se prozor sam otvoriti (nikad tijekom igre ili na televizoru). */
+export function PinPrompt({ auto }: { auto: boolean }) {
   const [open, setOpen] = useState(false);
+  const [pending, setPending] = useState(false);
   const [pin, setPin] = useState('');
   const [wrong, setWrong] = useState(false);
   useEffect(() => {
-    const on = () => {
+    const on = (e: Event) => {
+      const manual = !!(e as CustomEvent<{ manual?: boolean }>).detail?.manual;
       if (getPin()) setWrong(true);
-      setOpen(true);
+      if (manual) setOpen(true);
+      else if (!autoShown) setPending(true); // samo jednom, i tek kad smije
     };
     window.addEventListener('zicer-pin-needed', on);
     return () => window.removeEventListener('zicer-pin-needed', on);
   }, []);
+  useEffect(() => {
+    if (pending && auto && !autoShown) {
+      autoShown = true;
+      setPending(false);
+      setOpen(true);
+    }
+  }, [pending, auto]);
   if (!open) return null;
   return (
     <Modal title="Kućni PIN" onClose={() => setOpen(false)}>

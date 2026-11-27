@@ -376,7 +376,7 @@ export default function App() {
       >
         {content}
       </RemoteContext.Provider>
-      <PinPrompt />
+      <PinPrompt auto={screen !== 'game' && screen !== 'tv'} />
       {confirmDiscard && (
         <Confirm
           title="Odustati od nedovršene igre?"
