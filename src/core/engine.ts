@@ -41,15 +41,43 @@ export function planRounds(types: GameType[], count: number, withFinale: boolean
   const finale = withFinale && count >= 2;
   const n = finale ? count - 1 : count;
   if (mixed) return [...Array.from({ length: n }, () => 'mix' as RoundKind), ...(finale ? (['finale'] as RoundKind[]) : [])];
+  // Raznolikost između dvoboja: prvo vrste koje su se najdulje igrale prije, zatim nasumično.
+  const recent = recentTypes();
+  const age = (t: GameType) => {
+    const i = recent.indexOf(t);
+    return i < 0 ? 1e9 : i; // nikad igrano = najstarije
+  };
   const out: RoundKind[] = [];
+  let first = true;
   while (out.length < n) {
     let batch = shuffle(pool);
+    if (first) batch = batch.sort((a, b) => age(b) - age(a)); // stabilno: unutar iste starosti ostaje nasumično
+    first = false;
     if (out.length && batch.length > 1 && batch[0] === out[out.length - 1]) batch = [...batch.slice(1), batch[0]];
     out.push(...batch);
   }
-  const rounds: RoundKind[] = out.slice(0, n);
+  // Odabrane vrste u nasumičnom redoslijedu (da najstarije ne dolaze uvijek prve).
+  const rounds: RoundKind[] = shuffle(out.slice(0, n));
+  rememberTypes(rounds.filter((r): r is GameType => r !== 'finale' && r !== 'mix'));
   if (finale) rounds.push('finale');
   return rounds;
+}
+
+/** Vrste igara iz prethodnih dvoboja, najnovije prve (pamti se na uređaju). */
+function recentTypes(): GameType[] {
+  try {
+    return JSON.parse(localStorage.getItem('zicer-recent-types') || '[]');
+  } catch {
+    return [];
+  }
+}
+function rememberTypes(types: GameType[]) {
+  try {
+    const next = [...types, ...recentTypes().filter((t) => !types.includes(t))];
+    localStorage.setItem('zicer-recent-types', JSON.stringify(next));
+  } catch {
+    /* bez localStorage (testovi) */
+  }
 }
 
 const fullJokers = (): JokerSet => ({ fifty: true, double: true, steal: true });
@@ -116,6 +144,7 @@ export async function pickQuestion(
   difficulty: DifficultySetting,
   usedIds: string[],
   players?: [string, string],
+  avoidCats: string[] = [],
 ): Promise<{ question: Question; recycled: boolean } | null> {
   let all = await store.questionsByType(type);
   if (type === 'knowme') {
@@ -147,6 +176,10 @@ export async function pickQuestion(
   if (wanted !== null) {
     const exact = fresh.filter((q) => (q.difficulty ?? 2) === wanted);
     if (exact.length) fresh = exact;
+  }
+  if (avoidCats.length) {
+    const varied = fresh.filter((q) => !avoidCats.includes(categoryOf(q)));
+    if (varied.length) fresh = varied;
   }
   const question = fresh[Math.floor(Math.random() * fresh.length)];
   await store.markPlayed(question);
@@ -195,13 +228,19 @@ async function loadQuestion(state: MatchState, avoidType?: GameType): Promise<Cu
     }
     const recent = state.results.slice(-3).map((r) => r.type);
     const filtered = pool.filter((t) => !recent.includes(t) && t !== avoidType);
-    const choose = filtered.length ? filtered : pool;
+    let choose = filtered.length ? filtered : pool;
     if (!choose.length) return null;
+    // Raznolikost: prednost vrstama koje su se u ovom dvoboju igrale najmanje.
+    const used = (t: GameType) => state.results.filter((r) => r.type === t).length;
+    const least = Math.min(...choose.map(used));
+    choose = choose.filter((t) => used(t) === least);
     type = choose[Math.floor(Math.random() * choose.length)];
   } else {
     type = round;
   }
-  const picked = await pickQuestion(type, state.config.difficulty, state.usedIds, state.players);
+  // Raznolikost unutar vrste: izbjegni kategorije zadnjih pitanja te vrste u ovom dvoboju.
+  const avoidCats = state.results.filter((r) => r.type === type).slice(-3).map((r) => r.category);
+  const picked = await pickQuestion(type, state.config.difficulty, state.usedIds, state.players, avoidCats);
   if (!picked) return null;
   const pq = picked.question;
   // Pitanje o konkretnoj osobi: pogađa onaj drugi.

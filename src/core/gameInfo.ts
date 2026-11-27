@@ -206,9 +206,9 @@ export interface ModeInfo {
 }
 
 export const MODES: Record<Exclude<GameMode, 'prilagodjeni'>, ModeInfo> = {
-  brzi: { name: 'Brzi dvoboj', duration: '10–15 min', rounds: 3, questionsPerRound: 2, finale: false },
-  standardni: { name: 'Standardni dvoboj', duration: '30–45 min', rounds: 6, questionsPerRound: 4, finale: true },
-  veliki: { name: 'Veliki dvoboj', duration: '60–90 min', rounds: 10, questionsPerRound: 4, finale: true },
+  brzi: { name: 'Brzi dvoboj', duration: '15–20 min', rounds: 5, questionsPerRound: 3, finale: false },
+  standardni: { name: 'Standardni dvoboj', duration: '45–60 min', rounds: 9, questionsPerRound: 4, finale: true },
+  veliki: { name: 'Veliki dvoboj', duration: '90–120 min', rounds: 15, questionsPerRound: 5, finale: true },
 };
 
 export const MODE_NAMES: Record<GameMode, string> = {
