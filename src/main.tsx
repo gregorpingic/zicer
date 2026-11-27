@@ -1,21 +1,11 @@
 import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { registerSW } from 'virtual:pwa-register';
+import { startUpdater } from './core/updater';
 import App from './App';
 import PhoneApp from './remote/PhoneApp';
 import './styles.css';
 
-// Nova verzija aplikacije provjerava se pri pokretanju i svaki put kad se aplikacija vrati u prvi plan
-// (instalirana aplikacija na mobitelu inače može danima raditi sa starom verzijom).
-registerSW({
-  immediate: true,
-  onRegisteredSW(_url, r) {
-    if (!r) return;
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') void r.update();
-    });
-  },
-});
+startUpdater();
 
 const isPhone = () => location.hash.startsWith('#mobitel');
 

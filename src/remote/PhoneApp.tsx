@@ -1,3 +1,4 @@
+import { setBusy } from '../core/updater';
 import { useEffect, useRef, useState } from 'react';
 import Peer, { type DataConnection } from 'peerjs';
 import type { JokerKind, PlayerIndex } from '../core/types';
@@ -111,13 +112,29 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
       c.on('error', () => undefined);
     };
     p.on('open', connect);
-    p.on('disconnected', () => !stopped && !p.destroyed && p.reconnect());
+    const reconnect = () => {
+      window.setTimeout(() => {
+        if (stopped || p.destroyed || !p.disconnected) return;
+        try {
+          p.reconnect();
+        } catch {
+          /* pokušat će se ponovno pri sljedećoj grešci */
+        }
+      }, 2000);
+    };
+    p.on('disconnected', reconnect);
     p.on('error', (e: { type?: string }) => {
       if (e.type === 'peer-unavailable') {
         setError('Televizor s tim kodom nije pronađen. Provjerite kod – pokušavam ponovno…');
         retry = window.setTimeout(connect, 3000);
       } else if (e.type === 'network' || e.type === 'server-error' || e.type === 'socket-error') {
-        setError('Nema interneta ili poslužitelj za spajanje nije dostupan.');
+        // Već otvorena veza s televizorom radi i bez poslužitelja – samo se ponovno prijavi.
+        if (!conn.current?.open) setError('Nema veze s poslužiteljem za spajanje – pokušavam ponovno…');
+        reconnect();
+        if (!conn.current?.open) {
+          window.clearTimeout(retry);
+          retry = window.setTimeout(connect, 4000);
+        }
       }
     });
     return () => {
@@ -129,6 +146,11 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
   }, [code, status === 'code' || status === 'kicked']);
 
   useEffect(() => keepAwake(), []);
+  // Mobitel se ne ažurira na novu verziju dok je spojen na televizor.
+  useEffect(() => {
+    setBusy(status === 'play' || status === 'connecting');
+    return () => setBusy(false);
+  }, [status]);
 
   const submit = (c: Ctl, value: ControlValue) => {
     setSent((s) => new Set(s).add(c.id));

@@ -8,6 +8,7 @@ import { BotPlayer } from './core/bot';
 import { startSync } from './db/sync';
 import SyncBadge from './components/SyncBadge';
 import Rivalry from './components/Rivalry';
+import { setBusy } from './core/updater';
 import { PinPrompt } from './components/PinPanel';
 import { setSoundEnabled } from './core/sound';
 import { addQuestions, countByType, db, loadSavedMatch, loadSettings, saveMatch, saveSettings } from './db/db';
@@ -120,9 +121,11 @@ export default function App() {
   // Način "televizor + mobiteli": domaćin postoji dok je televizor u tom načinu.
   const startTv = () => {
     if (!host) setHost(new RemoteHost(roomCode(), settings.players));
+    localStorage.setItem('zicer-tv', '1');
     void go('tv');
   };
   const stopTv = () => {
+    localStorage.removeItem('zicer-tv');
     host?.destroy();
     setHost(null);
     void go('home');
@@ -134,6 +137,8 @@ export default function App() {
   useEffect(() => {
     setTvMode(tvActive);
   }, [tvActive]);
+  // Nova verzija aplikacije ne učitava se usred igre ni dok je televizor spojen s mobitelima.
+  useEffect(() => setBusy(tvActive || screen === 'game'), [tvActive, screen]);
   useEffect(() => {
     if (!host) return;
     return host.onCommand((c) => {
@@ -193,7 +198,16 @@ export default function App() {
       const s = await loadSettings();
       setSettings(s);
       setSoundEnabled(s.sound);
-      setSaved(await loadSavedMatch());
+      const sv = await loadSavedMatch();
+      setSaved(sv);
+      // Ako se televizor ponovno učitao usred TV načina: ista soba i nastavak igre, mobiteli se sami vrate.
+      if (localStorage.getItem('zicer-tv') === '1') {
+        setHost(new RemoteHost(roomCode(), s.players));
+        if (sv) {
+          setMatch(sv);
+          setScreen('game');
+        } else setScreen('tv');
+      }
       setReady(true);
     })().catch((e) => setError(String(e?.message || e)));
   }, []);

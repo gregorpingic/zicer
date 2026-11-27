@@ -47,28 +47,57 @@ export class RemoteHost {
     const peer = new Peer(PEER_PREFIX + this.code, { debug: 0 });
     this.peer = peer;
     peer.on('open', () => {
+      this.attempts = 0;
       this.status = 'ready';
       this.error = '';
       this.emit();
     });
     peer.on('connection', (conn) => this.accept(conn));
-    peer.on('disconnected', () => {
-      if (!this.destroyed && !peer.destroyed) peer.reconnect();
-    });
+    peer.on('disconnected', () => this.reconnectSoon());
     peer.on('error', (e: { type?: string; message?: string }) => {
-      if (e.type === 'unavailable-id' || e.type === 'network' || e.type === 'server-error' || e.type === 'socket-error') {
-        // ID je možda još zauzet od prethodnog učitavanja stranice – pokušaj ponovno.
+      if (e.type === 'unavailable-id') {
+        // ID je još zauzet od prethodnog učitavanja stranice – pokušaj ponovno za koju sekundu.
         this.status = 'connecting';
-        this.error = e.type === 'unavailable-id' ? 'Soba se ponovno otvara…' : 'Nema veze s poslužiteljem za spajanje – provjerite internet.';
+        this.error = 'Soba se ponovno otvara…';
         this.emit();
         peer.destroy();
         window.clearTimeout(this.retryTimer);
         this.retryTimer = window.setTimeout(() => this.open(), 3000);
+      } else if (e.type === 'network' || e.type === 'server-error' || e.type === 'socket-error' || e.type === 'disconnected') {
+        // Prekid veze s poslužiteljem za spajanje NE prekida već spojene mobitele – samo se ponovno prijavi.
+        this.status = 'connecting';
+        this.error = 'Ponovno spajanje s poslužiteljem…';
+        this.emit();
+        this.reconnectSoon();
       } else if (e.type !== 'peer-unavailable') {
         this.error = e.message || String(e.type);
         this.emit();
       }
     });
+  }
+
+  private attempts = 0;
+  private reconnectSoon() {
+    if (this.destroyed) return;
+    window.clearTimeout(this.retryTimer);
+    this.retryTimer = window.setTimeout(() => {
+      const peer = this.peer;
+      if (this.destroyed || !peer) return;
+      this.attempts++;
+      const live = [...this.conns.keys()].some((c) => c.open);
+      if (peer.destroyed || (this.attempts > 6 && !live)) {
+        // Potpuno novo spajanje samo kad nijedan mobitel nije spojen.
+        this.attempts = 0;
+        if (!peer.destroyed) peer.destroy();
+        this.open();
+      } else if (peer.disconnected) {
+        try {
+          peer.reconnect();
+        } catch {
+          this.reconnectSoon();
+        }
+      }
+    }, Math.min(10000, 1500 * (this.attempts + 1)));
   }
 
   private accept(conn: DataConnection) {
