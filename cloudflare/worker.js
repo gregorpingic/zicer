@@ -136,6 +136,21 @@ async function api(request, env, url) {
     return json({ ok: true });
   }
 
+  if (parts[1] === 'daily') {
+    if (m === 'GET') {
+      const days = Math.min(60, Number(url.searchParams.get('days') || 14));
+      const r = await db.prepare('SELECT date, player, score, detail, created_at FROM daily ORDER BY date DESC LIMIT ?').bind(days * 4).all();
+      return json(r.results.map((x) => ({ ...x, detail: x.detail ? JSON.parse(x.detail) : null })));
+    }
+    if (m === 'POST') {
+      const b = await body(request);
+      if (!b || !/^\d{4}-\d{2}-\d{2}$/.test(b.date || '') || typeof b.player !== 'string' || !b.player.trim()) return json({ error: 'Neispravno' }, 400);
+      await db.prepare('INSERT OR IGNORE INTO daily (date, player, score, detail, created_at) VALUES (?, ?, ?, ?, ?)')
+        .bind(b.date, b.player.slice(0, 40), Math.round(Number(b.score) || 0), JSON.stringify(b.detail || null).slice(0, 20000), now).run();
+      return json({ ok: true });
+    }
+  }
+
   return json({ error: 'Nepoznata putanja' }, 404);
 }
 

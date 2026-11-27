@@ -230,6 +230,7 @@ function RoundIntro({ state, onStart }: { state: MatchState; onStart: () => void
           Zaostaje <strong>{state.players[trailing]}</strong> – prvi/a je na potezu. Razlika: {Math.abs(state.scores[0] - state.scores[1])}.
         </p>
       )}
+      {state.roundIndex === 0 && state.config.stake && <div className="stake-banner">🎯 Ulog dvoboja: {state.config.stake}</div>}
       <p className="muted">Pitanja u rundi: {state.config.questionsPerRound}</p>
       <Control
         spec={{ for: 'any', kind: 'buttons', title: `Runda ${state.roundIndex + 1}: ${info.name}`, note: info.short, buttons: [{ id: 'start', label: 'Započni rundu' }] }}
@@ -305,6 +306,14 @@ function EndScreen({ state, onRematch, onHome }: { state: MatchState; onRematch:
           </div>
         )}
       </div>
+      {state.config.stake && (
+        <div className="stake-banner big">
+          🎯 {state.config.stake}
+          <div className="stake-who">
+            {/^pobjednik/i.test(state.config.stake) ? `To je ${state.players[w]}! 🏆` : `To je ${state.players[(1 - w) as PlayerIndex]} 😅`}
+          </div>
+        </div>
+      )}
       <table className="stats-table">
         <thead>
           <tr>

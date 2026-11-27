@@ -1,7 +1,7 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import QRCode from 'qrcode';
 import type { BotLevel, DifficultySetting, GameMode, MatchState, Settings, Tempo } from '../core/types';
-import { MODES, MODE_NAMES } from '../core/gameInfo';
+import { MODES, MODE_NAMES, STAKE_IDEAS } from '../core/gameInfo';
 import { BOT_LEVEL_NAMES } from '../core/bot';
 import { Button } from '../components/common';
 import { Control } from './RemoteContext';
@@ -99,6 +99,12 @@ export default function TvLobby({
     },
     { id: 'time', label: 'Tempo', value: TEMPO_NAMES[settings.tempo ?? 'normalno'], act: () => set({ tempo: next(TEMPOS, settings.tempo ?? 'normalno') }) },
     { id: 'auto', label: 'Automatski nastavak', value: settings.autoNext ? 'Da' : 'Ne', act: () => set({ autoNext: !settings.autoNext }) },
+    {
+      id: 'stake',
+      label: 'Ulog',
+      value: settings.stake || 'bez uloga',
+      act: () => set({ stake: next(['', ...STAKE_IDEAS], STAKE_IDEAS.includes(settings.stake) ? settings.stake : '') }),
+    },
     { id: 'jokers', label: 'Džokeri', value: settings.jokers ? 'Da' : 'Ne', act: () => set({ jokers: !settings.jokers }) },
     { id: 'speed', label: 'Brzinski bonus', value: settings.speedBonus ? 'Da' : 'Ne', act: () => set({ speedBonus: !settings.speedBonus }) },
   ];

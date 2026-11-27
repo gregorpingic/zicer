@@ -111,8 +111,11 @@ export function validateQuestion(raw: unknown): Question {
       if (ex) out.examples = ex;
       return out as unknown as Question;
     }
-    case 'knowme':
-      return { ...base, question: str(o, 'question')! } as Question;
+    case 'knowme': {
+      const about = str(o, 'about', false);
+      const answer = str(o, 'answer', false);
+      return { ...base, question: str(o, 'question')!, ...(about ? { about } : {}), ...(answer ? { answer } : {}) } as Question;
+    }
     case 'association':
     case 'describe': {
       const out: Obj = { ...base, clues: strArr(o, 'clues', 3, 8)!, answer: str(o, 'answer')! };

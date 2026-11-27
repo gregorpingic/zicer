@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { BotLevel, DifficultySetting, GameMode, GameType, MatchConfig, Settings, Tempo } from '../core/types';
-import { BOT_EXCLUDED, GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from '../core/gameInfo';
+import { BOT_EXCLUDED, GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO, STAKE_IDEAS } from '../core/gameInfo';
 import { BOT_LEVEL_NAMES } from '../core/bot';
 import { planRounds } from '../core/engine';
 import { countByType } from '../db/db';
@@ -73,6 +73,7 @@ export default function Setup({
       rounds: planRounds(types, rounds, finale, settings.mixed),
       questionsPerRound: qpr,
       difficulty,
+      ...(settings.stake.trim() ? { stake: settings.stake.trim() } : {}),
     };
     onStart([players[0].trim(), vsBot ? settings.botName : players[1].trim()], config);
   };
@@ -220,6 +221,28 @@ export default function Setup({
           </div>
         )}
         {types.length === 0 && <div className="msg msg-bad">Odaberite barem jednu vrstu igre koja ima pitanja.</div>}
+      </section>
+
+      <section className="card">
+        <h2>Ulog (neobavezno)</h2>
+        <div className="row">
+          <input
+            className="stake-input"
+            value={settings.stake}
+            maxLength={80}
+            placeholder="npr. Gubitnik kuha večeru"
+            onChange={(e) => set({ stake: e.target.value })}
+            aria-label="Ulog"
+          />
+          <Button variant="secondary" onClick={() => set({ stake: STAKE_IDEAS[Math.floor(Math.random() * STAKE_IDEAS.length)] })}>
+            🎲 Predloži
+          </Button>
+          {settings.stake && (
+            <Button variant="ghost" onClick={() => set({ stake: '' })}>
+              Bez uloga
+            </Button>
+          )}
+        </div>
       </section>
 
       <section className="card">

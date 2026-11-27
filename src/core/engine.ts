@@ -115,8 +115,22 @@ export async function pickQuestion(
   type: GameType,
   difficulty: DifficultySetting,
   usedIds: string[],
+  players?: [string, string],
 ): Promise<{ question: Question; recycled: boolean } | null> {
-  const all = await store.questionsByType(type);
+  let all = await store.questionsByType(type);
+  if (type === 'knowme') {
+    // Pitanja o osobama koje ne igraju ovaj dvoboj se preskaču.
+    all = all.filter((q) => q.type !== 'knowme' || !q.about || players?.includes(q.about));
+    // Pitanja o vama dolaze češće (oko 60 %), ako ih ima neodigranih.
+    const playedSet = await store.playedIds(type);
+    const usedSet = new Set(usedIds);
+    const personal = all.filter((q) => q.type === 'knowme' && q.about && !playedSet.has(q.id) && !usedSet.has(q.id));
+    if (personal.length && Math.random() < 0.6) {
+      const question = personal[Math.floor(Math.random() * personal.length)];
+      await store.markPlayed(question);
+      return { question, recycled: false };
+    }
+  }
   if (!all.length) return null;
   const used = new Set(usedIds);
   let candidates = all.filter((q) => !used.has(q.id));
@@ -187,9 +201,15 @@ async function loadQuestion(state: MatchState, avoidType?: GameType): Promise<Cu
   } else {
     type = round;
   }
-  const picked = await pickQuestion(type, state.config.difficulty, state.usedIds);
+  const picked = await pickQuestion(type, state.config.difficulty, state.usedIds, state.players);
   if (!picked) return null;
-  return { question: picked.question, active, multiplier, recycled: picked.recycled };
+  const pq = picked.question;
+  // Pitanje o konkretnoj osobi: pogađa onaj drugi.
+  if (pq.type === 'knowme' && pq.about) {
+    const subject = state.players.indexOf(pq.about);
+    if (subject >= 0) active = (1 - subject) as PlayerIndex;
+  }
+  return { question: pq, active, multiplier, recycled: picked.recycled };
 }
 
 /** Početak pitanja (nakon uvoda runde ili nakon prethodnog pitanja). */
@@ -342,5 +362,6 @@ export function toRecord(state: MatchState): MatchRecord {
     winner: state.winner ?? 0,
     results: state.results,
     adjustments: state.adjustments,
+    ...(state.config.stake ? { stake: state.config.stake } : {}),
   };
 }

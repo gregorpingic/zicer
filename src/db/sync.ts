@@ -10,7 +10,7 @@ import * as store from './db';
 const API = 'https://zicer.lastegg.app/api';
 
 /** Postavke su iste na svim uređajima – sve, uključujući zvuk i glas. */
-const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer', 'jokers', 'speedBonus'];
+const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer', 'jokers', 'speedBonus', 'stake'];
 
 export type SyncStatus = { state: 'idle' | 'syncing' | 'ok' | 'offline'; at?: number; message?: string };
 

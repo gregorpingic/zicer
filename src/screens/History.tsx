@@ -116,6 +116,7 @@ export default function History({ onBack }: { onBack: () => void }) {
                     </td>
                     <td>
                       <strong>{m.players[m.winner]}</strong>
+                      {m.stake && <div className="muted small">🎯 {m.stake}</div>}
                     </td>
                   </tr>
                 ))}

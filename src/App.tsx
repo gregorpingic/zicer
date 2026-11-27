@@ -21,8 +21,10 @@ import Setup from './screens/Setup';
 import History from './screens/History';
 import Questions from './screens/Questions';
 import SettingsScreen from './screens/Settings';
+import Daily from './screens/Daily';
+import AboutUs from './screens/AboutUs';
 
-type Screen = 'home' | 'setup' | 'game' | 'history' | 'questions' | 'settings' | 'help' | 'tv';
+type Screen = 'home' | 'setup' | 'game' | 'history' | 'questions' | 'settings' | 'help' | 'tv' | 'daily' | 'about';
 
 /** Kod sobe ostaje isti između učitavanja, da se mobiteli mogu sami ponovno spojiti. */
 function roomCode(): string {
@@ -77,6 +79,14 @@ function Help({ onBack }: { onBack: () => void }) {
           <li>Svaki džoker može se iskoristiti jednom po dvoboju – na mobitelu ili na ekranu.</li>
           <li><strong>⚡ Brzinski bonus</strong> – +5 za najbrži točan odgovor u igrama Istina ili laž i Veće ili manje te za točan odgovor u prvoj trećini vremena u Kvizu i Uljezu.</li>
           <li><strong>⚑ Prijavi</strong> – ako je pitanje netočno, nejasno ili dosadno, prijavi ga; prijave se pregledavaju u „Pitanja i paketi”.</li>
+        </ul>
+      </section>
+      <section className="card">
+        <h2>Ulog, dnevni izazov i pitanja o nama</h2>
+        <ul className="rules">
+          <li><strong>🎯 Ulog</strong> – prije dvoboja upišite (ili 🎲 izvucite) za što igrate, npr. „Gubitnik kuha večeru”. Na kraju aplikacija javi tko plaća.</li>
+          <li><strong>📅 Dnevni izazov</strong> – svaki dan istih 5 pitanja za oboje. Svatko igra sam na svom uređaju kad stigne (do 10 bodova po pitanju), a zatim usporedite rezultate i niz zadnjih 14 dana.</li>
+          <li><strong>💬 Pitanja o nama</strong> – svatko upiše pitanja o sebi s točnim odgovorom. U igri „Koliko me poznaješ?” ta pitanja dolaze češće: drugi igrač pogađa, a odgovor je već poznat.</li>
         </ul>
       </section>
       {(Object.keys(ROUND_INFO) as (keyof typeof ROUND_INFO)[]).map((k) => (
@@ -150,6 +160,7 @@ export default function App() {
       rounds: planRounds(types, m.rounds, m.finale, settings.mixed),
       questionsPerRound: m.questionsPerRound,
       difficulty: settings.difficulty,
+      ...(settings.stake.trim() ? { stake: settings.stake.trim() } : {}),
     };
     let players = settings.players;
     if (vsBot && host) {
@@ -261,6 +272,12 @@ export default function App() {
     case 'help':
       content = <Help onBack={() => go('home')} />;
       break;
+    case 'daily':
+      content = <Daily settings={settings} onBack={() => go('home')} />;
+      break;
+    case 'about':
+      content = <AboutUs settings={settings} onBack={() => go('home')} />;
+      break;
     case 'tv':
       content = host && (
         <TvLobby
@@ -320,6 +337,14 @@ export default function App() {
             <Button variant="secondary" onClick={() => go('setup')}>
               Igra na jednom uređaju
             </Button>
+            <div className="home-row">
+              <Button variant="secondary" onClick={() => go('daily')}>
+                📅 Dnevni izazov
+              </Button>
+              <Button variant="secondary" onClick={() => go('about')}>
+                💬 Pitanja o nama
+              </Button>
+            </div>
             <Button variant="secondary" onClick={() => go('history')}>
               Povijest i statistika
             </Button>

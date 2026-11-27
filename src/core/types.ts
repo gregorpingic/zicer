@@ -62,6 +62,9 @@ export interface List3Question extends BaseQuestion {
 export interface KnowMeQuestion extends BaseQuestion {
   type: 'knowme';
   question: string;
+  /** Pitanje o konkretnoj osobi (ime igrača) s unaprijed upisanim odgovorom. */
+  about?: string;
+  answer?: string;
 }
 export interface AssociationQuestion extends BaseQuestion {
   type: 'association';
@@ -205,6 +208,8 @@ export interface MatchConfig {
   bot?: BotLevel;
   /** Miješana pitanja: svako pitanje u rundi je druga vrsta igre. */
   mixed?: boolean;
+  /** Ulog dvoboja, npr. „Gubitnik kuha večeru”. */
+  stake?: string;
   /** Odabrane vrste igara (prazno = sve). */
   types: GameType[];
   finale: boolean;
@@ -272,6 +277,7 @@ export interface MatchRecord {
   winner: PlayerIndex;
   results: QuestionResult[];
   adjustments: ScoreAdjustment[];
+  stake?: string;
   /** Je li zapis poslan u zajedničku bazu. */
   synced?: boolean;
 }
@@ -323,6 +329,8 @@ export interface Settings {
   jokers: boolean;
   /** Brzinski bonus za brži točan odgovor. */
   speedBonus: boolean;
+  /** Ulog za sljedeći dvoboj (prazno = bez uloga). */
+  stake: string;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -340,4 +348,5 @@ export const DEFAULT_SETTINGS: Settings = {
   mixed: false,
   jokers: true,
   speedBonus: true,
+  stake: '',
 };

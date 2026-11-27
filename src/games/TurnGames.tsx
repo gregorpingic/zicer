@@ -459,7 +459,9 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
   // active = onaj koji pogađa; drugi igrač tajno odgovara o sebi
   const guesser = active;
   const subject = otherOf(active);
-  const [secret, setSecret] = useState<string | null>(null);
+  // Pitanje o konkretnoj osobi s unaprijed upisanim odgovorom – bez tajnog unosa.
+  const personal = !!(q.about && q.answer);
+  const [secret, setSecret] = useState<string | null>(personal ? q.answer! : null);
   const [revealed, setRevealed] = useState(false);
   const [verdict, setVerdict] = useState<Outcome>(null);
   const [text, setText] = useState('');
@@ -476,7 +478,12 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
     else sfx.wrong();
   };
 
-  const card = <QuestionCard label={`Koliko me poznaješ? · pitanje za: ${players[subject]}`} text={q.question} />;
+  const card = (
+    <QuestionCard
+      label={personal ? `Koliko me poznaješ? · ${players[subject]} je ovo unaprijed odgovorio/la` : `Koliko me poznaješ? · pitanje za: ${players[subject]}`}
+      text={q.question}
+    />
+  );
 
   if (secret === null)
     return (
@@ -527,7 +534,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
       {!revealed ? (
         <div className="center stack">
           <div className="muted">
-            {players[subject]} je zaključao/la odgovor. {players[guesser]}, reci naglas što misliš da je odgovor.
+            {personal ? `Odgovor je upisan unaprijed.` : `${players[subject]} je zaključao/la odgovor.`} {players[guesser]}, reci naglas što misliš da je odgovor.
           </div>
           <AnswerTimer onEnd={() => setRevealed(true)} />
           <Control

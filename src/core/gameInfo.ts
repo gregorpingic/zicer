@@ -201,6 +201,22 @@ export const MODE_NAMES: Record<GameMode, string> = {
 
 export const DIFFICULTY_NAMES = { 1: 'Lako', 2: 'Srednje', 3: 'Teško' } as const;
 
+/** Prijedlozi uloga za dvoboj. */
+export const STAKE_IDEAS = [
+  'Gubitnik kuha večeru',
+  'Gubitnik pere suđe cijeli tjedan',
+  'Gubitnik plaća sljedeći izlazak',
+  'Gubitnik donosi doručak u krevet',
+  'Gubitnik masira pobjednika 15 minuta',
+  'Pobjednik bira film za večeras',
+  'Gubitnik iznosi smeće tjedan dana',
+  'Gubitnik peče kolač',
+  'Gubitnik usisava cijeli stan',
+  'Gubitnik vozi idući put',
+  'Gubitnik kupuje sladoled',
+  'Pobjednik bira večeru za vikend',
+];
+
 /** Kategorija za statistiku. */
 export function categoryOf(q: Question): string {
   return q.category || ROUND_INFO[q.type].name;
