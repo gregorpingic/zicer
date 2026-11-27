@@ -46,10 +46,10 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
   },
   list3: {
     name: 'Nabroji tri',
-    short: 'Usmeno nabroji tri pojma prije isteka vremena.',
+    short: 'Upiši tri odgovora prije isteka vremena.',
     rules: [
-      'Igrač na potezu naglas nabraja odgovore dok teče vrijeme.',
-      'Protivnik potvrđuje koliko je odgovora bilo valjano.',
+      'Igrač na potezu upisuje tri odgovora (svaki u svoje polje).',
+      'Odgovori s popisa poznatih odmah se označe kao točni; ostale potvrđuje protivnik.',
       'Svaki valjan odgovor: 10 bodova.',
     ],
   },
@@ -114,11 +114,11 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
   },
   category: {
     name: 'Kategorijski dvoboj',
-    short: 'Naizmjence nabrajajte pojmove iz kategorije.',
+    short: 'Naizmjence upisujte po jedan pojam iz kategorije.',
     rules: [
-      'Igrači naizmjence izgovaraju po jedan primjer iz kategorije.',
-      'Ponavljanje nije dopušteno. Valjanost odgovora potvrđujete sami.',
-      'Gubi onaj tko se više ne može sjetiti, ponovi odgovor ili mu istekne vrijeme. Pobjednik: 20 bodova.',
+      'Igrači se izmjenjuju: svatko na svom potezu upiše JEDAN pojam iz zadane kategorije.',
+      'Ponovljeni pojam se ne prihvaća – upiši drugi. Nepoznati pojam protivnik može odbiti.',
+      'Gubi tko ne upiše valjan pojam prije isteka vremena ili odustane. Pobjednik: 20 bodova.',
     ],
   },
   year: {
@@ -162,7 +162,7 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
 export const SIMULTANEOUS: GameType[] = ['closest', 'truefalse', 'higherlower', 'year', 'risk'];
 
 /** Vrste koje nemaju smisla protiv računala (ono ne zna tvoje odgovore niti čuje izgovoreno). */
-export const BOT_EXCLUDED: GameType[] = ['knowme', 'list3'];
+export const BOT_EXCLUDED: GameType[] = ['knowme'];
 
 /** Vrste koje se mogu pojaviti u finalu. */
 export const FINALE_POOL: GameType[] = GAME_TYPES.filter((t) => t !== 'risk');

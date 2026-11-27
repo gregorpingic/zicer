@@ -2883,3 +2883,105 @@ body {
     padding: 0.3rem 0.75rem 2rem;
   }
 }
+
+/* Mobitel: samostalan prikaz (odbrojavanje, kontekst, čekanje) */
+.phone-timer {
+  position: sticky;
+  top: 3.4rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.2rem 0;
+  background: var(--panel);
+}
+.phone-timer-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  min-width: 2.2ch;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.phone-timer-bar {
+  height: 0.6rem;
+}
+.phone-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  background: var(--bg2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.98rem;
+}
+.phone-idle-q {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  max-width: 22rem;
+  line-height: 1.3;
+}
+.p0-text {
+  color: var(--p0);
+}
+.p1-text {
+  color: var(--p1);
+}
+
+/* Gornja traka na mobitelu: samo ikone u jednom redu */
+@media (max-width: 640px) {
+  .toolbar {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  .toolbar .btn {
+    font-size: 0.72rem;
+    padding: 0.2em 0.5em;
+    white-space: nowrap;
+  }
+}
+/* Onemogućeni glavni gumbi: neutralno sivi, a ne "blatno" žuti */
+.btn-primary:disabled {
+  background: var(--panel2);
+  color: var(--muted);
+  opacity: 1;
+}
+/* Sažetak ispravnog poretka: sitnije */
+.solution:not(.big) {
+  font-size: 1rem;
+  color: var(--muted);
+}
+.solution:not(.big) strong {
+  color: var(--text);
+}
+
+/* Upisani odgovori (Nabroji tri) */
+.typed-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: min(100%, 32rem);
+}
+.typed-list li {
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 1.1rem;
+}
+.typed-list li.known {
+  border-color: rgba(76, 195, 138, 0.5);
+}
+.typed-list li span {
+  color: var(--muted);
+  margin-right: 0.4rem;
+}
+.typed-list li.known span {
+  color: var(--good);
+}

@@ -139,6 +139,11 @@ export class BotPlayer {
           if (knows(steal ? s.p * 0.8 : s.clue)) return { text: q.answer };
           return { button: steal ? 'giveup' : 'next' };
         }
+        if (q?.type === 'list3') {
+          const n = Math.round((spec.multi ?? 3) * (s.p + (Math.random() - 0.5) * 0.4));
+          const pool = [...(q.examples ?? [])].sort(() => Math.random() - 0.5);
+          return { text: pool.slice(0, Math.max(0, Math.min(n, pool.length))).join('\n') };
+        }
         if (q?.type === 'category') {
           const fresh = (q.examples ?? []).filter((e) => !this.memory.has(e));
           if (!fresh.length || !knows(s.keepGoing)) return { button: 'dunno' };

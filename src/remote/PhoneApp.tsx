@@ -221,8 +221,9 @@ export default function PhoneApp({ onLeave }: { onLeave: () => void }) {
         ))}
         {mine.length === 0 && (
           <div className="phone-idle">
-            <div className="phone-idle-icon">{waitingSecret ? '🔒' : '📺'}</div>
-            <div>{waitingSecret ? 'Odgovor je zaključan. Čeka se drugi igrač.' : 'Gledaj u televizor'}</div>
+            {info?.question && <div className="phone-idle-q">{info.question}</div>}
+            <div className="phone-idle-icon">{waitingSecret ? '🔒' : '⏳'}</div>
+            <div>{waitingSecret ? 'Odgovor je zaključan. Čeka se drugi igrač.' : info?.turn || 'Čekaj svoj red'}</div>
           </div>
         )}
       </main>
@@ -360,11 +361,11 @@ function PhoneCountdown({ seconds, paused }: { seconds: number; paused: boolean 
   }, [paused]);
   const sec = Math.ceil(left / 1000);
   return (
-    <div className={`phone-timer ${sec <= 5 ? 'low' : ''}`}>
+    <div className={`phone-timer ${sec <= 5 ? 'low' : ''}`} role="timer">
+      <span className="phone-timer-num">{sec}</span>
       <div className="phone-timer-bar">
         <div className="phone-timer-fill" style={{ transform: `scaleX(${left / (seconds * 1000)})` }} />
       </div>
-      <span>{sec} s</span>
     </div>
   );
 }
@@ -375,6 +376,13 @@ function ControlView({ c, paused, onSubmit }: { c: Ctl; paused: boolean; onSubmi
       {c.timer ? <PhoneCountdown seconds={c.timer} paused={paused} /> : null}
       {c.secret && <div className="phone-secret-tag">🔒 Tajni odgovor – vidiš ga samo ti</div>}
       {c.title && <div className="phone-title">{c.title}</div>}
+      {c.lines?.length ? (
+        <ul className="phone-lines">
+          {c.lines.map((l, i) => (
+            <li key={i}>{l}</li>
+          ))}
+        </ul>
+      ) : null}
       {c.note && <div className="msg msg-info">{c.note}</div>}
       <ControlBody c={c} onSubmit={onSubmit} />
     </section>
@@ -383,6 +391,7 @@ function ControlView({ c, paused, onSubmit }: { c: Ctl; paused: boolean; onSubmi
 
 function ControlBody({ c, onSubmit }: { c: Ctl; onSubmit: (v: ControlValue) => void }) {
   const [text, setText] = useState('');
+  const [multi, setMulti] = useState<string[]>(() => (c.kind === 'text' && c.multi ? Array(c.multi).fill('') : []));
   const [stake, setStake] = useState(c.kind === 'stake' ? Math.min(10, c.max) : 0);
   const [order, setOrder] = useState<number[]>(c.kind === 'order' ? c.items.map((_, i) => i) : []);
 
@@ -424,6 +433,31 @@ function ControlBody({ c, onSubmit }: { c: Ctl; onSubmit: (v: ControlValue) => v
       );
     }
     case 'text':
+      if (c.multi)
+        return (
+          <form
+            className="phone-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              onSubmit({ text: multi.map((x) => x.trim()).join('\n') });
+            }}
+          >
+            {multi.map((v, i) => (
+              <input
+                key={i}
+                className="big-input"
+                autoComplete="off"
+                value={v}
+                placeholder={`${i + 1}. ${c.placeholder || 'odgovor'}`}
+                onChange={(e) => setMulti(multi.map((x, k) => (k === i ? e.target.value : x)))}
+              />
+            ))}
+            <button className="btn btn-primary btn-big" type="submit">
+              {c.submitLabel || 'Pošalji'}
+            </button>
+            <Buttons c={c} onSubmit={onSubmit} />
+          </form>
+        );
       return (
         <form
           className="phone-form"

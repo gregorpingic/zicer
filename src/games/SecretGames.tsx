@@ -13,6 +13,7 @@ import {
   ResultBanner,
   SecretSequence,
   formatNumber,
+  pointsLine,
 } from '../components/common';
 
 type Pair<T> = [T | null, T | null];
@@ -97,7 +98,7 @@ export function Closest({ question: q, active, players, multiplier, onDone }: Ga
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} phone={[`Točno: ${formatNumber(q.answer)} ${q.unit ?? ''}`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -142,7 +143,7 @@ export function TrueFalse({ question: q, active, players, multiplier, onDone }: 
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} phone={[`Točno: ${q.answer ? 'ISTINA' : 'LAŽ'}`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -187,7 +188,7 @@ export function HigherLower({ question: q, active, players, multiplier, onDone }
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} phone={[`Točno: ${q.options[q.correct]}`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -233,7 +234,7 @@ export function Year({ question: q, active, players, multiplier, onDone }: GameP
       />
       <ResultBanner points={points!} players={players} multiplier={multiplier} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} phone={[`Točno: ${q.answer}.`, pointsLine(points!, players, multiplier)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }
@@ -335,7 +336,7 @@ export function Risk({ question: q, active, players, scores, onDone }: GameProps
       />
       <ResultBanner points={points!} players={players} />
       <Explanation explanation={q.explanation} source={q.source} />
-      <NextButton readText={q.explanation} onClick={() => onDone({ points: points!, outcome })} />
+      <NextButton readText={q.explanation} phone={[`Točno: ${q.options[q.correct]}`, pointsLine(points!, players, 1)]} onClick={() => onDone({ points: points!, outcome })} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import type { Outcome, PlayerIndex } from '../core/types';
 import { matchBoard } from '../core/scoring';
 import { sfx } from '../core/sound';
 import { Control } from '../remote/RemoteContext';
-import { AnswerTimer, Button, NextButton, PlayerTag, QuestionCard, ResultBanner, TurnBanner, useAnswerTime } from '../components/common';
+import { AnswerTimer, Button, NextButton, QuestionCard, ResultBanner, TurnBanner, pointsLine, useAnswerTime } from '../components/common';
 
 type Phase = 'play' | 'steal' | 'done';
 
@@ -126,7 +126,7 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
     <div className="game feud">
       {phase === 'play' && <TurnBanner p={active} name={players[active]} />}
       {phase === 'steal' && <TurnBanner p={other} name={players[other]}> – krađa!</TurnBanner>}
-      <QuestionCard label={q.estimated ? 'Procijenjeni popularni odgovori (nije stvarna anketa)' : `Anketa · ${q.source}`} text={q.question} />
+      <QuestionCard label={q.estimated ? 'Što kaže narod? · procijenjeni odgovori' : `Što kaže narod? · anketa: ${q.source}`} text={q.question} />
 
       <div className="feud-board">
         {q.answers.map((a, i) => {
@@ -174,6 +174,10 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
             placeholder: phase === 'play' ? 'Upiši odgovor' : 'Odgovor za krađu',
             submitLabel: 'Provjeri',
             ...(seconds ? { timer: seconds } : {}),
+            lines: [
+              ...q.answers.map((a, i) => (revealed[i] ? `${i + 1}. ${a.text} – ${a.points}` : `${i + 1}. ············`)),
+              `Banka: ${bank} · Pogreške: ${strikes}/3`,
+            ],
             buttons: [phase === 'play' ? { id: 'strike', label: 'Ne znam (pogreška)', variant: 'bad' } : { id: 'giveup', label: 'Odustajem', variant: 'bad' }],
           }}
           onSubmit={(v) => {
@@ -236,7 +240,7 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
         <div className="guess-log" aria-label="Upisani odgovori">
           {log.map((e, k) => (
             <span key={k} className={`log-item ${e.result} ${e.undone ? 'undone' : ''}`}>
-              <PlayerTag p={e.p} name={players[e.p]} />: „{e.guess}”{' '}
+              <strong className={`p${e.p}-text`}>{players[e.p]}:</strong> „{e.guess}”
               {e.result === 'hit'
                 ? e.undone
                   ? '→ poništeno'
@@ -263,7 +267,11 @@ export default function Feud({ question: q, active, players, multiplier, onDone 
       {phase === 'done' && result && (
         <>
           <ResultBanner points={result.points} players={players} multiplier={multiplier} title={result.title} />
-          <NextButton auto={9} onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
+          <NextButton
+            auto={9}
+            phone={[result.title, ...q.answers.map((a, i) => `${i + 1}. ${a.text} – ${a.points}`), pointsLine(result.points, players, multiplier)]}
+            onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })}
+          />
         </>
       )}
     </div>

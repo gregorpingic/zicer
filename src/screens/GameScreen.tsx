@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ComponentType } from 'react';
 import type { GameType, MatchState, PlayerIndex, QuestionOutcome } from '../core/types';
 import { GAME_COMPONENTS } from '../games';
 import type { GameProps } from '../games/types';
-import { MODE_NAMES, ROUND_INFO, SIMULTANEOUS } from '../core/gameInfo';
+import { MODE_NAMES, ROUND_INFO, SIMULTANEOUS, questionText } from '../core/gameInfo';
 import * as engine from '../core/engine';
 import { addMatchRecord, saveMatch } from '../db/db';
 import { sfx } from '../core/sound';
@@ -386,6 +386,9 @@ export default function GameScreen({
             ? 'Kraj dvoboja'
             : `Runda ${state.roundIndex + 1}/${state.config.rounds.length} · ${ROUND_INFO[round].name}`,
       subtitle: state.phase === 'question' ? `Pitanje ${state.questionIndex + 1}/${state.config.questionsPerRound}` : undefined,
+      question: state.current ? questionText(state.current.question) : undefined,
+      turn:
+        state.current && !SIMULTANEOUS.includes(state.current.question.type) ? `Na potezu: ${state.players[state.current.active]}` : undefined,
     });
   }, [host, state, paused]);
 
@@ -443,11 +446,11 @@ export default function GameScreen({
           </Button>
           {inQuestion && (
             <Button variant="ghost" onClick={() => setConfirm('skip')}>
-              ⏭ Preskoči pitanje
+              ⏭ Preskoči
             </Button>
           )}
           <Button variant="ghost" onClick={() => setAdjust(true)}>
-            ± Korekcija bodova
+            ± Bodovi
           </Button>
           <Button variant="ghost" onClick={() => setConfirm('exit')}>
             ✕ Izlaz

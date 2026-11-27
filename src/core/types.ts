@@ -256,20 +256,20 @@ export type Tempo = 'opusteno' | 'normalno' | 'brzo' | 'bez';
 
 /** Preporučena vremena za odgovor (sekunde) – kratko za brze odluke, dulje za razmišljanje. */
 export const DEFAULT_TIMERS: Record<GameType, number> = {
-  truefalse: 10,
-  higherlower: 10,
-  category: 10,
-  association: 15,
-  describe: 15,
-  quiz: 20,
-  oddone: 20,
-  risk: 20,
-  year: 20,
-  feud: 20,
-  closest: 25,
-  list3: 30,
-  order: 40,
-  knowme: 45,
+  truefalse: 15,
+  higherlower: 15,
+  category: 20,
+  association: 25,
+  describe: 25,
+  quiz: 30,
+  oddone: 30,
+  risk: 30,
+  year: 30,
+  feud: 30,
+  closest: 40,
+  list3: 60,
+  order: 60,
+  knowme: 60,
 };
 
 export const TEMPO_FACTOR: Record<Tempo, number> = { opusteno: 1.5, normalno: 1, brzo: 0.7, bez: 0 };

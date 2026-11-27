@@ -21,6 +21,8 @@ interface ControlBase {
   secret?: boolean;
   /** Vrijeme za odgovor u sekundama (mobitel prikazuje odbrojavanje). */
   timer?: number;
+  /** Kontekst za mobitel da ne treba gledati u televizor (tragovi, stanje ploče…). */
+  lines?: string[];
   /**
    * Uloga kontrole u igri protiv računala: 'judge' – procjena tuđeg odgovora (prepušta se čovjeku),
    * 'objection' – prigovor na protivnikov odgovor (računalo ga ne koristi).
@@ -33,7 +35,7 @@ export type ControlSpec = ControlBase &
     | { kind: 'buttons'; buttons: ControlButton[] }
     | { kind: 'choice'; options: string[]; disabled?: number[]; buttons?: ControlButton[] }
     | { kind: 'number'; unit?: string; placeholder?: string }
-    | { kind: 'text'; placeholder?: string; submitLabel?: string; allowEmpty?: boolean; buttons?: ControlButton[] }
+    | { kind: 'text'; placeholder?: string; submitLabel?: string; allowEmpty?: boolean; buttons?: ControlButton[]; multi?: number }
     | { kind: 'stake'; max: number; score: number }
     | { kind: 'order'; items: string[] }
   );
@@ -53,6 +55,9 @@ export interface PhoneInfo {
   subtitle?: string;
   paused: boolean;
   inGame: boolean;
+  /** Trenutačno pitanje i tko je na potezu (za prikaz dok mobitel čeka). */
+  question?: string;
+  turn?: string;
 }
 
 export type HostMessage =

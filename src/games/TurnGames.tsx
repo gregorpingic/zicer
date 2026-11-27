@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import type { GameProps } from './types';
 import type { Outcome, PlayerIndex } from '../core/types';
-import { POINTS, normalize, orderPoints } from '../core/scoring';
+import { POINTS, answerMatches, normalize, orderPoints } from '../core/scoring';
 import { shuffle } from '../core/engine';
 import { sfx } from '../core/sound';
 import {
@@ -13,9 +13,9 @@ import {
   QuestionCard,
   ResultBanner,
   SecretSequence,
-  Timer,
   TurnBanner,
   useAnswerTime,
+  pointsLine,
 } from '../components/common';
 import { Control } from '../remote/RemoteContext';
 
@@ -145,7 +145,7 @@ function OptionsWithSteal({
           {board(false)}
           <ResultBanner points={points} players={players} multiplier={multiplier} />
           <Explanation explanation={explanation} source={source} />
-          <NextButton readText={explanation} onClick={() => onDone({ points, outcome })} />
+          <NextButton readText={explanation} phone={[`Točno: ${options[correct]}`, pointsLine(points, players, multiplier)]} onClick={() => onDone({ points, outcome })} />
         </>
       )}
     </div>
@@ -295,7 +295,11 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
             title={`${res.correctPositions} od ${arr.length} na točnom mjestu`}
           />
           <Explanation explanation={q.explanation} source={q.source} />
-          <NextButton readText={q.explanation} onClick={() => onDone({ points, outcome })} />
+          <NextButton
+            readText={q.explanation}
+            phone={[`${res.correctPositions} od ${arr.length} na točnom mjestu`, ...q.items.map((t, i) => `${i + 1}. ${t}${q.values ? ` (${q.values[i]})` : ''}`), pointsLine(points, players, multiplier)]}
+            onClick={() => onDone({ points, outcome })}
+          />
         </>
       )}
     </div>
@@ -305,69 +309,114 @@ export function Order({ question: q, active, players, multiplier, onDone }: Game
 // ---------------- Nabroji tri ----------------
 
 export function List3({ question: q, active, players, multiplier, onDone }: GameProps<'list3'>) {
-  const listSeconds = useAnswerTime();
+  const seconds = useAnswerTime();
   const other = otherOf(active);
   const count = q.count ?? 3;
-  const [phase, setPhase] = useState<'ready' | 'run' | 'judge' | 'done'>('ready');
-  const [valid, setValid] = useState(0);
-  const points: [number, number] = [0, 0];
-  points[active] = valid * POINTS.list3PerItem;
-  const outcome: [Outcome, Outcome] = [null, null];
-  outcome[active] = valid >= count ? 'correct' : valid > 0 ? 'partial' : 'wrong';
+  const [answers, setAnswers] = useState<string[] | null>(null);
+  const [inputs, setInputs] = useState<string[]>(() => Array(count).fill(''));
+  const [valid, setValid] = useState<number | null>(null);
+  const known = (a: string) => !!q.examples?.length && answerMatches(a, q.examples);
 
+  const submit = (list: string[]) => {
+    if (answers !== null) return;
+    const clean = [...new Set(list.map((s) => s.trim()).filter(Boolean))].slice(0, count);
+    setAnswers(clean);
+    if (clean.length === 0) {
+      setValid(0);
+      sfx.wrong();
+    } else if (clean.every(known)) {
+      setValid(clean.length);
+      sfx.correct();
+    }
+  };
   const judge = (n: number) => {
     setValid(n);
-    setPhase('done');
     if (n > 0) sfx.correct();
     else sfx.wrong();
   };
 
+  const knownCount = answers ? answers.filter(known).length : 0;
+  const points: [number, number] = [0, 0];
+  points[active] = (valid ?? 0) * POINTS.list3PerItem;
+  const outcome: [Outcome, Outcome] = [null, null];
+  outcome[active] = (valid ?? 0) >= count ? 'correct' : (valid ?? 0) > 0 ? 'partial' : 'wrong';
+  const lines = answers?.map((a) => `${known(a) ? '✓' : '?'} ${a}`);
+  const judgeButtons = Array.from({ length: (answers?.length ?? 0) - knownCount + 1 }, (_, k) => knownCount + k);
+
   return (
     <div className="game">
-      <TurnBanner p={active} name={players[active]} />
+      {answers === null && <TurnBanner p={active} name={players[active]} />}
       <QuestionCard label="Nabroji tri" text={q.prompt} />
-      {phase === 'ready' && (
-        <div className="center stack">
-          <div className="muted">
-            {listSeconds ? `Imaš ${listSeconds} sekundi.` : 'Bez vremenskog ograničenja.'} Odgovaraj naglas.
-          </div>
+      {answers === null && (
+        <>
+          <AnswerTimer onEnd={() => submit(inputs)} />
           <Control
-            spec={{ for: active, kind: 'buttons', title: q.prompt, note: 'Kad pritisneš Kreni, kreće vrijeme. Odgovaraj naglas.', buttons: [{ id: 'go', label: 'Kreni!' }] }}
-            onSubmit={() => setPhase('run')}
+            spec={{
+              for: active,
+              kind: 'text',
+              title: q.prompt,
+              note: `Upiši ${count} odgovora – svaki u svoje polje.`,
+              multi: count,
+              placeholder: 'odgovor',
+              submitLabel: 'Pošalji odgovore',
+              allowEmpty: true,
+              ...(seconds ? { timer: seconds } : {}),
+            }}
+            onSubmit={(v) => submit((v.text || '').split('\n'))}
           >
-            <Button big onClick={() => setPhase('run')} autoFocus>
-              Kreni!
-            </Button>
+            <form
+              className="guess-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                submit(inputs);
+              }}
+            >
+              {inputs.map((v, i) => (
+                <input
+                  key={i}
+                  className="big-input"
+                  value={v}
+                  autoComplete="off"
+                  placeholder={`${i + 1}. odgovor`}
+                  aria-label={`${i + 1}. odgovor`}
+                  onChange={(e) => setInputs(inputs.map((x, k) => (k === i ? e.target.value : x)))}
+                />
+              ))}
+              <Button type="submit" big>
+                Pošalji odgovore
+              </Button>
+            </form>
           </Control>
-        </div>
+        </>
       )}
-      {phase === 'run' && (
-        <div className="center stack">
-          <Timer seconds={listSeconds} running onEnd={() => setPhase('judge')} />
-          <Control spec={{ for: active, kind: 'buttons', title: 'Nabrajaj naglas!', buttons: [{ id: 'done', label: 'Gotovo' }] }} onSubmit={() => setPhase('judge')}>
-            <Button big onClick={() => setPhase('judge')}>
-              Gotovo
-            </Button>
-          </Control>
-        </div>
+      {answers !== null && (
+        <ul className="typed-list">
+          {answers.length === 0 && <li className="muted">⌛ Bez odgovora</li>}
+          {answers.map((a) => (
+            <li key={a} className={known(a) ? 'known' : ''}>
+              <span>{known(a) ? '✓' : '?'}</span> {a}
+            </li>
+          ))}
+        </ul>
       )}
-      {phase === 'judge' && (
+      {answers !== null && valid === null && (
         <div className="center stack">
           <div className="judge-q">
-            <PlayerTag p={other} name={players[other]} />, koliko je odgovora bilo valjano?
+            <PlayerTag p={other} name={players[other]} />, koliko je odgovora valjano? <span className="muted small">(✓ su već priznati)</span>
           </div>
           <Control
             spec={{
               for: other,
               kind: 'buttons',
               role: 'judge',
-              title: `Koliko je valjanih odgovora rekao/la ${players[active]}?`,
-              buttons: Array.from({ length: count + 1 }, (_, n) => ({ id: String(n), label: String(n), variant: n === 0 ? 'bad' : 'secondary' })),
+              title: `Koliko je valjanih odgovora upisao/la ${players[active]}?`,
+              lines,
+              buttons: judgeButtons.map((n) => ({ id: String(n), label: String(n), variant: n === 0 ? 'bad' : 'secondary' })),
             }}
             onSubmit={(v) => judge(Number(v.button) || 0)}
           >
             <div className="row center">
-              {Array.from({ length: count + 1 }, (_, n) => (
+              {judgeButtons.map((n) => (
                 <Button key={n} big variant={n === 0 ? 'bad' : 'secondary'} onClick={() => judge(n)}>
                   {n}
                 </Button>
@@ -376,15 +425,11 @@ export function List3({ question: q, active, players, multiplier, onDone }: Game
           </Control>
         </div>
       )}
-      {phase === 'done' && (
+      {valid !== null && (
         <>
           <ResultBanner points={points} players={players} multiplier={multiplier} title={`Valjanih odgovora: ${valid}`} />
-          {q.examples?.length ? (
-            <div className="explain">
-              <p className="muted">Primjeri mogućih odgovora: {q.examples.join(', ')}</p>
-            </div>
-          ) : null}
-          <NextButton onClick={() => onDone({ points, outcome })} />
+          {q.examples?.length ? <div className="explain muted">Još mogućih odgovora: {q.examples.join(', ')}</div> : null}
+          <NextButton phone={[`Valjanih odgovora: ${valid}`, ...(lines ?? []), pointsLine(points, players, multiplier)]} onClick={() => onDone({ points, outcome })} />
         </>
       )}
     </div>
@@ -469,7 +514,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
           </div>
           <AnswerTimer onEnd={() => setRevealed(true)} />
           <Control
-            spec={{ for: 'any', kind: 'buttons', title: `${players[guesser]} pogađa naglas`, buttons: [{ id: 'reveal', label: 'Otkrij odgovor' }] }}
+            spec={{ for: 'any', kind: 'buttons', title: q.question, note: `${players[guesser]} pogađa naglas`, buttons: [{ id: 'reveal', label: 'Otkrij odgovor' }] }}
             onSubmit={() => setRevealed(true)}
           >
             <Button big onClick={() => setRevealed(true)} autoFocus>
@@ -484,7 +529,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
             <div className="center stack">
               <div className="judge-q">Zajedno odlučite – je li pogodak točan?</div>
               <Control
-                spec={{ for: 'any', kind: 'buttons', title: 'Je li pogodak točan?', buttons: verdictButtons }}
+                spec={{ for: 'any', kind: 'buttons', title: `${players[subject]}: „${secret}”`, note: 'Je li pogodak točan?', buttons: verdictButtons }}
                 onSubmit={(v) => decide((v.button as 'correct' | 'partial' | 'wrong') || 'wrong')}
               >
                 <div className="row center">
@@ -499,7 +544,7 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
           ) : (
             <>
               <ResultBanner points={points} players={players} multiplier={multiplier} />
-              <NextButton onClick={() => onDone({ points, outcome })} />
+              <NextButton phone={[`${players[subject]}: „${secret}”`, pointsLine(points, players, multiplier)]} onClick={() => onDone({ points, outcome })} />
             </>
           )}
         </>
@@ -511,33 +556,39 @@ export function KnowMe({ question: q, active, players, multiplier, onDone }: Gam
 // ---------------- Kategorijski dvoboj ----------------
 
 export function Category({ question: q, active, players, multiplier, onDone }: GameProps<'category'>) {
-  const turnSeconds = useAnswerTime();
+  const seconds = useAnswerTime();
   const [turn, setTurn] = useState<PlayerIndex>(active);
-  const [said, setSaid] = useState<string[]>([]);
+  const [said, setSaid] = useState<{ p: PlayerIndex; text: string; known: boolean }[]>([]);
   const [input, setInput] = useState('');
+  const [warn, setWarn] = useState('');
   const [loser, setLoser] = useState<PlayerIndex | null>(null);
   const [reason, setReason] = useState('');
-  const [warn, setWarn] = useState('');
-  const [started, setStarted] = useState(false);
-  const saidNorm = useMemo(() => new Set(said.map(normalize)), [said]);
+  const known = (t: string) => !!q.examples?.length && answerMatches(t, q.examples);
+  const same = (a: string, b: string) => normalize(a) === normalize(b) || (answerMatches(a, [b]) && answerMatches(b, [a]));
+  const last = said[said.length - 1];
+  const canReject = !!last && !last.known && last.p !== turn;
 
-  const accept = (raw: string) => {
+  const submit = (raw: string) => {
     const t = raw.trim();
-    if (t && saidNorm.has(normalize(t))) {
-      setWarn(`„${t}” je već izgovoreno! Ponavljanje znači poraz.`);
+    if (!t || loser !== null) return;
+    if (said.some((s) => same(s.text, t))) {
+      setWarn(`„${t}” je već upisano – upiši nešto drugo.`);
+      sfx.wrong();
       return;
     }
     setWarn('');
-    setSaid((s) => [...s, t || `odgovor ${s.length + 1}`]);
     setInput('');
+    setSaid((s) => [...s, { p: turn, text: t, known: known(t) }]);
     setTurn(otherOf(turn));
     sfx.reveal();
   };
-  const lose = (why: string) => {
-    setLoser(turn);
+  const lose = (p: PlayerIndex, why: string) => {
+    if (loser !== null) return;
+    setLoser(p);
     setReason(why);
     sfx.wrong();
   };
+  const reject = () => last && lose(last.p, `„${last.text}” nije valjan pojam`);
 
   if (loser !== null) {
     const winner = otherOf(loser);
@@ -546,108 +597,87 @@ export function Category({ question: q, active, players, multiplier, onDone }: G
     const outcome: [Outcome, Outcome] = [null, null];
     outcome[winner] = 'correct';
     outcome[loser] = 'wrong';
+    const title = `${players[loser]}: ${reason}. Pobjeđuje ${players[winner]}!`;
     return (
       <div className="game">
         <QuestionCard label="Kategorijski dvoboj" text={q.topic} />
-        <ResultBanner
-          points={points}
-          players={players}
-          multiplier={multiplier}
-          title={`${players[loser]}: ${reason}. Pobjeđuje ${players[winner]}! (valjanih odgovora: ${said.length})`}
-        />
+        <SaidList said={said} players={players} />
+        <ResultBanner points={points} players={players} multiplier={multiplier} title={title} />
         {q.examples?.length ? <div className="explain muted">Još neki primjeri: {q.examples.join(', ')}</div> : null}
-        <NextButton onClick={() => onDone({ points, outcome })} />
+        <NextButton phone={[title, pointsLine(points, players, multiplier)]} onClick={() => onDone({ points, outcome })} />
       </div>
     );
   }
 
-  const opp = otherOf(turn);
+  const buttons = [
+    { id: 'dunno', label: 'Ne znam više – odustajem', variant: 'bad' as const },
+    ...(canReject ? [{ id: 'reject', label: `Odbij „${last!.text}” (nije valjano)`, variant: 'secondary' as const }] : []),
+  ];
+
   return (
     <div className="game">
-      <TurnBanner p={turn} name={players[turn]} />
-      <QuestionCard label="Kategorijski dvoboj" text={q.topic} />
-      {!started ? (
-        <div className="center stack">
-          <div className="muted">
-            Počinje {players[active]}. {turnSeconds ? `Svaki potez traje najviše ${turnSeconds} s.` : 'Bez vremenskog ograničenja.'}
-          </div>
-          <Control spec={{ for: 'any', kind: 'buttons', title: q.topic, buttons: [{ id: 'go', label: 'Kreni!' }] }} onSubmit={() => setStarted(true)}>
-            <Button big onClick={() => setStarted(true)} autoFocus>
-              Kreni!
-            </Button>
-          </Control>
-        </div>
-      ) : (
-        <>
-          <Timer key={said.length} seconds={turnSeconds} running onEnd={() => lose('isteklo je vrijeme')} />
-          {warn && <div className="msg msg-bad">{warn}</div>}
-          <Control
-            spec={{
-              for: turn,
-              kind: 'text',
-              title: `Tvoj red: ${q.topic}`,
-              note: warn || 'Izgovori odgovor naglas. Upis je neobavezan – služi za provjeru ponavljanja.',
-              placeholder: 'Odgovor (neobavezno)',
-              submitLabel: '✓ Rekao/la sam',
-              allowEmpty: true,
-              buttons: [{ id: 'dunno', label: '✕ Ne znam', variant: 'bad' }],
-            }}
-            onSubmit={(v) => (v.button === 'dunno' ? lose('ne može se sjetiti odgovora') : accept(v.text || ''))}
-          >
-            <form
-              className="guess-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                accept(input);
-              }}
-            >
-              <input
-                className="big-input"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Upiši odgovor (neobavezno – za provjeru ponavljanja)"
-                autoComplete="off"
-                aria-label="Odgovor"
-              />
-              <div className="row center">
-                <Button big variant="good" type="submit">
-                  ✓ Valjan odgovor
-                </Button>
-                <Button big variant="bad" onClick={() => lose('ne može se sjetiti odgovora')}>
-                  ✕ Ne zna
-                </Button>
-                <Button variant="secondary" onClick={() => lose('ponovio/la je odgovor')}>
-                  Ponovljeno
-                </Button>
-                <Button variant="secondary" onClick={() => lose('odgovor nije valjan')}>
-                  Nevaljano
-                </Button>
-              </div>
-            </form>
-          </Control>
-          <Control
-            spec={{
-              for: opp,
-              kind: 'buttons',
-              role: 'objection',
-              title: `${players[turn]} odgovara: ${q.topic}`,
-              note: 'Ako je odgovor ponovljen ili nije valjan, prijavi ga.',
-              buttons: [
-                { id: 'repeat', label: 'Ponovljeno', variant: 'secondary' },
-                { id: 'invalid', label: 'Nevaljano', variant: 'secondary' },
-              ],
-            }}
-            onSubmit={(v) => lose(v.button === 'repeat' ? 'ponovio/la je odgovor' : 'odgovor nije valjan')}
-            silent
+      <TurnBanner p={turn} name={players[turn]}> · upiši jedan pojam</TurnBanner>
+      <QuestionCard label="Kategorijski dvoboj · naizmjence upisujte po jedan pojam" text={q.topic} />
+      <AnswerTimer key={said.length} onEnd={() => lose(turn, 'isteklo je vrijeme')} />
+      {warn && <div className="msg msg-bad">{warn}</div>}
+      <Control
+        spec={{
+          for: turn,
+          kind: 'text',
+          title: `Tvoj red – ${q.topic}`,
+          note: warn || 'Upiši JEDAN pojam iz kategorije koji još nije upisan.',
+          placeholder: 'Jedan pojam',
+          submitLabel: 'Pošalji',
+          ...(seconds ? { timer: seconds } : {}),
+          lines: said.length ? [`Već upisano: ${said.map((s) => s.text).join(', ')}`] : undefined,
+          buttons,
+        }}
+        onSubmit={(v) => (v.button === 'dunno' ? lose(turn, 'odustao/la je') : v.button === 'reject' ? reject() : submit(v.text || ''))}
+      >
+        <form
+          className="guess-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            submit(input);
+          }}
+        >
+          <input
+            className="big-input"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={`${players[turn]}: upiši jedan pojam`}
+            autoComplete="off"
+            aria-label="Pojam"
           />
-          {said.length > 0 && (
-            <div className="said">
-              <span className="muted">Izgovoreno ({said.length}): </span>
-              {said.join(' · ')}
-            </div>
-          )}
-        </>
-      )}
+          <div className="row center">
+            <Button type="submit" disabled={!input.trim()}>
+              Pošalji
+            </Button>
+            <Button variant="bad" onClick={() => lose(turn, 'odustao/la je')}>
+              Ne znam više
+            </Button>
+            {canReject && (
+              <Button variant="secondary" onClick={reject}>
+                Odbij „{last!.text}”
+              </Button>
+            )}
+          </div>
+        </form>
+      </Control>
+      <SaidList said={said} players={players} />
+    </div>
+  );
+}
+
+function SaidList({ said, players }: { said: { p: PlayerIndex; text: string; known: boolean }[]; players: [string, string] }) {
+  if (!said.length) return null;
+  return (
+    <div className="guess-log">
+      {said.map((s, i) => (
+        <span key={i} className={`log-item ${s.known ? 'hit' : ''}`} title={s.known ? 'Poznat pojam' : 'Nepoznat pojam – protivnik ga može odbiti'}>
+          <strong className={`p${s.p}-text`}>{players[s.p]}:</strong> {s.text} {s.known ? '✓' : '?'}
+        </span>
+      ))}
     </div>
   );
 }

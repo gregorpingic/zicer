@@ -4,7 +4,7 @@ import type { Outcome, PlayerIndex } from '../core/types';
 import { POINTS, answerMatches, cluePoints } from '../core/scoring';
 import { sfx } from '../core/sound';
 import { Control } from '../remote/RemoteContext';
-import { AnswerTimer, Button, Explanation, NextButton, QuestionCard, ResultBanner, TurnBanner, useAnswerTime } from '../components/common';
+import { AnswerTimer, Button, Explanation, NextButton, QuestionCard, ResultBanner, TurnBanner, pointsLine, useAnswerTime } from '../components/common';
 
 interface ClueProps {
   label: string;
@@ -115,6 +115,7 @@ function ProgressiveClues(props: ClueProps) {
             placeholder: 'Upiši odgovor',
             submitLabel: 'Provjeri',
             ...(seconds ? { timer: seconds } : {}),
+            lines: clues.slice(0, shown).map((c, i) => `${i + 1}. ${c}`),
             buttons: [
               phase === 'play'
                 ? { id: 'next', label: shown < n ? 'Sljedeći trag' : 'Odustajem', variant: 'secondary' }
@@ -222,7 +223,11 @@ function ProgressiveClues(props: ClueProps) {
           <div className="solution big">{answer}</div>
           <ResultBanner points={result.points} players={players} multiplier={multiplier} title={result.title} />
           <Explanation explanation={props.explanation} source={props.source} />
-          <NextButton readText={props.explanation} onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })} />
+          <NextButton
+            readText={props.explanation}
+            phone={[`Rješenje: ${answer}`, result.title, pointsLine(result.points, players, multiplier)]}
+            onClick={() => onDone({ points: result.points, outcome: result.outcome, note: result.title })}
+          />
         </>
       )}
     </div>

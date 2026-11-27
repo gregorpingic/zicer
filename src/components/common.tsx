@@ -463,7 +463,20 @@ export function readingTime(text?: string, base = 6): number {
 }
 
 /** Gumb za nastavak s automatskim odbrojavanjem (prema postavkama). */
-export function NextButton({ onClick, label = 'Dalje', readText, auto }: { onClick: () => void; label?: string; readText?: string; auto?: number }) {
+export function NextButton({
+  onClick,
+  label = 'Dalje',
+  readText,
+  auto,
+  phone,
+}: {
+  onClick: () => void;
+  label?: string;
+  readText?: string;
+  auto?: number;
+  /** Sažetak ishoda za mobitel (točan odgovor, bodovi). */
+  phone?: string[];
+}) {
   const clicked = useRef(false);
   const go = () => {
     if (clicked.current) return;
@@ -472,7 +485,7 @@ export function NextButton({ onClick, label = 'Dalje', readText, auto }: { onCli
   };
   return (
     <div className="next-row">
-      <Control spec={{ for: 'any', kind: 'buttons', buttons: [{ id: 'next', label: `${label} →` }] }} onSubmit={go}>
+      <Control spec={{ for: 'any', kind: 'buttons', title: phone?.[0], lines: phone?.slice(1), buttons: [{ id: 'next', label: `${label} →` }] }} onSubmit={go}>
         <Button big onClick={go} autoFocus>
           {label} →
         </Button>
@@ -480,6 +493,11 @@ export function NextButton({ onClick, label = 'Dalje', readText, auto }: { onCli
       <AutoAdvance seconds={auto ?? readingTime(readText)} onEnd={go} />
     </div>
   );
+}
+
+/** Kratki zapis dodijeljenih bodova za mobitel: "Antonija +20 · Ivan 0". */
+export function pointsLine(points: [number, number], players: [string, string], multiplier = 1): string {
+  return players.map((n, p) => `${n} ${points[p] * multiplier > 0 ? '+' : ''}${points[p] * multiplier}`).join(' · ');
 }
 
 /** Hrvatska množina: plural(1, 'pitanje', 'pitanja', 'pitanja'). */
