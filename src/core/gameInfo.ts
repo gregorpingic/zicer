@@ -146,7 +146,7 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
       'Oba igrača tajno upisuju procjenu cijene u eurima.',
       'Bliža procjena: 20 bodova. Jednako udaljene procjene: 10 bodova svakome.',
       'Tko pogodi unutar ±10 % stvarne cijene, dobiva još +10 – bonus mogu dobiti oboje.',
-      'Cijene su okvirne (Hrvatska, 2025.), osim ako nije drukčije navedeno.',
+      'Cijene su okvirne (Hrvatska, 2026.), osim ako nije drukčije navedeno.',
     ],
   },
   mix: {

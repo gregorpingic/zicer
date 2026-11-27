@@ -720,8 +720,8 @@
       "item": "Šalica kave (espresso)",
       "details": "u kafiću u Zagrebu",
       "answer": 1.8,
-      "source": "Okvirne cijene u Hrvatskoj, 2025.",
-      "explanation": "Espresso u zagrebačkim kafićima obično stoji 1,50–2,20 €."
+      "source": "Okvirne cijene u Hrvatskoj, 2026.",
+      "explanation": "Espresso u zagrebačkim kafićima u 2026. obično stoji 1,50–2,50 €."
     },
     {
       "id": "osn-price-002",
@@ -729,9 +729,9 @@
       "difficulty": 2,
       "category": "Cijene",
       "item": "PlayStation 5 (Slim, s pogonom za diskove)",
-      "answer": 550,
+      "answer": 650,
       "source": "Sony – preporučena maloprodajna cijena u EU-u",
-      "explanation": "Preporučena cijena u EU-u je oko 550 €, a na akcijama i manje."
+      "explanation": "Od travnja 2026. preporučena cijena u EU-u je 649,99 € (100 € više nego prije)."
     },
     {
       "id": "osn-price-003",
@@ -739,10 +739,10 @@
       "difficulty": 2,
       "category": "Cijene",
       "item": "Ulaznica za šetnju dubrovačkim zidinama",
-      "details": "odrasla osoba, 2025.",
+      "details": "odrasla osoba, 2026.",
       "answer": 40,
       "source": "Društvo prijatelja dubrovačke starine",
-      "explanation": "Ulaznica za odrasle stoji 40 €."
+      "explanation": "Ulaznica za odrasle stoji oko 35–40 €, a zimi znatno manje."
     }
   ]
 }
