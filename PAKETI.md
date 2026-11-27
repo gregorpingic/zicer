@@ -55,6 +55,8 @@ Jedna datoteka = jedan paket. Gotovi valjani primjeri za svaku vrstu igre nalaze
 | `year` ✱ | Pogodi godinu | `question`, `answer` (cijeli broj) | – |
 | `risk` ✱ | Riskiraj bodove | `question`, `options` (4), `correct` (0–3), `category` | – |
 | `price` | Pogodi cijenu | `item`, `answer` (cijena u eurima) | `details`, `explanation`, `source` |
+| `picture` | Pogodi po slici | `question`, `image` (https adresa ili `slike/zastave/hr.svg`, `slike/obrisi/hr.svg`), `options` (4), `correct` (0–3) | `category`, `explanation` |
+| `versus` | Tko je stariji? | `prompt`, `pairs` (3–8 × `{a, b, correct}`; `correct` 0 = točan je `a`, 1 = `b`) | `values` uz par, npr. `["16. 8. 1958.", "29. 8. 1958."]` |
 
 Veliko finale nema vlastita pitanja – koristi pitanja ostalih vrsta.
 

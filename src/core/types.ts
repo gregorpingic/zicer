@@ -16,7 +16,9 @@ export type GameType =
   | 'category'
   | 'year'
   | 'risk'
-  | 'price';
+  | 'price'
+  | 'picture'
+  | 'versus';
 
 /** Runda može biti jedna vrsta igre ili Veliko finale (kombinacija vrsta). */
 export type RoundKind = GameType | 'finale' | 'mix';
@@ -132,6 +134,29 @@ export interface PriceQuestion extends BaseQuestion {
   details?: string;
 }
 
+export interface PictureQuestion extends BaseQuestion {
+  type: 'picture';
+  question: string;
+  /** Putanja slike unutar aplikacije (npr. „slike/zastave/hr.svg”) ili puni https URL. */
+  image: string;
+  options: string[];
+  correct: number;
+}
+export interface VersusPair {
+  a: string;
+  b: string;
+  /** 0 = točan je prvi, 1 = drugi. */
+  correct: 0 | 1;
+  /** Neobavezne vrijednosti (npr. godine), prikazuju se nakon otkrivanja. */
+  values?: [string, string];
+}
+export interface VersusQuestion extends BaseQuestion {
+  type: 'versus';
+  /** Npr. „Tko je stariji?” ili „Što je bilo prije?” */
+  prompt: string;
+  pairs: VersusPair[];
+}
+
 export interface RiskQuestion extends BaseQuestion {
   type: 'risk';
   question: string;
@@ -154,7 +179,9 @@ export type Question =
   | CategoryQuestion
   | YearQuestion
   | RiskQuestion
-  | PriceQuestion;
+  | PriceQuestion
+  | PictureQuestion
+  | VersusQuestion;
 
 export type QuestionOf<T extends GameType> = Extract<Question, { type: T }>;
 
@@ -301,6 +328,8 @@ export const DEFAULT_TIMERS: Record<GameType, number> = {
   order: 60,
   knowme: 60,
   price: 30,
+  picture: 20,
+  versus: 10,
 };
 
 export const TEMPO_FACTOR: Record<Tempo, number> = { opusteno: 1.5, normalno: 1, brzo: 0.7, bez: 0 };

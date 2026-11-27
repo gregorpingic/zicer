@@ -37,8 +37,10 @@ function OptionsWithSteal({
   source,
   onDone,
   removed = [],
+  image,
 }: {
   removed?: number[];
+  image?: string;
   options: string[];
   correct: number;
   active: PlayerIndex;
@@ -116,12 +118,13 @@ function OptionsWithSteal({
       {phase === 'answer' && <TurnBanner p={active} name={players[active]} />}
       {phase === 'steal' && <TurnBanner p={other} name={players[other]}> – može ukrasti za {POINTS.steal * multiplier}</TurnBanner>}
       <QuestionCard label={label} text={text} />
+      {image && <img className="question-image" src={image} alt="" />}
       {phase === 'answer' && <AnswerTimer key="a" onEnd={() => pickFirst(-1)} />}
       {phase === 'steal' && <AnswerTimer key="s" onEnd={() => setSteal('declined')} />}
       {first === -1 && <div className="msg msg-bad">⌛ {players[active]} nije odgovorio/la na vrijeme.</div>}
       {phase === 'answer' && (
         <Control
-          spec={{ for: active, kind: 'choice', title: text, options, disabled: removed, ...timer }}
+          spec={{ for: active, kind: 'choice', title: text, options, disabled: removed, image, ...timer }}
           onSubmit={(v) => v.choice !== undefined && pickFirst(v.choice)}
           display={board(false)}
         >
@@ -136,6 +139,7 @@ function OptionsWithSteal({
             title: `Krađa za ${POINTS.steal * multiplier} bodova: ${text}`,
             options,
             disabled: [...removed, ...(first === null || first < 0 ? [] : [first])],
+            image,
             ...timer,
             buttons: [{ id: 'decline', label: 'Ne želim krasti', variant: 'ghost' }],
           }}
@@ -179,6 +183,26 @@ export function Quiz({ question: q, active, players, multiplier, onDone, removed
       winPoints={POINTS.quiz}
       label={`Klasični kviz · ${q.category}`}
       text={q.question}
+      explanation={q.explanation}
+      source={q.source}
+      onDone={onDone}
+    />
+  );
+}
+
+export function Picture({ question: q, active, players, multiplier, onDone, removed }: GameProps<'picture'>) {
+  return (
+    <OptionsWithSteal
+      removed={removed}
+      options={q.options}
+      correct={q.correct}
+      active={active}
+      players={players}
+      multiplier={multiplier}
+      winPoints={POINTS.picture}
+      label={`Pogodi po slici${q.category ? ` · ${q.category}` : ''}`}
+      text={q.question}
+      image={q.image}
       explanation={q.explanation}
       source={q.source}
       onDone={onDone}

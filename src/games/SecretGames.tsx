@@ -431,3 +431,93 @@ export function Price({ question: q, active, players, multiplier, onDone }: Game
     </div>
   );
 }
+
+// ---------------- Tko je stariji? (brza serija usporedbi) ----------------
+
+export function Versus({ question: q, active, players, multiplier, onDone }: GameProps<'versus'>) {
+  const [k, setK] = useState(0);
+  const [answers, setAnswers] = useState<Pair<number>[]>([]);
+  const done = answers.length === q.pairs.length;
+  const right = ([0, 1] as const).map((p) => answers.filter((a, i) => a[p] === q.pairs[i].correct).length);
+  const points = done
+    ? (right.map((n) => n * POINTS.versusPerPair + (n === q.pairs.length ? POINTS.versusAllBonus : 0)) as [number, number])
+    : null;
+  useRevealSound(points);
+  const pr = q.pairs[k];
+  const opts = [pr.a, pr.b];
+  const card = <QuestionCard label={`Tko je stariji? · ${Math.min(k + 1, q.pairs.length)}/${q.pairs.length}`} text={q.prompt} />;
+  if (!done)
+    return (
+      <div className="game">
+        {answers.length > 0 && (
+          <div className="versus-last">
+            Prethodno: <strong>{[q.pairs[k - 1].a, q.pairs[k - 1].b][q.pairs[k - 1].correct]}</strong>
+            {q.pairs[k - 1].values && <span className="muted"> ({q.pairs[k - 1].values!.join(' / ')})</span>}
+            {' · '}
+            {players.map((n, p) => `${n} ${answers[k - 1][p] === q.pairs[k - 1].correct ? '✓' : '✕'}`).join('  ')}
+          </div>
+        )}
+        <SecretSequence<number>
+          key={k}
+          players={players}
+          order={order(active)}
+          header={
+            <>
+              {card}
+              <div className="versus-pair">
+                <span>{pr.a}</span>
+                <span className="vs">ili</span>
+                <span>{pr.b}</span>
+              </div>
+            </>
+          }
+          renderInput={(_, submit) => <ChoiceEntry options={opts} onSubmit={submit} />}
+          remote={() => ({ kind: 'choice', title: `${q.prompt} (${k + 1}/${q.pairs.length})`, options: opts })}
+          fromValue={(v) => v.choice ?? 0}
+          onComplete={(v) => {
+            const a = pair<number>(v);
+            if (a[0] === q.pairs[k].correct || a[1] === q.pairs[k].correct) sfx.correct();
+            else sfx.wrong();
+            setAnswers((prev) => [...prev, a]);
+            setK((x) => x + 1);
+          }}
+        />
+      </div>
+    );
+  const outcome = right.map((n) => (n === q.pairs.length ? 'correct' : n > 0 ? 'partial' : 'wrong')) as [Outcome, Outcome];
+  return (
+    <div className="game">
+      <QuestionCard label="Tko je stariji?" text={q.prompt} />
+      <table className="stats-table versus-table">
+        <thead>
+          <tr>
+            <th>Točno</th>
+            <th>{players[0]}</th>
+            <th>{players[1]}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {q.pairs.map((x, i) => (
+            <tr key={i}>
+              <td>
+                <strong>{[x.a, x.b][x.correct]}</strong> <span className="muted">vs {[x.a, x.b][1 - x.correct]}</span>
+                {x.values && <div className="muted small">{x.values[x.correct]} · {x.values[1 - x.correct]}</div>}
+              </td>
+              {([0, 1] as const).map((p) => (
+                <td key={p} className={answers[i][p] === x.correct ? 'good' : 'bad'}>
+                  {answers[i][p] === null ? '⌛' : answers[i][p] === x.correct ? '✓' : '✕'}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <ResultBanner points={points!} players={players} multiplier={multiplier} />
+      <Explanation explanation={q.explanation} source={q.source} />
+      <NextButton
+        phone={[`${players[0]} ${right[0]}/${q.pairs.length} · ${players[1]} ${right[1]}/${q.pairs.length}`, pointsLine(points!, players, multiplier)]}
+        onClick={() => onDone({ points: points!, outcome })}
+      />
+    </div>
+  );
+}

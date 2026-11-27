@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { GameType, PlayerIndex, Question, Settings } from '../core/types';
 import { ROUND_INFO, questionText } from '../core/gameInfo';
 import { allQuestions } from '../db/db';
+import { apiFetch } from '../db/pin';
 import { yearPoints } from '../core/scoring';
 import { sfx } from '../core/sound';
 import { AnswerTimer, Button, Explanation, QuestionCard, QuestionTypeContext, formatNumber, parseNumber } from '../components/common';
@@ -9,7 +10,6 @@ import { AnswerTimer, Button, Explanation, QuestionCard, QuestionTypeContext, fo
 // Dnevni izazov: svaki dan istih 5 pitanja za oba igrača (isti odabir na svim uređajima).
 // Svatko igra sam, kad stigne; rezultati se spremaju u zajedničku bazu i uspoređuju.
 
-const API = 'https://zicer.lastegg.app/api';
 const SEQUENCE: GameType[][] = [['quiz'], ['truefalse'], ['price', 'closest'], ['year'], ['higherlower']];
 /** Samo pitanja iz zajedničkih paketa, da odabir bude isti na svim uređajima. */
 const STABLE_PACKS = ['zicer-osnovni', 'zicer-kurirani', 'zicer-kurirani-2', 'zicer-cijene'];
@@ -94,14 +94,14 @@ function givenText(q: Question, given: number | null): string {
 }
 
 async function fetchRows(): Promise<DailyRow[]> {
-  const r = await fetch(`${API}/daily?days=14`);
+  const r = await apiFetch('/daily?days=14');
   if (!r.ok) throw new Error(String(r.status));
   return r.json();
 }
 
 async function postRow(row: { date: string; player: string; score: number; detail: unknown }) {
   try {
-    const r = await fetch(`${API}/daily`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(row) });
+    const r = await apiFetch('/daily', { method: 'POST', body: JSON.stringify(row) });
     if (!r.ok) throw new Error();
   } catch {
     // bez interneta: spremi i pošalji pri sljedećem otvaranju
@@ -113,7 +113,10 @@ async function postRow(row: { date: string; player: string; score: number; detai
 async function flushPending() {
   const pending = JSON.parse(localStorage.getItem('zicer-daily-pending') || '[]') as unknown[];
   if (!pending.length) return;
-  for (const row of pending) await fetch(`${API}/daily`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(row) });
+  for (const row of pending) {
+    const r = await apiFetch('/daily', { method: 'POST', body: JSON.stringify(row) });
+    if (!r.ok) return;
+  }
   localStorage.removeItem('zicer-daily-pending');
 }
 

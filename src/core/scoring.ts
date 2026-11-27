@@ -18,6 +18,9 @@ export const POINTS = {
   tiebreak: 10,
   riskMinStake: 10,
   speed: 5,
+  picture: 10,
+  versusPerPair: 4,
+  versusAllBonus: 5,
 } as const;
 
 /** Brzinski bonus kod istodobnih odgovora: najbrži među točnima dobiva +5. */

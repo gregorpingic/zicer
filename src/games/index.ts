@@ -2,8 +2,8 @@ import type { ComponentType } from 'react';
 import type { GameType } from '../core/types';
 import type { GameProps } from './types';
 import Feud from './Feud';
-import { Closest, HigherLower, Price, Risk, TrueFalse, Year } from './SecretGames';
-import { Category, KnowMe, List3, OddOne, Order, Quiz } from './TurnGames';
+import { Closest, HigherLower, Price, Risk, TrueFalse, Versus, Year } from './SecretGames';
+import { Category, KnowMe, List3, OddOne, Order, Picture, Quiz } from './TurnGames';
 import { Association, Describe } from './ClueGames';
 
 /**
@@ -27,4 +27,6 @@ export const GAME_COMPONENTS: { [K in GameType]: ComponentType<GameProps<K>> } =
   year: Year,
   risk: Risk,
   price: Price,
+  picture: Picture,
+  versus: Versus,
 };

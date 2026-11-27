@@ -16,6 +16,8 @@ export const GAME_TYPES: GameType[] = [
   'year',
   'risk',
   'price',
+  'picture',
+  'versus',
 ];
 
 export interface RoundInfo {
@@ -149,6 +151,23 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
       'Cijene su okvirne (Hrvatska, 2026.), osim ako nije drukčije navedeno.',
     ],
   },
+  picture: {
+    name: 'Pogodi po slici',
+    short: 'Zastave i obrisi država – što je na slici?',
+    rules: [
+      'Igrač na potezu bira jedan od četiri ponuđena odgovora.',
+      'Točan odgovor: 10 bodova. Ako pogriješi, drugi igrač može ukrasti.',
+    ],
+  },
+  versus: {
+    name: 'Tko je stariji?',
+    short: 'Brza serija od 5 usporedbi – tko je stariji, što je bilo prije?',
+    rules: [
+      'Oba igrača istodobno biraju jedan od dva odgovora, pet puta zaredom.',
+      'Svaki točan odgovor: 4 boda. Svih pet točno: +5 bonusa.',
+      'Na svaku usporedbu je kratko vrijeme – ne razmišljaj predugo!',
+    ],
+  },
   mix: {
     name: 'Miješana runda',
     short: 'Svako pitanje je druga vrsta igre.',
@@ -170,7 +189,7 @@ export const ROUND_INFO: Record<RoundKind, RoundInfo> = {
 };
 
 /** Vrste koje se igraju tajnim odgovorima oba igrača (nema "igrača na potezu"). */
-export const SIMULTANEOUS: GameType[] = ['closest', 'truefalse', 'higherlower', 'year', 'risk'];
+export const SIMULTANEOUS: GameType[] = ['closest', 'truefalse', 'higherlower', 'year', 'risk', 'versus'];
 
 /** Vrste koje nemaju smisla protiv računala (ono ne zna tvoje odgovore niti čuje izgovoreno). */
 export const BOT_EXCLUDED: GameType[] = ['knowme'];
@@ -248,5 +267,9 @@ export function questionText(q: Question): string {
       return q.topic;
     case 'price':
       return `Koliko košta: ${q.item}?`;
+    case 'picture':
+      return q.question;
+    case 'versus':
+      return `${q.prompt} ${q.pairs[0].a} ili ${q.pairs[0].b}…`;
   }
 }

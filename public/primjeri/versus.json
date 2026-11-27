@@ -1,0 +1,65 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-versus",
+    "name": "Primjer – Tko je stariji?",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-versus-001",
+      "type": "versus",
+      "difficulty": 2,
+      "category": "Glazba",
+      "prompt": "Tko je stariji?",
+      "pairs": [
+        {
+          "a": "Madonna",
+          "b": "Michael Jackson",
+          "correct": 0,
+          "values": [
+            "16. kolovoza 1958.",
+            "29. kolovoza 1958."
+          ]
+        },
+        {
+          "a": "Shakira",
+          "b": "Beyoncé",
+          "correct": 0,
+          "values": [
+            "2. veljače 1977.",
+            "4. rujna 1981."
+          ]
+        },
+        {
+          "a": "Adele",
+          "b": "Rihanna",
+          "correct": 1,
+          "values": [
+            "5. svibnja 1988.",
+            "20. veljače 1988."
+          ]
+        },
+        {
+          "a": "Elton John",
+          "b": "David Bowie",
+          "correct": 1,
+          "values": [
+            "25. ožujka 1947.",
+            "8. siječnja 1947."
+          ]
+        },
+        {
+          "a": "Ed Sheeran",
+          "b": "Taylor Swift",
+          "correct": 1,
+          "values": [
+            "17. veljače 1991.",
+            "13. prosinca 1989."
+          ]
+        }
+      ]
+    }
+  ]
+}

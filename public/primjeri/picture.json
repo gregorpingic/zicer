@@ -1,0 +1,26 @@
+{
+  "format": "zicer-paket",
+  "version": 1,
+  "pack": {
+    "id": "primjer-picture",
+    "name": "Primjer – Pogodi po slici",
+    "author": "Zicer"
+  },
+  "questions": [
+    {
+      "id": "primjer-picture-001",
+      "type": "picture",
+      "difficulty": 1,
+      "category": "Zastave",
+      "question": "Čija je ovo zastava?",
+      "image": "slike/zastave/hr.svg",
+      "options": [
+        "Slovenija",
+        "Hrvatska",
+        "Slovačka",
+        "Srbija"
+      ],
+      "correct": 1
+    }
+  ]
+}

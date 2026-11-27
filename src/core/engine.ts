@@ -59,7 +59,7 @@ export function canUseJoker(state: MatchState, p: PlayerIndex, kind: JokerKind):
   const cur = state.current;
   if (!state.jokers?.[p][kind] || !cur || state.phase !== 'question') return false;
   const t = cur.question.type;
-  if (kind === 'fifty') return (t === 'quiz' || t === 'oddone') && cur.active === p && !cur.removed;
+  if (kind === 'fifty') return (t === 'quiz' || t === 'oddone' || t === 'picture') && cur.active === p && !cur.removed;
   if (kind === 'double') return t !== 'risk' && !cur.doubled?.includes(p);
   return !SIMULTANEOUS.includes(t) && cur.active !== p;
 }
@@ -70,9 +70,9 @@ export function useJoker(state: MatchState, p: PlayerIndex, kind: JokerKind): Ma
   const cur = { ...state.current! };
   const jokers = state.jokers!.map((j, i) => (i === p ? { ...j, [kind]: false } : j)) as [JokerSet, JokerSet];
   if (kind === 'fifty') {
-    const q = cur.question as Extract<Question, { type: 'quiz' | 'oddone' }>;
-    const correct = q.type === 'quiz' ? q.correct : q.odd;
-    const count = q.type === 'quiz' ? q.options.length : q.items.length;
+    const q = cur.question as Extract<Question, { type: 'quiz' | 'oddone' | 'picture' }>;
+    const correct = q.type === 'oddone' ? q.odd : q.correct;
+    const count = q.type === 'oddone' ? q.items.length : q.options.length;
     const wrong = shuffle(Array.from({ length: count }, (_, i) => i).filter((i) => i !== correct));
     cur.removed = wrong.slice(0, 2);
   } else if (kind === 'double') {

@@ -5,7 +5,7 @@
     "id": "zicer-osnovni",
     "name": "Osnovni paket (probni)",
     "author": "Zicer",
-    "description": "Probna pitanja za svaku vrstu igre – po 3 pitanja."
+    "description": "Probna pitanja za svaku vrstu igre."
   },
   "questions": [
     {
@@ -743,6 +743,214 @@
       "answer": 40,
       "source": "Društvo prijatelja dubrovačke starine",
       "explanation": "Ulaznica za odrasle stoji oko 35–40 €, a zimi znatno manje."
+    },
+    {
+      "id": "osn-slike-zastava-hr",
+      "type": "picture",
+      "difficulty": 1,
+      "category": "Zastave",
+      "question": "Čija je ovo zastava?",
+      "image": "slike/zastave/hr.svg",
+      "options": [
+        "Hrvatska",
+        "Slovenija",
+        "Bosna i Hercegovina",
+        "Austrija"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "osn-slike-zastava-jp",
+      "type": "picture",
+      "difficulty": 1,
+      "category": "Zastave",
+      "question": "Čija je ovo zastava?",
+      "image": "slike/zastave/jp.svg",
+      "options": [
+        "Filipini",
+        "Japan",
+        "Kina",
+        "Tajvan"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "osn-slike-obris-it",
+      "type": "picture",
+      "difficulty": 2,
+      "category": "Obrisi država",
+      "question": "Koja je ovo država?",
+      "image": "slike/obrisi/it.svg",
+      "options": [
+        "Crna Gora",
+        "Bosna i Hercegovina",
+        "Italija",
+        "Austrija"
+      ],
+      "correct": 2,
+      "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+    },
+    {
+      "id": "osn-usp-osobe0-001",
+      "type": "versus",
+      "difficulty": 1,
+      "category": "Glazba",
+      "prompt": "Tko je stariji?",
+      "pairs": [
+        {
+          "a": "Prince",
+          "b": "Severina",
+          "correct": 0,
+          "values": [
+            "7. lipnja 1958.",
+            "21. travnja 1972."
+          ]
+        },
+        {
+          "a": "Rihanna",
+          "b": "Christina Aguilera",
+          "correct": 1,
+          "values": [
+            "20. veljače 1988.",
+            "18. prosinca 1980."
+          ]
+        },
+        {
+          "a": "Shakira",
+          "b": "Dua Lipa",
+          "correct": 0,
+          "values": [
+            "2. veljače 1977.",
+            "22. kolovoza 1995."
+          ]
+        },
+        {
+          "a": "Bob Dylan",
+          "b": "David Bowie",
+          "correct": 0,
+          "values": [
+            "24. svibnja 1941.",
+            "8. siječnja 1947."
+          ]
+        },
+        {
+          "a": "Britney Spears",
+          "b": "Eminem",
+          "correct": 1,
+          "values": [
+            "2. prosinca 1981.",
+            "17. listopada 1972."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "osn-usp-dog2-001",
+      "type": "versus",
+      "difficulty": 1,
+      "category": "Povijest",
+      "prompt": "Što je bilo prije?",
+      "pairs": [
+        {
+          "a": "Početak Prvog svjetskog rata",
+          "b": "Kraj Drugog svjetskog rata",
+          "correct": 0,
+          "values": [
+            "1914.",
+            "1945."
+          ]
+        },
+        {
+          "a": "Olimpijske igre u Sarajevu",
+          "b": "Pad Berlinskog zida",
+          "correct": 0,
+          "values": [
+            "1984.",
+            "1989."
+          ]
+        },
+        {
+          "a": "Jugoslavija pobjeđuje na Eurosongu (Riva)",
+          "b": "Hrvatska srebrna na SP-u u Rusiji",
+          "correct": 0,
+          "values": [
+            "1989.",
+            "2018."
+          ]
+        },
+        {
+          "a": "Kip slobode",
+          "b": "Titanic potonuo",
+          "correct": 0,
+          "values": [
+            "1886.",
+            "1912."
+          ]
+        },
+        {
+          "a": "Hrvatska proglašava neovisnost",
+          "b": "Hrvatska bronca na SP-u u Francuskoj",
+          "correct": 0,
+          "values": [
+            "1991.",
+            "1998."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "osn-usp-osobe2-001",
+      "type": "versus",
+      "difficulty": 1,
+      "category": "Sport",
+      "prompt": "Tko je stariji?",
+      "pairs": [
+        {
+          "a": "LeBron James",
+          "b": "Davor Šuker",
+          "correct": 1,
+          "values": [
+            "30. prosinca 1984.",
+            "1. siječnja 1968."
+          ]
+        },
+        {
+          "a": "Michael Jordan",
+          "b": "Muhammad Ali",
+          "correct": 1,
+          "values": [
+            "17. veljače 1963.",
+            "17. siječnja 1942."
+          ]
+        },
+        {
+          "a": "Mario Mandžukić",
+          "b": "Michael Schumacher",
+          "correct": 1,
+          "values": [
+            "21. svibnja 1986.",
+            "3. siječnja 1969."
+          ]
+        },
+        {
+          "a": "Ivica Kostelić",
+          "b": "Erling Haaland",
+          "correct": 0,
+          "values": [
+            "23. studenoga 1979.",
+            "21. srpnja 2000."
+          ]
+        },
+        {
+          "a": "Toni Kukoč",
+          "b": "Ivan Rakitić",
+          "correct": 0,
+          "values": [
+            "18. rujna 1968.",
+            "10. ožujka 1988."
+          ]
+        }
+      ]
     }
   ]
 }

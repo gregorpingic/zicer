@@ -7,6 +7,8 @@ import { BOT_EXCLUDED, GAME_TYPES, MODES, MODE_NAMES, ROUND_INFO } from './core/
 import { BotPlayer } from './core/bot';
 import { startSync } from './db/sync';
 import SyncBadge from './components/SyncBadge';
+import Rivalry from './components/Rivalry';
+import { PinPrompt } from './components/PinPanel';
 import { setSoundEnabled } from './core/sound';
 import { addQuestions, countByType, db, loadSavedMatch, loadSettings, saveMatch, saveSettings } from './db/db';
 import { RemoteHost } from './remote/host';
@@ -36,7 +38,7 @@ function roomCode(): string {
   return c;
 }
 
-const BUILTIN_VERSION = 2;
+const BUILTIN_VERSION = 3;
 
 /** Pri prvom pokretanju (ili novoj verziji ugrađenog paketa) uvozi ugrađena pitanja. */
 async function seedBuiltin() {
@@ -313,6 +315,7 @@ export default function App() {
             <span className="vs">vs</span>
             <span className="ptag p1">{settings.players[1]}</span>
           </div>
+          <Rivalry players={settings.players} />
           <div className="home-menu">
             {saved && (
               <div className="resume-box">
@@ -373,6 +376,7 @@ export default function App() {
       >
         {content}
       </RemoteContext.Provider>
+      <PinPrompt />
       {confirmDiscard && (
         <Confirm
           title="Odustati od nedovršene igre?"

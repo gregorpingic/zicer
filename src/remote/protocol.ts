@@ -26,6 +26,8 @@ interface ControlBase {
   timer?: number;
   /** Kontekst za mobitel da ne treba gledati u televizor (tragovi, stanje ploče…). */
   lines?: string[];
+  /** Slika uz pitanje (Pogodi po slici). */
+  image?: string;
   /**
    * Uloga kontrole u igri protiv računala: 'judge' – procjena tuđeg odgovora (prepušta se čovjeku),
    * 'objection' – prigovor na protivnikov odgovor (računalo ga ne koristi).

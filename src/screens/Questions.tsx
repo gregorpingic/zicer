@@ -161,7 +161,7 @@ function ImportSection({ onChange }: { onChange: () => void }) {
 
 // ---------------- Vlastito pitanje ----------------
 
-type FieldKind = 'text' | 'textarea' | 'number' | 'index1' | 'bool' | 'select' | 'list' | 'feud';
+type FieldKind = 'text' | 'textarea' | 'number' | 'index1' | 'bool' | 'select' | 'list' | 'feud' | 'versus';
 interface Field {
   key: string;
   label: string;
@@ -260,6 +260,17 @@ const FIELDS: Record<GameType, Field[]> = {
     { ...EXPL, optional: true },
     SRC_OPT,
   ],
+  picture: [
+    { key: 'question', label: 'Pitanje', kind: 'text', def: 'Čija je ovo zastava?' },
+    { key: 'image', label: 'Adresa slike', kind: 'text', help: 'https://… ili slike/zastave/hr.svg' },
+    { key: 'options', label: 'Ponuđeni odgovori', kind: 'list', help: 'Točno 4 odgovora.' },
+    { key: 'correct', label: 'Redni broj točnog odgovora (1–4)', kind: 'index1' },
+    EXPL_OPT,
+  ],
+  versus: [
+    { key: 'prompt', label: 'Pitanje', kind: 'text', def: 'Tko je stariji?' },
+    { key: 'pairs', label: 'Usporedbe', kind: 'versus', help: 'Svaka u svom retku: TOČAN | netočan (aplikacija sama miješa redoslijed). 3–8 redaka.' },
+  ],
   risk: [
     { key: 'question', label: 'Pitanje', kind: 'text' },
     { key: 'options', label: 'Ponuđeni odgovori', kind: 'list', help: 'Točno 4 odgovora.' },
@@ -298,6 +309,12 @@ function buildQuestion(type: GameType, values: Record<string, string | boolean>,
         q[f.key] = lines().map((l) => {
           const [text, pts] = l.split('|');
           return { text: (text || '').trim(), points: parseNumber(pts || '') ?? 0 };
+        });
+        break;
+      case 'versus':
+        q[f.key] = lines().map((l) => {
+          const [right, wrong] = l.split('|').map((x) => (x || '').trim());
+          return Math.random() < 0.5 ? { a: right, b: wrong, correct: 0 } : { a: wrong, b: right, correct: 1 };
         });
         break;
       default:
@@ -379,7 +396,7 @@ function CustomQuestionForm({ onAdded }: { onAdded: () => void }) {
                         </option>
                       ))}
                     </select>
-                  ) : f.kind === 'list' || f.kind === 'feud' || f.kind === 'textarea' ? (
+                  ) : f.kind === 'list' || f.kind === 'feud' || f.kind === 'versus' || f.kind === 'textarea' ? (
                     <textarea rows={f.kind === 'textarea' ? 2 : 5} value={String(v)} onChange={(e) => set(e.target.value)} />
                   ) : (
                     <input value={String(v)} inputMode={f.kind === 'text' ? undefined : 'numeric'} onChange={(e) => set(e.target.value)} />

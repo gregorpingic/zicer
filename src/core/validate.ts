@@ -167,6 +167,26 @@ export function validateQuestion(raw: unknown): Question {
       const details = str(o, 'details', false);
       return { ...base, item: str(o, 'item')!, answer, ...(details ? { details } : {}) } as Question;
     }
+    case 'picture': {
+      const options = strArr(o, 'options', 4, 4)!;
+      const correct = num(o, 'correct', { int: true, min: 0, max: 3 });
+      const image = str(o, 'image')!;
+      if (!/^(https:\/\/|slike\/)[^\s"'<>]+$/.test(image)) throw new VErr('polje "image" mora biti https adresa ili putanja „slike/…”');
+      return { ...base, question: str(o, 'question')!, image, options, correct } as Question;
+    }
+    case 'versus': {
+      if (!Array.isArray(o.pairs) || o.pairs.length < 3 || o.pairs.length > 8) throw new VErr('polje "pairs" mora imati 3–8 usporedbi');
+      const pairs = (o.pairs as Obj[]).map((pr) => {
+        const values = strArr(pr, 'values', 2, 2, false) as [string, string] | undefined;
+        return {
+          a: str(pr, 'a')!,
+          b: str(pr, 'b')!,
+          correct: num(pr, 'correct', { int: true, min: 0, max: 1 }) as 0 | 1,
+          ...(values ? { values } : {}),
+        };
+      });
+      return { ...base, prompt: str(o, 'prompt')!, pairs } as Question;
+    }
     case 'year':
       requireFactual(o);
       return { ...base, question: str(o, 'question')!, answer: num(o, 'answer', { int: true, min: -5000, max: 2100 }) } as Question;

@@ -7,7 +7,7 @@ const ORIGIN = 'https://gregorpingic.github.io/zicer';
 const CORS = {
   'access-control-allow-origin': '*',
   'access-control-allow-methods': 'GET,PUT,POST,DELETE,OPTIONS',
-  'access-control-allow-headers': 'content-type',
+  'access-control-allow-headers': 'content-type,x-zicer-pin',
 };
 const MAX_BODY = 6 * 1024 * 1024;
 
@@ -22,6 +22,11 @@ async function body(request) {
   return JSON.parse(text);
 }
 
+async function sha(pin) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('zicer-pin-v1:' + pin));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
 const okId = (s) => typeof s === 'string' && /^[A-Za-z0-9._-]{1,100}$/.test(s);
 
 async function api(request, env, url) {
@@ -29,6 +34,31 @@ async function api(request, env, url) {
   const parts = url.pathname.split('/').filter(Boolean); // ['api', ...]
   const now = Date.now();
   const m = request.method;
+
+  // ---- Kućni PIN: dok nije postavljen, baza je otvorena; nakon postavljanja traži se zaglavlje x-zicer-pin. ----
+  const pinRow = await db.prepare("SELECT value FROM kv WHERE key = 'pin'").first();
+  const pinOk = async (pin) => !!pinRow && typeof pin === 'string' && (await sha(pin)) === pinRow.value;
+  if (parts[1] === 'pin' && m === 'GET') return json({ set: !!pinRow });
+  if (pinRow) {
+    const fails = await db.prepare("SELECT value, updated_at FROM kv WHERE key = 'pin-fails'").first();
+    const count = fails && now - fails.updated_at < 15 * 60 * 1000 ? Number(fails.value) : 0;
+    if (count >= 20) return json({ error: 'pin-locked' }, 429);
+    const given = parts[1] === 'pin' && m === 'POST' ? (await body(request.clone())).old : request.headers.get('x-zicer-pin');
+    if (!(await pinOk(given))) {
+      await db.prepare("INSERT OR REPLACE INTO kv (key, value, updated_at) VALUES ('pin-fails', ?, ?)").bind(String(count + 1), now).run();
+      return json({ error: 'pin' }, 401);
+    }
+  }
+  if (parts[1] === 'pin' && m === 'POST') {
+    const b = await body(request);
+    if (b.pin === null && pinRow) {
+      await db.prepare("DELETE FROM kv WHERE key = 'pin'").run();
+      return json({ ok: true, set: false });
+    }
+    if (typeof b.pin !== 'string' || !/^\d{4,8}$/.test(b.pin)) return json({ error: 'PIN mora imati 4–8 znamenki' }, 400);
+    await db.prepare("INSERT OR REPLACE INTO kv (key, value, updated_at) VALUES ('pin', ?, ?)").bind(await sha(b.pin), now).run();
+    return json({ ok: true, set: true });
+  }
 
   if (parts[1] === 'state' && m === 'GET') {
     const since = Number(url.searchParams.get('since') || 0);

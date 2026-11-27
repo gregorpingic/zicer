@@ -424,6 +424,7 @@ function ControlView({ c, paused, onSubmit }: { c: Ctl; paused: boolean; onSubmi
       {c.timer ? <PhoneCountdown seconds={c.timer} paused={paused} /> : null}
       {c.secret && <div className="phone-secret-tag">🔒 Tajni odgovor – vidiš ga samo ti</div>}
       {c.title && <div className="phone-title">{c.title}</div>}
+      {c.image && <img className="phone-image" src={c.image} alt="" />}
       {c.lines?.length ? (
         <ul className="phone-lines">
           {c.lines.map((l, i) => (

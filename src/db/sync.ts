@@ -1,3 +1,4 @@
+import { apiFetch } from './pin';
 import type { MatchRecord, PackInfo, Question, Settings } from '../core/types';
 import * as store from './db';
 
@@ -7,7 +8,6 @@ import * as store from './db';
 // - povijest dvoboja i odigrana pitanja: spajaju se (unija),
 // - brisanja i resetiranja šalju se i primjenjuju na svim uređajima.
 
-const API = 'https://zicer.lastegg.app/api';
 
 /** Postavke su iste na svim uređajima – sve, uključujući zvuk i glas. */
 const SHARED_SETTINGS: (keyof Settings)[] = ['players', 'timers', 'tempo', 'difficulty', 'botName', 'botLevel', 'autoNext', 'mixed', 'sound', 'speech', 'autoSpeak', 'timer', 'jokers', 'speedBonus', 'stake'];
@@ -34,7 +34,7 @@ function announce() {
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(API + path, { ...init, headers: { 'content-type': 'application/json', ...(init?.headers || {}) } });
+  const res = await apiFetch(path, init);
   if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => '')}`.slice(0, 200));
   return res.json() as Promise<T>;
 }

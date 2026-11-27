@@ -146,6 +146,30 @@ const examples = {
     source: 'Okvirne cijene u Hrvatskoj, 2025.',
     explanation: 'Kugla sladoleda obično stoji između 1,50 i 2,50 €.',
   },
+  picture: {
+    id: 'primjer-picture-001',
+    type: 'picture',
+    difficulty: 1,
+    category: 'Zastave',
+    question: 'Čija je ovo zastava?',
+    image: 'slike/zastave/hr.svg',
+    options: ['Slovenija', 'Hrvatska', 'Slovačka', 'Srbija'],
+    correct: 1,
+  },
+  versus: {
+    id: 'primjer-versus-001',
+    type: 'versus',
+    difficulty: 2,
+    category: 'Glazba',
+    prompt: 'Tko je stariji?',
+    pairs: [
+      { a: 'Madonna', b: 'Michael Jackson', correct: 0, values: ['16. kolovoza 1958.', '29. kolovoza 1958.'] },
+      { a: 'Shakira', b: 'Beyoncé', correct: 0, values: ['2. veljače 1977.', '4. rujna 1981.'] },
+      { a: 'Adele', b: 'Rihanna', correct: 1, values: ['5. svibnja 1988.', '20. veljače 1988.'] },
+      { a: 'Elton John', b: 'David Bowie', correct: 1, values: ['25. ožujka 1947.', '8. siječnja 1947.'] },
+      { a: 'Ed Sheeran', b: 'Taylor Swift', correct: 1, values: ['17. veljače 1991.', '13. prosinca 1989.'] },
+    ],
+  },
   risk: {
     id: 'primjer-risk-001',
     type: 'risk',
@@ -163,7 +187,7 @@ const names = {
   feud: 'Što kaže narod?', closest: 'Najbliži pobjeđuje', list3: 'Nabroji tri', knowme: 'Koliko me poznaješ?',
   association: 'Asocijacije', truefalse: 'Istina ili laž', quiz: 'Klasični kviz', order: 'Poredaj po redu',
   oddone: 'Izbaci uljeza', describe: 'Pogodi po opisu', higherlower: 'Veće ili manje', category: 'Kategorijski dvoboj',
-  year: 'Pogodi godinu', risk: 'Riskiraj bodove', price: 'Pogodi cijenu',
+  year: 'Pogodi godinu', risk: 'Riskiraj bodove', price: 'Pogodi cijenu', picture: 'Pogodi po slici', versus: 'Tko je stariji?',
 };
 
 mkdirSync('public/primjeri', { recursive: true });

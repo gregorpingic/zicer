@@ -1,3 +1,4 @@
+import Rivalry from '../components/Rivalry';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import QRCode from 'qrcode';
 import type { BotLevel, DifficultySetting, GameMode, MatchState, Settings, Tempo } from '../core/types';
@@ -138,6 +139,7 @@ export default function TvLobby({
 
       <div className="tv-columns">
         <section className="tv-join-card">
+          <Rivalry players={settings.players} className="tv-rivalry" />
           <h1 className="tv-title">Spojite mobitele</h1>
           <div className="tv-join">
             <div className="tv-qr" dangerouslySetInnerHTML={{ __html: qr }} aria-label="QR kod za spajanje" />

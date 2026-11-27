@@ -1,0 +1,4926 @@
+{
+ "format": "zicer-paket",
+ "version": 1,
+ "pack": {
+  "id": "zicer-usporedbe",
+  "name": "Tko je stariji? – usporedbe",
+  "author": "Zicer",
+  "description": "Brze serije usporedbi: datumi rođenja poznatih osoba i godine događaja."
+ },
+ "questions": [
+  {
+   "id": "usp-osobe0-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Prince",
+     "b": "Severina",
+     "correct": 0,
+     "values": [
+      "7. lipnja 1958.",
+      "21. travnja 1972."
+     ]
+    },
+    {
+     "a": "Rihanna",
+     "b": "Christina Aguilera",
+     "correct": 1,
+     "values": [
+      "20. veljače 1988.",
+      "18. prosinca 1980."
+     ]
+    },
+    {
+     "a": "Shakira",
+     "b": "Dua Lipa",
+     "correct": 0,
+     "values": [
+      "2. veljače 1977.",
+      "22. kolovoza 1995."
+     ]
+    },
+    {
+     "a": "Bob Dylan",
+     "b": "David Bowie",
+     "correct": 0,
+     "values": [
+      "24. svibnja 1941.",
+      "8. siječnja 1947."
+     ]
+    },
+    {
+     "a": "Britney Spears",
+     "b": "Eminem",
+     "correct": 1,
+     "values": [
+      "2. prosinca 1981.",
+      "17. listopada 1972."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Whitney Houston",
+     "b": "Bob Dylan",
+     "correct": 1,
+     "values": [
+      "9. kolovoza 1963.",
+      "24. svibnja 1941."
+     ]
+    },
+    {
+     "a": "George Michael",
+     "b": "Prince",
+     "correct": 1,
+     "values": [
+      "25. lipnja 1963.",
+      "7. lipnja 1958."
+     ]
+    },
+    {
+     "a": "Michael Jackson",
+     "b": "Severina",
+     "correct": 0,
+     "values": [
+      "29. kolovoza 1958.",
+      "21. travnja 1972."
+     ]
+    },
+    {
+     "a": "David Bowie",
+     "b": "Jon Bon Jovi",
+     "correct": 0,
+     "values": [
+      "8. siječnja 1947.",
+      "2. ožujka 1962."
+     ]
+    },
+    {
+     "a": "Sting",
+     "b": "Jennifer Lopez",
+     "correct": 0,
+     "values": [
+      "2. listopada 1951.",
+      "24. srpnja 1969."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Freddie Mercury",
+     "b": "Bob Dylan",
+     "correct": 1,
+     "values": [
+      "5. rujna 1946.",
+      "24. svibnja 1941."
+     ]
+    },
+    {
+     "a": "Justin Bieber",
+     "b": "Christina Aguilera",
+     "correct": 1,
+     "values": [
+      "1. ožujka 1994.",
+      "18. prosinca 1980."
+     ]
+    },
+    {
+     "a": "David Bowie",
+     "b": "Jennifer Lopez",
+     "correct": 0,
+     "values": [
+      "8. siječnja 1947.",
+      "24. srpnja 1969."
+     ]
+    },
+    {
+     "a": "Robbie Williams",
+     "b": "Kurt Cobain",
+     "correct": 1,
+     "values": [
+      "13. veljače 1974.",
+      "20. veljače 1967."
+     ]
+    },
+    {
+     "a": "Celine Dion",
+     "b": "Britney Spears",
+     "correct": 0,
+     "values": [
+      "30. ožujka 1968.",
+      "2. prosinca 1981."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-004",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Prince",
+     "b": "Doris Dragović",
+     "correct": 0,
+     "values": [
+      "7. lipnja 1958.",
+      "16. travnja 1961."
+     ]
+    },
+    {
+     "a": "Beyoncé",
+     "b": "Shakira",
+     "correct": 1,
+     "values": [
+      "4. rujna 1981.",
+      "2. veljače 1977."
+     ]
+    },
+    {
+     "a": "Jennifer Lopez",
+     "b": "Adele",
+     "correct": 0,
+     "values": [
+      "24. srpnja 1969.",
+      "5. svibnja 1988."
+     ]
+    },
+    {
+     "a": "Madonna",
+     "b": "Sting",
+     "correct": 1,
+     "values": [
+      "16. kolovoza 1958.",
+      "2. listopada 1951."
+     ]
+    },
+    {
+     "a": "Christina Aguilera",
+     "b": "Britney Spears",
+     "correct": 0,
+     "values": [
+      "18. prosinca 1980.",
+      "2. prosinca 1981."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Beyoncé",
+     "b": "Dua Lipa",
+     "correct": 0,
+     "values": [
+      "4. rujna 1981.",
+      "22. kolovoza 1995."
+     ]
+    },
+    {
+     "a": "Kurt Cobain",
+     "b": "Kylie Minogue",
+     "correct": 0,
+     "values": [
+      "20. veljače 1967.",
+      "28. svibnja 1968."
+     ]
+    },
+    {
+     "a": "Shakira",
+     "b": "Bono",
+     "correct": 1,
+     "values": [
+      "2. veljače 1977.",
+      "10. svibnja 1960."
+     ]
+    },
+    {
+     "a": "Paul McCartney",
+     "b": "Cher",
+     "correct": 0,
+     "values": [
+      "18. lipnja 1942.",
+      "20. svibnja 1946."
+     ]
+    },
+    {
+     "a": "Christina Aguilera",
+     "b": "Gibonni",
+     "correct": 1,
+     "values": [
+      "18. prosinca 1980.",
+      "13. kolovoza 1968."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Cher",
+     "b": "Jon Bon Jovi",
+     "correct": 0,
+     "values": [
+      "20. svibnja 1946.",
+      "2. ožujka 1962."
+     ]
+    },
+    {
+     "a": "Oliver Dragojević",
+     "b": "Elvis Presley",
+     "correct": 1,
+     "values": [
+      "7. prosinca 1947.",
+      "8. siječnja 1935."
+     ]
+    },
+    {
+     "a": "Beyoncé",
+     "b": "Jennifer Lopez",
+     "correct": 1,
+     "values": [
+      "4. rujna 1981.",
+      "24. srpnja 1969."
+     ]
+    },
+    {
+     "a": "Bruce Springsteen",
+     "b": "Eminem",
+     "correct": 0,
+     "values": [
+      "23. rujna 1949.",
+      "17. listopada 1972."
+     ]
+    },
+    {
+     "a": "Shakira",
+     "b": "Gibonni",
+     "correct": 1,
+     "values": [
+      "2. veljače 1977.",
+      "13. kolovoza 1968."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Bruce Springsteen",
+     "b": "David Bowie",
+     "correct": 1,
+     "values": [
+      "23. rujna 1949.",
+      "8. siječnja 1947."
+     ]
+    },
+    {
+     "a": "Eminem",
+     "b": "Justin Bieber",
+     "correct": 0,
+     "values": [
+      "17. listopada 1972.",
+      "1. ožujka 1994."
+     ]
+    },
+    {
+     "a": "Rihanna",
+     "b": "Dua Lipa",
+     "correct": 0,
+     "values": [
+      "20. veljače 1988.",
+      "22. kolovoza 1995."
+     ]
+    },
+    {
+     "a": "Severina",
+     "b": "Celine Dion",
+     "correct": 1,
+     "values": [
+      "21. travnja 1972.",
+      "30. ožujka 1968."
+     ]
+    },
+    {
+     "a": "Prince",
+     "b": "Robbie Williams",
+     "correct": 0,
+     "values": [
+      "7. lipnja 1958.",
+      "13. veljače 1974."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-008",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Michael Jackson",
+     "b": "Freddie Mercury",
+     "correct": 1,
+     "values": [
+      "29. kolovoza 1958.",
+      "5. rujna 1946."
+     ]
+    },
+    {
+     "a": "Cher",
+     "b": "George Michael",
+     "correct": 0,
+     "values": [
+      "20. svibnja 1946.",
+      "25. lipnja 1963."
+     ]
+    },
+    {
+     "a": "Billie Eilish",
+     "b": "Shakira",
+     "correct": 1,
+     "values": [
+      "18. prosinca 2001.",
+      "2. veljače 1977."
+     ]
+    },
+    {
+     "a": "Kurt Cobain",
+     "b": "Britney Spears",
+     "correct": 0,
+     "values": [
+      "20. veljače 1967.",
+      "2. prosinca 1981."
+     ]
+    },
+    {
+     "a": "Celine Dion",
+     "b": "Beyoncé",
+     "correct": 0,
+     "values": [
+      "30. ožujka 1968.",
+      "4. rujna 1981."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Cher",
+     "b": "Michael Jackson",
+     "correct": 0,
+     "values": [
+      "20. svibnja 1946.",
+      "29. kolovoza 1958."
+     ]
+    },
+    {
+     "a": "Paul McCartney",
+     "b": "Kurt Cobain",
+     "correct": 0,
+     "values": [
+      "18. lipnja 1942.",
+      "20. veljače 1967."
+     ]
+    },
+    {
+     "a": "Billie Eilish",
+     "b": "Beyoncé",
+     "correct": 1,
+     "values": [
+      "18. prosinca 2001.",
+      "4. rujna 1981."
+     ]
+    },
+    {
+     "a": "Freddie Mercury",
+     "b": "Whitney Houston",
+     "correct": 0,
+     "values": [
+      "5. rujna 1946.",
+      "9. kolovoza 1963."
+     ]
+    },
+    {
+     "a": "David Bowie",
+     "b": "Prince",
+     "correct": 0,
+     "values": [
+      "8. siječnja 1947.",
+      "7. lipnja 1958."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Bob Dylan",
+     "b": "Đorđe Balašević",
+     "correct": 0,
+     "values": [
+      "24. svibnja 1941.",
+      "11. svibnja 1953."
+     ]
+    },
+    {
+     "a": "Shakira",
+     "b": "Adele",
+     "correct": 0,
+     "values": [
+      "2. veljače 1977.",
+      "5. svibnja 1988."
+     ]
+    },
+    {
+     "a": "Jon Bon Jovi",
+     "b": "Lady Gaga",
+     "correct": 0,
+     "values": [
+      "2. ožujka 1962.",
+      "28. ožujka 1986."
+     ]
+    },
+    {
+     "a": "David Bowie",
+     "b": "Madonna",
+     "correct": 0,
+     "values": [
+      "8. siječnja 1947.",
+      "16. kolovoza 1958."
+     ]
+    },
+    {
+     "a": "Sting",
+     "b": "Prince",
+     "correct": 0,
+     "values": [
+      "2. listopada 1951.",
+      "7. lipnja 1958."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-011",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Dua Lipa",
+     "b": "Eminem",
+     "correct": 1,
+     "values": [
+      "22. kolovoza 1995.",
+      "17. listopada 1972."
+     ]
+    },
+    {
+     "a": "Jennifer Lopez",
+     "b": "Bruce Springsteen",
+     "correct": 1,
+     "values": [
+      "24. srpnja 1969.",
+      "23. rujna 1949."
+     ]
+    },
+    {
+     "a": "Kylie Minogue",
+     "b": "Prince",
+     "correct": 1,
+     "values": [
+      "28. svibnja 1968.",
+      "7. lipnja 1958."
+     ]
+    },
+    {
+     "a": "Madonna",
+     "b": "Celine Dion",
+     "correct": 0,
+     "values": [
+      "16. kolovoza 1958.",
+      "30. ožujka 1968."
+     ]
+    },
+    {
+     "a": "Whitney Houston",
+     "b": "Britney Spears",
+     "correct": 0,
+     "values": [
+      "9. kolovoza 1963.",
+      "2. prosinca 1981."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-012",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Dua Lipa",
+     "b": "Justin Bieber",
+     "correct": 1,
+     "values": [
+      "22. kolovoza 1995.",
+      "1. ožujka 1994."
+     ]
+    },
+    {
+     "a": "Rihanna",
+     "b": "Kurt Cobain",
+     "correct": 1,
+     "values": [
+      "20. veljače 1988.",
+      "20. veljače 1967."
+     ]
+    },
+    {
+     "a": "Elton John",
+     "b": "Michael Jackson",
+     "correct": 0,
+     "values": [
+      "25. ožujka 1947.",
+      "29. kolovoza 1958."
+     ]
+    },
+    {
+     "a": "Mick Jagger",
+     "b": "Jon Bon Jovi",
+     "correct": 0,
+     "values": [
+      "26. srpnja 1943.",
+      "2. ožujka 1962."
+     ]
+    },
+    {
+     "a": "Kylie Minogue",
+     "b": "Sting",
+     "correct": 1,
+     "values": [
+      "28. svibnja 1968.",
+      "2. listopada 1951."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-013",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Gibonni",
+     "b": "Cher",
+     "correct": 1,
+     "values": [
+      "13. kolovoza 1968.",
+      "20. svibnja 1946."
+     ]
+    },
+    {
+     "a": "Prince",
+     "b": "Tina Turner",
+     "correct": 1,
+     "values": [
+      "7. lipnja 1958.",
+      "26. studenoga 1939."
+     ]
+    },
+    {
+     "a": "Jennifer Lopez",
+     "b": "Đorđe Balašević",
+     "correct": 1,
+     "values": [
+      "24. srpnja 1969.",
+      "11. svibnja 1953."
+     ]
+    },
+    {
+     "a": "Justin Bieber",
+     "b": "Britney Spears",
+     "correct": 1,
+     "values": [
+      "1. ožujka 1994.",
+      "2. prosinca 1981."
+     ]
+    },
+    {
+     "a": "Doris Dragović",
+     "b": "Kurt Cobain",
+     "correct": 0,
+     "values": [
+      "16. travnja 1961.",
+      "20. veljače 1967."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe0-014",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Glazba",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Eminem",
+     "b": "Doris Dragović",
+     "correct": 1,
+     "values": [
+      "17. listopada 1972.",
+      "16. travnja 1961."
+     ]
+    },
+    {
+     "a": "Kylie Minogue",
+     "b": "David Bowie",
+     "correct": 1,
+     "values": [
+      "28. svibnja 1968.",
+      "8. siječnja 1947."
+     ]
+    },
+    {
+     "a": "Lady Gaga",
+     "b": "Jennifer Lopez",
+     "correct": 1,
+     "values": [
+      "28. ožujka 1986.",
+      "24. srpnja 1969."
+     ]
+    },
+    {
+     "a": "Bruce Springsteen",
+     "b": "Elton John",
+     "correct": 1,
+     "values": [
+      "23. rujna 1949.",
+      "25. ožujka 1947."
+     ]
+    },
+    {
+     "a": "Bono",
+     "b": "Britney Spears",
+     "correct": 0,
+     "values": [
+      "10. svibnja 1960.",
+      "2. prosinca 1981."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Robert De Niro",
+     "b": "George Clooney",
+     "correct": 0,
+     "values": [
+      "17. kolovoza 1943.",
+      "6. svibnja 1961."
+     ]
+    },
+    {
+     "a": "Bruce Willis",
+     "b": "Tom Hanks",
+     "correct": 0,
+     "values": [
+      "19. ožujka 1955.",
+      "9. srpnja 1956."
+     ]
+    },
+    {
+     "a": "Leonardo DiCaprio",
+     "b": "Sandra Bullock",
+     "correct": 1,
+     "values": [
+      "11. studenoga 1974.",
+      "26. srpnja 1964."
+     ]
+    },
+    {
+     "a": "Keanu Reeves",
+     "b": "Meryl Streep",
+     "correct": 1,
+     "values": [
+      "2. rujna 1964.",
+      "22. lipnja 1949."
+     ]
+    },
+    {
+     "a": "Keira Knightley",
+     "b": "Angelina Jolie",
+     "correct": 1,
+     "values": [
+      "26. ožujka 1985.",
+      "4. lipnja 1975."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Angelina Jolie",
+     "b": "Jennifer Aniston",
+     "correct": 1,
+     "values": [
+      "4. lipnja 1975.",
+      "11. veljače 1969."
+     ]
+    },
+    {
+     "a": "Tom Hanks",
+     "b": "George Clooney",
+     "correct": 0,
+     "values": [
+      "9. srpnja 1956.",
+      "6. svibnja 1961."
+     ]
+    },
+    {
+     "a": "Sylvester Stallone",
+     "b": "Robert De Niro",
+     "correct": 1,
+     "values": [
+      "6. srpnja 1946.",
+      "17. kolovoza 1943."
+     ]
+    },
+    {
+     "a": "Margot Robbie",
+     "b": "Will Smith",
+     "correct": 1,
+     "values": [
+      "2. srpnja 1990.",
+      "25. rujna 1968."
+     ]
+    },
+    {
+     "a": "Marilyn Monroe",
+     "b": "Rade Šerbedžija",
+     "correct": 0,
+     "values": [
+      "1. lipnja 1926.",
+      "27. srpnja 1946."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Jennifer Aniston",
+     "b": "Rade Šerbedžija",
+     "correct": 1,
+     "values": [
+      "11. veljače 1969.",
+      "27. srpnja 1946."
+     ]
+    },
+    {
+     "a": "Matt Damon",
+     "b": "Meryl Streep",
+     "correct": 1,
+     "values": [
+      "8. listopada 1970.",
+      "22. lipnja 1949."
+     ]
+    },
+    {
+     "a": "Al Pacino",
+     "b": "Jack Nicholson",
+     "correct": 1,
+     "values": [
+      "25. travnja 1940.",
+      "22. travnja 1937."
+     ]
+    },
+    {
+     "a": "Timothée Chalamet",
+     "b": "Natalie Portman",
+     "correct": 1,
+     "values": [
+      "27. prosinca 1995.",
+      "9. lipnja 1981."
+     ]
+    },
+    {
+     "a": "Tom Cruise",
+     "b": "Goran Višnjić",
+     "correct": 0,
+     "values": [
+      "3. srpnja 1962.",
+      "9. rujna 1972."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Timothée Chalamet",
+     "b": "Cameron Diaz",
+     "correct": 1,
+     "values": [
+      "27. prosinca 1995.",
+      "30. kolovoza 1972."
+     ]
+    },
+    {
+     "a": "Jack Nicholson",
+     "b": "Marilyn Monroe",
+     "correct": 1,
+     "values": [
+      "22. travnja 1937.",
+      "1. lipnja 1926."
+     ]
+    },
+    {
+     "a": "Tom Cruise",
+     "b": "Harrison Ford",
+     "correct": 1,
+     "values": [
+      "3. srpnja 1962.",
+      "13. srpnja 1942."
+     ]
+    },
+    {
+     "a": "Meryl Streep",
+     "b": "Jennifer Aniston",
+     "correct": 0,
+     "values": [
+      "22. lipnja 1949.",
+      "11. veljače 1969."
+     ]
+    },
+    {
+     "a": "George Clooney",
+     "b": "Keanu Reeves",
+     "correct": 0,
+     "values": [
+      "6. svibnja 1961.",
+      "2. rujna 1964."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-005",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Morgan Freeman",
+     "b": "Meryl Streep",
+     "correct": 0,
+     "values": [
+      "1. lipnja 1937.",
+      "22. lipnja 1949."
+     ]
+    },
+    {
+     "a": "Angelina Jolie",
+     "b": "Matt Damon",
+     "correct": 1,
+     "values": [
+      "4. lipnja 1975.",
+      "8. listopada 1970."
+     ]
+    },
+    {
+     "a": "Daniel Radcliffe",
+     "b": "Emma Watson",
+     "correct": 0,
+     "values": [
+      "23. srpnja 1989.",
+      "15. travnja 1990."
+     ]
+    },
+    {
+     "a": "Jennifer Lawrence",
+     "b": "Ryan Gosling",
+     "correct": 1,
+     "values": [
+      "15. kolovoza 1990.",
+      "12. studenoga 1980."
+     ]
+    },
+    {
+     "a": "Sylvester Stallone",
+     "b": "George Clooney",
+     "correct": 0,
+     "values": [
+      "6. srpnja 1946.",
+      "6. svibnja 1961."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Keanu Reeves",
+     "b": "Goran Višnjić",
+     "correct": 0,
+     "values": [
+      "2. rujna 1964.",
+      "9. rujna 1972."
+     ]
+    },
+    {
+     "a": "Nicole Kidman",
+     "b": "Leonardo DiCaprio",
+     "correct": 0,
+     "values": [
+      "20. lipnja 1967.",
+      "11. studenoga 1974."
+     ]
+    },
+    {
+     "a": "Jennifer Aniston",
+     "b": "Ryan Gosling",
+     "correct": 0,
+     "values": [
+      "11. veljače 1969.",
+      "12. studenoga 1980."
+     ]
+    },
+    {
+     "a": "Jennifer Lawrence",
+     "b": "Angelina Jolie",
+     "correct": 1,
+     "values": [
+      "15. kolovoza 1990.",
+      "4. lipnja 1975."
+     ]
+    },
+    {
+     "a": "Marilyn Monroe",
+     "b": "Arnold Schwarzenegger",
+     "correct": 0,
+     "values": [
+      "1. lipnja 1926.",
+      "30. srpnja 1947."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Matt Damon",
+     "b": "Keira Knightley",
+     "correct": 0,
+     "values": [
+      "8. listopada 1970.",
+      "26. ožujka 1985."
+     ]
+    },
+    {
+     "a": "Arnold Schwarzenegger",
+     "b": "Harrison Ford",
+     "correct": 1,
+     "values": [
+      "30. srpnja 1947.",
+      "13. srpnja 1942."
+     ]
+    },
+    {
+     "a": "Zendaya",
+     "b": "Angelina Jolie",
+     "correct": 1,
+     "values": [
+      "1. rujna 1996.",
+      "4. lipnja 1975."
+     ]
+    },
+    {
+     "a": "Meryl Streep",
+     "b": "Tom Cruise",
+     "correct": 0,
+     "values": [
+      "22. lipnja 1949.",
+      "3. srpnja 1962."
+     ]
+    },
+    {
+     "a": "Audrey Hepburn",
+     "b": "Jack Nicholson",
+     "correct": 0,
+     "values": [
+      "4. svibnja 1929.",
+      "22. travnja 1937."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-008",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "George Clooney",
+     "b": "Will Smith",
+     "correct": 0,
+     "values": [
+      "6. svibnja 1961.",
+      "25. rujna 1968."
+     ]
+    },
+    {
+     "a": "Robert De Niro",
+     "b": "Audrey Hepburn",
+     "correct": 1,
+     "values": [
+      "17. kolovoza 1943.",
+      "4. svibnja 1929."
+     ]
+    },
+    {
+     "a": "Daniel Radcliffe",
+     "b": "Keira Knightley",
+     "correct": 1,
+     "values": [
+      "23. srpnja 1989.",
+      "26. ožujka 1985."
+     ]
+    },
+    {
+     "a": "Timothée Chalamet",
+     "b": "Leonardo DiCaprio",
+     "correct": 1,
+     "values": [
+      "27. prosinca 1995.",
+      "11. studenoga 1974."
+     ]
+    },
+    {
+     "a": "Oprah Winfrey",
+     "b": "Jack Nicholson",
+     "correct": 1,
+     "values": [
+      "29. siječnja 1954.",
+      "22. travnja 1937."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Jennifer Lawrence",
+     "b": "Matt Damon",
+     "correct": 1,
+     "values": [
+      "15. kolovoza 1990.",
+      "8. listopada 1970."
+     ]
+    },
+    {
+     "a": "Denzel Washington",
+     "b": "Jennifer Aniston",
+     "correct": 0,
+     "values": [
+      "28. prosinca 1954.",
+      "11. veljače 1969."
+     ]
+    },
+    {
+     "a": "Brad Pitt",
+     "b": "Robert De Niro",
+     "correct": 1,
+     "values": [
+      "18. prosinca 1963.",
+      "17. kolovoza 1943."
+     ]
+    },
+    {
+     "a": "George Clooney",
+     "b": "Nicole Kidman",
+     "correct": 0,
+     "values": [
+      "6. svibnja 1961.",
+      "20. lipnja 1967."
+     ]
+    },
+    {
+     "a": "Will Smith",
+     "b": "Sandra Bullock",
+     "correct": 1,
+     "values": [
+      "25. rujna 1968.",
+      "26. srpnja 1964."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-010",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Johnny Depp",
+     "b": "Oprah Winfrey",
+     "correct": 1,
+     "values": [
+      "9. lipnja 1963.",
+      "29. siječnja 1954."
+     ]
+    },
+    {
+     "a": "Sandra Bullock",
+     "b": "Bruce Willis",
+     "correct": 1,
+     "values": [
+      "26. srpnja 1964.",
+      "19. ožujka 1955."
+     ]
+    },
+    {
+     "a": "Keanu Reeves",
+     "b": "Jennifer Aniston",
+     "correct": 0,
+     "values": [
+      "2. rujna 1964.",
+      "11. veljače 1969."
+     ]
+    },
+    {
+     "a": "Arnold Schwarzenegger",
+     "b": "Sylvester Stallone",
+     "correct": 1,
+     "values": [
+      "30. srpnja 1947.",
+      "6. srpnja 1946."
+     ]
+    },
+    {
+     "a": "Goran Višnjić",
+     "b": "Emma Watson",
+     "correct": 0,
+     "values": [
+      "9. rujna 1972.",
+      "15. travnja 1990."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-011",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Ben Affleck",
+     "b": "Timothée Chalamet",
+     "correct": 0,
+     "values": [
+      "15. kolovoza 1972.",
+      "27. prosinca 1995."
+     ]
+    },
+    {
+     "a": "Sandra Bullock",
+     "b": "Oprah Winfrey",
+     "correct": 1,
+     "values": [
+      "26. srpnja 1964.",
+      "29. siječnja 1954."
+     ]
+    },
+    {
+     "a": "Tom Holland",
+     "b": "Keira Knightley",
+     "correct": 1,
+     "values": [
+      "1. lipnja 1996.",
+      "26. ožujka 1985."
+     ]
+    },
+    {
+     "a": "Goran Višnjić",
+     "b": "Bruce Willis",
+     "correct": 1,
+     "values": [
+      "9. rujna 1972.",
+      "19. ožujka 1955."
+     ]
+    },
+    {
+     "a": "Harrison Ford",
+     "b": "Sylvester Stallone",
+     "correct": 0,
+     "values": [
+      "13. srpnja 1942.",
+      "6. srpnja 1946."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-012",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Brad Pitt",
+     "b": "Cameron Diaz",
+     "correct": 0,
+     "values": [
+      "18. prosinca 1963.",
+      "30. kolovoza 1972."
+     ]
+    },
+    {
+     "a": "Tom Hanks",
+     "b": "Goran Višnjić",
+     "correct": 0,
+     "values": [
+      "9. srpnja 1956.",
+      "9. rujna 1972."
+     ]
+    },
+    {
+     "a": "Arnold Schwarzenegger",
+     "b": "Matt Damon",
+     "correct": 0,
+     "values": [
+      "30. srpnja 1947.",
+      "8. listopada 1970."
+     ]
+    },
+    {
+     "a": "Tom Holland",
+     "b": "Margot Robbie",
+     "correct": 1,
+     "values": [
+      "1. lipnja 1996.",
+      "2. srpnja 1990."
+     ]
+    },
+    {
+     "a": "Denzel Washington",
+     "b": "Harrison Ford",
+     "correct": 1,
+     "values": [
+      "28. prosinca 1954.",
+      "13. srpnja 1942."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-013",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Kim Kardashian",
+     "b": "Emma Watson",
+     "correct": 0,
+     "values": [
+      "21. listopada 1980.",
+      "15. travnja 1990."
+     ]
+    },
+    {
+     "a": "Angelina Jolie",
+     "b": "Goran Višnjić",
+     "correct": 1,
+     "values": [
+      "4. lipnja 1975.",
+      "9. rujna 1972."
+     ]
+    },
+    {
+     "a": "Natalie Portman",
+     "b": "Keanu Reeves",
+     "correct": 1,
+     "values": [
+      "9. lipnja 1981.",
+      "2. rujna 1964."
+     ]
+    },
+    {
+     "a": "Bruce Willis",
+     "b": "Cameron Diaz",
+     "correct": 0,
+     "values": [
+      "19. ožujka 1955.",
+      "30. kolovoza 1972."
+     ]
+    },
+    {
+     "a": "Ben Affleck",
+     "b": "Matt Damon",
+     "correct": 1,
+     "values": [
+      "15. kolovoza 1972.",
+      "8. listopada 1970."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe1-014",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Film i TV",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Meryl Streep",
+     "b": "Nicole Kidman",
+     "correct": 0,
+     "values": [
+      "22. lipnja 1949.",
+      "20. lipnja 1967."
+     ]
+    },
+    {
+     "a": "Morgan Freeman",
+     "b": "Oprah Winfrey",
+     "correct": 0,
+     "values": [
+      "1. lipnja 1937.",
+      "29. siječnja 1954."
+     ]
+    },
+    {
+     "a": "Tom Holland",
+     "b": "Natalie Portman",
+     "correct": 1,
+     "values": [
+      "1. lipnja 1996.",
+      "9. lipnja 1981."
+     ]
+    },
+    {
+     "a": "Bruce Willis",
+     "b": "Jennifer Aniston",
+     "correct": 0,
+     "values": [
+      "19. ožujka 1955.",
+      "11. veljače 1969."
+     ]
+    },
+    {
+     "a": "Johnny Depp",
+     "b": "Rade Šerbedžija",
+     "correct": 1,
+     "values": [
+      "9. lipnja 1963.",
+      "27. srpnja 1946."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "LeBron James",
+     "b": "Davor Šuker",
+     "correct": 1,
+     "values": [
+      "30. prosinca 1984.",
+      "1. siječnja 1968."
+     ]
+    },
+    {
+     "a": "Michael Jordan",
+     "b": "Muhammad Ali",
+     "correct": 1,
+     "values": [
+      "17. veljače 1963.",
+      "17. siječnja 1942."
+     ]
+    },
+    {
+     "a": "Mario Mandžukić",
+     "b": "Michael Schumacher",
+     "correct": 1,
+     "values": [
+      "21. svibnja 1986.",
+      "3. siječnja 1969."
+     ]
+    },
+    {
+     "a": "Ivica Kostelić",
+     "b": "Erling Haaland",
+     "correct": 0,
+     "values": [
+      "23. studenoga 1979.",
+      "21. srpnja 2000."
+     ]
+    },
+    {
+     "a": "Toni Kukoč",
+     "b": "Ivan Rakitić",
+     "correct": 0,
+     "values": [
+      "18. rujna 1968.",
+      "10. ožujka 1988."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Toni Kukoč",
+     "b": "Lewis Hamilton",
+     "correct": 0,
+     "values": [
+      "18. rujna 1968.",
+      "7. siječnja 1985."
+     ]
+    },
+    {
+     "a": "Blanka Vlašić",
+     "b": "Zlatko Dalić",
+     "correct": 1,
+     "values": [
+      "8. studenoga 1983.",
+      "26. listopada 1966."
+     ]
+    },
+    {
+     "a": "Muhammad Ali",
+     "b": "Diego Maradona",
+     "correct": 0,
+     "values": [
+      "17. siječnja 1942.",
+      "30. listopada 1960."
+     ]
+    },
+    {
+     "a": "Neymar",
+     "b": "Erling Haaland",
+     "correct": 0,
+     "values": [
+      "5. veljače 1992.",
+      "21. srpnja 2000."
+     ]
+    },
+    {
+     "a": "Janica Kostelić",
+     "b": "Michael Jordan",
+     "correct": 1,
+     "values": [
+      "5. siječnja 1982.",
+      "17. veljače 1963."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-003",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Toni Kukoč",
+     "b": "Dražen Petrović",
+     "correct": 1,
+     "values": [
+      "18. rujna 1968.",
+      "22. listopada 1964."
+     ]
+    },
+    {
+     "a": "Mario Mandžukić",
+     "b": "Serena Williams",
+     "correct": 1,
+     "values": [
+      "21. svibnja 1986.",
+      "26. rujna 1981."
+     ]
+    },
+    {
+     "a": "David Beckham",
+     "b": "Zlatko Dalić",
+     "correct": 1,
+     "values": [
+      "2. svibnja 1975.",
+      "26. listopada 1966."
+     ]
+    },
+    {
+     "a": "Blanka Vlašić",
+     "b": "Novak Đoković",
+     "correct": 0,
+     "values": [
+      "8. studenoga 1983.",
+      "22. svibnja 1987."
+     ]
+    },
+    {
+     "a": "Tiger Woods",
+     "b": "Lionel Messi",
+     "correct": 0,
+     "values": [
+      "30. prosinca 1975.",
+      "24. lipnja 1987."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Novak Đoković",
+     "b": "Serena Williams",
+     "correct": 1,
+     "values": [
+      "22. svibnja 1987.",
+      "26. rujna 1981."
+     ]
+    },
+    {
+     "a": "Luka Modrić",
+     "b": "Kylian Mbappé",
+     "correct": 0,
+     "values": [
+      "9. rujna 1985.",
+      "20. prosinca 1998."
+     ]
+    },
+    {
+     "a": "LeBron James",
+     "b": "Toni Kukoč",
+     "correct": 1,
+     "values": [
+      "30. prosinca 1984.",
+      "18. rujna 1968."
+     ]
+    },
+    {
+     "a": "Usain Bolt",
+     "b": "Goran Ivanišević",
+     "correct": 1,
+     "values": [
+      "21. kolovoza 1986.",
+      "13. rujna 1971."
+     ]
+    },
+    {
+     "a": "Lewis Hamilton",
+     "b": "Rafael Nadal",
+     "correct": 0,
+     "values": [
+      "7. siječnja 1985.",
+      "3. lipnja 1986."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Blanka Vlašić",
+     "b": "Dražen Petrović",
+     "correct": 1,
+     "values": [
+      "8. studenoga 1983.",
+      "22. listopada 1964."
+     ]
+    },
+    {
+     "a": "Lionel Messi",
+     "b": "Neymar",
+     "correct": 0,
+     "values": [
+      "24. lipnja 1987.",
+      "5. veljače 1992."
+     ]
+    },
+    {
+     "a": "Pelé",
+     "b": "Diego Maradona",
+     "correct": 0,
+     "values": [
+      "23. listopada 1940.",
+      "30. listopada 1960."
+     ]
+    },
+    {
+     "a": "Ivan Rakitić",
+     "b": "Kylian Mbappé",
+     "correct": 0,
+     "values": [
+      "10. ožujka 1988.",
+      "20. prosinca 1998."
+     ]
+    },
+    {
+     "a": "Zlatko Dalić",
+     "b": "Muhammad Ali",
+     "correct": 1,
+     "values": [
+      "26. listopada 1966.",
+      "17. siječnja 1942."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Rafael Nadal",
+     "b": "LeBron James",
+     "correct": 1,
+     "values": [
+      "3. lipnja 1986.",
+      "30. prosinca 1984."
+     ]
+    },
+    {
+     "a": "Erling Haaland",
+     "b": "Serena Williams",
+     "correct": 1,
+     "values": [
+      "21. srpnja 2000.",
+      "26. rujna 1981."
+     ]
+    },
+    {
+     "a": "Davor Šuker",
+     "b": "Tiger Woods",
+     "correct": 0,
+     "values": [
+      "1. siječnja 1968.",
+      "30. prosinca 1975."
+     ]
+    },
+    {
+     "a": "Toni Kukoč",
+     "b": "Ivica Kostelić",
+     "correct": 0,
+     "values": [
+      "18. rujna 1968.",
+      "23. studenoga 1979."
+     ]
+    },
+    {
+     "a": "Zlatan Ibrahimović",
+     "b": "Zlatko Dalić",
+     "correct": 1,
+     "values": [
+      "3. listopada 1981.",
+      "26. listopada 1966."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-007",
+   "type": "versus",
+   "difficulty": 3,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "LeBron James",
+     "b": "Roger Federer",
+     "correct": 1,
+     "values": [
+      "30. prosinca 1984.",
+      "8. kolovoza 1981."
+     ]
+    },
+    {
+     "a": "Davor Šuker",
+     "b": "Michael Jordan",
+     "correct": 1,
+     "values": [
+      "1. siječnja 1968.",
+      "17. veljače 1963."
+     ]
+    },
+    {
+     "a": "Usain Bolt",
+     "b": "Serena Williams",
+     "correct": 1,
+     "values": [
+      "21. kolovoza 1986.",
+      "26. rujna 1981."
+     ]
+    },
+    {
+     "a": "Pelé",
+     "b": "Muhammad Ali",
+     "correct": 0,
+     "values": [
+      "23. listopada 1940.",
+      "17. siječnja 1942."
+     ]
+    },
+    {
+     "a": "Michael Schumacher",
+     "b": "Dražen Petrović",
+     "correct": 1,
+     "values": [
+      "3. siječnja 1969.",
+      "22. listopada 1964."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-008",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Janica Kostelić",
+     "b": "Lewis Hamilton",
+     "correct": 0,
+     "values": [
+      "5. siječnja 1982.",
+      "7. siječnja 1985."
+     ]
+    },
+    {
+     "a": "Ivica Kostelić",
+     "b": "Michael Phelps",
+     "correct": 0,
+     "values": [
+      "23. studenoga 1979.",
+      "30. lipnja 1985."
+     ]
+    },
+    {
+     "a": "Toni Kukoč",
+     "b": "David Beckham",
+     "correct": 0,
+     "values": [
+      "18. rujna 1968.",
+      "2. svibnja 1975."
+     ]
+    },
+    {
+     "a": "Lionel Messi",
+     "b": "Rafael Nadal",
+     "correct": 1,
+     "values": [
+      "24. lipnja 1987.",
+      "3. lipnja 1986."
+     ]
+    },
+    {
+     "a": "Michael Jordan",
+     "b": "Pelé",
+     "correct": 1,
+     "values": [
+      "17. veljače 1963.",
+      "23. listopada 1940."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Zlatko Dalić",
+     "b": "Cristiano Ronaldo",
+     "correct": 0,
+     "values": [
+      "26. listopada 1966.",
+      "5. veljače 1985."
+     ]
+    },
+    {
+     "a": "Novak Đoković",
+     "b": "Erling Haaland",
+     "correct": 0,
+     "values": [
+      "22. svibnja 1987.",
+      "21. srpnja 2000."
+     ]
+    },
+    {
+     "a": "Serena Williams",
+     "b": "Neymar",
+     "correct": 0,
+     "values": [
+      "26. rujna 1981.",
+      "5. veljače 1992."
+     ]
+    },
+    {
+     "a": "Ivan Rakitić",
+     "b": "Lionel Messi",
+     "correct": 1,
+     "values": [
+      "10. ožujka 1988.",
+      "24. lipnja 1987."
+     ]
+    },
+    {
+     "a": "Toni Kukoč",
+     "b": "Michael Phelps",
+     "correct": 0,
+     "values": [
+      "18. rujna 1968.",
+      "30. lipnja 1985."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Ivan Rakitić",
+     "b": "Neymar",
+     "correct": 0,
+     "values": [
+      "10. ožujka 1988.",
+      "5. veljače 1992."
+     ]
+    },
+    {
+     "a": "Diego Maradona",
+     "b": "Roger Federer",
+     "correct": 0,
+     "values": [
+      "30. listopada 1960.",
+      "8. kolovoza 1981."
+     ]
+    },
+    {
+     "a": "Janica Kostelić",
+     "b": "Goran Ivanišević",
+     "correct": 1,
+     "values": [
+      "5. siječnja 1982.",
+      "13. rujna 1971."
+     ]
+    },
+    {
+     "a": "Michael Phelps",
+     "b": "Marin Čilić",
+     "correct": 0,
+     "values": [
+      "30. lipnja 1985.",
+      "28. rujna 1988."
+     ]
+    },
+    {
+     "a": "Zlatan Ibrahimović",
+     "b": "Michael Schumacher",
+     "correct": 1,
+     "values": [
+      "3. listopada 1981.",
+      "3. siječnja 1969."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-011",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Davor Šuker",
+     "b": "Rafael Nadal",
+     "correct": 0,
+     "values": [
+      "1. siječnja 1968.",
+      "3. lipnja 1986."
+     ]
+    },
+    {
+     "a": "Erling Haaland",
+     "b": "Kylian Mbappé",
+     "correct": 1,
+     "values": [
+      "21. srpnja 2000.",
+      "20. prosinca 1998."
+     ]
+    },
+    {
+     "a": "Cristiano Ronaldo",
+     "b": "Marin Čilić",
+     "correct": 0,
+     "values": [
+      "5. veljače 1985.",
+      "28. rujna 1988."
+     ]
+    },
+    {
+     "a": "Michael Jordan",
+     "b": "Zlatan Ibrahimović",
+     "correct": 0,
+     "values": [
+      "17. veljače 1963.",
+      "3. listopada 1981."
+     ]
+    },
+    {
+     "a": "Goran Ivanišević",
+     "b": "LeBron James",
+     "correct": 0,
+     "values": [
+      "13. rujna 1971.",
+      "30. prosinca 1984."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-012",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Tiger Woods",
+     "b": "Blanka Vlašić",
+     "correct": 0,
+     "values": [
+      "30. prosinca 1975.",
+      "8. studenoga 1983."
+     ]
+    },
+    {
+     "a": "Lewis Hamilton",
+     "b": "Goran Ivanišević",
+     "correct": 1,
+     "values": [
+      "7. siječnja 1985.",
+      "13. rujna 1971."
+     ]
+    },
+    {
+     "a": "Luka Modrić",
+     "b": "Sandra Perković",
+     "correct": 0,
+     "values": [
+      "9. rujna 1985.",
+      "21. lipnja 1990."
+     ]
+    },
+    {
+     "a": "Michael Phelps",
+     "b": "Neymar",
+     "correct": 0,
+     "values": [
+      "30. lipnja 1985.",
+      "5. veljače 1992."
+     ]
+    },
+    {
+     "a": "Diego Maradona",
+     "b": "Janica Kostelić",
+     "correct": 0,
+     "values": [
+      "30. listopada 1960.",
+      "5. siječnja 1982."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-013",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Mario Mandžukić",
+     "b": "Blanka Vlašić",
+     "correct": 1,
+     "values": [
+      "21. svibnja 1986.",
+      "8. studenoga 1983."
+     ]
+    },
+    {
+     "a": "David Beckham",
+     "b": "Cristiano Ronaldo",
+     "correct": 0,
+     "values": [
+      "2. svibnja 1975.",
+      "5. veljače 1985."
+     ]
+    },
+    {
+     "a": "Luka Modrić",
+     "b": "Michael Jordan",
+     "correct": 1,
+     "values": [
+      "9. rujna 1985.",
+      "17. veljače 1963."
+     ]
+    },
+    {
+     "a": "Erling Haaland",
+     "b": "Roger Federer",
+     "correct": 1,
+     "values": [
+      "21. srpnja 2000.",
+      "8. kolovoza 1981."
+     ]
+    },
+    {
+     "a": "Dražen Petrović",
+     "b": "Marin Čilić",
+     "correct": 0,
+     "values": [
+      "22. listopada 1964.",
+      "28. rujna 1988."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe2-014",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Sport",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Cristiano Ronaldo",
+     "b": "Usain Bolt",
+     "correct": 0,
+     "values": [
+      "5. veljače 1985.",
+      "21. kolovoza 1986."
+     ]
+    },
+    {
+     "a": "Rafael Nadal",
+     "b": "Goran Ivanišević",
+     "correct": 1,
+     "values": [
+      "3. lipnja 1986.",
+      "13. rujna 1971."
+     ]
+    },
+    {
+     "a": "Janica Kostelić",
+     "b": "Mario Mandžukić",
+     "correct": 0,
+     "values": [
+      "5. siječnja 1982.",
+      "21. svibnja 1986."
+     ]
+    },
+    {
+     "a": "David Beckham",
+     "b": "Diego Maradona",
+     "correct": 1,
+     "values": [
+      "2. svibnja 1975.",
+      "30. listopada 1960."
+     ]
+    },
+    {
+     "a": "Lionel Messi",
+     "b": "Zlatko Dalić",
+     "correct": 1,
+     "values": [
+      "24. lipnja 1987.",
+      "26. listopada 1966."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Jules Verne",
+     "b": "Charles Dickens",
+     "correct": 1,
+     "values": [
+      "8. veljače 1828.",
+      "7. veljače 1812."
+     ]
+    },
+    {
+     "a": "Salvador Dalí",
+     "b": "John F. Kennedy",
+     "correct": 0,
+     "values": [
+      "11. svibnja 1904.",
+      "29. svibnja 1917."
+     ]
+    },
+    {
+     "a": "Marie Curie",
+     "b": "Vincent van Gogh",
+     "correct": 1,
+     "values": [
+      "7. studenoga 1867.",
+      "30. ožujka 1853."
+     ]
+    },
+    {
+     "a": "Princeza Diana",
+     "b": "Princ Harry",
+     "correct": 0,
+     "values": [
+      "1. srpnja 1961.",
+      "15. rujna 1984."
+     ]
+    },
+    {
+     "a": "Pablo Picasso",
+     "b": "Ivo Andrić",
+     "correct": 0,
+     "values": [
+      "25. listopada 1881.",
+      "9. listopada 1892."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Marija Jurić Zagorka",
+     "b": "Marie Curie",
+     "correct": 1,
+     "values": [
+      "2. ožujka 1873.",
+      "7. studenoga 1867."
+     ]
+    },
+    {
+     "a": "Kraljica Elizabeta II.",
+     "b": "Martin Luther King",
+     "correct": 0,
+     "values": [
+      "21. travnja 1926.",
+      "15. siječnja 1929."
+     ]
+    },
+    {
+     "a": "Albert Einstein",
+     "b": "Agatha Christie",
+     "correct": 0,
+     "values": [
+      "14. ožujka 1879.",
+      "15. rujna 1890."
+     ]
+    },
+    {
+     "a": "Princ William",
+     "b": "J. K. Rowling",
+     "correct": 1,
+     "values": [
+      "21. lipnja 1982.",
+      "31. srpnja 1965."
+     ]
+    },
+    {
+     "a": "Papa Franjo",
+     "b": "Donald Trump",
+     "correct": 0,
+     "values": [
+      "17. prosinca 1936.",
+      "14. lipnja 1946."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Walt Disney",
+     "b": "Albert Einstein",
+     "correct": 1,
+     "values": [
+      "5. prosinca 1901.",
+      "14. ožujka 1879."
+     ]
+    },
+    {
+     "a": "Barack Obama",
+     "b": "J. K. Rowling",
+     "correct": 0,
+     "values": [
+      "4. kolovoza 1961.",
+      "31. srpnja 1965."
+     ]
+    },
+    {
+     "a": "Papa Franjo",
+     "b": "Martin Luther King",
+     "correct": 1,
+     "values": [
+      "17. prosinca 1936.",
+      "15. siječnja 1929."
+     ]
+    },
+    {
+     "a": "Thomas Edison",
+     "b": "Jules Verne",
+     "correct": 1,
+     "values": [
+      "11. veljače 1847.",
+      "8. veljače 1828."
+     ]
+    },
+    {
+     "a": "Princ William",
+     "b": "Mate Rimac",
+     "correct": 0,
+     "values": [
+      "21. lipnja 1982.",
+      "12. veljače 1988."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Mark Zuckerberg",
+     "b": "Mate Rimac",
+     "correct": 0,
+     "values": [
+      "14. svibnja 1984.",
+      "12. veljače 1988."
+     ]
+    },
+    {
+     "a": "Vladimir Putin",
+     "b": "Martin Luther King",
+     "correct": 1,
+     "values": [
+      "7. listopada 1952.",
+      "15. siječnja 1929."
+     ]
+    },
+    {
+     "a": "Winston Churchill",
+     "b": "Pablo Picasso",
+     "correct": 0,
+     "values": [
+      "30. studenoga 1874.",
+      "25. listopada 1881."
+     ]
+    },
+    {
+     "a": "Charles Dickens",
+     "b": "Charles Darwin",
+     "correct": 1,
+     "values": [
+      "7. veljače 1812.",
+      "12. veljače 1809."
+     ]
+    },
+    {
+     "a": "Vincent van Gogh",
+     "b": "Mahatma Gandhi",
+     "correct": 0,
+     "values": [
+      "30. ožujka 1853.",
+      "2. listopada 1869."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Winston Churchill",
+     "b": "Josip Broz Tito",
+     "correct": 0,
+     "values": [
+      "30. studenoga 1874.",
+      "7. svibnja 1892."
+     ]
+    },
+    {
+     "a": "Mark Zuckerberg",
+     "b": "J. K. Rowling",
+     "correct": 1,
+     "values": [
+      "14. svibnja 1984.",
+      "31. srpnja 1965."
+     ]
+    },
+    {
+     "a": "Vincent van Gogh",
+     "b": "Nikola Tesla",
+     "correct": 0,
+     "values": [
+      "30. ožujka 1853.",
+      "10. srpnja 1856."
+     ]
+    },
+    {
+     "a": "Vladimir Putin",
+     "b": "Princeza Diana",
+     "correct": 0,
+     "values": [
+      "7. listopada 1952.",
+      "1. srpnja 1961."
+     ]
+    },
+    {
+     "a": "Ivo Andrić",
+     "b": "Marija Jurić Zagorka",
+     "correct": 1,
+     "values": [
+      "9. listopada 1892.",
+      "2. ožujka 1873."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Napoleon Bonaparte",
+     "b": "Wolfgang Amadeus Mozart",
+     "correct": 1,
+     "values": [
+      "15. kolovoza 1769.",
+      "27. siječnja 1756."
+     ]
+    },
+    {
+     "a": "Marie Curie",
+     "b": "Mahatma Gandhi",
+     "correct": 0,
+     "values": [
+      "7. studenoga 1867.",
+      "2. listopada 1869."
+     ]
+    },
+    {
+     "a": "Ivo Andrić",
+     "b": "Salvador Dalí",
+     "correct": 0,
+     "values": [
+      "9. listopada 1892.",
+      "11. svibnja 1904."
+     ]
+    },
+    {
+     "a": "Vladimir Putin",
+     "b": "Kralj Charles III.",
+     "correct": 1,
+     "values": [
+      "7. listopada 1952.",
+      "14. studenoga 1948."
+     ]
+    },
+    {
+     "a": "Jeff Bezos",
+     "b": "Princ Harry",
+     "correct": 0,
+     "values": [
+      "12. siječnja 1964.",
+      "15. rujna 1984."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Papa Franjo",
+     "b": "Steve Jobs",
+     "correct": 0,
+     "values": [
+      "17. prosinca 1936.",
+      "24. veljače 1955."
+     ]
+    },
+    {
+     "a": "Jules Verne",
+     "b": "Charles Darwin",
+     "correct": 1,
+     "values": [
+      "8. veljače 1828.",
+      "12. veljače 1809."
+     ]
+    },
+    {
+     "a": "Salvador Dalí",
+     "b": "Kraljica Elizabeta II.",
+     "correct": 0,
+     "values": [
+      "11. svibnja 1904.",
+      "21. travnja 1926."
+     ]
+    },
+    {
+     "a": "Princ William",
+     "b": "Mark Zuckerberg",
+     "correct": 0,
+     "values": [
+      "21. lipnja 1982.",
+      "14. svibnja 1984."
+     ]
+    },
+    {
+     "a": "Kralj Charles III.",
+     "b": "Bill Gates",
+     "correct": 0,
+     "values": [
+      "14. studenoga 1948.",
+      "28. listopada 1955."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-008",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Marie Curie",
+     "b": "Albert Einstein",
+     "correct": 0,
+     "values": [
+      "7. studenoga 1867.",
+      "14. ožujka 1879."
+     ]
+    },
+    {
+     "a": "Mahatma Gandhi",
+     "b": "Winston Churchill",
+     "correct": 0,
+     "values": [
+      "2. listopada 1869.",
+      "30. studenoga 1874."
+     ]
+    },
+    {
+     "a": "Joe Biden",
+     "b": "Bill Gates",
+     "correct": 0,
+     "values": [
+      "20. studenoga 1942.",
+      "28. listopada 1955."
+     ]
+    },
+    {
+     "a": "Charles Dickens",
+     "b": "Lav Tolstoj",
+     "correct": 0,
+     "values": [
+      "7. veljače 1812.",
+      "9. rujna 1828."
+     ]
+    },
+    {
+     "a": "Miroslav Krleža",
+     "b": "Marija Jurić Zagorka",
+     "correct": 1,
+     "values": [
+      "7. srpnja 1893.",
+      "2. ožujka 1873."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Vincent van Gogh",
+     "b": "Marija Jurić Zagorka",
+     "correct": 0,
+     "values": [
+      "30. ožujka 1853.",
+      "2. ožujka 1873."
+     ]
+    },
+    {
+     "a": "Bill Gates",
+     "b": "Jeff Bezos",
+     "correct": 0,
+     "values": [
+      "28. listopada 1955.",
+      "12. siječnja 1964."
+     ]
+    },
+    {
+     "a": "Miroslav Krleža",
+     "b": "Salvador Dalí",
+     "correct": 0,
+     "values": [
+      "7. srpnja 1893.",
+      "11. svibnja 1904."
+     ]
+    },
+    {
+     "a": "Josip Broz Tito",
+     "b": "Mahatma Gandhi",
+     "correct": 1,
+     "values": [
+      "7. svibnja 1892.",
+      "2. listopada 1869."
+     ]
+    },
+    {
+     "a": "Princeza Diana",
+     "b": "Mark Zuckerberg",
+     "correct": 0,
+     "values": [
+      "1. srpnja 1961.",
+      "14. svibnja 1984."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Marie Curie",
+     "b": "Ivan Meštrović",
+     "correct": 0,
+     "values": [
+      "7. studenoga 1867.",
+      "15. kolovoza 1883."
+     ]
+    },
+    {
+     "a": "Steve Jobs",
+     "b": "Jeff Bezos",
+     "correct": 0,
+     "values": [
+      "24. veljače 1955.",
+      "12. siječnja 1964."
+     ]
+    },
+    {
+     "a": "Mate Rimac",
+     "b": "Princ Harry",
+     "correct": 1,
+     "values": [
+      "12. veljače 1988.",
+      "15. rujna 1984."
+     ]
+    },
+    {
+     "a": "Princeza Diana",
+     "b": "Bill Gates",
+     "correct": 1,
+     "values": [
+      "1. srpnja 1961.",
+      "28. listopada 1955."
+     ]
+    },
+    {
+     "a": "Agatha Christie",
+     "b": "Frida Kahlo",
+     "correct": 0,
+     "values": [
+      "15. rujna 1890.",
+      "6. srpnja 1907."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-011",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Josip Broz Tito",
+     "b": "Ivan Meštrović",
+     "correct": 1,
+     "values": [
+      "7. svibnja 1892.",
+      "15. kolovoza 1883."
+     ]
+    },
+    {
+     "a": "Kralj Charles III.",
+     "b": "Papa Franjo",
+     "correct": 1,
+     "values": [
+      "14. studenoga 1948.",
+      "17. prosinca 1936."
+     ]
+    },
+    {
+     "a": "Mahatma Gandhi",
+     "b": "Nikola Tesla",
+     "correct": 1,
+     "values": [
+      "2. listopada 1869.",
+      "10. srpnja 1856."
+     ]
+    },
+    {
+     "a": "Pablo Picasso",
+     "b": "Agatha Christie",
+     "correct": 0,
+     "values": [
+      "25. listopada 1881.",
+      "15. rujna 1890."
+     ]
+    },
+    {
+     "a": "Miroslav Krleža",
+     "b": "Ivo Andrić",
+     "correct": 1,
+     "values": [
+      "7. srpnja 1893.",
+      "9. listopada 1892."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-012",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Kralj Charles III.",
+     "b": "J. K. Rowling",
+     "correct": 0,
+     "values": [
+      "14. studenoga 1948.",
+      "31. srpnja 1965."
+     ]
+    },
+    {
+     "a": "Josip Broz Tito",
+     "b": "Salvador Dalí",
+     "correct": 0,
+     "values": [
+      "7. svibnja 1892.",
+      "11. svibnja 1904."
+     ]
+    },
+    {
+     "a": "Winston Churchill",
+     "b": "Miroslav Krleža",
+     "correct": 0,
+     "values": [
+      "30. studenoga 1874.",
+      "7. srpnja 1893."
+     ]
+    },
+    {
+     "a": "Elon Musk",
+     "b": "Mate Rimac",
+     "correct": 0,
+     "values": [
+      "28. lipnja 1971.",
+      "12. veljače 1988."
+     ]
+    },
+    {
+     "a": "Mahatma Gandhi",
+     "b": "Albert Einstein",
+     "correct": 0,
+     "values": [
+      "2. listopada 1869.",
+      "14. ožujka 1879."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-013",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Princ Harry",
+     "b": "J. K. Rowling",
+     "correct": 1,
+     "values": [
+      "15. rujna 1984.",
+      "31. srpnja 1965."
+     ]
+    },
+    {
+     "a": "Leonardo da Vinci",
+     "b": "Michelangelo",
+     "correct": 0,
+     "values": [
+      "15. travnja 1452.",
+      "6. ožujka 1475."
+     ]
+    },
+    {
+     "a": "Agatha Christie",
+     "b": "Ivan Meštrović",
+     "correct": 1,
+     "values": [
+      "15. rujna 1890.",
+      "15. kolovoza 1883."
+     ]
+    },
+    {
+     "a": "Elon Musk",
+     "b": "Barack Obama",
+     "correct": 1,
+     "values": [
+      "28. lipnja 1971.",
+      "4. kolovoza 1961."
+     ]
+    },
+    {
+     "a": "Joe Biden",
+     "b": "Kraljica Elizabeta II.",
+     "correct": 1,
+     "values": [
+      "20. studenoga 1942.",
+      "21. travnja 1926."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-osobe3-014",
+   "type": "versus",
+   "difficulty": 2,
+   "category": "Povijest i znanost",
+   "prompt": "Tko je stariji?",
+   "pairs": [
+    {
+     "a": "Papa Franjo",
+     "b": "John F. Kennedy",
+     "correct": 1,
+     "values": [
+      "17. prosinca 1936.",
+      "29. svibnja 1917."
+     ]
+    },
+    {
+     "a": "Albert Einstein",
+     "b": "Ivan Meštrović",
+     "correct": 0,
+     "values": [
+      "14. ožujka 1879.",
+      "15. kolovoza 1883."
+     ]
+    },
+    {
+     "a": "Kralj Charles III.",
+     "b": "Joe Biden",
+     "correct": 1,
+     "values": [
+      "14. studenoga 1948.",
+      "20. studenoga 1942."
+     ]
+    },
+    {
+     "a": "Vladimir Putin",
+     "b": "Bill Gates",
+     "correct": 0,
+     "values": [
+      "7. listopada 1952.",
+      "28. listopada 1955."
+     ]
+    },
+    {
+     "a": "Marie Curie",
+     "b": "Nikola Tesla",
+     "correct": 1,
+     "values": [
+      "7. studenoga 1867.",
+      "10. srpnja 1856."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Let Jurija Gagarina",
+     "b": "Windows 95",
+     "correct": 0,
+     "values": [
+      "1961.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Facebook",
+     "b": "ChatGPT",
+     "correct": 0,
+     "values": [
+      "2004.",
+      "2022."
+     ]
+    },
+    {
+     "a": "Prvi let braće Wright",
+     "b": "Otkriće penicilina",
+     "correct": 0,
+     "values": [
+      "1903.",
+      "1928."
+     ]
+    },
+    {
+     "a": "Slijetanje na Mjesec",
+     "b": "Prvi iPhone",
+     "correct": 0,
+     "values": [
+      "1969.",
+      "2007."
+     ]
+    },
+    {
+     "a": "YouTube",
+     "b": "Prvi PlayStation",
+     "correct": 1,
+     "values": [
+      "2005.",
+      "1994."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Netflix (osnivanje)",
+     "b": "Sputnjik",
+     "correct": 1,
+     "values": [
+      "1997.",
+      "1957."
+     ]
+    },
+    {
+     "a": "Amazon (osnivanje)",
+     "b": "Instagram",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2010."
+     ]
+    },
+    {
+     "a": "Prvi SMS",
+     "b": "WhatsApp",
+     "correct": 0,
+     "values": [
+      "1992.",
+      "2009."
+     ]
+    },
+    {
+     "a": "Otkriće penicilina",
+     "b": "Let Jurija Gagarina",
+     "correct": 0,
+     "values": [
+      "1928.",
+      "1961."
+     ]
+    },
+    {
+     "a": "Google",
+     "b": "Twitter",
+     "correct": 0,
+     "values": [
+      "1998.",
+      "2006."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Bitcoin",
+     "b": "Prvi PlayStation",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Nintendo Wii",
+     "b": "Wikipedija",
+     "correct": 1,
+     "values": [
+      "2006.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Google",
+     "b": "Let Jurija Gagarina",
+     "correct": 1,
+     "values": [
+      "1998.",
+      "1961."
+     ]
+    },
+    {
+     "a": "Amazon (osnivanje)",
+     "b": "Sputnjik",
+     "correct": 1,
+     "values": [
+      "1994.",
+      "1957."
+     ]
+    },
+    {
+     "a": "Slijetanje na Mjesec",
+     "b": "Prvi SMS",
+     "correct": 0,
+     "values": [
+      "1969.",
+      "1992."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Instagram",
+     "b": "ChatGPT",
+     "correct": 0,
+     "values": [
+      "2010.",
+      "2022."
+     ]
+    },
+    {
+     "a": "Facebook",
+     "b": "Twitter",
+     "correct": 0,
+     "values": [
+      "2004.",
+      "2006."
+     ]
+    },
+    {
+     "a": "Nintendo Wii",
+     "b": "Netflix (osnivanje)",
+     "correct": 1,
+     "values": [
+      "2006.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Game Boy",
+     "b": "Wikipedija",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Otkriće penicilina",
+     "b": "Sputnjik",
+     "correct": 0,
+     "values": [
+      "1928.",
+      "1957."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Netflix (osnivanje)",
+     "b": "YouTube",
+     "correct": 0,
+     "values": [
+      "1997.",
+      "2005."
+     ]
+    },
+    {
+     "a": "Nintendo Wii",
+     "b": "Prvi PlayStation",
+     "correct": 1,
+     "values": [
+      "2006.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Wikipedija",
+     "b": "Windows 95",
+     "correct": 1,
+     "values": [
+      "2001.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Prvi let braće Wright",
+     "b": "Izum telefona (Bellov patent)",
+     "correct": 1,
+     "values": [
+      "1903.",
+      "1876."
+     ]
+    },
+    {
+     "a": "Twitter",
+     "b": "ChatGPT",
+     "correct": 0,
+     "values": [
+      "2006.",
+      "2022."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Prvi PlayStation",
+     "b": "Let Jurija Gagarina",
+     "correct": 1,
+     "values": [
+      "1994.",
+      "1961."
+     ]
+    },
+    {
+     "a": "WhatsApp",
+     "b": "ChatGPT",
+     "correct": 0,
+     "values": [
+      "2009.",
+      "2022."
+     ]
+    },
+    {
+     "a": "Facebook",
+     "b": "Windows 95",
+     "correct": 1,
+     "values": [
+      "2004.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Bitcoin",
+     "b": "Amazon (osnivanje)",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Prvi iPhone",
+     "b": "Netflix (osnivanje)",
+     "correct": 1,
+     "values": [
+      "2007.",
+      "1997."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Amazon (osnivanje)",
+     "b": "ChatGPT",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2022."
+     ]
+    },
+    {
+     "a": "Let Jurija Gagarina",
+     "b": "Netflix (osnivanje)",
+     "correct": 0,
+     "values": [
+      "1961.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Instagram",
+     "b": "Twitter",
+     "correct": 1,
+     "values": [
+      "2010.",
+      "2006."
+     ]
+    },
+    {
+     "a": "WhatsApp",
+     "b": "Nintendo Wii",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "2006."
+     ]
+    },
+    {
+     "a": "YouTube",
+     "b": "Slijetanje na Mjesec",
+     "correct": 1,
+     "values": [
+      "2005.",
+      "1969."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-008",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Google",
+     "b": "Nintendo Wii",
+     "correct": 0,
+     "values": [
+      "1998.",
+      "2006."
+     ]
+    },
+    {
+     "a": "ChatGPT",
+     "b": "YouTube",
+     "correct": 1,
+     "values": [
+      "2022.",
+      "2005."
+     ]
+    },
+    {
+     "a": "WhatsApp",
+     "b": "Twitter",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "2006."
+     ]
+    },
+    {
+     "a": "Sputnjik",
+     "b": "Prvi SMS",
+     "correct": 0,
+     "values": [
+      "1957.",
+      "1992."
+     ]
+    },
+    {
+     "a": "Instagram",
+     "b": "Prvi iPhone",
+     "correct": 1,
+     "values": [
+      "2010.",
+      "2007."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Sputnjik",
+     "b": "Let Jurija Gagarina",
+     "correct": 0,
+     "values": [
+      "1957.",
+      "1961."
+     ]
+    },
+    {
+     "a": "Prvi iPhone",
+     "b": "Amazon (osnivanje)",
+     "correct": 1,
+     "values": [
+      "2007.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Slijetanje na Mjesec",
+     "b": "Bitcoin",
+     "correct": 0,
+     "values": [
+      "1969.",
+      "2009."
+     ]
+    },
+    {
+     "a": "Nintendo Wii",
+     "b": "Prvi SMS",
+     "correct": 1,
+     "values": [
+      "2006.",
+      "1992."
+     ]
+    },
+    {
+     "a": "Instagram",
+     "b": "Netflix (osnivanje)",
+     "correct": 1,
+     "values": [
+      "2010.",
+      "1997."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog0-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Tehnologija i internet",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Netflix (osnivanje)",
+     "b": "Prvi SMS",
+     "correct": 1,
+     "values": [
+      "1997.",
+      "1992."
+     ]
+    },
+    {
+     "a": "WhatsApp",
+     "b": "Windows 95",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Nintendo Wii",
+     "b": "Instagram",
+     "correct": 0,
+     "values": [
+      "2006.",
+      "2010."
+     ]
+    },
+    {
+     "a": "Slijetanje na Mjesec",
+     "b": "Sputnjik",
+     "correct": 1,
+     "values": [
+      "1969.",
+      "1957."
+     ]
+    },
+    {
+     "a": "Facebook",
+     "b": "Prvi PlayStation",
+     "correct": 1,
+     "values": [
+      "2004.",
+      "1994."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Pulp Fiction",
+     "b": "Igra prijestolja (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2011."
+     ]
+    },
+    {
+     "a": "Gospodar prstenova: Prstenova družina",
+     "b": "Čeljusti",
+     "correct": 1,
+     "values": [
+      "2001.",
+      "1975."
+     ]
+    },
+    {
+     "a": "Ratovi zvijezda (prvi film)",
+     "b": "Simpsoni (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1977.",
+      "1989."
+     ]
+    },
+    {
+     "a": "Prvi film o Harryju Potteru",
+     "b": "Avatar",
+     "correct": 0,
+     "values": [
+      "2001.",
+      "2009."
+     ]
+    },
+    {
+     "a": "Prijatelji (prva epizoda)",
+     "b": "Matrix",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "1999."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Titanic (film)",
+     "b": "Shrek",
+     "correct": 0,
+     "values": [
+      "1997.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Barbie (film)",
+     "b": "Breaking Bad (prva epizoda)",
+     "correct": 1,
+     "values": [
+      "2023.",
+      "2008."
+     ]
+    },
+    {
+     "a": "Igra prijestolja (prva epizoda)",
+     "b": "Gospodar prstenova: Prstenova družina",
+     "correct": 1,
+     "values": [
+      "2011.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Kum",
+     "b": "Simpsoni (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1972.",
+      "1989."
+     ]
+    },
+    {
+     "a": "Čeljusti",
+     "b": "Povratak u budućnost",
+     "correct": 0,
+     "values": [
+      "1975.",
+      "1985."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Simpsoni (prva epizoda)",
+     "b": "Titanic (film)",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Matrix",
+     "b": "E.T.",
+     "correct": 1,
+     "values": [
+      "1999.",
+      "1982."
+     ]
+    },
+    {
+     "a": "Ratovi zvijezda (prvi film)",
+     "b": "Gospodar prstenova: Prstenova družina",
+     "correct": 0,
+     "values": [
+      "1977.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Avatar",
+     "b": "Povratak u budućnost",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1985."
+     ]
+    },
+    {
+     "a": "Jurski park",
+     "b": "Shrek",
+     "correct": 0,
+     "values": [
+      "1993.",
+      "2001."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Titanic (film)",
+     "b": "Kum",
+     "correct": 1,
+     "values": [
+      "1997.",
+      "1972."
+     ]
+    },
+    {
+     "a": "Snježno kraljevstvo",
+     "b": "Prijatelji (prva epizoda)",
+     "correct": 1,
+     "values": [
+      "2013.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Forrest Gump",
+     "b": "Shrek",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Povratak u budućnost",
+     "b": "Pulp Fiction",
+     "correct": 0,
+     "values": [
+      "1985.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Simpsoni (prva epizoda)",
+     "b": "Čeljusti",
+     "correct": 1,
+     "values": [
+      "1989.",
+      "1975."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Avatar",
+     "b": "Ratovi zvijezda (prvi film)",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1977."
+     ]
+    },
+    {
+     "a": "Snježno kraljevstvo",
+     "b": "Forrest Gump",
+     "correct": 1,
+     "values": [
+      "2013.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Jurski park",
+     "b": "Prvi film o Harryju Potteru",
+     "correct": 0,
+     "values": [
+      "1993.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Čeljusti",
+     "b": "Kralj lavova",
+     "correct": 0,
+     "values": [
+      "1975.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Simpsoni (prva epizoda)",
+     "b": "Breaking Bad (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "2008."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Kralj lavova",
+     "b": "Igra prijestolja (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2011."
+     ]
+    },
+    {
+     "a": "Prvi film o Harryju Potteru",
+     "b": "E.T.",
+     "correct": 1,
+     "values": [
+      "2001.",
+      "1982."
+     ]
+    },
+    {
+     "a": "Forrest Gump",
+     "b": "Breaking Bad (prva epizoda)",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2008."
+     ]
+    },
+    {
+     "a": "Čeljusti",
+     "b": "Kum",
+     "correct": 1,
+     "values": [
+      "1975.",
+      "1972."
+     ]
+    },
+    {
+     "a": "Avatar",
+     "b": "Titanic (film)",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1997."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Igra prijestolja (prva epizoda)",
+     "b": "Matrix",
+     "correct": 1,
+     "values": [
+      "2011.",
+      "1999."
+     ]
+    },
+    {
+     "a": "Squid Game",
+     "b": "E.T.",
+     "correct": 1,
+     "values": [
+      "2021.",
+      "1982."
+     ]
+    },
+    {
+     "a": "Prijatelji (prva epizoda)",
+     "b": "Avatar",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2009."
+     ]
+    },
+    {
+     "a": "Prvi film o Harryju Potteru",
+     "b": "Snježno kraljevstvo",
+     "correct": 0,
+     "values": [
+      "2001.",
+      "2013."
+     ]
+    },
+    {
+     "a": "Titanic (film)",
+     "b": "Gospodar prstenova: Prstenova družina",
+     "correct": 0,
+     "values": [
+      "1997.",
+      "2001."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-008",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Ratovi zvijezda (prvi film)",
+     "b": "Jurski park",
+     "correct": 0,
+     "values": [
+      "1977.",
+      "1993."
+     ]
+    },
+    {
+     "a": "Kralj lavova",
+     "b": "Snježno kraljevstvo",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2013."
+     ]
+    },
+    {
+     "a": "Čeljusti",
+     "b": "Avengers (prvi film)",
+     "correct": 0,
+     "values": [
+      "1975.",
+      "2012."
+     ]
+    },
+    {
+     "a": "Squid Game",
+     "b": "Breaking Bad (prva epizoda)",
+     "correct": 1,
+     "values": [
+      "2021.",
+      "2008."
+     ]
+    },
+    {
+     "a": "Matrix",
+     "b": "Barbie (film)",
+     "correct": 0,
+     "values": [
+      "1999.",
+      "2023."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Jurski park",
+     "b": "Titanic (film)",
+     "correct": 0,
+     "values": [
+      "1993.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Matrix",
+     "b": "Forrest Gump",
+     "correct": 1,
+     "values": [
+      "1999.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Avengers (prvi film)",
+     "b": "Prijatelji (prva epizoda)",
+     "correct": 1,
+     "values": [
+      "2012.",
+      "1994."
+     ]
+    },
+    {
+     "a": "Kum",
+     "b": "Prvi film o Harryju Potteru",
+     "correct": 0,
+     "values": [
+      "1972.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Kralj lavova",
+     "b": "Avatar",
+     "correct": 0,
+     "values": [
+      "1994.",
+      "2009."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog1-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Filmovi i serije",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Prijatelji (prva epizoda)",
+     "b": "Kum",
+     "correct": 1,
+     "values": [
+      "1994.",
+      "1972."
+     ]
+    },
+    {
+     "a": "Squid Game",
+     "b": "Prvi film o Harryju Potteru",
+     "correct": 1,
+     "values": [
+      "2021.",
+      "2001."
+     ]
+    },
+    {
+     "a": "Snježno kraljevstvo",
+     "b": "Barbie (film)",
+     "correct": 0,
+     "values": [
+      "2013.",
+      "2023."
+     ]
+    },
+    {
+     "a": "Igra prijestolja (prva epizoda)",
+     "b": "Titanic (film)",
+     "correct": 1,
+     "values": [
+      "2011.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Pulp Fiction",
+     "b": "Ratovi zvijezda (prvi film)",
+     "correct": 1,
+     "values": [
+      "1994.",
+      "1977."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Početak Prvog svjetskog rata",
+     "b": "Kraj Drugog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1914.",
+      "1945."
+     ]
+    },
+    {
+     "a": "Olimpijske igre u Sarajevu",
+     "b": "Pad Berlinskog zida",
+     "correct": 0,
+     "values": [
+      "1984.",
+      "1989."
+     ]
+    },
+    {
+     "a": "Jugoslavija pobjeđuje na Eurosongu (Riva)",
+     "b": "Hrvatska srebrna na SP-u u Rusiji",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "2018."
+     ]
+    },
+    {
+     "a": "Kip slobode",
+     "b": "Titanic potonuo",
+     "correct": 0,
+     "values": [
+      "1886.",
+      "1912."
+     ]
+    },
+    {
+     "a": "Hrvatska proglašava neovisnost",
+     "b": "Hrvatska bronca na SP-u u Francuskoj",
+     "correct": 0,
+     "values": [
+      "1991.",
+      "1998."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Francuska revolucija",
+     "b": "Američka deklaracija o neovisnosti",
+     "correct": 1,
+     "values": [
+      "1789.",
+      "1776."
+     ]
+    },
+    {
+     "a": "Hrvatska proglašava neovisnost",
+     "b": "Raspad Beatlesa",
+     "correct": 1,
+     "values": [
+      "1991.",
+      "1970."
+     ]
+    },
+    {
+     "a": "Hrvatska bronca na SP-u u Francuskoj",
+     "b": "Akcija Oluja",
+     "correct": 1,
+     "values": [
+      "1998.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Černobilska nesreća",
+     "b": "Hrvatska uvodi euro",
+     "correct": 0,
+     "values": [
+      "1986.",
+      "2023."
+     ]
+    },
+    {
+     "a": "Kraj Drugog svjetskog rata",
+     "b": "Olimpijske igre u Sarajevu",
+     "correct": 0,
+     "values": [
+      "1945.",
+      "1984."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Eiffelov toranj dovršen",
+     "b": "Kip slobode",
+     "correct": 1,
+     "values": [
+      "1889.",
+      "1886."
+     ]
+    },
+    {
+     "a": "Euro novčanice i kovanice u opticaju",
+     "b": "Pandemija koronavirusa počinje",
+     "correct": 0,
+     "values": [
+      "2002.",
+      "2020."
+     ]
+    },
+    {
+     "a": "Olimpijske igre u Sarajevu",
+     "b": "Hrvatska uvodi euro",
+     "correct": 0,
+     "values": [
+      "1984.",
+      "2023."
+     ]
+    },
+    {
+     "a": "Titanic potonuo",
+     "b": "Početak Prvog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1912.",
+      "1914."
+     ]
+    },
+    {
+     "a": "Jugoslavija pobjeđuje na Eurosongu (Riva)",
+     "b": "Raspad Beatlesa",
+     "correct": 1,
+     "values": [
+      "1989.",
+      "1970."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Titanic potonuo",
+     "b": "Kraj Drugog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1912.",
+      "1945."
+     ]
+    },
+    {
+     "a": "Kip slobode",
+     "b": "Početak Prvog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1886.",
+      "1914."
+     ]
+    },
+    {
+     "a": "Olimpijske igre u Sarajevu",
+     "b": "Hrvatska bronca na SP-u u Francuskoj",
+     "correct": 0,
+     "values": [
+      "1984.",
+      "1998."
+     ]
+    },
+    {
+     "a": "Hrvatska proglašava neovisnost",
+     "b": "Hrvatska uvodi euro",
+     "correct": 0,
+     "values": [
+      "1991.",
+      "2023."
+     ]
+    },
+    {
+     "a": "Euro novčanice i kovanice u opticaju",
+     "b": "Hrvatska ulazi u EU",
+     "correct": 0,
+     "values": [
+      "2002.",
+      "2013."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Otkriće krapinskog pračovjeka",
+     "b": "Kip slobode",
+     "correct": 1,
+     "values": [
+      "1899.",
+      "1886."
+     ]
+    },
+    {
+     "a": "Jugoslavija pobjeđuje na Eurosongu (Riva)",
+     "b": "Akcija Oluja",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "1995."
+     ]
+    },
+    {
+     "a": "Hrvatska ulazi u EU",
+     "b": "Pandemija koronavirusa počinje",
+     "correct": 0,
+     "values": [
+      "2013.",
+      "2020."
+     ]
+    },
+    {
+     "a": "Černobilska nesreća",
+     "b": "Hrvatska bronca na SP-u u Francuskoj",
+     "correct": 0,
+     "values": [
+      "1986.",
+      "1998."
+     ]
+    },
+    {
+     "a": "Titanic potonuo",
+     "b": "Eiffelov toranj dovršen",
+     "correct": 1,
+     "values": [
+      "1912.",
+      "1889."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Hrvatska uvodi euro",
+     "b": "Hrvatska bronca na SP-u u Francuskoj",
+     "correct": 1,
+     "values": [
+      "2023.",
+      "1998."
+     ]
+    },
+    {
+     "a": "Eiffelov toranj dovršen",
+     "b": "Početak Prvog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1889.",
+      "1914."
+     ]
+    },
+    {
+     "a": "Akcija Oluja",
+     "b": "Olimpijske igre u Sarajevu",
+     "correct": 1,
+     "values": [
+      "1995.",
+      "1984."
+     ]
+    },
+    {
+     "a": "Euro novčanice i kovanice u opticaju",
+     "b": "Raspad Beatlesa",
+     "correct": 1,
+     "values": [
+      "2002.",
+      "1970."
+     ]
+    },
+    {
+     "a": "Pad Berlinskog zida",
+     "b": "Hrvatska proglašava neovisnost",
+     "correct": 0,
+     "values": [
+      "1989.",
+      "1991."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-007",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Otkriće krapinskog pračovjeka",
+     "b": "Titanic potonuo",
+     "correct": 0,
+     "values": [
+      "1899.",
+      "1912."
+     ]
+    },
+    {
+     "a": "Černobilska nesreća",
+     "b": "Raspad Beatlesa",
+     "correct": 1,
+     "values": [
+      "1986.",
+      "1970."
+     ]
+    },
+    {
+     "a": "Hrvatska proglašava neovisnost",
+     "b": "Jugoslavija pobjeđuje na Eurosongu (Riva)",
+     "correct": 1,
+     "values": [
+      "1991.",
+      "1989."
+     ]
+    },
+    {
+     "a": "Hrvatska uvodi euro",
+     "b": "Hrvatska ulazi u EU",
+     "correct": 1,
+     "values": [
+      "2023.",
+      "2013."
+     ]
+    },
+    {
+     "a": "Euro novčanice i kovanice u opticaju",
+     "b": "Hrvatska srebrna na SP-u u Rusiji",
+     "correct": 0,
+     "values": [
+      "2002.",
+      "2018."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-009",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Hrvatska ulazi u EU",
+     "b": "Olimpijske igre u Sarajevu",
+     "correct": 1,
+     "values": [
+      "2013.",
+      "1984."
+     ]
+    },
+    {
+     "a": "Pad Berlinskog zida",
+     "b": "Raspad Beatlesa",
+     "correct": 1,
+     "values": [
+      "1989.",
+      "1970."
+     ]
+    },
+    {
+     "a": "Hrvatska proglašava neovisnost",
+     "b": "Euro novčanice i kovanice u opticaju",
+     "correct": 0,
+     "values": [
+      "1991.",
+      "2002."
+     ]
+    },
+    {
+     "a": "Černobilska nesreća",
+     "b": "Pandemija koronavirusa počinje",
+     "correct": 0,
+     "values": [
+      "1986.",
+      "2020."
+     ]
+    },
+    {
+     "a": "Otkriće krapinskog pračovjeka",
+     "b": "Početak Prvog svjetskog rata",
+     "correct": 0,
+     "values": [
+      "1899.",
+      "1914."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog2-010",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Povijest",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Eiffelov toranj dovršen",
+     "b": "Otkriće krapinskog pračovjeka",
+     "correct": 0,
+     "values": [
+      "1889.",
+      "1899."
+     ]
+    },
+    {
+     "a": "Kraj Drugog svjetskog rata",
+     "b": "Raspad Beatlesa",
+     "correct": 0,
+     "values": [
+      "1945.",
+      "1970."
+     ]
+    },
+    {
+     "a": "Olimpijske igre u Sarajevu",
+     "b": "Hrvatska proglašava neovisnost",
+     "correct": 0,
+     "values": [
+      "1984.",
+      "1991."
+     ]
+    },
+    {
+     "a": "Hrvatska srebrna na SP-u u Rusiji",
+     "b": "Hrvatska ulazi u EU",
+     "correct": 1,
+     "values": [
+      "2018.",
+      "2013."
+     ]
+    },
+    {
+     "a": "Pandemija koronavirusa počinje",
+     "b": "Pad Berlinskog zida",
+     "correct": 1,
+     "values": [
+      "2020.",
+      "1989."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-001",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Angry Birds",
+     "b": "The Sims",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "2000."
+     ]
+    },
+    {
+     "a": "Pokémon (prve igre)",
+     "b": "Fortnite",
+     "correct": 0,
+     "values": [
+      "1996.",
+      "2017."
+     ]
+    },
+    {
+     "a": "Barbie lutka",
+     "b": "Monopoly (Parker Brothers)",
+     "correct": 1,
+     "values": [
+      "1959.",
+      "1935."
+     ]
+    },
+    {
+     "a": "Pokémon GO",
+     "b": "Pac-Man",
+     "correct": 1,
+     "values": [
+      "2016.",
+      "1980."
+     ]
+    },
+    {
+     "a": "Rubikova kocka",
+     "b": "Lego kocka",
+     "correct": 1,
+     "values": [
+      "1974.",
+      "1958."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-002",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Monopoly (Parker Brothers)",
+     "b": "Lego kocka",
+     "correct": 0,
+     "values": [
+      "1935.",
+      "1958."
+     ]
+    },
+    {
+     "a": "The Sims",
+     "b": "Grand Theft Auto (prva igra)",
+     "correct": 1,
+     "values": [
+      "2000.",
+      "1997."
+     ]
+    },
+    {
+     "a": "Rubikova kocka",
+     "b": "Tetris",
+     "correct": 0,
+     "values": [
+      "1974.",
+      "1984."
+     ]
+    },
+    {
+     "a": "Pac-Man",
+     "b": "Pokémon (prve igre)",
+     "correct": 0,
+     "values": [
+      "1980.",
+      "1996."
+     ]
+    },
+    {
+     "a": "Nutella",
+     "b": "Super Mario Bros.",
+     "correct": 0,
+     "values": [
+      "1964.",
+      "1985."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-003",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Tamagotchi",
+     "b": "Pokémon GO",
+     "correct": 0,
+     "values": [
+      "1996.",
+      "2016."
+     ]
+    },
+    {
+     "a": "Rubikova kocka",
+     "b": "Angry Birds",
+     "correct": 0,
+     "values": [
+      "1974.",
+      "2009."
+     ]
+    },
+    {
+     "a": "Grand Theft Auto (prva igra)",
+     "b": "Lego kocka",
+     "correct": 1,
+     "values": [
+      "1997.",
+      "1958."
+     ]
+    },
+    {
+     "a": "The Sims",
+     "b": "Tetris",
+     "correct": 1,
+     "values": [
+      "2000.",
+      "1984."
+     ]
+    },
+    {
+     "a": "Pac-Man",
+     "b": "Super Mario Bros.",
+     "correct": 0,
+     "values": [
+      "1980.",
+      "1985."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-004",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Rubikova kocka",
+     "b": "Monopoly (Parker Brothers)",
+     "correct": 1,
+     "values": [
+      "1974.",
+      "1935."
+     ]
+    },
+    {
+     "a": "Angry Birds",
+     "b": "Tamagotchi",
+     "correct": 1,
+     "values": [
+      "2009.",
+      "1996."
+     ]
+    },
+    {
+     "a": "Pokémon GO",
+     "b": "Tetris",
+     "correct": 1,
+     "values": [
+      "2016.",
+      "1984."
+     ]
+    },
+    {
+     "a": "Super Mario Bros.",
+     "b": "The Sims",
+     "correct": 0,
+     "values": [
+      "1985.",
+      "2000."
+     ]
+    },
+    {
+     "a": "Nutella",
+     "b": "Barbie lutka",
+     "correct": 1,
+     "values": [
+      "1964.",
+      "1959."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-005",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Barbie lutka",
+     "b": "Pac-Man",
+     "correct": 0,
+     "values": [
+      "1959.",
+      "1980."
+     ]
+    },
+    {
+     "a": "Fortnite",
+     "b": "Super Mario Bros.",
+     "correct": 1,
+     "values": [
+      "2017.",
+      "1985."
+     ]
+    },
+    {
+     "a": "Pokémon (prve igre)",
+     "b": "Rubikova kocka",
+     "correct": 1,
+     "values": [
+      "1996.",
+      "1974."
+     ]
+    },
+    {
+     "a": "Tetris",
+     "b": "Angry Birds",
+     "correct": 0,
+     "values": [
+      "1984.",
+      "2009."
+     ]
+    },
+    {
+     "a": "The Sims",
+     "b": "Pokémon GO",
+     "correct": 0,
+     "values": [
+      "2000.",
+      "2016."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "usp-dog3-006",
+   "type": "versus",
+   "difficulty": 1,
+   "category": "Igre i igračke",
+   "prompt": "Što je bilo prije?",
+   "pairs": [
+    {
+     "a": "Grand Theft Auto (prva igra)",
+     "b": "Super Mario Bros.",
+     "correct": 1,
+     "values": [
+      "1997.",
+      "1985."
+     ]
+    },
+    {
+     "a": "The Sims",
+     "b": "Pac-Man",
+     "correct": 1,
+     "values": [
+      "2000.",
+      "1980."
+     ]
+    },
+    {
+     "a": "Tetris",
+     "b": "Lego kocka",
+     "correct": 1,
+     "values": [
+      "1984.",
+      "1958."
+     ]
+    },
+    {
+     "a": "Angry Birds",
+     "b": "Pokémon GO",
+     "correct": 0,
+     "values": [
+      "2009.",
+      "2016."
+     ]
+    },
+    {
+     "a": "Tamagotchi",
+     "b": "Nutella",
+     "correct": 1,
+     "values": [
+      "1996.",
+      "1964."
+     ]
+    }
+   ]
+  }
+ ]
+}

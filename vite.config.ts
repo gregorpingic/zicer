@@ -28,6 +28,15 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,json,webmanifest}'],
+        // Slike za „Pogodi po slici” preuzimaju se tek kad zatrebaju, a zatim ostaju spremljene.
+        globIgnores: ['slike/**'],
+        runtimeCaching: [
+          {
+            urlPattern: /\/slike\//,
+            handler: 'CacheFirst',
+            options: { cacheName: 'zicer-slike', expiration: { maxEntries: 600 } },
+          },
+        ],
         navigateFallback: 'index.html',
       },
     }),

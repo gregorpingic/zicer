@@ -1,0 +1,4631 @@
+{
+ "format": "zicer-paket",
+ "version": 1,
+ "pack": {
+  "id": "zicer-slike",
+  "name": "Pogodi po slici – zastave i obrisi",
+  "author": "Zicer",
+  "description": "Zastave: flag-icons (MIT). Obrisi: Natural Earth (javno vlasništvo)."
+ },
+ "questions": [
+  {
+   "id": "slike-zastava-af",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/af.svg",
+   "options": [
+    "Afganistan",
+    "Kazahstan",
+    "Katar",
+    "Azerbajdžan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-al",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/al.svg",
+   "options": [
+    "Sjeverna Makedonija",
+    "Albanija",
+    "Srbija",
+    "Kosovo"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-dz",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/dz.svg",
+   "options": [
+    "Španjolska",
+    "Alžir",
+    "Libija",
+    "Maroko"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ad",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ad.svg",
+   "options": [
+    "Švicarska",
+    "Španjolska",
+    "Andora",
+    "Lihtenštajn"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ao",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ao.svg",
+   "options": [
+    "Zambija",
+    "Angola",
+    "Kongo",
+    "Bocvana"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ag",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ag.svg",
+   "options": [
+    "Grenada",
+    "Sveti Vincent i Grenadini",
+    "Barbados",
+    "Antigva i Barbuda"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ar",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ar.svg",
+   "options": [
+    "Argentina",
+    "Peru",
+    "Čile",
+    "Bolivija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-am",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/am.svg",
+   "options": [
+    "Libanon",
+    "Azerbajdžan",
+    "Armenija",
+    "Irak"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-au",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/au.svg",
+   "options": [
+    "Singapur",
+    "Filipini",
+    "Tajland",
+    "Australija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-at",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/at.svg",
+   "options": [
+    "Austrija",
+    "Slovenija",
+    "Lihtenštajn",
+    "Hrvatska"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-az",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/az.svg",
+   "options": [
+    "Iran",
+    "Irak",
+    "Armenija",
+    "Azerbajdžan"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-bs",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bs.svg",
+   "options": [
+    "Belize",
+    "Bahami",
+    "Haiti",
+    "Honduras"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-bh",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bh.svg",
+   "options": [
+    "Oman",
+    "Iran",
+    "Bahrein",
+    "Saudijska Arabija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-bd",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bd.svg",
+   "options": [
+    "Tajland",
+    "Indija",
+    "Bangladeš",
+    "Nepal"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-bb",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bb.svg",
+   "options": [
+    "Barbados",
+    "Sveti Vincent i Grenadini",
+    "Grenada",
+    "Sveta Lucija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-by",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/by.svg",
+   "options": [
+    "Latvija",
+    "Bjelorusija",
+    "Estonija",
+    "Poljska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-be",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/be.svg",
+   "options": [
+    "Luksemburg",
+    "Ujedinjeno Kraljevstvo",
+    "Belgija",
+    "Švicarska"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-bz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bz.svg",
+   "options": [
+    "Honduras",
+    "Kostarika",
+    "Belize",
+    "Gvatemala"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-bj",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bj.svg",
+   "options": [
+    "Obala Bjelokosti",
+    "Benin",
+    "Mali",
+    "Togo"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-bt",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bt.svg",
+   "options": [
+    "Butan",
+    "Laos",
+    "Mjanmar",
+    "Nepal"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-bo",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bo.svg",
+   "options": [
+    "Bolivija",
+    "Urugvaj",
+    "Paragvaj",
+    "Brazil"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ba",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ba.svg",
+   "options": [
+    "Kosovo",
+    "Srbija",
+    "Hrvatska",
+    "Bosna i Hercegovina"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-bw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bw.svg",
+   "options": [
+    "Esvatini",
+    "Južnoafrička Republika",
+    "Bocvana",
+    "Zambija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-br",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/br.svg",
+   "options": [
+    "Urugvaj",
+    "Brazil",
+    "Bolivija",
+    "Paragvaj"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-bn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bn.svg",
+   "options": [
+    "Vijetnam",
+    "Filipini",
+    "Malezija",
+    "Brunej"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-bg",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bg.svg",
+   "options": [
+    "Rumunjska",
+    "Sjeverna Makedonija",
+    "Kosovo",
+    "Bugarska"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-bf",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bf.svg",
+   "options": [
+    "Mali",
+    "Gvineja",
+    "Obala Bjelokosti",
+    "Burkina Faso"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-bi",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/bi.svg",
+   "options": [
+    "Tanzanija",
+    "Uganda",
+    "Kenija",
+    "Burundi"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-cv",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cv.svg",
+   "options": [
+    "Gvineja",
+    "Zelenortski Otoci",
+    "Gvineja Bisau",
+    "Senegal"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-kh",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kh.svg",
+   "options": [
+    "Tajland",
+    "Vijetnam",
+    "Laos",
+    "Kambodža"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-cm",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cm.svg",
+   "options": [
+    "Egipat",
+    "Kamerun",
+    "Libija",
+    "Kenija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ca",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ca.svg",
+   "options": [
+    "Kanada",
+    "SAD",
+    "Jamajka",
+    "Meksiko"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cf",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cf.svg",
+   "options": [
+    "Ekvatorska Gvineja",
+    "Srednjoafrička Republika",
+    "Kongo",
+    "DR Kongo"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-td",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/td.svg",
+   "options": [
+    "Čad",
+    "Sudan",
+    "Srednjoafrička Republika",
+    "Libija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cl",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cl.svg",
+   "options": [
+    "Bolivija",
+    "Čile",
+    "Brazil",
+    "Peru"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-cn",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cn.svg",
+   "options": [
+    "Kina",
+    "Sjeverna Koreja",
+    "Nepal",
+    "Tajvan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-co",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/co.svg",
+   "options": [
+    "Kolumbija",
+    "Venezuela",
+    "Kostarika",
+    "Jamajka"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-km",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/km.svg",
+   "options": [
+    "Kenija",
+    "Komori",
+    "Mozambik",
+    "Malavi"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-cg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cg.svg",
+   "options": [
+    "Kongo",
+    "Kamerun",
+    "Gabon",
+    "Srednjoafrička Republika"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cd",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cd.svg",
+   "options": [
+    "Angola",
+    "Kongo",
+    "DR Kongo",
+    "Srednjoafrička Republika"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-cr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cr.svg",
+   "options": [
+    "Ekvador",
+    "Kostarika",
+    "Kolumbija",
+    "Panama"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ci",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ci.svg",
+   "options": [
+    "Obala Bjelokosti",
+    "Burkina Faso",
+    "Togo",
+    "Gvineja"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-hr",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/hr.svg",
+   "options": [
+    "Hrvatska",
+    "Slovenija",
+    "Bosna i Hercegovina",
+    "Austrija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cu",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cu.svg",
+   "options": [
+    "Kuba",
+    "Jamajka",
+    "Kostarika",
+    "Panama"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cy",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cy.svg",
+   "options": [
+    "Cipar",
+    "Izrael",
+    "Libanon",
+    "Turska"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-cz",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/cz.svg",
+   "options": [
+    "Češka",
+    "Poljska",
+    "Slovačka",
+    "Austrija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-dk",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/dk.svg",
+   "options": [
+    "Belgija",
+    "Danska",
+    "Češka",
+    "Nizozemska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-dj",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/dj.svg",
+   "options": [
+    "Džibuti",
+    "Jemen",
+    "Somalija",
+    "Etiopija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-dm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/dm.svg",
+   "options": [
+    "Sveta Lucija",
+    "Dominika",
+    "Sveti Vincent i Grenadini",
+    "Barbados"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-do",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/do.svg",
+   "options": [
+    "Jamajka",
+    "Kuba",
+    "Panama",
+    "Dominikanska Republika"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ec",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ec.svg",
+   "options": [
+    "Kostarika",
+    "Ekvador",
+    "Peru",
+    "Kolumbija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-eg",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/eg.svg",
+   "options": [
+    "Egipat",
+    "Sirija",
+    "Libija",
+    "Izrael"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-sv",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sv.svg",
+   "options": [
+    "Panama",
+    "Belize",
+    "Salvador",
+    "Honduras"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-gq",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gq.svg",
+   "options": [
+    "Ekvatorska Gvineja",
+    "Gabon",
+    "Kamerun",
+    "Nigerija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-er",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/er.svg",
+   "options": [
+    "Eritreja",
+    "Etiopija",
+    "Jemen",
+    "Južni Sudan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ee",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ee.svg",
+   "options": [
+    "Latvija",
+    "Švedska",
+    "Estonija",
+    "Finska"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-sz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sz.svg",
+   "options": [
+    "Južnoafrička Republika",
+    "Zambija",
+    "Lesoto",
+    "Esvatini"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-et",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/et.svg",
+   "options": [
+    "Kenija",
+    "Katar",
+    "Etiopija",
+    "Saudijska Arabija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-fj",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/fj.svg",
+   "options": [
+    "Vanuatu",
+    "Fidži",
+    "Salomonovi Otoci",
+    "Samoa"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-fi",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/fi.svg",
+   "options": [
+    "Estonija",
+    "Litva",
+    "Finska",
+    "Bjelorusija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-fr",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/fr.svg",
+   "options": [
+    "Monako",
+    "Irska",
+    "Portugal",
+    "Francuska"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ga",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ga.svg",
+   "options": [
+    "Kongo",
+    "Gabon",
+    "Sveti Toma i Princip",
+    "Nigerija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gm.svg",
+   "options": [
+    "Gvineja",
+    "Mauretanija",
+    "Gambija",
+    "Sijera Leone"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ge",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ge.svg",
+   "options": [
+    "Gruzija",
+    "Sirija",
+    "Irak",
+    "Turska"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-de",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/de.svg",
+   "options": [
+    "Belgija",
+    "Njemačka",
+    "Lihtenštajn",
+    "Austrija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gh",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gh.svg",
+   "options": [
+    "Gana",
+    "Libija",
+    "Maroko",
+    "Kamerun"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-gr",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gr.svg",
+   "options": [
+    "Sjeverna Makedonija",
+    "Grčka",
+    "Kosovo",
+    "Albanija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gd",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gd.svg",
+   "options": [
+    "Antigva i Barbuda",
+    "Grenada",
+    "Sveti Vincent i Grenadini",
+    "Dominika"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gt",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gt.svg",
+   "options": [
+    "Kuba",
+    "Kostarika",
+    "Panama",
+    "Gvatemala"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-gn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gn.svg",
+   "options": [
+    "Obala Bjelokosti",
+    "Gvineja",
+    "Gvineja Bisau",
+    "Gambija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gw.svg",
+   "options": [
+    "Mauretanija",
+    "Gvineja Bisau",
+    "Gvineja",
+    "Senegal"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-gy",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gy.svg",
+   "options": [
+    "Gvajana",
+    "Trinidad i Tobago",
+    "Barbados",
+    "Venezuela"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ht",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ht.svg",
+   "options": [
+    "Haiti",
+    "Kuba",
+    "Kostarika",
+    "Panama"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-hn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/hn.svg",
+   "options": [
+    "Honduras",
+    "Kostarika",
+    "Nikaragva",
+    "Salvador"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-hu",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/hu.svg",
+   "options": [
+    "Mađarska",
+    "Bosna i Hercegovina",
+    "Hrvatska",
+    "Austrija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-is",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/is.svg",
+   "options": [
+    "Norveška",
+    "Irska",
+    "Nizozemska",
+    "Island"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-in",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/in.svg",
+   "options": [
+    "Afganistan",
+    "Indija",
+    "Nepal",
+    "Tajland"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-id",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/id.svg",
+   "options": [
+    "Singapur",
+    "Indonezija",
+    "Australija",
+    "Filipini"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ir",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ir.svg",
+   "options": [
+    "Ujedinjeni Arapski Emirati",
+    "Katar",
+    "Afganistan",
+    "Iran"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-iq",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/iq.svg",
+   "options": [
+    "Jordan",
+    "Azerbajdžan",
+    "Irak",
+    "Libanon"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ie",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ie.svg",
+   "options": [
+    "Nizozemska",
+    "Irska",
+    "Ujedinjeno Kraljevstvo",
+    "Belgija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-il",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/il.svg",
+   "options": [
+    "Izrael",
+    "Sirija",
+    "Cipar",
+    "Irak"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-it",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/it.svg",
+   "options": [
+    "Vatikan",
+    "Monako",
+    "Italija",
+    "San Marino"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-jm",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/jm.svg",
+   "options": [
+    "Dominikanska Republika",
+    "Panama",
+    "Kostarika",
+    "Jamajka"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-jp",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/jp.svg",
+   "options": [
+    "Filipini",
+    "Japan",
+    "Kina",
+    "Tajvan"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-jo",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/jo.svg",
+   "options": [
+    "Cipar",
+    "Egipat",
+    "Jordan",
+    "Izrael"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-kz",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kz.svg",
+   "options": [
+    "Kazahstan",
+    "Afganistan",
+    "Azerbajdžan",
+    "Pakistan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ke",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ke.svg",
+   "options": [
+    "Kenija",
+    "Saudijska Arabija",
+    "Ujedinjeni Arapski Emirati",
+    "Kamerun"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ki",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ki.svg",
+   "options": [
+    "Maršalovi Otoci",
+    "Kiribati",
+    "Samoa",
+    "Tuvalu"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-kw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kw.svg",
+   "options": [
+    "Saudijska Arabija",
+    "Kuvajt",
+    "Ujedinjeni Arapski Emirati",
+    "Katar"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-kg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kg.svg",
+   "options": [
+    "Kirgistan",
+    "Turkmenistan",
+    "Pakistan",
+    "Tadžikistan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-la",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/la.svg",
+   "options": [
+    "Laos",
+    "Kambodža",
+    "Mjanmar",
+    "Bangladeš"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-lv",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lv.svg",
+   "options": [
+    "Litva",
+    "Estonija",
+    "Latvija",
+    "Finska"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-lb",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lb.svg",
+   "options": [
+    "Sirija",
+    "Jordan",
+    "Turska",
+    "Libanon"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ls",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ls.svg",
+   "options": [
+    "Zimbabve",
+    "Lesoto",
+    "Mozambik",
+    "Južnoafrička Republika"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-lr",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lr.svg",
+   "options": [
+    "Liberija",
+    "Gvineja Bisau",
+    "Sijera Leone",
+    "Gvineja"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ly",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ly.svg",
+   "options": [
+    "Malta",
+    "Libija",
+    "Grčka",
+    "Tunis"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-li",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/li.svg",
+   "options": [
+    "Lihtenštajn",
+    "Monako",
+    "Švicarska",
+    "Slovenija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-lt",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lt.svg",
+   "options": [
+    "Ukrajina",
+    "Bjelorusija",
+    "Litva",
+    "Latvija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-lu",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lu.svg",
+   "options": [
+    "Švicarska",
+    "Luksemburg",
+    "Njemačka",
+    "Nizozemska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mg.svg",
+   "options": [
+    "Komori",
+    "Malavi",
+    "Mozambik",
+    "Madagaskar"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-mw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mw.svg",
+   "options": [
+    "Malavi",
+    "Mozambik",
+    "Tanzanija",
+    "Zambija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-my",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/my.svg",
+   "options": [
+    "Australija",
+    "Singapur",
+    "Tajland",
+    "Malezija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-mv",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mv.svg",
+   "options": [
+    "Pakistan",
+    "Šri Lanka",
+    "Bangladeš",
+    "Maldivi"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ml",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ml.svg",
+   "options": [
+    "Togo",
+    "Mali",
+    "Benin",
+    "Burkina Faso"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mt",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mt.svg",
+   "options": [
+    "Italija",
+    "Malta",
+    "Albanija",
+    "Tunis"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mh",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mh.svg",
+   "options": [
+    "Kiribati",
+    "Maršalovi Otoci",
+    "Salomonovi Otoci",
+    "Nauru"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mr",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mr.svg",
+   "options": [
+    "Senegal",
+    "Gambija",
+    "Gvineja Bisau",
+    "Mauretanija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-mu",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mu.svg",
+   "options": [
+    "Mozambik",
+    "Mauricijus",
+    "Esvatini",
+    "Malavi"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mx",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mx.svg",
+   "options": [
+    "Meksiko",
+    "Gvatemala",
+    "SAD",
+    "Jamajka"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-fm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/fm.svg",
+   "options": [
+    "Mikronezija",
+    "Maršalovi Otoci",
+    "Palau",
+    "Papua Nova Gvineja"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-md",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/md.svg",
+   "options": [
+    "Ukrajina",
+    "Moldavija",
+    "Slovačka",
+    "Rumunjska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mc",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mc.svg",
+   "options": [
+    "Vatikan",
+    "Švicarska",
+    "Monako",
+    "Italija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-mn",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mn.svg",
+   "options": [
+    "Kina",
+    "Mongolija",
+    "Rusija",
+    "Nepal"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-me",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/me.svg",
+   "options": [
+    "Albanija",
+    "Hrvatska",
+    "Crna Gora",
+    "Srbija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ma",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ma.svg",
+   "options": [
+    "Andora",
+    "Tunis",
+    "Maroko",
+    "Španjolska"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-mz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mz.svg",
+   "options": [
+    "Esvatini",
+    "Mozambik",
+    "Komori",
+    "Malavi"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-mm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mm.svg",
+   "options": [
+    "Mjanmar",
+    "Vijetnam",
+    "Kambodža",
+    "Butan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-na",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/na.svg",
+   "options": [
+    "Namibija",
+    "Lesoto",
+    "Zimbabve",
+    "Zambija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-nr",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/nr.svg",
+   "options": [
+    "Fidži",
+    "Nauru",
+    "Vanuatu",
+    "Mikronezija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-np",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/np.svg",
+   "options": [
+    "Indija",
+    "Bangladeš",
+    "Nepal",
+    "Pakistan"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-nl",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/nl.svg",
+   "options": [
+    "Ujedinjeno Kraljevstvo",
+    "Nizozemska",
+    "Luksemburg",
+    "Danska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-nz",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/nz.svg",
+   "options": [
+    "Novi Zeland",
+    "Australija",
+    "Malezija",
+    "Singapur"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ni",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ni.svg",
+   "options": [
+    "Gvatemala",
+    "Honduras",
+    "Nikaragva",
+    "Panama"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ne",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ne.svg",
+   "options": [
+    "Togo",
+    "Niger",
+    "Kamerun",
+    "Čad"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-ng",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ng.svg",
+   "options": [
+    "Alžir",
+    "Kamerun",
+    "Tunis",
+    "Nigerija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-kp",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kp.svg",
+   "options": [
+    "Japan",
+    "Kina",
+    "Sjeverna Koreja",
+    "Tajvan"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-mk",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/mk.svg",
+   "options": [
+    "Kosovo",
+    "Grčka",
+    "Sjeverna Makedonija",
+    "Crna Gora"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-no",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/no.svg",
+   "options": [
+    "Danska",
+    "Latvija",
+    "Estonija",
+    "Norveška"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-om",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/om.svg",
+   "options": [
+    "Katar",
+    "Oman",
+    "Kuvajt",
+    "Jemen"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-pk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pk.svg",
+   "options": [
+    "Pakistan",
+    "Ujedinjeni Arapski Emirati",
+    "Nepal",
+    "Indija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-pw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pw.svg",
+   "options": [
+    "Filipini",
+    "Indonezija",
+    "Papua Nova Gvineja",
+    "Palau"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-pa",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pa.svg",
+   "options": [
+    "Kostarika",
+    "Gvatemala",
+    "Kolumbija",
+    "Panama"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-pg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pg.svg",
+   "options": [
+    "Australija",
+    "Istočni Timor",
+    "Papua Nova Gvineja",
+    "Mikronezija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-py",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/py.svg",
+   "options": [
+    "Čile",
+    "Paragvaj",
+    "Argentina",
+    "Brazil"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-pe",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pe.svg",
+   "options": [
+    "Venezuela",
+    "Kolumbija",
+    "Panama",
+    "Peru"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ph",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ph.svg",
+   "options": [
+    "Filipini",
+    "Indonezija",
+    "Vijetnam",
+    "Tajvan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-pl",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pl.svg",
+   "options": [
+    "Mađarska",
+    "Češka",
+    "Litva",
+    "Poljska"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-pt",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/pt.svg",
+   "options": [
+    "Maroko",
+    "Portugal",
+    "Španjolska",
+    "Francuska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-qa",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/qa.svg",
+   "options": [
+    "Irak",
+    "Saudijska Arabija",
+    "Katar",
+    "Jordan"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ro",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ro.svg",
+   "options": [
+    "Bugarska",
+    "Srbija",
+    "Rumunjska",
+    "Moldavija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ru",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ru.svg",
+   "options": [
+    "Finska",
+    "Kina",
+    "Rusija",
+    "Sjeverna Koreja"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-rw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/rw.svg",
+   "options": [
+    "Burundi",
+    "Južni Sudan",
+    "Ruanda",
+    "Uganda"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-kn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kn.svg",
+   "options": [
+    "Sveti Vincent i Grenadini",
+    "Grenada",
+    "Sveti Kristofor i Nevis",
+    "Sveta Lucija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-lc",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lc.svg",
+   "options": [
+    "Barbados",
+    "Dominika",
+    "Sveti Vincent i Grenadini",
+    "Sveta Lucija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-vc",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/vc.svg",
+   "options": [
+    "Sveti Vincent i Grenadini",
+    "Grenada",
+    "Antigva i Barbuda",
+    "Sveta Lucija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ws",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ws.svg",
+   "options": [
+    "Tuvalu",
+    "Tonga",
+    "Samoa",
+    "Nauru"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-sm",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sm.svg",
+   "options": [
+    "San Marino",
+    "Monako",
+    "Italija",
+    "Hrvatska"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-st",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/st.svg",
+   "options": [
+    "Ekvatorska Gvineja",
+    "Kamerun",
+    "Gabon",
+    "Sveti Toma i Princip"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-sa",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sa.svg",
+   "options": [
+    "Saudijska Arabija",
+    "Katar",
+    "Jordan",
+    "Izrael"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-sn",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sn.svg",
+   "options": [
+    "Senegal",
+    "Alžir",
+    "Nigerija",
+    "Gana"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-rs",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/rs.svg",
+   "options": [
+    "Albanija",
+    "Mađarska",
+    "Sjeverna Makedonija",
+    "Srbija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-sc",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sc.svg",
+   "options": [
+    "Maldivi",
+    "Kenija",
+    "Sejšeli",
+    "Komori"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-sl",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sl.svg",
+   "options": [
+    "Liberija",
+    "Gambija",
+    "Sijera Leone",
+    "Gvineja Bisau"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-sg",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sg.svg",
+   "options": [
+    "Tajland",
+    "Singapur",
+    "Malezija",
+    "Vijetnam"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-sk",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sk.svg",
+   "options": [
+    "Slovačka",
+    "Hrvatska",
+    "Češka",
+    "Slovenija"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-si",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/si.svg",
+   "options": [
+    "Hrvatska",
+    "Austrija",
+    "Mađarska",
+    "Slovenija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-sb",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sb.svg",
+   "options": [
+    "Tuvalu",
+    "Salomonovi Otoci",
+    "Papua Nova Gvineja",
+    "Nauru"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-so",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/so.svg",
+   "options": [
+    "Jemen",
+    "Kenija",
+    "Džibuti",
+    "Somalija"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-za",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/za.svg",
+   "options": [
+    "Južnoafrička Republika",
+    "Kenija",
+    "Nigerija",
+    "Egipat"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-kr",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/kr.svg",
+   "options": [
+    "Južna Koreja",
+    "Filipini",
+    "Tajvan",
+    "Kina"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ss",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ss.svg",
+   "options": [
+    "Srednjoafrička Republika",
+    "Ruanda",
+    "Južni Sudan",
+    "Etiopija"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-es",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/es.svg",
+   "options": [
+    "Monako",
+    "Portugal",
+    "Andora",
+    "Španjolska"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-lk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/lk.svg",
+   "options": [
+    "Indija",
+    "Pakistan",
+    "Nepal",
+    "Šri Lanka"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-sd",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sd.svg",
+   "options": [
+    "Džibuti",
+    "Sudan",
+    "Čad",
+    "Etiopija"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-sr",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sr.svg",
+   "options": [
+    "Trinidad i Tobago",
+    "Grenada",
+    "Gvajana",
+    "Surinam"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-se",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/se.svg",
+   "options": [
+    "Švedska",
+    "Latvija",
+    "Estonija",
+    "Litva"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ch",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ch.svg",
+   "options": [
+    "San Marino",
+    "Lihtenštajn",
+    "Luksemburg",
+    "Švicarska"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-sy",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/sy.svg",
+   "options": [
+    "Jordan",
+    "Sirija",
+    "Izrael",
+    "Turska"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-tj",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tj.svg",
+   "options": [
+    "Tadžikistan",
+    "Pakistan",
+    "Turkmenistan",
+    "Kirgistan"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-tz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tz.svg",
+   "options": [
+    "Zambija",
+    "Uganda",
+    "Tanzanija",
+    "Ruanda"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-th",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/th.svg",
+   "options": [
+    "Tajland",
+    "Malezija",
+    "Tajvan",
+    "Nepal"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-tl",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tl.svg",
+   "options": [
+    "Palau",
+    "Indonezija",
+    "Brunej",
+    "Istočni Timor"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-tg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tg.svg",
+   "options": [
+    "Togo",
+    "Nigerija",
+    "Gana",
+    "Burkina Faso"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-to",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/to.svg",
+   "options": [
+    "Fidži",
+    "Samoa",
+    "Tonga",
+    "Vanuatu"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-tt",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tt.svg",
+   "options": [
+    "Barbados",
+    "Sveti Vincent i Grenadini",
+    "Venezuela",
+    "Trinidad i Tobago"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-tn",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tn.svg",
+   "options": [
+    "Italija",
+    "Alžir",
+    "Vatikan",
+    "Tunis"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-tr",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tr.svg",
+   "options": [
+    "Turska",
+    "Armenija",
+    "Gruzija",
+    "Izrael"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-tm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tm.svg",
+   "options": [
+    "Azerbajdžan",
+    "Turkmenistan",
+    "Afganistan",
+    "Tadžikistan"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-zastava-tv",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tv.svg",
+   "options": [
+    "Tuvalu",
+    "Vanuatu",
+    "Tonga",
+    "Kiribati"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-ug",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ug.svg",
+   "options": [
+    "Burundi",
+    "DR Kongo",
+    "Kenija",
+    "Uganda"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ua",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ua.svg",
+   "options": [
+    "Moldavija",
+    "Rumunjska",
+    "Ukrajina",
+    "Litva"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ae",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ae.svg",
+   "options": [
+    "Afganistan",
+    "Pakistan",
+    "Irak",
+    "Ujedinjeni Arapski Emirati"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-gb",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/gb.svg",
+   "options": [
+    "Belgija",
+    "Nizozemska",
+    "Ujedinjeno Kraljevstvo",
+    "Njemačka"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-us",
+   "type": "picture",
+   "difficulty": 1,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/us.svg",
+   "options": [
+    "Jamajka",
+    "Meksiko",
+    "Kuba",
+    "SAD"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-uy",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/uy.svg",
+   "options": [
+    "Urugvaj",
+    "Argentina",
+    "Bolivija",
+    "Brazil"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-uz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/uz.svg",
+   "options": [
+    "Kirgistan",
+    "Afganistan",
+    "Uzbekistan",
+    "Turkmenistan"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-vu",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/vu.svg",
+   "options": [
+    "Tonga",
+    "Samoa",
+    "Vanuatu",
+    "Tuvalu"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ve",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ve.svg",
+   "options": [
+    "Venezuela",
+    "Panama",
+    "Haiti",
+    "Jamajka"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-vn",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/vn.svg",
+   "options": [
+    "Tajvan",
+    "Filipini",
+    "Vijetnam",
+    "Bangladeš"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-ye",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ye.svg",
+   "options": [
+    "Jemen",
+    "Ujedinjeni Arapski Emirati",
+    "Eritreja",
+    "Oman"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-zm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/zm.svg",
+   "options": [
+    "Zambija",
+    "Tanzanija",
+    "Zimbabve",
+    "Mozambik"
+   ],
+   "correct": 0
+  },
+  {
+   "id": "slike-zastava-zw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/zw.svg",
+   "options": [
+    "Mozambik",
+    "Esvatini",
+    "Zimbabve",
+    "Lesoto"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-xk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/xk.svg",
+   "options": [
+    "Srbija",
+    "Bugarska",
+    "Kosovo",
+    "Bosna i Hercegovina"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-tw",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/tw.svg",
+   "options": [
+    "Vijetnam",
+    "Filipini",
+    "Tajvan",
+    "Sjeverna Koreja"
+   ],
+   "correct": 2
+  },
+  {
+   "id": "slike-zastava-va",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/va.svg",
+   "options": [
+    "Monako",
+    "Slovenija",
+    "San Marino",
+    "Vatikan"
+   ],
+   "correct": 3
+  },
+  {
+   "id": "slike-zastava-ps",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Zastave",
+   "question": "Čija je ovo zastava?",
+   "image": "slike/zastave/ps.svg",
+   "options": [
+    "Jordan",
+    "Palestina",
+    "Sirija",
+    "Egipat"
+   ],
+   "correct": 1
+  },
+  {
+   "id": "slike-obris-hr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/hr.svg",
+   "options": [
+    "Slovenija",
+    "Austrija",
+    "Srbija",
+    "Hrvatska"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-si",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/si.svg",
+   "options": [
+    "Hrvatska",
+    "Italija",
+    "Bosna i Hercegovina",
+    "Slovenija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ba",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ba.svg",
+   "options": [
+    "Hrvatska",
+    "Mađarska",
+    "Crna Gora",
+    "Bosna i Hercegovina"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-rs",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/rs.svg",
+   "options": [
+    "Srbija",
+    "Sjeverna Makedonija",
+    "Albanija",
+    "Mađarska"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-me",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/me.svg",
+   "options": [
+    "Crna Gora",
+    "Sjeverna Makedonija",
+    "Kosovo",
+    "Hrvatska"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-mk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/mk.svg",
+   "options": [
+    "Grčka",
+    "Crna Gora",
+    "Albanija",
+    "Sjeverna Makedonija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-al",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/al.svg",
+   "options": [
+    "Grčka",
+    "Bosna i Hercegovina",
+    "Albanija",
+    "Sjeverna Makedonija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-hu",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/hu.svg",
+   "options": [
+    "Hrvatska",
+    "Mađarska",
+    "Slovenija",
+    "Austrija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-at",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/at.svg",
+   "options": [
+    "Češka",
+    "Austrija",
+    "Slovačka",
+    "Mađarska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-it",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/it.svg",
+   "options": [
+    "Crna Gora",
+    "Bosna i Hercegovina",
+    "Italija",
+    "Austrija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-de",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/de.svg",
+   "options": [
+    "Danska",
+    "Češka",
+    "Belgija",
+    "Njemačka"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-fr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/fr.svg",
+   "options": [
+    "Irska",
+    "Švicarska",
+    "Francuska",
+    "Ujedinjeno Kraljevstvo"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-es",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/es.svg",
+   "options": [
+    "Maroko",
+    "Švicarska",
+    "Španjolska",
+    "Italija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-pt",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/pt.svg",
+   "options": [
+    "Švicarska",
+    "Portugal",
+    "Maroko",
+    "Španjolska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-gb",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/gb.svg",
+   "options": [
+    "Ujedinjeno Kraljevstvo",
+    "Irska",
+    "Nizozemska",
+    "Švicarska"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ie",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ie.svg",
+   "options": [
+    "Danska",
+    "Irska",
+    "Ujedinjeno Kraljevstvo",
+    "Francuska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-nl",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/nl.svg",
+   "options": [
+    "Češka",
+    "Nizozemska",
+    "Švicarska",
+    "Belgija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-be",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/be.svg",
+   "options": [
+    "Njemačka",
+    "Nizozemska",
+    "Ujedinjeno Kraljevstvo",
+    "Belgija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ch",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ch.svg",
+   "options": [
+    "Švicarska",
+    "Belgija",
+    "Češka",
+    "Italija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-pl",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/pl.svg",
+   "options": [
+    "Slovačka",
+    "Poljska",
+    "Bjelorusija",
+    "Litva"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cz",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cz.svg",
+   "options": [
+    "Slovačka",
+    "Češka",
+    "Njemačka",
+    "Mađarska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-sk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/sk.svg",
+   "options": [
+    "Slovenija",
+    "Slovačka",
+    "Hrvatska",
+    "Mađarska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-gr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/gr.svg",
+   "options": [
+    "Kosovo",
+    "Albanija",
+    "Grčka",
+    "Srbija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-tr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/tr.svg",
+   "options": [
+    "Turska",
+    "Armenija",
+    "Cipar",
+    "Sirija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-se",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/se.svg",
+   "options": [
+    "Estonija",
+    "Švedska",
+    "Finska",
+    "Litva"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-no",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/no.svg",
+   "options": [
+    "Finska",
+    "Litva",
+    "Norveška",
+    "Latvija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-fi",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/fi.svg",
+   "options": [
+    "Latvija",
+    "Litva",
+    "Finska",
+    "Bjelorusija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-dk",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/dk.svg",
+   "options": [
+    "Njemačka",
+    "Danska",
+    "Poljska",
+    "Nizozemska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-is",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/is.svg",
+   "options": [
+    "Island",
+    "Irska",
+    "Nizozemska",
+    "Ujedinjeno Kraljevstvo"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ru",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ru.svg",
+   "options": [
+    "Kazahstan",
+    "Mongolija",
+    "Rusija",
+    "Norveška"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ua",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ua.svg",
+   "options": [
+    "Slovačka",
+    "Ukrajina",
+    "Moldavija",
+    "Rumunjska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-us",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/us.svg",
+   "options": [
+    "Haiti",
+    "Jamajka",
+    "SAD",
+    "Kuba"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ca",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ca.svg",
+   "options": [
+    "Island",
+    "Kanada",
+    "Kuba",
+    "Meksiko"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-mx",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/mx.svg",
+   "options": [
+    "SAD",
+    "Meksiko",
+    "Kostarika",
+    "Kuba"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-br",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/br.svg",
+   "options": [
+    "Brazil",
+    "Peru",
+    "Venezuela",
+    "Bolivija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ar",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ar.svg",
+   "options": [
+    "Peru",
+    "Brazil",
+    "Paragvaj",
+    "Argentina"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-jp",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/jp.svg",
+   "options": [
+    "Japan",
+    "Tajvan",
+    "Kina",
+    "Sjeverna Koreja"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cn",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cn.svg",
+   "options": [
+    "Nepal",
+    "Tajvan",
+    "Sjeverna Koreja",
+    "Kina"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-kr",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/kr.svg",
+   "options": [
+    "Japan",
+    "Južna Koreja",
+    "Tajvan",
+    "Mongolija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-in",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/in.svg",
+   "options": [
+    "Tajland",
+    "Nepal",
+    "Afganistan",
+    "Indija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-au",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/au.svg",
+   "options": [
+    "Indonezija",
+    "Australija",
+    "Malezija",
+    "Vijetnam"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-eg",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/eg.svg",
+   "options": [
+    "Egipat",
+    "Jordan",
+    "Libanon",
+    "Izrael"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-za",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/za.svg",
+   "options": [
+    "Južnoafrička Republika",
+    "Gana",
+    "Kamerun",
+    "Egipat"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cu",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cu.svg",
+   "options": [
+    "Gvatemala",
+    "Haiti",
+    "Kuba",
+    "Panama"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-jm",
+   "type": "picture",
+   "difficulty": 2,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/jm.svg",
+   "options": [
+    "Haiti",
+    "Kuba",
+    "Gvatemala",
+    "Jamajka"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ro",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ro.svg",
+   "options": [
+    "Moldavija",
+    "Kosovo",
+    "Mađarska",
+    "Rumunjska"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-bg",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/bg.svg",
+   "options": [
+    "Rumunjska",
+    "Grčka",
+    "Kosovo",
+    "Bugarska"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-md",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/md.svg",
+   "options": [
+    "Rumunjska",
+    "Slovačka",
+    "Ukrajina",
+    "Moldavija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-by",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/by.svg",
+   "options": [
+    "Bjelorusija",
+    "Estonija",
+    "Poljska",
+    "Latvija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-lt",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/lt.svg",
+   "options": [
+    "Bjelorusija",
+    "Litva",
+    "Latvija",
+    "Ukrajina"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-lv",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/lv.svg",
+   "options": [
+    "Poljska",
+    "Finska",
+    "Bjelorusija",
+    "Latvija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ee",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ee.svg",
+   "options": [
+    "Bjelorusija",
+    "Finska",
+    "Estonija",
+    "Poljska"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cy",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cy.svg",
+   "options": [
+    "Izrael",
+    "Sirija",
+    "Cipar",
+    "Egipat"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-xk",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/xk.svg",
+   "options": [
+    "Albanija",
+    "Bosna i Hercegovina",
+    "Sjeverna Makedonija",
+    "Kosovo"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ge",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ge.svg",
+   "options": [
+    "Libanon",
+    "Turska",
+    "Gruzija",
+    "Sirija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-am",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/am.svg",
+   "options": [
+    "Libanon",
+    "Armenija",
+    "Gruzija",
+    "Turska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-az",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/az.svg",
+   "options": [
+    "Turska",
+    "Azerbajdžan",
+    "Iran",
+    "Gruzija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-kz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/kz.svg",
+   "options": [
+    "Afganistan",
+    "Gruzija",
+    "Kazahstan",
+    "Iran"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-sa",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/sa.svg",
+   "options": [
+    "Saudijska Arabija",
+    "Irak",
+    "Iran",
+    "Izrael"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ae",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ae.svg",
+   "options": [
+    "Ujedinjeni Arapski Emirati",
+    "Pakistan",
+    "Afganistan",
+    "Irak"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ir",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ir.svg",
+   "options": [
+    "Armenija",
+    "Katar",
+    "Afganistan",
+    "Iran"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-iq",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/iq.svg",
+   "options": [
+    "Sirija",
+    "Irak",
+    "Libanon",
+    "Armenija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-sy",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/sy.svg",
+   "options": [
+    "Sirija",
+    "Izrael",
+    "Cipar",
+    "Jordan"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-lb",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/lb.svg",
+   "options": [
+    "Cipar",
+    "Libanon",
+    "Jordan",
+    "Turska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-jo",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/jo.svg",
+   "options": [
+    "Cipar",
+    "Egipat",
+    "Libanon",
+    "Jordan"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-il",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/il.svg",
+   "options": [
+    "Cipar",
+    "Irak",
+    "Egipat",
+    "Izrael"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-qa",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/qa.svg",
+   "options": [
+    "Sirija",
+    "Saudijska Arabija",
+    "Ujedinjeni Arapski Emirati",
+    "Katar"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ma",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ma.svg",
+   "options": [
+    "Alžir",
+    "Maroko",
+    "Tunis",
+    "Francuska"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-dz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/dz.svg",
+   "options": [
+    "Alžir",
+    "Libija",
+    "Italija",
+    "Portugal"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-tn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/tn.svg",
+   "options": [
+    "Grčka",
+    "Tunis",
+    "Italija",
+    "Alžir"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ly",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ly.svg",
+   "options": [
+    "Egipat",
+    "Sjeverna Makedonija",
+    "Libija",
+    "Grčka"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ng",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ng.svg",
+   "options": [
+    "Nigerija",
+    "Tunis",
+    "Libija",
+    "Senegal"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ke",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ke.svg",
+   "options": [
+    "Ujedinjeni Arapski Emirati",
+    "Kenija",
+    "Kamerun",
+    "Egipat"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-et",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/et.svg",
+   "options": [
+    "Etiopija",
+    "Saudijska Arabija",
+    "Egipat",
+    "Katar"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-gh",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/gh.svg",
+   "options": [
+    "Alžir",
+    "Senegal",
+    "Nigerija",
+    "Gana"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-sn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/sn.svg",
+   "options": [
+    "Španjolska",
+    "Maroko",
+    "Senegal",
+    "Nigerija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cm",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cm.svg",
+   "options": [
+    "Kamerun",
+    "Kenija",
+    "Gana",
+    "Libija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-co",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/co.svg",
+   "options": [
+    "Jamajka",
+    "Peru",
+    "Venezuela",
+    "Kolumbija"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-pe",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/pe.svg",
+   "options": [
+    "Peru",
+    "Kolumbija",
+    "Paragvaj",
+    "Venezuela"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cl",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cl.svg",
+   "options": [
+    "Argentina",
+    "Čile",
+    "Brazil",
+    "Bolivija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ve",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ve.svg",
+   "options": [
+    "Jamajka",
+    "Venezuela",
+    "Kolumbija",
+    "Dominikanska Republika"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-uy",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/uy.svg",
+   "options": [
+    "Peru",
+    "Paragvaj",
+    "Brazil",
+    "Urugvaj"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-py",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/py.svg",
+   "options": [
+    "Bolivija",
+    "Argentina",
+    "Brazil",
+    "Paragvaj"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-bo",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/bo.svg",
+   "options": [
+    "Brazil",
+    "Bolivija",
+    "Peru",
+    "Argentina"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ec",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ec.svg",
+   "options": [
+    "Venezuela",
+    "Kostarika",
+    "Panama",
+    "Ekvador"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-th",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/th.svg",
+   "options": [
+    "Tajland",
+    "Malezija",
+    "Vijetnam",
+    "Šri Lanka"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-vn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/vn.svg",
+   "options": [
+    "Kina",
+    "Filipini",
+    "Tajland",
+    "Vijetnam"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-id",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/id.svg",
+   "options": [
+    "Malezija",
+    "Tajvan",
+    "Indonezija",
+    "Filipini"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ph",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ph.svg",
+   "options": [
+    "Tajvan",
+    "Malezija",
+    "Filipini",
+    "Australija"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-my",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/my.svg",
+   "options": [
+    "Filipini",
+    "Malezija",
+    "Tajland",
+    "Indonezija"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-pk",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/pk.svg",
+   "options": [
+    "Indija",
+    "Nepal",
+    "Pakistan",
+    "Katar"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-bd",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/bd.svg",
+   "options": [
+    "Nepal",
+    "Bangladeš",
+    "Indija",
+    "Tajland"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-np",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/np.svg",
+   "options": [
+    "Nepal",
+    "Bangladeš",
+    "Tajland",
+    "Kina"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-lk",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/lk.svg",
+   "options": [
+    "Pakistan",
+    "Tajland",
+    "Vijetnam",
+    "Šri Lanka"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-nz",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/nz.svg",
+   "options": [
+    "Novi Zeland",
+    "Malezija",
+    "Filipini",
+    "Indonezija"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-mn",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/mn.svg",
+   "options": [
+    "Nepal",
+    "Mongolija",
+    "Kazahstan",
+    "Sjeverna Koreja"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-kp",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/kp.svg",
+   "options": [
+    "Sjeverna Koreja",
+    "Filipini",
+    "Tajvan",
+    "Južna Koreja"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-af",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/af.svg",
+   "options": [
+    "Afganistan",
+    "Katar",
+    "Iran",
+    "Pakistan"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-tw",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/tw.svg",
+   "options": [
+    "Japan",
+    "Tajvan",
+    "Južna Koreja",
+    "Kina"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-pa",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/pa.svg",
+   "options": [
+    "Haiti",
+    "Gvatemala",
+    "Jamajka",
+    "Panama"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-cr",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/cr.svg",
+   "options": [
+    "Kostarika",
+    "Ekvador",
+    "Kolumbija",
+    "Gvatemala"
+   ],
+   "correct": 0,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-do",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/do.svg",
+   "options": [
+    "Jamajka",
+    "Dominikanska Republika",
+    "Venezuela",
+    "Kuba"
+   ],
+   "correct": 1,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-ht",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/ht.svg",
+   "options": [
+    "Kuba",
+    "Jamajka",
+    "Haiti",
+    "Dominikanska Republika"
+   ],
+   "correct": 2,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  },
+  {
+   "id": "slike-obris-gt",
+   "type": "picture",
+   "difficulty": 3,
+   "category": "Obrisi država",
+   "question": "Koja je ovo država?",
+   "image": "slike/obrisi/gt.svg",
+   "options": [
+    "Kuba",
+    "Haiti",
+    "Panama",
+    "Gvatemala"
+   ],
+   "correct": 3,
+   "explanation": "Obris nije u mjerilu; manji udaljeni otoci i prekomorski dijelovi su izostavljeni."
+  }
+ ]
+}

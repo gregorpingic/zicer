@@ -86,6 +86,11 @@ export class BotPlayer {
           if (q.type === 'quiz' || q.type === 'risk' || q.type === 'higherlower') correct = q.correct;
           else if (q.type === 'oddone') correct = q.odd;
           else if (q.type === 'truefalse') correct = q.answer ? 0 : 1;
+          else if (q.type === 'picture') correct = q.correct;
+          else if (q.type === 'versus') {
+            const pr = q.pairs.find((x) => x.a === spec.options[0] && x.b === spec.options[1]);
+            if (pr) correct = pr.correct;
+          }
         }
         if (correct >= 0 && allowed.includes(correct) && knows()) return { choice: correct };
         const wrong = allowed.filter((i) => i !== correct);
